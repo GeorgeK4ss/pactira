@@ -19,7 +19,7 @@ export const assertNotEmbedSession = (session: Pick<Session, 'isEmbed'> | null |
   }
 
   throw new AppError(AuthenticationErrorCode.EmbedSessionRestricted, {
-    message: 'This action is not available from an embedded session. Sign in to Documenso directly to continue.',
+    message: 'This action is not available from an embedded session. Sign in to Pactira directly to continue.',
     statusCode: 403,
   });
 };

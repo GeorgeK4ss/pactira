@@ -62,7 +62,7 @@ export const TemplateDocumentSelfSigned = ({ documentName, assetBaseUrl }: Templ
 
           <Button
             className="rounded-lg border border-border border-solid px-4 py-2 text-center font-medium text-foreground text-sm no-underline"
-            href="https://documenso.com/pricing"
+            href={NEXT_PUBLIC_WEBAPP_URL}
           >
             <Img
               src={getEmailAssetUrl(assetBaseUrl, 'static/review.png')}

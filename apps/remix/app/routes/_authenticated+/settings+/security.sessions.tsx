@@ -113,7 +113,7 @@ export default function SettingsSecuritySessions() {
           </h3>
 
           <p className="mt-1 text-muted-foreground text-sm">
-            <Trans>Sessions created by signing in to Documenso embedded on another website.</Trans>
+            <Trans>Sessions created by signing in to Pactira embedded on another website.</Trans>
           </p>
 
           <div className="mt-4">

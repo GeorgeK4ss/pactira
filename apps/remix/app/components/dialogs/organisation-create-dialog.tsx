@@ -395,17 +395,6 @@ const BillingPlanForm = ({ value, onChange, plans, canCreateFreeOrganisation }: 
           </div>
         </Link>
       </div>
-
-      <div className="mt-6 text-center">
-        <Link
-          to="https://documenso.com/pricing"
-          className="flex items-center justify-center gap-1 text-primary text-sm hover:text-primary/80 hover:underline"
-          target="_blank"
-        >
-          <Trans>Compare all plans and features in detail</Trans>
-          <ExternalLinkIcon className="h-4 w-4" />
-        </Link>
-      </div>
     </div>
   );
 };

@@ -290,9 +290,9 @@ export default function EmbedAuthPopupPage({ loaderData }: Route.ComponentProps)
         .with({ status: 'error' }, ({ code, message }) => (
           <ErrorLine>
             {match(code)
-              .with('opener-missing', () => <Trans>This window must be opened from a Documenso embed.</Trans>)
+              .with('opener-missing', () => <Trans>This window must be opened from a Pactira embed.</Trans>)
               .with('opener-timeout', () => (
-                <Trans>Could not connect to the Documenso embed. Close this window and try again.</Trans>
+                <Trans>Could not connect to the Pactira embed. Close this window and try again.</Trans>
               ))
               .with('csc-options-invalid', () => (
                 <Trans>This signing request is missing its details. Close this window and try again.</Trans>
@@ -363,7 +363,7 @@ const EmbedAuthPopupLayout = ({ children, isCsc = false }: { children: ReactNode
           {isCsc ? (
             <Trans>Sign in with your signing provider to continue</Trans>
           ) : (
-            <Trans>Sign in to Documenso to continue</Trans>
+            <Trans>Sign in to Pactira to continue</Trans>
           )}
         </h1>
       </div>
