@@ -26,6 +26,22 @@ export const switchLanguage = async (lang: string) => {
   window.location.reload();
 };
 
+/** Each language in its own name, so people can find theirs whatever the page language is. */
+export const NATIVE_LANGUAGE_NAMES: Record<string, string> = {
+  de: 'Deutsch',
+  en: 'English',
+  fr: 'Français',
+  es: 'Español',
+  he: 'עברית',
+  it: 'Italiano',
+  nl: 'Nederlands',
+  pl: 'Polski',
+  'pt-BR': 'Português (Brasil)',
+  ja: '日本語',
+  ko: '한국어',
+  zh: '中文',
+};
+
 type LanguageSwitcherDialogProps = {
   open: boolean;
   setOpen: (_open: boolean) => void;
@@ -49,11 +65,14 @@ export const LanguageSwitcherDialog = ({ open, setOpen }: LanguageSwitcherDialog
           {Object.values(SUPPORTED_LANGUAGES).map((language) => (
             <CommandItem
               key={language.short}
-              value={_(language.full)}
+              value={`${NATIVE_LANGUAGE_NAMES[language.short] ?? ''} ${_(language.full)}`}
               onSelect={async () => setLanguage(language.short)}
             >
               <CheckIcon className={cn('me-2 h-4 w-4', i18n.locale === language.short ? 'opacity-100' : 'opacity-0')} />
-              {_(language.full)}
+              <span dir="auto">{NATIVE_LANGUAGE_NAMES[language.short] ?? _(language.full)}</span>
+              {NATIVE_LANGUAGE_NAMES[language.short] && NATIVE_LANGUAGE_NAMES[language.short] !== _(language.full) && (
+                <span className="ms-2 text-muted-foreground text-xs">{_(language.full)}</span>
+              )}
             </CommandItem>
           ))}
         </CommandGroup>
