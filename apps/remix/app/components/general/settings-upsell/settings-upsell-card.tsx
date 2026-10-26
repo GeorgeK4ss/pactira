@@ -57,7 +57,7 @@ export const SettingsUpsellCard = ({
   const ctaContent = (
     <>
       {ctaLabel ?? <Trans>Upgrade Plan</Trans>}
-      <ArrowRightIcon className="ms-2 h-4 w-4" />
+      <ArrowRightIcon className="ms-2 h-4 w-4 rtl:-scale-x-100" />
     </>
   );
 

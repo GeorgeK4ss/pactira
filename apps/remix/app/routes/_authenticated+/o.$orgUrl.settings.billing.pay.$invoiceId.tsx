@@ -195,7 +195,7 @@ export default function PayInvoicePage({ params }: Route.ComponentProps) {
         to={billingPath}
         className="inline-flex items-center gap-1 text-muted-foreground text-sm hover:text-foreground"
       >
-        <ArrowLeftIcon className="h-4 w-4 rtl:rotate-180" />
+        <ArrowLeftIcon className="h-4 w-4 rtl:-scale-x-100" />
         <Trans>Back to billing</Trans>
       </Link>
 

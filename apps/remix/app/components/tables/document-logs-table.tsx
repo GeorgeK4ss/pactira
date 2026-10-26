@@ -23,7 +23,6 @@ export type DocumentLogsTableProps = {
 
 const dateFormat: DateTimeFormatOptions = {
   ...DateTime.DATETIME_SHORT,
-  hourCycle: 'h12',
 };
 
 export const DocumentLogsTable = ({ documentId, userId }: DocumentLogsTableProps) => {

@@ -167,7 +167,7 @@ export default function DashboardPage() {
               {/* <Button variant="ghost" size="sm" asChild>
               <Link to="/" className="gap-1">
                 <Trans>View all</Trans>
-                <ChevronRightIcon className="h-4 w-4" />
+                <ChevronRightIcon className="rtl:-scale-x-100 h-4 w-4" />
               </Link>
             </Button> */}
             </div>
@@ -239,7 +239,7 @@ export default function DashboardPage() {
                 <span>
                   <Trans>View all</Trans>
                 </span>
-                <ChevronRightIcon className="h-4 w-4" />
+                <ChevronRightIcon className="rtl:-scale-x-100 h-4 w-4" />
               </Link>
             </Button> */}
           </div>

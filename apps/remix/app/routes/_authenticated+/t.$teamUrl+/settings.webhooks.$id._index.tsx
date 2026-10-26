@@ -141,7 +141,7 @@ export default function WebhookPage({ params }: Route.ComponentProps) {
             </p>
 
             <div className="opacity-0 transition-opacity group-hover:opacity-100 data-state-selected:block">
-              <ChevronRightIcon className="h-4 w-4" />
+              <ChevronRightIcon className="h-4 w-4 rtl:-scale-x-100" />
             </div>
           </div>
         ),

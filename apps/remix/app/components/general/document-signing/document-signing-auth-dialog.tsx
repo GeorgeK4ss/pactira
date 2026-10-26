@@ -89,7 +89,7 @@ export const DocumentSigningAuthDialog = ({
             {selectedAuthType && validAuthTypes.length > 1 && (
               <div className="flex items-center gap-2">
                 <Button type="button" variant="ghost" size="sm" onClick={handleBackToChooser} className="h-6 w-6 p-0">
-                  <ChevronLeftIcon className="h-4 w-4" />
+                  <ChevronLeftIcon className="h-4 w-4 rtl:-scale-x-100" />
                 </Button>
                 <span>{title || <Trans>Sign field</Trans>}</span>
               </div>

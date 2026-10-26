@@ -63,7 +63,7 @@ export const InboxTable = () => {
       {
         header: _(msg`Created`),
         accessorKey: 'createdAt',
-        cell: ({ row }) => i18n.date(row.original.createdAt, { ...DateTime.DATETIME_SHORT, hourCycle: 'h12' }),
+        cell: ({ row }) => i18n.date(row.original.createdAt, { ...DateTime.DATETIME_SHORT }),
       },
       {
         header: _(msg`Title`),

@@ -195,7 +195,7 @@ const TeamDropdownMenu = ({ team }: { team: TGetOrganisationSessionResponse[0]['
       <DropdownMenuContent align="end" onClick={(e) => e.stopPropagation()}>
         <DropdownMenuItem asChild>
           <Link to={`/t/${team.url}`}>
-            <ArrowRight className="me-2 h-4 w-4" />
+            <ArrowRight className="me-2 h-4 w-4 rtl:-scale-x-100" />
             <Trans>Go to team</Trans>
           </Link>
         </DropdownMenuItem>

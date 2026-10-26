@@ -227,7 +227,7 @@ export const DocumentSigningPageViewV2 = () => {
                 <div className="px-4">
                   <Button asChild variant="ghost" className="w-full justify-start">
                     <Link to="/">
-                      <ArrowLeftIcon className="me-2 h-4 w-4" />
+                      <ArrowLeftIcon className="me-2 h-4 w-4 rtl:-scale-x-100" />
                       <Trans>Return</Trans>
                     </Link>
                   </Button>

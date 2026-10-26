@@ -505,7 +505,7 @@ export const EnvelopeEditor = () => {
                 asChild
               >
                 <Link to={relativePath.basePath}>
-                  <ArrowLeftIcon className="h-4 w-4 flex-shrink-0" />
+                  <ArrowLeftIcon className="h-4 w-4 flex-shrink-0 rtl:-scale-x-100" />
 
                   {!minimizeLeftSidebar && (
                     <span className="ms-2">

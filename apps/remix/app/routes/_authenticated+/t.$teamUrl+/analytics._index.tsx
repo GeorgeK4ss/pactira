@@ -111,7 +111,7 @@ export default function TeamAnalyticsPage({ loaderData }: Route.ComponentProps) 
             <Button variant="ghost" size="sm" className="text-muted-foreground" asChild>
               <Link to={formatOrganisationAnalyticsPath(organisation.url)}>
                 <Trans>View organisation analytics</Trans>
-                <ArrowRightIcon className="ms-1.5 h-3.5 w-3.5" />
+                <ArrowRightIcon className="ms-1.5 h-3.5 w-3.5 rtl:-scale-x-100" />
               </Link>
             </Button>
           )

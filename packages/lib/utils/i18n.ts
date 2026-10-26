@@ -68,7 +68,8 @@ export const extractLocaleData = ({ headers }: ExtractLocaleDataOptions): I18nLo
   if (defaultLanguage && APP_I18N_OPTIONS.supportedLangs.includes(defaultLanguage as SupportedLanguageCodes)) {
     return {
       lang: defaultLanguage as SupportedLanguageCodes,
-      locales: headerLocales,
+      // Dates and numbers follow the same language, not the browser's region (no "PM" in Hebrew).
+      locales: [defaultLanguage],
     };
   }
 

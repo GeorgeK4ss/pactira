@@ -138,7 +138,7 @@ export default function DocumentsLogsPage({ loaderData }: Route.ComponentProps) 
         to={`${documentRootPath}/${document.envelopeId}`}
         className="flex items-center text-documenso-700 hover:opacity-80"
       >
-        <ChevronLeft className="me-2 inline-block h-5 w-5" />
+        <ChevronLeft className="me-2 inline-block h-5 w-5 rtl:-scale-x-100" />
         <Trans>Document</Trans>
       </Link>
 

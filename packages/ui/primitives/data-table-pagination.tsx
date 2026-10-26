@@ -86,7 +86,7 @@ export function DataTablePagination<TData>({
             <span className="sr-only">
               <Trans>Go to first page</Trans>
             </span>
-            <ChevronsLeft className="h-4 w-4" />
+            <ChevronsLeft className="h-4 w-4 rtl:-scale-x-100" />
           </Button>
           <Button
             variant="outline"
@@ -97,7 +97,7 @@ export function DataTablePagination<TData>({
             <span className="sr-only">
               <Trans>Go to previous page</Trans>
             </span>
-            <ChevronLeft className="h-4 w-4" />
+            <ChevronLeft className="h-4 w-4 rtl:-scale-x-100" />
           </Button>
           <Button
             variant="outline"
@@ -108,7 +108,7 @@ export function DataTablePagination<TData>({
             <span className="sr-only">
               <Trans>Go to next page</Trans>
             </span>
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className="h-4 w-4 rtl:-scale-x-100" />
           </Button>
           <Button
             variant="outline"
@@ -119,7 +119,7 @@ export function DataTablePagination<TData>({
             <span className="sr-only">
               <Trans>Go to last page</Trans>
             </span>
-            <ChevronsRight className="h-4 w-4" />
+            <ChevronsRight className="h-4 w-4 rtl:-scale-x-100" />
           </Button>
         </div>
       </div>

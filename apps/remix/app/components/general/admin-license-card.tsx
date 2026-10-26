@@ -69,7 +69,7 @@ export const AdminLicenseCard = ({ licenseData }: AdminLicenseCardProps) => {
                 target="_blank"
                 className="flex flex-row items-center text-muted-foreground text-xs hover:text-muted-foreground/80"
               >
-                <Trans>Learn more</Trans> <ArrowRightIcon className="h-3 w-3" />
+                <Trans>Learn more</Trans> <ArrowRightIcon className="h-3 w-3 rtl:-scale-x-100" />
               </Link>
             </div>
           </div>

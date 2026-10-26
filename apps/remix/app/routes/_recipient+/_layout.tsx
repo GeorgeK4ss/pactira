@@ -65,7 +65,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
       primaryButton={
         <Button asChild className="w-32">
           <Link to="/">
-            <ChevronLeft className="me-2 h-4 w-4" />
+            <ChevronLeft className="me-2 h-4 w-4 rtl:-scale-x-100" />
             <Trans>Go Back</Trans>
           </Link>
         </Button>

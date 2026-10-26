@@ -17,7 +17,6 @@ import { UAParser } from 'ua-parser-js';
 
 const dateFormat: DateTimeFormatOptions = {
   ...DateTime.DATETIME_SHORT,
-  hourCycle: 'h12',
 };
 
 export const SettingsSecurityActivityTable = () => {

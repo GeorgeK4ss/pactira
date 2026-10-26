@@ -23,7 +23,7 @@ export const SettingsScopeBreadcrumb = ({ scope, scopeName, crumbs }: SettingsSc
 
         return (
           <span key={`${crumb}-${idx}`} className="flex items-center gap-2">
-            <ChevronRightIcon className="h-3.5 w-3.5 opacity-50" />
+            <ChevronRightIcon className="h-3.5 w-3.5 opacity-50 rtl:-scale-x-100" />
             <span className={cn(isLeaf && 'font-semibold text-foreground')}>{crumb}</span>
           </span>
         );

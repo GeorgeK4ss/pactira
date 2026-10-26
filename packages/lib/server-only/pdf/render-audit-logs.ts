@@ -693,7 +693,6 @@ export async function renderAuditLogs({
 
 const dateFormat: DateTimeFormatOptions = {
   ...DateTime.DATETIME_SHORT,
-  hourCycle: 'h12',
 };
 
 /**

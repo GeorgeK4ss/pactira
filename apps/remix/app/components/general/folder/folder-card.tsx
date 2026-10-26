@@ -103,7 +103,7 @@ export const FolderCard = ({ folder, onMove, onSettings, onDelete }: FolderCardP
 
                 <DropdownMenuContent onClick={(e) => e.stopPropagation()} align="end">
                   <DropdownMenuItem onClick={() => onMove(folder)}>
-                    <ArrowRightIcon className="me-2 h-4 w-4" />
+                    <ArrowRightIcon className="me-2 h-4 w-4 rtl:-scale-x-100" />
                     <Trans>Move</Trans>
                   </DropdownMenuItem>
 
