@@ -41,6 +41,7 @@ import { toCheckboxCustomText, toRadioCustomText } from '../../utils/fields';
 import { getRecipientsInActiveSigningStep } from '../../utils/recipient-groups';
 import { getRecipientsWithMissingFields, isRecipientEmailValidForSending } from '../../utils/recipients';
 import { getEnvelopeWhereInput } from '../envelope/get-envelope-by-id';
+import { assertOrganisationCanSend } from '../organisation/assert-organisation-can-send';
 import { insertFormValuesInPdf } from '../pdf/insert-form-values-in-pdf';
 import { assertUserNotDisabledById } from '../user/assert-user-not-disabled';
 import { triggerWebhook } from '../webhooks/trigger/trigger-webhook';
@@ -58,6 +59,8 @@ export const sendDocument = async ({ id, userId, teamId, sendEmail, requestMetad
   // redistribute / template-use routes, the bulk-send job, and direct
   // templates that auto-send on creation.
   await assertUserNotDisabledById({ userId });
+
+  await assertOrganisationCanSend({ teamId });
 
   const { envelopeWhereInput } = await getEnvelopeWhereInput({
     id,

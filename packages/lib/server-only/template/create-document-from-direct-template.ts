@@ -49,6 +49,7 @@ import {
 import { sendDocument } from '../document/send-document';
 import { validateFieldAuth } from '../document/validate-field-auth';
 import { incrementDocumentId } from '../envelope/increment-id';
+import { assertOrganisationCanSend } from '../organisation/assert-organisation-can-send';
 import { assertOrganisationRatesAndLimits } from '../rate-limit/assert-organisation-rates-and-limits';
 import { assignOmittedRecipientSigningOrders } from '../recipient/assign-omitted-recipient-signing-orders';
 import { resolveSignatureLevel } from '../signature-level/resolve-signature-level';
@@ -148,6 +149,8 @@ export const createDocumentFromDirectTemplate = async ({
   }
 
   await assertSenderNotDisabled({ userId: directTemplateEnvelope.userId });
+
+  await assertOrganisationCanSend({ teamId: directTemplateEnvelope.teamId });
 
   if (
     nextSigner &&
