@@ -13,6 +13,16 @@ export const RECIPIENT_LIMIT_EXCEEDED_ERROR_MESSAGE = {
   description: msg`This document has too many recipients. Please remove some recipients or contact support if you need more.`,
 };
 
+export const PAYMENT_REQUIRED_ERROR_MESSAGE = {
+  title: msg`Payment required`,
+  description: msg`Your plan is not active. Pay for the plan on the billing page to send documents.`,
+};
+
+export const SEND_LIMIT_REACHED_ERROR_MESSAGE = {
+  title: msg`Monthly send limit reached`,
+  description: msg`Your plan's sends for this month are used up. Sending opens again when the next billing month starts.`,
+};
+
 export const FAIR_USE_LIMIT_EXCEEDED_ERROR_MESSAGE = {
   title: msg`Fair use limit exceeded`,
   description: msg`Your organisation has reached its plan's fair use limit. Please contact your organisation administrator or support to continue.`,
@@ -21,6 +31,8 @@ export const FAIR_USE_LIMIT_EXCEEDED_ERROR_MESSAGE = {
 export const getDistributeErrorMessage = (code: string): ToastMessageDescriptor => {
   return match(code)
     .with('RECIPIENT_LIMIT_EXCEEDED', () => RECIPIENT_LIMIT_EXCEEDED_ERROR_MESSAGE)
+    .with('PAYMENT_REQUIRED', () => PAYMENT_REQUIRED_ERROR_MESSAGE)
+    .with('SEND_LIMIT_REACHED', () => SEND_LIMIT_REACHED_ERROR_MESSAGE)
     .with(AppErrorCode.TOO_MANY_REQUESTS, () => FAIR_USE_LIMIT_EXCEEDED_ERROR_MESSAGE)
     .otherwise(() => ({
       title: msg`Something went wrong`,
@@ -31,6 +43,10 @@ export const getDistributeErrorMessage = (code: string): ToastMessageDescriptor 
 export const getDirectTemplateErrorMessage = (code: string): ToastMessageDescriptor => {
   return match(code)
     .with('RECIPIENT_LIMIT_EXCEEDED', () => RECIPIENT_LIMIT_EXCEEDED_ERROR_MESSAGE)
+    .with('PAYMENT_REQUIRED', 'SEND_LIMIT_REACHED', () => ({
+      title: msg`Link unavailable`,
+      description: msg`This link cannot be used right now. Please contact the person who shared it.`,
+    }))
     .with(AppErrorCode.TOO_MANY_REQUESTS, () => FAIR_USE_LIMIT_EXCEEDED_ERROR_MESSAGE)
     .with(AppErrorCode.MISSING_SIGNATURE_FIELD, () => ({
       title: msg`Missing signature fields`,

@@ -860,6 +860,7 @@ model Organisation {
   embedSignatures EmbedSignature[]
 
   billingInvoices       BillingInvoice[]
+  documentSends         DocumentSend[]
   cryptoPaymentRequests CryptoPaymentRequest[]
 
   avatarImage AvatarImage? @relation(fields: [avatarImageId], references: [id], onDelete: SetNull)
@@ -1337,6 +1338,20 @@ enum BillingInvoiceStatus {
   OPEN
   PAID
   VOID
+}
+
+/// One row per document sent for signing (emailed or signing links generated), written by a
+/// database trigger on Envelope. Kept when the document is deleted, so the monthly send
+/// allowance cannot be reset.
+model DocumentSend {
+  id             Int      @id @default(autoincrement())
+  organisationId String
+  envelopeId     String
+  createdAt      DateTime @default(now())
+
+  organisation Organisation @relation(fields: [organisationId], references: [id], onDelete: Cascade)
+
+  @@index([organisationId, createdAt])
 }
 
 model BillingInvoice {

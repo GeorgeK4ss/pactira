@@ -1,17 +1,18 @@
 import {
   type BillingInterval,
-  DOCUMENTS_PER_MONTH,
   formatUsd,
   INCLUDED_SEATS,
   intervalStartBefore,
   PLAN_PRICES_CENTS,
   proratedSeatsCents,
   renewalAmountCents,
+  SENDS_PER_MONTH,
 } from '@documenso/billing/plan';
 import { useCurrentOrganisation } from '@documenso/lib/client-only/providers/organisation';
 import { AppError } from '@documenso/lib/errors/app-error';
 import { canExecuteOrganisationAction } from '@documenso/lib/utils/organisations';
 import { trpc } from '@documenso/trpc/react';
+import { cn } from '@documenso/ui/lib/utils';
 import { Badge } from '@documenso/ui/primitives/badge';
 import { Button } from '@documenso/ui/primitives/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@documenso/ui/primitives/card';
@@ -21,7 +22,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Tabs, TabsList, TabsTrigger } from '@documenso/ui/primitives/tabs';
 import { useToast } from '@documenso/ui/primitives/use-toast';
 import { Trans, useLingui } from '@lingui/react/macro';
-import { ExternalLinkIcon, Loader, UsersIcon } from 'lucide-react';
+import { ExternalLinkIcon, Loader, SendIcon, UsersIcon } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { match } from 'ts-pattern';
@@ -51,7 +52,7 @@ export const CryptoBilling = () => {
     );
   }
 
-  const { subscription, seats, invoices, isPaymentRequired, canPay } = data;
+  const { subscription, seats, sends, invoices, isPaymentRequired, canPay } = data;
   const isActive = !isPaymentRequired && subscription?.status === 'ACTIVE';
   const extraSeats = subscription?.extraSeats ?? 0;
 
@@ -137,8 +138,8 @@ export const CryptoBilling = () => {
               </CardTitle>
               <CardDescription className="mt-1">
                 <Trans>
-                  {INCLUDED_SEATS} seats and {DOCUMENTS_PER_MONTH} documents a month included. Each extra seat is billed
-                  per seat.
+                  {INCLUDED_SEATS} seats and {SENDS_PER_MONTH} sent documents a month included. Each extra seat is
+                  billed per seat.
                 </Trans>
               </CardDescription>
             </div>
@@ -202,6 +203,31 @@ export const CryptoBilling = () => {
           </p>
         </CardContent>
       </Card>
+
+      {isActive && (
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <SendIcon className="h-5 w-5 rtl:-scale-x-100" />
+              <Trans>Sent documents this month</Trans>
+            </CardTitle>
+            <CardDescription className="mt-1">
+              <Trans>
+                {sends.used} of {sends.limit} used. Emailing a document or creating its signing links counts as one
+                send; drafts and reminders do not count.
+              </Trans>
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
+              <div
+                className={cn('h-full rounded-full', sends.used >= sends.limit ? 'bg-destructive' : 'bg-primary')}
+                style={{ width: `${Math.min(100, (sends.used / sends.limit) * 100)}%` }}
+              />
+            </div>
+          </CardContent>
+        </Card>
+      )}
 
       <Card className="mt-6">
         <CardHeader>

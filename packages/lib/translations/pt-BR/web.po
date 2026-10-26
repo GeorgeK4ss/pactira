@@ -344,6 +344,12 @@ msgstr "{0} convidou você para {recipientActionVerb} um documento"
 msgid "{0} of {1} documents remaining this month."
 msgstr "{0} de {1} documentos restantes este mês."
 
+#. placeholder {0}: sends.used
+#. placeholder {1}: sends.limit
+#: apps/remix/app/components/general/billing/crypto-billing.tsx
+msgid "{0} of {1} used. Emailing a document or creating its signing links counts as one send; drafts and reminders do not count."
+msgstr ""
+
 #. placeholder {0}: planClaim.name
 #: apps/remix/app/components/general/settings-org-switcher.tsx
 msgid "{0} Plan"
@@ -415,7 +421,7 @@ msgid "{expiresInMinutes, plural, one {This code will expire in # minute.} other
 msgstr "{expiresInMinutes, plural, one {Este código expirará em # minuto.} other {Este código expirará em # minutos.}}"
 
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
-msgid "{INCLUDED_SEATS} seats and {DOCUMENTS_PER_MONTH} documents a month included. Each extra seat is billed per seat."
+msgid "{INCLUDED_SEATS} seats and {SENDS_PER_MONTH} sent documents a month included. Each extra seat is billed per seat."
 msgstr ""
 
 #: packages/email/templates/document-invite.tsx
@@ -7592,6 +7598,10 @@ msgctxt "Action button to link template to public profile"
 msgid "Link template"
 msgstr "Vincular modelo"
 
+#: apps/remix/app/utils/toast-error-messages.ts
+msgid "Link unavailable"
+msgstr ""
+
 #: packages/email/templates/organisation-account-link-confirmation.tsx
 msgid "Link your Pactira account"
 msgstr "Vincule sua conta Pactira"
@@ -8023,6 +8033,10 @@ msgstr "Usuários Ativos Mensais: Usuários que tiveram pelo menos um de seus do
 
 #: apps/remix/app/components/general/claim-limit-fields.tsx
 msgid "Monthly quota"
+msgstr ""
+
+#: apps/remix/app/utils/toast-error-messages.ts
+msgid "Monthly send limit reached"
 msgstr ""
 
 #: apps/remix/app/components/general/organisation-usage-panel.tsx
@@ -9214,6 +9228,7 @@ msgstr "Pagamento em atraso"
 
 #: apps/remix/app/components/general/organisations/organisation-billing-banner.tsx
 #: apps/remix/app/components/general/organisations/organisation-billing-banner.tsx
+#: apps/remix/app/utils/toast-error-messages.ts
 msgid "Payment required"
 msgstr ""
 
@@ -11183,6 +11198,10 @@ msgstr "Enviando..."
 #: packages/lib/server-only/pdf/render-certificate.ts
 msgid "Sent"
 msgstr "Enviado"
+
+#: apps/remix/app/components/general/billing/crypto-billing.tsx
+msgid "Sent documents this month"
+msgstr ""
 
 #: apps/remix/app/components/general/organisation-usage-panel.tsx
 msgid "Sent this period"
@@ -13349,6 +13368,10 @@ msgstr "Esta é a URL que os usuários usarão para entrar em sua organização.
 #: apps/remix/app/components/dialogs/envelope-item-delete-dialog.tsx
 msgid "This item cannot be deleted"
 msgstr "Este item não pode ser excluído"
+
+#: apps/remix/app/utils/toast-error-messages.ts
+msgid "This link cannot be used right now. Please contact the person who shared it."
+msgstr ""
 
 #: apps/remix/app/routes/_unauthenticated+/team.verify.email.$token.tsx
 msgid "This link is invalid or has expired. Please contact your team to resend a verification."
@@ -16626,6 +16649,14 @@ msgstr ""
 #: apps/remix/app/components/general/organisations/organisation-billing-banner.tsx
 msgid "Your plan is no longer valid. Please subscribe to a new plan to continue using Pactira."
 msgstr "Seu plano não é mais válido. Por favor, assine um novo plano para continuar usando o Pactira."
+
+#: apps/remix/app/utils/toast-error-messages.ts
+msgid "Your plan is not active. Pay for the plan on the billing page to send documents."
+msgstr ""
+
+#: apps/remix/app/utils/toast-error-messages.ts
+msgid "Your plan's sends for this month are used up. Sending opens again when the next billing month starts."
+msgstr ""
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.billing.pay.$invoiceId.tsx
 msgid "Your previous payment window expired. Choose again to get a fresh amount."

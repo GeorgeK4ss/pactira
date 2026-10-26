@@ -14,8 +14,11 @@ export const PLAN_PRICES_CENTS: Record<BillingInterval, { base: number; seat: nu
 
 export const MINIMUM_SEAT_CHARGE_CENTS = 100;
 
-/** Documents an organisation can create per billing month (yearly plans reset monthly too). */
-export const DOCUMENTS_PER_MONTH = 250;
+/**
+ * Documents an organisation can send for signing per billing month (emailed or as signing links;
+ * yearly plans reset monthly too). Uploads and drafts are not limited.
+ */
+export const SENDS_PER_MONTH = 250;
 
 export const seatCap = (extraSeats: number) => INCLUDED_SEATS + Math.max(0, extraSeats);
 

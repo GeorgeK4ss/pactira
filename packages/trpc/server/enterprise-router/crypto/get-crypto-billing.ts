@@ -1,7 +1,8 @@
 import { NETWORKS } from '@documenso/billing/crypto/config';
 import { getCryptoSettings, payableAssets } from '@documenso/billing/crypto/settings';
 import { CRYPTO_PROVIDER } from '@documenso/billing/invoices';
-import { seatCap } from '@documenso/billing/plan';
+import { SENDS_PER_MONTH, seatCap } from '@documenso/billing/plan';
+import { countSendsThisMonth } from '@documenso/lib/server-only/organisation/assert-organisation-can-send';
 import { isOrganisationPendingPayment } from '@documenso/lib/utils/billing';
 import { prisma } from '@documenso/prisma';
 import { OrganisationMemberInviteStatus } from '@prisma/client';
@@ -37,7 +38,12 @@ export const getCryptoBillingRoute = authenticatedProcedure
       getCryptoSettings(),
     ]);
 
+    const sendsUsed = subscription?.periodEnd
+      ? await countSendsThisMonth({ organisationId, periodEnd: subscription.periodEnd })
+      : 0;
+
     return {
+      sends: { used: sendsUsed, limit: SENDS_PER_MONTH },
       isPaymentRequired: isOrganisationPendingPayment({
         type: organisation.type,
         subscription,

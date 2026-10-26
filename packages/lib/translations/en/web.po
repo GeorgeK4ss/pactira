@@ -344,6 +344,12 @@ msgstr "{0} invited you to {recipientActionVerb} a document"
 msgid "{0} of {1} documents remaining this month."
 msgstr "{0} of {1} documents remaining this month."
 
+#. placeholder {0}: sends.used
+#. placeholder {1}: sends.limit
+#: apps/remix/app/components/general/billing/crypto-billing.tsx
+msgid "{0} of {1} used. Emailing a document or creating its signing links counts as one send; drafts and reminders do not count."
+msgstr "{0} of {1} used. Emailing a document or creating its signing links counts as one send; drafts and reminders do not count."
+
 #. placeholder {0}: planClaim.name
 #: apps/remix/app/components/general/settings-org-switcher.tsx
 msgid "{0} Plan"
@@ -415,8 +421,8 @@ msgid "{expiresInMinutes, plural, one {This code will expire in # minute.} other
 msgstr "{expiresInMinutes, plural, one {This code will expire in # minute.} other {This code will expire in # minutes.}}"
 
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
-msgid "{INCLUDED_SEATS} seats and {DOCUMENTS_PER_MONTH} documents a month included. Each extra seat is billed per seat."
-msgstr "{INCLUDED_SEATS} seats and {DOCUMENTS_PER_MONTH} documents a month included. Each extra seat is billed per seat."
+msgid "{INCLUDED_SEATS} seats and {SENDS_PER_MONTH} sent documents a month included. Each extra seat is billed per seat."
+msgstr "{INCLUDED_SEATS} seats and {SENDS_PER_MONTH} sent documents a month included. Each extra seat is billed per seat."
 
 #: packages/email/templates/document-invite.tsx
 msgid "{inviterName} <0>({inviterEmail})</0>"
@@ -7592,6 +7598,10 @@ msgctxt "Action button to link template to public profile"
 msgid "Link template"
 msgstr "Link template"
 
+#: apps/remix/app/utils/toast-error-messages.ts
+msgid "Link unavailable"
+msgstr "Link unavailable"
+
 #: packages/email/templates/organisation-account-link-confirmation.tsx
 msgid "Link your Pactira account"
 msgstr "Link your Pactira account"
@@ -8024,6 +8034,10 @@ msgstr "Monthly Active Users: Users that had at least one of their documents com
 #: apps/remix/app/components/general/claim-limit-fields.tsx
 msgid "Monthly quota"
 msgstr "Monthly quota"
+
+#: apps/remix/app/utils/toast-error-messages.ts
+msgid "Monthly send limit reached"
+msgstr "Monthly send limit reached"
 
 #: apps/remix/app/components/general/organisation-usage-panel.tsx
 msgid "Monthly usage"
@@ -9214,6 +9228,7 @@ msgstr "Payment overdue"
 
 #: apps/remix/app/components/general/organisations/organisation-billing-banner.tsx
 #: apps/remix/app/components/general/organisations/organisation-billing-banner.tsx
+#: apps/remix/app/utils/toast-error-messages.ts
 msgid "Payment required"
 msgstr "Payment required"
 
@@ -11183,6 +11198,10 @@ msgstr "Sending..."
 #: packages/lib/server-only/pdf/render-certificate.ts
 msgid "Sent"
 msgstr "Sent"
+
+#: apps/remix/app/components/general/billing/crypto-billing.tsx
+msgid "Sent documents this month"
+msgstr "Sent documents this month"
 
 #: apps/remix/app/components/general/organisation-usage-panel.tsx
 msgid "Sent this period"
@@ -13349,6 +13368,10 @@ msgstr "This is the URL which users will use to sign in to your organization."
 #: apps/remix/app/components/dialogs/envelope-item-delete-dialog.tsx
 msgid "This item cannot be deleted"
 msgstr "This item cannot be deleted"
+
+#: apps/remix/app/utils/toast-error-messages.ts
+msgid "This link cannot be used right now. Please contact the person who shared it."
+msgstr "This link cannot be used right now. Please contact the person who shared it."
 
 #: apps/remix/app/routes/_unauthenticated+/team.verify.email.$token.tsx
 msgid "This link is invalid or has expired. Please contact your team to resend a verification."
@@ -16626,6 +16649,14 @@ msgstr "Your plan ends on {0}. Pay to keep access."
 #: apps/remix/app/components/general/organisations/organisation-billing-banner.tsx
 msgid "Your plan is no longer valid. Please subscribe to a new plan to continue using Pactira."
 msgstr "Your plan is no longer valid. Please subscribe to a new plan to continue using Pactira."
+
+#: apps/remix/app/utils/toast-error-messages.ts
+msgid "Your plan is not active. Pay for the plan on the billing page to send documents."
+msgstr "Your plan is not active. Pay for the plan on the billing page to send documents."
+
+#: apps/remix/app/utils/toast-error-messages.ts
+msgid "Your plan's sends for this month are used up. Sending opens again when the next billing month starts."
+msgstr "Your plan's sends for this month are used up. Sending opens again when the next billing month starts."
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.billing.pay.$invoiceId.tsx
 msgid "Your previous payment window expired. Choose again to get a fresh amount."
