@@ -1,4 +1,4 @@
-import { useLimits } from '@documenso/ee/server-only/limits/provider/client';
+import { useLimits } from '@documenso/billing/limits/provider/client';
 import { useUpdateSearchParams } from '@documenso/lib/client-only/hooks/use-update-search-params';
 import { useCurrentOrganisation } from '@documenso/lib/client-only/providers/organisation';
 import { formatTemplatesPath } from '@documenso/lib/utils/teams';

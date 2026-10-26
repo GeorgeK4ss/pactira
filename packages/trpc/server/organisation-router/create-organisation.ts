@@ -1,5 +1,5 @@
-import { createCheckoutSession } from '@documenso/ee/server-only/stripe/create-checkout-session';
-import { createCustomer } from '@documenso/ee/server-only/stripe/create-customer';
+import { createCheckoutSession } from '@documenso/billing/stripe/checkout';
+import { createCustomer } from '@documenso/billing/stripe/customers';
 import { IS_BILLING_ENABLED, NEXT_PUBLIC_WEBAPP_URL } from '@documenso/lib/constants/app';
 import { AppError, AppErrorCode } from '@documenso/lib/errors/app-error';
 import { createOrganisation } from '@documenso/lib/server-only/organisation/create-organisation';

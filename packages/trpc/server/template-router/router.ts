@@ -1,4 +1,4 @@
-import { getServerLimits } from '@documenso/ee/server-only/limits/server';
+import { getServerLimits } from '@documenso/billing/limits/server';
 import { AppError, AppErrorCode } from '@documenso/lib/errors/app-error';
 import { jobs } from '@documenso/lib/jobs/client';
 import { captureServerEvent } from '@documenso/lib/server-only/analytics/capture-server-event';

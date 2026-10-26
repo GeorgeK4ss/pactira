@@ -1,4 +1,4 @@
-import { createCustomer } from '@documenso/ee/server-only/stripe/create-customer';
+import { createCustomer } from '@documenso/billing/stripe/customers';
 import { getSubscriptionClaim } from '@documenso/lib/server-only/subscription/get-subscription-claim';
 import { prisma } from '@documenso/prisma';
 import { OrganisationMemberRole, OrganisationType, Prisma, type SubscriptionClaim } from '@prisma/client';

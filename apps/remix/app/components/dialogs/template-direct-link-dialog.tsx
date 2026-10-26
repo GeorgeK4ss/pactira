@@ -1,4 +1,4 @@
-import { useLimits } from '@documenso/ee/server-only/limits/provider/client';
+import { useLimits } from '@documenso/billing/limits/provider/client';
 import { useCopyToClipboard } from '@documenso/lib/client-only/hooks/use-copy-to-clipboard';
 import { useCurrentOrganisation } from '@documenso/lib/client-only/providers/organisation';
 import { DIRECT_TEMPLATE_RECIPIENT_EMAIL } from '@documenso/lib/constants/direct-templates';

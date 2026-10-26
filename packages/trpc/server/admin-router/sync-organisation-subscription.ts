@@ -1,4 +1,4 @@
-import { syncStripeCustomerSubscription } from '@documenso/ee/server-only/stripe/sync-stripe-customer-subscription';
+import { syncStripeCustomerSubscription } from '@documenso/billing/stripe/subscription';
 import { AppError, AppErrorCode } from '@documenso/lib/errors/app-error';
 import { prisma } from '@documenso/prisma';
 

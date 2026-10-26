@@ -1,4 +1,4 @@
-import { useLimits } from '@documenso/ee/server-only/limits/provider/client';
+import { useLimits } from '@documenso/billing/limits/provider/client';
 import { useAnalytics } from '@documenso/lib/client-only/hooks/use-analytics';
 import { useCurrentOrganisation } from '@documenso/lib/client-only/providers/organisation';
 import { useSession } from '@documenso/lib/client-only/providers/session';

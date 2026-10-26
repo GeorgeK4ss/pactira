@@ -1,4 +1,4 @@
-import { getServerLimits } from '@documenso/ee/server-only/limits/server';
+import { getServerLimits } from '@documenso/billing/limits/server';
 import { NEXT_PUBLIC_WEBAPP_URL } from '@documenso/lib/constants/app';
 import { DATE_FORMATS, DEFAULT_DOCUMENT_DATE_FORMAT } from '@documenso/lib/constants/date-formats';
 import { DocumentDataType, DocumentStatus, EnvelopeType, SigningStatus } from '@prisma/client';

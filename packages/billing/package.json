@@ -1,0 +1,23 @@
+{
+  "name": "@documenso/billing",
+  "version": "0.0.0",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "license": "AGPL-3.0",
+  "files": [
+    "limits/",
+    "stripe/"
+  ],
+  "scripts": {
+    "clean": "rimraf node_modules"
+  },
+  "dependencies": {
+    "@documenso/auth": "*",
+    "@documenso/lib": "*",
+    "@documenso/prisma": "*",
+    "react": "^19.2.7",
+    "remeda": "^2.32.0",
+    "stripe": "^12.18.0",
+    "zod": "^3.25.76"
+  }
+}

@@ -1,5 +1,5 @@
-import { DEFAULT_MINIMUM_ENVELOPE_ITEM_COUNT, PAID_PLAN_LIMITS } from '@documenso/ee/server-only/limits/constants';
-import { LimitsProvider } from '@documenso/ee/server-only/limits/provider/client';
+import { DEFAULT_MINIMUM_ENVELOPE_ITEM_COUNT, PAID_PLAN_LIMITS } from '@documenso/billing/limits/constants';
+import { LimitsProvider } from '@documenso/billing/limits/provider/client';
 import { useChildRouteFlags } from '@documenso/lib/client-only/hooks/use-child-route-flags';
 import { useOptionalCurrentOrganisation } from '@documenso/lib/client-only/providers/organisation';
 import { isOrganisationPendingPayment } from '@documenso/lib/utils/billing';

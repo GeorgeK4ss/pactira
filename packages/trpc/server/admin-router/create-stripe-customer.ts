@@ -1,4 +1,4 @@
-import { createCustomer } from '@documenso/ee/server-only/stripe/create-customer';
+import { createCustomer } from '@documenso/billing/stripe/customers';
 import { AppError, AppErrorCode } from '@documenso/lib/errors/app-error';
 import { prisma } from '@documenso/prisma';
 

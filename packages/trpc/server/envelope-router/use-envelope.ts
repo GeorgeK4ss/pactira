@@ -1,4 +1,4 @@
-import { getServerLimits } from '@documenso/ee/server-only/limits/server';
+import { getServerLimits } from '@documenso/billing/limits/server';
 import { AppError, AppErrorCode } from '@documenso/lib/errors/app-error';
 import { sendDocument } from '@documenso/lib/server-only/document/send-document';
 import { getEnvelopeById } from '@documenso/lib/server-only/envelope/get-envelope-by-id';

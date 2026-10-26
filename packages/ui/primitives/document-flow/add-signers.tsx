@@ -1,4 +1,4 @@
-import { useLimits } from '@documenso/ee/server-only/limits/provider/client';
+import { useLimits } from '@documenso/billing/limits/provider/client';
 import { useAutoSave } from '@documenso/lib/client-only/hooks/use-autosave';
 import { useDebouncedValue } from '@documenso/lib/client-only/hooks/use-debounced-value';
 import { useCurrentOrganisation } from '@documenso/lib/client-only/providers/organisation';

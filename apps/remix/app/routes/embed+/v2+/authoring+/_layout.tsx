@@ -1,5 +1,5 @@
-import { PAID_PLAN_LIMITS } from '@documenso/ee/server-only/limits/constants';
-import { LimitsProvider } from '@documenso/ee/server-only/limits/provider/client';
+import { PAID_PLAN_LIMITS } from '@documenso/billing/limits/constants';
+import { LimitsProvider } from '@documenso/billing/limits/provider/client';
 import { useAnalytics } from '@documenso/lib/client-only/hooks/use-analytics';
 import { OrganisationProvider } from '@documenso/lib/client-only/providers/organisation';
 import { APP_I18N_OPTIONS } from '@documenso/lib/constants/i18n';

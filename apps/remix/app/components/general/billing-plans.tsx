@@ -1,4 +1,4 @@
-import type { InternalClaimPlans } from '@documenso/ee/server-only/stripe/get-internal-claim-plans';
+import type { InternalClaimPlans } from '@documenso/billing/stripe/plans';
 import { useIsMounted } from '@documenso/lib/client-only/hooks/use-is-mounted';
 import { useCurrentOrganisation } from '@documenso/lib/client-only/providers/organisation';
 import { useSession } from '@documenso/lib/client-only/providers/session';

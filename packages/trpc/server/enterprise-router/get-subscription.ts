@@ -1,6 +1,5 @@
-import { getInternalClaimPlans } from '@documenso/ee/server-only/stripe/get-internal-claim-plans';
-import { getSubscription } from '@documenso/ee/server-only/stripe/get-subscription';
-import { syncStripeCustomerSubscription } from '@documenso/ee/server-only/stripe/sync-stripe-customer-subscription';
+import { getInternalClaimPlans } from '@documenso/billing/stripe/plans';
+import { getSubscription, syncStripeCustomerSubscription } from '@documenso/billing/stripe/subscription';
 import { IS_BILLING_ENABLED } from '@documenso/lib/constants/app';
 import { ORGANISATION_MEMBER_ROLE_PERMISSIONS_MAP } from '@documenso/lib/constants/organisations';
 import { AppError, AppErrorCode } from '@documenso/lib/errors/app-error';

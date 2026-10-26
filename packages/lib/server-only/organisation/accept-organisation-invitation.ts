@@ -1,7 +1,4 @@
-import {
-  assertMemberCountWithinCap,
-  syncMemberCountWithStripeSeatPlan,
-} from '@documenso/ee/server-only/stripe/update-subscription-item-quantity';
+import { assertMemberCountWithinCap, syncMemberCountWithStripeSeatPlan } from '@documenso/billing/stripe/seats';
 import { prisma } from '@documenso/prisma';
 import type { OrganisationGroup, OrganisationMemberRole } from '@prisma/client';
 import { OrganisationGroupType, OrganisationMemberInviteStatus, SubscriptionStatus } from '@prisma/client';

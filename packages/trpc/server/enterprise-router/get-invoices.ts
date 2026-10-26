@@ -1,4 +1,4 @@
-import { getInvoices } from '@documenso/ee/server-only/stripe/get-invoices';
+import { getInvoices } from '@documenso/billing/stripe/checkout';
 import { IS_BILLING_ENABLED } from '@documenso/lib/constants/app';
 import { ORGANISATION_MEMBER_ROLE_PERMISSIONS_MAP } from '@documenso/lib/constants/organisations';
 import { AppError, AppErrorCode } from '@documenso/lib/errors/app-error';

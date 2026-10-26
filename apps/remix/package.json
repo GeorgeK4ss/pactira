@@ -18,6 +18,7 @@
     "@documenso/api": "*",
     "@documenso/assets": "*",
     "@documenso/auth": "*",
+    "@documenso/billing": "*",
     "@documenso/ee": "*",
     "@documenso/lib": "*",
     "@documenso/prisma": "*",
