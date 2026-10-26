@@ -14,6 +14,9 @@ export const PLAN_PRICES_CENTS: Record<BillingInterval, { base: number; seat: nu
 
 export const MINIMUM_SEAT_CHARGE_CENTS = 100;
 
+/** Documents an organisation can create per billing month (yearly plans reset monthly too). */
+export const DOCUMENTS_PER_MONTH = 250;
+
 export const seatCap = (extraSeats: number) => INCLUDED_SEATS + Math.max(0, extraSeats);
 
 export const renewalAmountCents = (interval: BillingInterval, extraSeats: number) => {
@@ -88,3 +91,20 @@ export const nextPeriodStart = (periodEnd: Date | null, now: Date = new Date()) 
 
 export const formatUsd = (cents: number) =>
   `$${(cents / 100).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+/**
+ * Start of the billing month that `now` falls in, counted back in whole months from the period end
+ * so the count resets on the same day each month (the day the plan renews).
+ */
+export const usageMonthStart = (periodEnd: Date, now: Date = new Date()) => {
+  // A period paid early can run up to two intervals ahead, so look back far enough for that.
+  for (let months = 1; months <= 36; months++) {
+    const start = shiftMonths(periodEnd, -months);
+
+    if (start.getTime() <= now.getTime()) {
+      return start;
+    }
+  }
+
+  return shiftMonths(now, -1);
+};

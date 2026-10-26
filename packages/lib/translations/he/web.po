@@ -415,8 +415,8 @@ msgid "{expiresInMinutes, plural, one {This code will expire in # minute.} other
 msgstr "{expiresInMinutes, plural, one {תוקף הקוד יפוג בעוד # דקה.} other {תוקף הקוד יפוג בעוד # דקות.}}"
 
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
-msgid "{INCLUDED_SEATS} seats included. Each extra seat is billed per seat."
-msgstr "{INCLUDED_SEATS} מושבים כלולים. כל מושב נוסף מחויב בנפרד."
+msgid "{INCLUDED_SEATS} seats and {DOCUMENTS_PER_MONTH} documents a month included. Each extra seat is billed per seat."
+msgstr "כוללת {INCLUDED_SEATS} מושבים ו-{DOCUMENTS_PER_MONTH} מסמכים בחודש. כל מושב נוסף מחויב בנפרד."
 
 #: packages/email/templates/document-invite.tsx
 msgid "{inviterName} <0>({inviterEmail})</0>"

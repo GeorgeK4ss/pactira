@@ -420,7 +420,7 @@ msgid "{expiresInMinutes, plural, one {This code will expire in # minute.} other
 msgstr "{expiresInMinutes, plural, one {Deze code verloopt over # minuut.} other {Deze code verloopt over # minuten.}}"
 
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
-msgid "{INCLUDED_SEATS} seats included. Each extra seat is billed per seat."
+msgid "{INCLUDED_SEATS} seats and {DOCUMENTS_PER_MONTH} documents a month included. Each extra seat is billed per seat."
 msgstr ""
 
 #: packages/email/templates/document-invite.tsx

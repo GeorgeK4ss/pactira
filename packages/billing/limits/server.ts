@@ -1,4 +1,4 @@
-import { IS_BILLING_ENABLED } from '@documenso/lib/constants/app';
+import { IS_BILLING_ENABLED, IS_CRYPTO_BILLING_ENABLED } from '@documenso/lib/constants/app';
 import { AppError, AppErrorCode } from '@documenso/lib/errors/app-error';
 import type { TClaimFlags } from '@documenso/lib/types/subscription';
 import { isOrganisationPendingPayment } from '@documenso/lib/utils/billing';
@@ -6,6 +6,7 @@ import { buildTeamWhereQuery } from '@documenso/lib/utils/teams';
 import { prisma } from '@documenso/prisma';
 import { EnvelopeType, OrganisationType, SubscriptionStatus } from '@prisma/client';
 
+import { DOCUMENTS_PER_MONTH, usageMonthStart } from '../plan';
 import { FREE_PLAN_LIMITS, INACTIVE_PLAN_LIMITS, PAID_PLAN_LIMITS, SELFHOSTED_PLAN_LIMITS } from './constants';
 import type { TLimitsResponseSchema, TLimitsSchema } from './schema';
 
@@ -80,6 +81,27 @@ export const getServerLimits = async ({ userId, teamId }: GetServerLimitsOptions
   const isPaid = subscriptionStatus === SubscriptionStatus.ACTIVE || subscriptionStatus === SubscriptionStatus.PAST_DUE;
 
   if (isPaid) {
+    const periodEnd = organisation.subscription?.periodEnd;
+
+    // The crypto plan includes a monthly number of documents (deleted ones still count).
+    if (IS_CRYPTO_BILLING_ENABLED() && periodEnd) {
+      const quota = withRecipients({ ...PAID_PLAN_LIMITS, documents: DOCUMENTS_PER_MONTH });
+
+      const documentsThisMonth = await prisma.envelope.count({
+        where: {
+          type: EnvelopeType.DOCUMENT,
+          createdAt: { gte: usageMonthStart(periodEnd) },
+          team: { organisationId: organisation.id },
+        },
+      });
+
+      return {
+        quota,
+        remaining: { ...quota, documents: Math.max(quota.documents - documentsThisMonth, 0) },
+        maximumEnvelopeItemCount,
+      };
+    }
+
     const quota = withRecipients(PAID_PLAN_LIMITS);
 
     return { quota, remaining: quota, maximumEnvelopeItemCount };

@@ -1,5 +1,6 @@
 import {
   type BillingInterval,
+  DOCUMENTS_PER_MONTH,
   formatUsd,
   INCLUDED_SEATS,
   intervalStartBefore,
@@ -135,7 +136,10 @@ export const CryptoBilling = () => {
                 <Trans>Pactira plan</Trans>
               </CardTitle>
               <CardDescription className="mt-1">
-                <Trans>{INCLUDED_SEATS} seats included. Each extra seat is billed per seat.</Trans>
+                <Trans>
+                  {INCLUDED_SEATS} seats and {DOCUMENTS_PER_MONTH} documents a month included. Each extra seat is billed
+                  per seat.
+                </Trans>
               </CardDescription>
             </div>
 

@@ -49,7 +49,12 @@ export const LimitsProvider = ({
       return;
     }
 
-    const newLimits = await getLimits({ teamId });
+    // On failure keep what we have; the server enforces the limits anyway.
+    const newLimits = await getLimits({ teamId }).catch(() => null);
+
+    if (!newLimits) {
+      return;
+    }
 
     setLimits((oldLimits) => {
       if (isDeepEqual(oldLimits, newLimits)) {

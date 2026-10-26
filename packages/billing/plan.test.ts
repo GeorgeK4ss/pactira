@@ -7,6 +7,7 @@ import {
   proratedSeatsCents,
   renewalAmountCents,
   seatCap,
+  usageMonthStart,
 } from './plan';
 
 describe('renewalAmountCents', () => {
@@ -89,5 +90,25 @@ describe('seats bought while a renewal is prepaid', () => {
     // 35 days left in a 30-day interval: 900 * 35 / 30 = 1050
     expect(periodStart.toISOString()).toBe('2026-11-01T00:00:00.000Z');
     expect(proratedSeatsCents({ interval: 'MONTH', seats: 1, periodStart, periodEnd, now })).toBe(1_050);
+  });
+});
+
+describe('usageMonthStart', () => {
+  it('is the period start on a monthly plan', () => {
+    expect(usageMonthStart(new Date('2026-11-26T22:00:00Z'), new Date('2026-11-10T00:00:00Z')).toISOString()).toBe(
+      '2026-10-26T22:00:00.000Z',
+    );
+  });
+
+  it('resets every month on a yearly plan', () => {
+    expect(usageMonthStart(new Date('2027-10-26T22:00:00Z'), new Date('2027-03-01T00:00:00Z')).toISOString()).toBe(
+      '2027-02-26T22:00:00.000Z',
+    );
+  });
+
+  it('handles a renewal paid early', () => {
+    expect(usageMonthStart(new Date('2026-12-26T22:00:00Z'), new Date('2026-11-01T00:00:00Z')).toISOString()).toBe(
+      '2026-10-26T22:00:00.000Z',
+    );
   });
 });
