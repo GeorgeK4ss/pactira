@@ -1,6 +1,6 @@
 import { createCheckoutSession } from '@documenso/billing/stripe/checkout';
 import { createCustomer } from '@documenso/billing/stripe/customers';
-import { IS_BILLING_ENABLED, NEXT_PUBLIC_WEBAPP_URL } from '@documenso/lib/constants/app';
+import { IS_BILLING_ENABLED, IS_CRYPTO_BILLING_ENABLED, NEXT_PUBLIC_WEBAPP_URL } from '@documenso/lib/constants/app';
 import { AppError, AppErrorCode } from '@documenso/lib/errors/app-error';
 import { createOrganisation } from '@documenso/lib/server-only/organisation/create-organisation';
 import { getSubscriptionClaim } from '@documenso/lib/server-only/subscription/get-subscription-claim';
@@ -23,6 +23,38 @@ export const createOrganisationRoute = authenticatedProcedure
         priceId,
       },
     });
+
+    // Crypto billing has no free organisations: every organisation is created unpaid and is
+    // activated from its own billing page.
+    if (IS_CRYPTO_BILLING_ENABLED()) {
+      const pendingOrganisation = await prisma.organisation.findFirst({
+        where: {
+          ownerUserId: user.id,
+          type: OrganisationType.ORGANISATION,
+          OR: [{ subscription: { is: null } }, { subscription: { status: SubscriptionStatus.INACTIVE } }],
+        },
+      });
+
+      if (pendingOrganisation) {
+        throw new AppError(AppErrorCode.LIMIT_EXCEEDED, {
+          message: 'You have an organisation awaiting payment. Pay for it or remove it before creating a new one.',
+        });
+      }
+
+      const freeSubscriptionClaim = await getSubscriptionClaim(INTERNAL_CLAIM_ID.FREE);
+
+      const organisation = await createOrganisation({
+        userId: user.id,
+        name,
+        type: OrganisationType.ORGANISATION,
+        claim: freeSubscriptionClaim,
+      });
+
+      return {
+        paymentRequired: true,
+        checkoutUrl: `${NEXT_PUBLIC_WEBAPP_URL()}/o/${organisation.url}/settings/billing`,
+      };
+    }
 
     // Check if user can create a free organiastion.
     if (IS_BILLING_ENABLED() && !priceId) {

@@ -1,4 +1,5 @@
 import { createCustomer } from '@documenso/billing/stripe/customers';
+import { IS_STRIPE_BILLING_ENABLED } from '@documenso/lib/constants/app';
 import { AppError, AppErrorCode } from '@documenso/lib/errors/app-error';
 import { prisma } from '@documenso/prisma';
 
@@ -12,6 +13,11 @@ export const createStripeCustomerRoute = adminProcedure
   .input(ZCreateStripeCustomerRequestSchema)
   .output(ZCreateStripeCustomerResponseSchema)
   .mutation(async ({ input, ctx }) => {
+    if (!IS_STRIPE_BILLING_ENABLED()) {
+      throw new AppError(AppErrorCode.INVALID_REQUEST, {
+        message: 'Stripe billing is turned off',
+      });
+    }
     const { organisationId } = input;
 
     ctx.logger.info({

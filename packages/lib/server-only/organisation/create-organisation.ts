@@ -3,7 +3,7 @@ import { getSubscriptionClaim } from '@documenso/lib/server-only/subscription/ge
 import { prisma } from '@documenso/prisma';
 import { OrganisationMemberRole, OrganisationType, Prisma, type SubscriptionClaim } from '@prisma/client';
 
-import { IS_BILLING_ENABLED } from '../../constants/app';
+import { IS_STRIPE_BILLING_ENABLED } from '../../constants/app';
 import { ORGANISATION_INTERNAL_GROUPS } from '../../constants/organisations';
 import { AppError, AppErrorCode } from '../../errors/app-error';
 import { INTERNAL_CLAIM_ID } from '../../types/subscription';
@@ -23,7 +23,7 @@ type CreateOrganisationOptions = {
 export const createOrganisation = async ({ name, url, type, userId, customerId, claim }: CreateOrganisationOptions) => {
   let customerIdToUse = customerId;
 
-  if (!customerId && IS_BILLING_ENABLED()) {
+  if (!customerId && IS_STRIPE_BILLING_ENABLED()) {
     const user = await prisma.user.findUnique({
       where: {
         id: userId,

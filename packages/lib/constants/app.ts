@@ -61,6 +61,19 @@ export const NEXT_PRIVATE_INTERNAL_WEBAPP_URL = () =>
 
 export const IS_BILLING_ENABLED = () => env('NEXT_PUBLIC_FEATURE_BILLING_ENABLED') === 'true';
 
+export type BillingProvider = 'stripe' | 'crypto';
+
+/**
+ * Which payment system bills organisations. Stripe stays in the code base but is only used
+ * when this is `stripe` (the default).
+ */
+export const BILLING_PROVIDER = (): BillingProvider =>
+  env('NEXT_PUBLIC_BILLING_PROVIDER') === 'crypto' ? 'crypto' : 'stripe';
+
+export const IS_STRIPE_BILLING_ENABLED = () => IS_BILLING_ENABLED() && BILLING_PROVIDER() === 'stripe';
+
+export const IS_CRYPTO_BILLING_ENABLED = () => IS_BILLING_ENABLED() && BILLING_PROVIDER() === 'crypto';
+
 /**
  * When true, accounts are usable straight after sign-up: no confirmation email is sent
  * and sign-in does not require a verified email.

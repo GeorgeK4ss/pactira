@@ -1,5 +1,5 @@
 import { getInvoices } from '@documenso/billing/stripe/checkout';
-import { IS_BILLING_ENABLED } from '@documenso/lib/constants/app';
+import { IS_STRIPE_BILLING_ENABLED } from '@documenso/lib/constants/app';
 import { ORGANISATION_MEMBER_ROLE_PERMISSIONS_MAP } from '@documenso/lib/constants/organisations';
 import { AppError, AppErrorCode } from '@documenso/lib/errors/app-error';
 import { buildOrganisationWhereQuery } from '@documenso/lib/utils/organisations';
@@ -21,9 +21,9 @@ export const getInvoicesRoute = authenticatedProcedure
 
     const userId = ctx.user.id;
 
-    if (!IS_BILLING_ENABLED()) {
+    if (!IS_STRIPE_BILLING_ENABLED()) {
       throw new AppError(AppErrorCode.INVALID_REQUEST, {
-        message: 'Billing is not enabled',
+        message: 'Stripe billing is turned off',
       });
     }
 
