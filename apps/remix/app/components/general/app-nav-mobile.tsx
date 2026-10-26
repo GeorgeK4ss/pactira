@@ -5,11 +5,12 @@ import { useSession } from '@documenso/lib/client-only/providers/session';
 import { canAccessOrganisationAnalytics, formatOrganisationAnalyticsPath } from '@documenso/lib/utils/organisations';
 import { canExecuteTeamAction, formatAnalyticsPath } from '@documenso/lib/utils/teams';
 import { trpc } from '@documenso/trpc/react';
+import { LanguageSwitcherDialog } from '@documenso/ui/components/common/language-switcher-dialog';
 import { Sheet, SheetContent } from '@documenso/ui/primitives/sheet';
 import { ThemeSwitcher } from '@documenso/ui/primitives/theme-switcher';
 import { Trans, useLingui } from '@lingui/react/macro';
 import { ReadStatus } from '@prisma/client';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { Link } from 'react-router';
 
 import { useOptionalCurrentTeam } from '~/providers/team';
@@ -23,6 +24,8 @@ export const AppNavMobile = ({ isMenuOpen, onMenuOpenChange }: AppNavMobileProps
   const { t } = useLingui();
 
   const { organisations } = useSession();
+
+  const [languageSwitcherOpen, setLanguageSwitcherOpen] = useState(false);
 
   const currentTeam = useOptionalCurrentTeam();
   const currentOrganisation = useOptionalCurrentOrganisation();
@@ -87,49 +90,63 @@ export const AppNavMobile = ({ isMenuOpen, onMenuOpenChange }: AppNavMobileProps
   }, [currentTeam, currentOrganisation, organisations, t]);
 
   return (
-    <Sheet open={isMenuOpen} onOpenChange={onMenuOpenChange}>
-      <SheetContent className="flex w-full max-w-[350px] flex-col">
-        <Link to="/" onClick={handleMenuItemClick}>
-          <img src={LogoImage} alt="Pactira Logo" className="dark:invert" width={170} height={25} />
-        </Link>
+    <>
+      <Sheet open={isMenuOpen} onOpenChange={onMenuOpenChange}>
+        <SheetContent className="flex w-full max-w-[350px] flex-col">
+          <Link to="/" onClick={handleMenuItemClick}>
+            <img src={LogoImage} alt="Pactira Logo" className="dark:invert" width={170} height={25} />
+          </Link>
 
-        <div className="mt-8 flex w-full flex-col items-start gap-y-4">
-          {menuNavigationLinks.map(({ href, text }) => (
-            <Link
-              key={href}
-              className="flex items-center gap-2 font-semibold text-2xl text-foreground hover:text-foreground/80"
-              to={href}
-              onClick={() => handleMenuItemClick()}
+          <div className="mt-8 flex w-full flex-col items-start gap-y-4">
+            {menuNavigationLinks.map(({ href, text }) => (
+              <Link
+                key={href}
+                className="flex items-center gap-2 font-semibold text-2xl text-foreground hover:text-foreground/80"
+                to={href}
+                onClick={() => handleMenuItemClick()}
+              >
+                {text}
+                {href === '/inbox' && unreadCountData && unreadCountData.count > 0 && (
+                  <span className="flex h-6 min-w-[1.5rem] items-center justify-center rounded-full bg-primary px-1.5 font-semibold text-primary-foreground text-xs">
+                    {unreadCountData.count > 99 ? '99+' : unreadCountData.count}
+                  </span>
+                )}
+              </Link>
+            ))}
+
+            <button
+              className="font-semibold text-2xl text-foreground hover:text-foreground/80"
+              onClick={() => {
+                handleMenuItemClick();
+                setLanguageSwitcherOpen(true);
+              }}
             >
-              {text}
-              {href === '/inbox' && unreadCountData && unreadCountData.count > 0 && (
-                <span className="flex h-6 min-w-[1.5rem] items-center justify-center rounded-full bg-primary px-1.5 font-semibold text-primary-foreground text-xs">
-                  {unreadCountData.count > 99 ? '99+' : unreadCountData.count}
-                </span>
-              )}
-            </Link>
-          ))}
+              <Trans>Language</Trans>
+            </button>
 
-          <button
-            className="font-semibold text-2xl text-foreground hover:text-foreground/80"
-            onClick={async () => authClient.signOut()}
-          >
-            <Trans>Sign Out</Trans>
-          </button>
-        </div>
-
-        <div className="mt-auto flex w-full flex-col space-y-4 self-end">
-          <div className="w-fit">
-            <ThemeSwitcher />
+            <button
+              className="font-semibold text-2xl text-foreground hover:text-foreground/80"
+              onClick={async () => authClient.signOut()}
+            >
+              <Trans>Sign Out</Trans>
+            </button>
           </div>
 
-          <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Pactira
-            <br />
-            <Trans>All rights reserved.</Trans>
-          </p>
-        </div>
-      </SheetContent>
-    </Sheet>
+          <div className="mt-auto flex w-full flex-col space-y-4 self-end">
+            <div className="w-fit">
+              <ThemeSwitcher />
+            </div>
+
+            <p className="text-muted-foreground text-sm">
+              © {new Date().getFullYear()} Pactira
+              <br />
+              <Trans>All rights reserved.</Trans>
+            </p>
+          </div>
+        </SheetContent>
+      </Sheet>
+
+      <LanguageSwitcherDialog open={languageSwitcherOpen} setOpen={setLanguageSwitcherOpen} />
+    </>
   );
 };
