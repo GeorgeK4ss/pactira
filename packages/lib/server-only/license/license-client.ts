@@ -3,7 +3,6 @@ import path from 'node:path';
 
 import { prisma } from '@documenso/prisma';
 
-import { IS_BILLING_ENABLED } from '../../constants/app';
 import type { TLicenseClaim } from '../../types/license';
 import {
   LICENSE_FILE_NAME,
@@ -205,11 +204,9 @@ export class LicenseClient {
       (flag) => flag.isEnterprise && !licenseFlags[flag.key as keyof TLicenseClaim],
     );
 
+    // Billing is not checked here: this fork bills through its own AGPL module (packages/billing),
+    // not the commercially licensed one the "billing" licence flag refers to.
     let unauthorizedFlagUsage = false;
-
-    if (IS_BILLING_ENABLED() && !licenseFlags.billing) {
-      unauthorizedFlagUsage = true;
-    }
 
     try {
       const organisationWithUnauthorizedFlags = await prisma.organisationClaim.findFirst({
