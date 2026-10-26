@@ -114,6 +114,10 @@ export class LocalJobProvider extends BaseJobProvider {
     console.log(`[JOBS]: Started cron poller for ${this._cronJobs.length} job(s)`);
   }
 
+  public override async runCronTick() {
+    await this.processCronTick();
+  }
+
   private async processCronTick() {
     for (const cronJob of this._cronJobs) {
       try {

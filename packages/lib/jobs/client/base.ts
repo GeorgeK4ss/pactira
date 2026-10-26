@@ -26,4 +26,12 @@ export abstract class BaseJobProvider {
   public startCron(): void {
     // No-op by default — providers override if needed.
   }
+
+  /**
+   * Enqueue any cron jobs that are due, once. For hosts that pause the process between requests
+   * (e.g. Cloud Run), where an external scheduler calls this instead of relying on the poller.
+   */
+  public async runCronTick(): Promise<void> {
+    // No-op by default — providers override if needed.
+  }
 }

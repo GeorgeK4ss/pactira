@@ -1,6 +1,13 @@
 import { describe, expect, it } from 'vitest';
 
-import { addInterval, nextPeriodStart, proratedSeatsCents, renewalAmountCents, seatCap } from './plan';
+import {
+  addInterval,
+  intervalStartBefore,
+  nextPeriodStart,
+  proratedSeatsCents,
+  renewalAmountCents,
+  seatCap,
+} from './plan';
 
 describe('renewalAmountCents', () => {
   it('charges the base plan plus each extra seat', () => {
@@ -70,5 +77,17 @@ describe('nextPeriodStart', () => {
   it('starts now when the period has already lapsed', () => {
     expect(nextPeriodStart(new Date('2026-10-20T00:00:00Z'), now)).toBe(now);
     expect(nextPeriodStart(null, now)).toBe(now);
+  });
+});
+
+describe('seats bought while a renewal is prepaid', () => {
+  it('charges per day of one interval, beyond a single interval', () => {
+    const periodEnd = new Date('2026-12-01T00:00:00Z');
+    const periodStart = intervalStartBefore(periodEnd, 'MONTH');
+    const now = new Date('2026-10-27T00:00:00Z');
+
+    // 35 days left in a 30-day interval: 900 * 35 / 30 = 1050
+    expect(periodStart.toISOString()).toBe('2026-11-01T00:00:00.000Z');
+    expect(proratedSeatsCents({ interval: 'MONTH', seats: 1, periodStart, periodEnd, now })).toBe(1_050);
   });
 });

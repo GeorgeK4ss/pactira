@@ -65,23 +65,24 @@ export const getServerLimits = async ({ userId, teamId }: GetServerLimitsOptions
 
   const subscriptionStatus = organisation.subscription?.status;
 
-  const isPaid = subscriptionStatus === SubscriptionStatus.ACTIVE || subscriptionStatus === SubscriptionStatus.PAST_DUE;
-
-  if (isPaid) {
-    const quota = withRecipients(PAID_PLAN_LIMITS);
-
-    return { quota, remaining: quota, maximumEnvelopeItemCount };
-  }
-
   const isLapsedOrganisation =
     organisation.type === OrganisationType.ORGANISATION && subscriptionStatus === SubscriptionStatus.INACTIVE;
 
+  // Checked before "paid": with crypto billing an ACTIVE row past its period end is already unpaid.
   if (isLapsedOrganisation || isOrganisationPendingPayment(organisation)) {
     return {
       quota: INACTIVE_PLAN_LIMITS,
       remaining: INACTIVE_PLAN_LIMITS,
       maximumEnvelopeItemCount,
     };
+  }
+
+  const isPaid = subscriptionStatus === SubscriptionStatus.ACTIVE || subscriptionStatus === SubscriptionStatus.PAST_DUE;
+
+  if (isPaid) {
+    const quota = withRecipients(PAID_PLAN_LIMITS);
+
+    return { quota, remaining: quota, maximumEnvelopeItemCount };
   }
 
   const quota = withRecipients({

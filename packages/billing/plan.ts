@@ -31,8 +31,9 @@ export type ProratedSeatsOptions = {
 };
 
 /**
- * Charge for adding `seats` now until the end of the current period, by the share of the period
- * that is left (whole days, rounded up so the first day is never free). Never below $1.00.
+ * Charge for adding `seats` now until `periodEnd`, priced per day of a billing interval
+ * (`periodStart`..`periodEnd` is one interval; see `intervalStartBefore`). Whole days, rounded up so
+ * the first day is never free. Never below $1.00.
  */
 export const proratedSeatsCents = ({
   interval,
@@ -47,20 +48,19 @@ export const proratedSeatsCents = ({
 
   const day = 24 * 60 * 60 * 1000;
   const totalDays = Math.max(1, Math.round((periodEnd.getTime() - periodStart.getTime()) / day));
-  const daysLeft = Math.min(totalDays, Math.max(0, Math.ceil((periodEnd.getTime() - now.getTime()) / day)));
+  // Not capped at totalDays: a period renewed early can run more than one interval ahead.
+  const daysLeft = Math.max(0, Math.ceil((periodEnd.getTime() - now.getTime()) / day));
 
   const cents = Math.ceil((PLAN_PRICES_CENTS[interval].seat * seats * daysLeft) / totalDays);
 
   return Math.max(MINIMUM_SEAT_CHARGE_CENTS, cents);
 };
 
-/**
- * Adds one billing interval in UTC, keeping the day of month where it exists
- * (Jan 31 + 1 month = Feb 28/29).
- */
-export const addInterval = (date: Date, interval: BillingInterval) => {
-  const months = interval === 'YEAR' ? 12 : 1;
+/** Start of the billing interval that ends at `end`. */
+export const intervalStartBefore = (end: Date, interval: BillingInterval) =>
+  shiftMonths(end, interval === 'YEAR' ? -12 : -1);
 
+const shiftMonths = (date: Date, months: number) => {
   const result = new Date(date.getTime());
   const day = result.getUTCDate();
 
@@ -72,6 +72,12 @@ export const addInterval = (date: Date, interval: BillingInterval) => {
 
   return result;
 };
+
+/**
+ * Adds one billing interval in UTC, keeping the day of month where it exists
+ * (Jan 31 + 1 month = Feb 28/29).
+ */
+export const addInterval = (date: Date, interval: BillingInterval) => shiftMonths(date, interval === 'YEAR' ? 12 : 1);
 
 /**
  * Where a paid renewal starts: at the end of the current period if it has not passed yet,

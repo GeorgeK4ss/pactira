@@ -39,4 +39,8 @@ export class JobClient<T extends ReadonlyArray<JobDefinition> = []> {
   public startCron() {
     this._provider.startCron();
   }
+
+  public async runCronTick() {
+    await this._provider.runCronTick();
+  }
 }

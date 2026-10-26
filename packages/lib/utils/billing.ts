@@ -1,7 +1,7 @@
 import type { Subscription } from '@documenso/prisma/generated/zod/modelSchema/SubscriptionSchema';
 import { OrganisationType } from '@prisma/client';
 
-import { IS_BILLING_ENABLED } from '../constants/app';
+import { IS_BILLING_ENABLED, IS_CRYPTO_BILLING_ENABLED } from '../constants/app';
 import { AppError, AppErrorCode } from '../errors/app-error';
 import { INTERNAL_CLAIM_ID, type TClaimFlags } from '../types/subscription';
 
@@ -26,7 +26,7 @@ export const validateIfSubscriptionIsRequired = (subscription?: Subscription | n
 
 type PendingPaymentOrganisation = {
   type: OrganisationType;
-  subscription?: unknown;
+  subscription?: { status: string; periodEnd?: Date | string | null } | null;
   organisationClaim: {
     originalSubscriptionClaimId: string | null;
   };
@@ -44,6 +44,18 @@ type PendingPaymentOrganisation = {
 export const isOrganisationPendingPayment = (organisation: PendingPaymentOrganisation) => {
   if (!IS_BILLING_ENABLED()) {
     return false;
+  }
+
+  // Crypto billing: every organisation, personal ones included, must pay before it can send.
+  // The period end is checked here too, so access stops the moment a period runs out.
+  if (IS_CRYPTO_BILLING_ENABLED()) {
+    const subscription = organisation.subscription;
+
+    if (!subscription || subscription.status !== 'ACTIVE' || !subscription.periodEnd) {
+      return true;
+    }
+
+    return new Date(subscription.periodEnd).getTime() <= Date.now();
   }
 
   if (organisation.type !== OrganisationType.ORGANISATION) {
