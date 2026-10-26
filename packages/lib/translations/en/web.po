@@ -424,6 +424,10 @@ msgstr "{expiresInMinutes, plural, one {This code will expire in # minute.} othe
 msgid "{INCLUDED_SEATS} seats and {SENDS_PER_MONTH} sent documents a month included. Each extra seat is billed per seat."
 msgstr "{INCLUDED_SEATS} seats and {SENDS_PER_MONTH} sent documents a month included. Each extra seat is billed per seat."
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "{INCLUDED_SEATS} team members included"
+msgstr "{INCLUDED_SEATS} team members included"
+
 #: packages/email/templates/document-invite.tsx
 msgid "{inviterName} <0>({inviterEmail})</0>"
 msgstr "{inviterName} <0>({inviterEmail})</0>"
@@ -551,6 +555,10 @@ msgstr "{rowCount, plural, one {The CSV contains # row.} other {The CSV contains
 #: apps/remix/app/components/tables/envelopes-table-bulk-action-bar.tsx
 msgid "{selectedCount} selected"
 msgstr "{selectedCount} selected"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "{SENDS_PER_MONTH} documents sent per month"
+msgstr "{SENDS_PER_MONTH} documents sent per month"
 
 #: packages/email/template-components/template-document-rejected.tsx
 msgid "{signerName} has rejected the document \"{documentName}\"."
@@ -777,10 +785,12 @@ msgid "{visibleRows, plural, one {Showing # result.} other {Showing # results.}}
 msgstr "{visibleRows, plural, one {Showing # result.} other {Showing # results.}}"
 
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
+#: apps/remix/app/components/general/landing/landing-page.tsx
 msgid "/ month"
 msgstr "/ month"
 
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
+#: apps/remix/app/components/general/landing/landing-page.tsx
 msgid "/ year"
 msgstr "/ year"
 
@@ -1628,6 +1638,10 @@ msgstr "Add Signers"
 msgid "Add signers and configure signing preferences"
 msgstr "Add signers and configure signing preferences"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Add signers and fields"
+msgstr "Add signers and fields"
+
 #: apps/remix/app/components/dialogs/team-email-add-dialog.tsx
 msgid "Add team email"
 msgstr "Add team email"
@@ -1661,6 +1675,10 @@ msgstr "Add this URL to your provider's allowed redirect URIs"
 #: apps/remix/app/components/dialogs/email-transport-create-dialog.tsx
 msgid "Add transport"
 msgstr "Add transport"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Add who needs to sign and drag signature, date and text fields onto the page."
+msgstr "Add who needs to sign and drag signature, date and text fields onto the page."
 
 #: apps/remix/app/components/forms/branding-preferences-form.tsx
 msgid "Additional brand information to display at the bottom of emails"
@@ -2335,6 +2353,10 @@ msgctxt "Recipient role progressive verb"
 msgid "Approving"
 msgstr "Approving"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Are electronic signatures legally valid?"
+msgstr "Are electronic signatures legally valid?"
+
 #: apps/remix/app/components/dialogs/assistant-confirmation-dialog.tsx
 msgid "Are you sure you want to complete the document? This action cannot be undone. Please ensure that you have completed prefilling all relevant fields before proceeding."
 msgstr "Are you sure you want to complete the document? This action cannot be undone. Please ensure that you have completed prefilling all relevant fields before proceeding."
@@ -2489,6 +2511,10 @@ msgstr "Audit Log Details"
 #: apps/remix/app/routes/_authenticated+/admin+/documents.$id.tsx
 msgid "Audit Logs"
 msgstr "Audit Logs"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Audit trail and certificate"
+msgstr "Audit trail and certificate"
 
 #: apps/remix/app/routes/_internal+/[__htmltopdf]+/certificate.tsx
 #: packages/lib/server-only/pdf/render-certificate.ts
@@ -2731,6 +2757,10 @@ msgstr "Branding URL"
 msgid "Browser"
 msgstr "Browser"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Built for teams"
+msgstr "Built for teams"
+
 #: apps/remix/app/components/general/document/document-recipient-link-copy-dialog.tsx
 msgid "Bulk Copy"
 msgstr "Bulk Copy"
@@ -2794,6 +2824,10 @@ msgstr "By proceeding, you agree to our {0}."
 #: apps/remix/app/routes/_unauthenticated+/articles.signature-disclosure.tsx
 msgid "By using the electronic signature feature, you are consenting to conduct transactions and receive disclosures electronically. You acknowledge that your electronic signature on documents is binding and that you accept the terms outlined in the documents you are signing."
 msgstr "By using the electronic signature feature, you are consenting to conduct transactions and receive disclosures electronically. You acknowledge that your electronic signature on documents is binding and that you accept the terms outlined in the documents you are signing."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Can I add more people later?"
+msgstr "Can I add more people later?"
 
 #: packages/ui/components/recipient/recipient-role-select.tsx
 msgid "Can prepare"
@@ -3888,6 +3922,11 @@ msgstr "Create webhook"
 msgid "Create Webhook"
 msgstr "Create Webhook"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Create your account"
+msgstr "Create your account"
+
 #: apps/remix/app/routes/_recipient+/sign.$token+/complete.tsx
 msgid "Create your account and start using state-of-the-art document signing."
 msgstr "Create your account and start using state-of-the-art document signing."
@@ -3895,6 +3934,10 @@ msgstr "Create your account and start using state-of-the-art document signing."
 #: apps/remix/app/components/forms/signup.tsx
 msgid "Create your account and start using state-of-the-art document signing. Open and beautiful signing is within your grasp."
 msgstr "Create your account and start using state-of-the-art document signing. Open and beautiful signing is within your grasp."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Create your account now and have it signed today."
+msgstr "Create your account now and have it signed today."
 
 #: apps/remix/app/components/dialogs/public-profile-template-manage-dialog.tsx
 #: apps/remix/app/components/general/document/document-page-view-information.tsx
@@ -4633,6 +4676,10 @@ msgstr "DNS Records"
 #: apps/remix/app/routes/_unauthenticated+/team.verify.email.$token.tsx
 msgid "Do not proceed if you are unsure about this request."
 msgstr "Do not proceed if you are unsure about this request."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Do the people I send to need an account?"
+msgstr "Do the people I send to need an account?"
 
 #: apps/remix/app/components/general/admin-license-card.tsx
 msgid "Documenso License"
@@ -5396,6 +5443,10 @@ msgstr "e.g. Removed at the sender's request"
 msgid "e.g. Resend (free plans)"
 msgstr "e.g. Resend (free plans)"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Each document you send for signing, by email or by creating its signing links, is one send. Drafts, templates and reminders do not count."
+msgstr "Each document you send for signing, by email or by creating its signing links, is one send. Drafts, templates and reminders do not count."
+
 #: apps/remix/app/components/general/settings-upsell/email-domains-upsell.tsx
 msgid "Easy DNS setup with auto-generated DKIM and SPF records"
 msgstr "Easy DNS setup with auto-generated DKIM and SPF records"
@@ -5446,6 +5497,15 @@ msgstr "Electronic Delivery of Documents"
 #: apps/remix/app/routes/_unauthenticated+/articles.signature-disclosure.tsx
 msgid "Electronic Signature Disclosure"
 msgstr "Electronic Signature Disclosure"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Electronic signatures are recognised in most countries, including under Israel's Electronic Signature Law and the EU's eIDAS rules. Some documents have special requirements, so check with your lawyer for unusual cases."
+msgstr "Electronic signatures are recognised in most countries, including under Israel's Electronic Signature Law and the EU's eIDAS rules. Some documents have special requirements, so check with your lawyer for unusual cases."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+#: apps/remix/app/routes/_index.tsx
+msgid "Electronic signatures for teams"
+msgstr "Electronic signatures for teams"
 
 #: apps/remix/app/components/dialogs/admin-user-create-dialog.tsx
 #: apps/remix/app/components/dialogs/ai-field-detection-dialog.tsx
@@ -5577,6 +5637,10 @@ msgstr "Email is required"
 #: packages/ui/primitives/template-flow/add-template-settings.tsx
 msgid "Email Options"
 msgstr "Email Options"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Email or signing links"
+msgstr "Email or signing links"
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.email.tsx
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.email.tsx
@@ -6115,6 +6179,10 @@ msgstr "Event Type"
 msgid "Every transfer seen on the receiving wallets. Unmatched ones were not linked to an invoice."
 msgstr "Every transfer seen on the receiving wallets. Unmatched ones were not linked to an invoice."
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Every view and signature is logged, and the finished PDF is sealed with a signing certificate."
+msgstr "Every view and signature is logged, and the finished PDF is sealed with a signing certificate."
+
 #: apps/remix/app/components/dialogs/folder-update-dialog.tsx
 #: packages/lib/constants/document-visibility.ts
 #: packages/ui/components/document/document-visibility-select.tsx
@@ -6132,6 +6200,10 @@ msgstr "Everyone has signed"
 #: apps/remix/app/routes/_recipient+/sign.$token+/complete.tsx
 msgid "Everyone has signed! You will receive an email copy of the signed document."
 msgstr "Everyone has signed! You will receive an email copy of the signed document."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Everything you need to sign and send"
+msgstr "Everything you need to sign and send"
 
 #: apps/remix/app/components/general/organisation-usage-panel.tsx
 msgid "Exceeded"
@@ -6193,6 +6265,16 @@ msgstr "Extend by one period"
 #: packages/ui/primitives/template-flow/add-template-settings.tsx
 msgid "External ID"
 msgstr "External ID"
+
+#. placeholder {0}: formatUsd(prices.seat)
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Extra members {0} each per month"
+msgstr "Extra members {0} each per month"
+
+#. placeholder {0}: formatUsd(prices.seat)
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Extra members {0} each per year"
+msgstr "Extra members {0} each per year"
 
 #: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/admin-crypto-period-panel.tsx
@@ -6356,6 +6438,10 @@ msgstr "Failed: {failedCount}"
 msgid "Fair use limit exceeded"
 msgstr "Fair use limit exceeded"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "FAQ"
+msgstr "FAQ"
+
 #: apps/remix/app/components/forms/subscription-claim-form.tsx
 #: apps/remix/app/components/tables/admin-claims-table.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
@@ -6363,6 +6449,7 @@ msgid "Feature Flags"
 msgstr "Feature Flags"
 
 #: apps/remix/app/components/general/admin-license-card.tsx
+#: apps/remix/app/components/general/landing/landing-page.tsx
 msgid "Features"
 msgstr "Features"
 
@@ -6581,6 +6668,10 @@ msgstr "From address"
 msgid "From name"
 msgstr "From name"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "From the billing page, choose monthly or yearly and pay in USDT (TRON, Ethereum or BNB Chain) or USDC (Ethereum). Your plan activates as soon as the payment is confirmed, usually within two minutes."
+msgstr "From the billing page, choose monthly or yearly and pay in USDT (TRON, Ethereum or BNB Chain) or USDC (Ethereum). Your plan activates as soon as the payment is confirmed, usually within two minutes."
+
 #: apps/remix/app/components/embed/embed-direct-template-client-page.tsx
 #: apps/remix/app/components/embed/embed-document-signing-page-v1.tsx
 #: apps/remix/app/components/embed/multisign/multi-sign-document-signing-view.tsx
@@ -6622,6 +6713,15 @@ msgstr "Generate Links"
 #: packages/lib/constants/i18n.ts
 msgid "German"
 msgstr "German"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Get documents signed in minutes, not days."
+msgstr "Get documents signed in minutes, not days."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Get started"
+msgstr "Get started"
 
 #: apps/remix/app/components/general/settings-upsell/sso-portal-upsell.tsx
 msgid "Give your members a dedicated single sign-on portal. The SSO portal is available on the Enterprise plan."
@@ -6766,6 +6866,10 @@ msgstr "Having an assistant as the last signer means they will be unable to take
 msgid "Hebrew"
 msgstr "Hebrew"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Hebrew, English and 10 more languages"
+msgstr "Hebrew, English and 10 more languages"
+
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-fields-page.tsx
 #: packages/ui/primitives/document-flow/field-item.tsx
 msgid "Height:"
@@ -6899,6 +7003,15 @@ msgstr "Host"
 #: apps/remix/app/routes/_authenticated+/admin+/crypto.tsx
 msgid "Hours a payment amount stays reserved"
 msgstr "Hours a payment amount stays reserved"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "How do I pay?"
+msgstr "How do I pay?"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "How it works"
+msgstr "How it works"
 
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-settings-dialog.tsx
 msgid "How long recipients have to complete this document after it is sent. Uses the team default when set to inherit."
@@ -7262,6 +7375,10 @@ msgstr "Invite team members to collaborate"
 #: apps/remix/app/components/dialogs/team-member-create-dialog.tsx
 msgid "Invite them to the organisation first"
 msgstr "Invite them to the organization first"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Invite your colleagues, share templates and see every document the team sends."
+msgstr "Invite your colleagues, share templates and see every document the team sends."
 
 #: apps/remix/app/routes/_authenticated+/admin+/teams.$id.tsx
 msgid "Invited"
@@ -8019,6 +8136,7 @@ msgstr "Modify the details of the subscription claim."
 #: apps/remix/app/components/general/analytics/analytics-documents-over-time-card.tsx
 #: apps/remix/app/components/general/billing-plans.tsx
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
+#: apps/remix/app/components/general/landing/landing-page.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/crypto.tsx
 msgid "Monthly"
 msgstr "Monthly"
@@ -8260,6 +8378,10 @@ msgstr "No activity in the last 90 days."
 #: apps/remix/app/utils/analytics.ts
 msgid "No activity in the selected range."
 msgstr "No activity in the selected range."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "No card and no bank needed. Payments are confirmed on the blockchain automatically."
+msgstr "No card and no bank needed. Payments are confirmed on the blockchain automatically."
 
 #: apps/remix/app/components/general/pdf-viewer/envelope-pdf-viewer.tsx
 #: apps/remix/app/components/general/pdf-viewer/pdf-viewer.tsx
@@ -8514,6 +8636,10 @@ msgstr "No value found."
 msgid "No worries, it happens! Enter your email and we'll email you a special link to reset your password."
 msgstr "No worries, it happens! Enter your email and we'll email you a special link to reset your password."
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "No. Signers open the document from the email or the link you share, sign in the browser, and receive the signed copy."
+msgstr "No. Signers open the document from the email or the link you share, sign in the browser, and receive the signed copy."
+
 #: apps/remix/app/components/dialogs/envelope-distribute-dialog.tsx
 #: apps/remix/app/components/embed/authoring/configure-document-advanced-settings.tsx
 #: apps/remix/app/components/forms/editor/editor-field-number-form.tsx
@@ -8690,6 +8816,14 @@ msgstr "One of your signing requests has been reported. As part of keeping signe
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "One or more of your required fields have not been saved. Please refresh the page, complete any empty required fields, and try again."
 msgstr "One or more of your required fields have not been saved. Please refresh the page, complete any empty required fields, and try again."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "One plan, everything included. Pay monthly or save 15% yearly."
+msgstr "One plan, everything included. Pay monthly or save 15% yearly."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "One simple plan with the tools law offices, agencies and sales teams use every day."
+msgstr "One simple plan with the tools law offices, agencies and sales teams use every day."
 
 #: apps/remix/app/components/forms/branding-preferences-form.tsx
 msgid "Only .jpg, .png, and .webp files are accepted"
@@ -9040,6 +9174,7 @@ msgid "Ownership transferred to {organisationMemberName}."
 msgstr "Ownership transferred to {organisationMemberName}."
 
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
+#: apps/remix/app/components/general/landing/landing-page.tsx
 #: apps/remix/app/components/general/settings-org-switcher.tsx
 msgid "Pactira plan"
 msgstr "Pactira plan"
@@ -9212,6 +9347,14 @@ msgstr "Pay with a stablecoin from any wallet or exchange."
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
 msgid "Pay with crypto"
 msgstr "Pay with crypto"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Pay with USDT on TRON, Ethereum or BNB Chain, or USDC on Ethereum."
+msgstr "Pay with USDT on TRON, Ethereum or BNB Chain, or USDC on Ethereum."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Pay with USDT or USDC"
+msgstr "Pay with USDT or USDC"
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.billing.pay.$invoiceId.tsx
 msgid "Payment confirmed. Thank you!"
@@ -9678,6 +9821,10 @@ msgstr "Preview the document before sending"
 msgid "Preview what the signed document will look like with placeholder data"
 msgstr "Preview what the signed document will look like with placeholder data"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Pricing"
+msgstr "Pricing"
+
 #: apps/remix/app/components/forms/branding-preferences-form.tsx
 msgid "Primary"
 msgstr "Primary"
@@ -9788,6 +9935,10 @@ msgstr "Put your own brand on every document you send. Branding is available on 
 msgid "Qualified electronic signatures are not supported in this embed."
 msgstr "Qualified electronic signatures are not supported in this embed."
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Questions and answers"
+msgstr "Questions and answers"
+
 #: apps/remix/app/components/general/envelope-editor/envelope-editor.tsx
 msgid "Quick Actions"
 msgstr "Quick Actions"
@@ -9852,6 +10003,10 @@ msgstr "Reading your document"
 #: apps/remix/app/components/general/document/document-page-view-recipients.tsx
 msgid "Ready"
 msgstr "Ready"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Ready to send your first document?"
+msgstr "Ready to send your first document?"
 
 #: apps/remix/app/components/dialogs/admin-recipient-delete-dialog.tsx
 #: apps/remix/app/routes/_internal+/[__htmltopdf]+/certificate.tsx
@@ -10680,6 +10835,10 @@ msgstr "Save failed"
 msgid "Save Template"
 msgstr "Save Template"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Save the contracts you use every day and let clients fill and sign them from one link."
+msgstr "Save the contracts you use every day and let clients fill and sign them from one link."
+
 #: apps/remix/app/routes/_authenticated+/admin+/crypto.tsx
 msgid "Saved"
 msgstr "Saved"
@@ -10828,6 +10987,10 @@ msgstr "Security activity"
 #: apps/remix/app/components/general/admin-license-status-banner.tsx
 msgid "See Documentation"
 msgstr "See Documentation"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "See pricing"
+msgstr "See pricing"
 
 #: apps/remix/app/routes/_authenticated+/admin+/documents.$id.tsx
 msgid "See the background jobs tab for the status"
@@ -11070,6 +11233,18 @@ msgstr "Send a test email using this transport to verify the configuration."
 #: apps/remix/app/components/dialogs/webhook-test-dialog.tsx
 msgid "Send a test webhook with sample data to verify your integration is working correctly."
 msgstr "Send a test webhook with sample data to verify your integration is working correctly."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Send and get it signed"
+msgstr "Send and get it signed"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Send by email or link. Everyone signs from their phone, and you get the sealed PDF."
+msgstr "Send by email or link. Everyone signs from their phone, and you get the sealed PDF."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Send by email, or copy each signer's personal link and share it on WhatsApp or anywhere else."
+msgstr "Send by email, or copy each signer's personal link and share it on WhatsApp or anywhere else."
 
 #: apps/remix/app/components/forms/send-confirmation-email.tsx
 msgid "Send confirmation email"
@@ -11394,6 +11569,11 @@ msgstr "Sign field"
 msgid "Sign Here"
 msgstr "Sign Here"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Sign in"
+msgstr "Sign in"
+
 #: apps/remix/app/components/forms/signin.tsx
 #: apps/remix/app/components/forms/signin.tsx
 #: apps/remix/app/routes/_unauthenticated+/o.$orgUrl.signin.tsx
@@ -11463,6 +11643,10 @@ msgstr "Sign up"
 #: apps/remix/app/routes/_unauthenticated+/signup.tsx
 msgid "Sign Up"
 msgstr "Sign Up"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Sign up in seconds. No email confirmation needed."
+msgstr "Sign up in seconds. No email confirmation needed."
 
 #: apps/remix/app/components/forms/signup.tsx
 msgid "Sign Up with Google"
@@ -11627,6 +11811,10 @@ msgstr "Signing Links"
 msgid "Signing links have been generated for this document."
 msgstr "Signing links have been generated for this document."
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Signing links, audit trail and certificate"
+msgstr "Signing links, audit trail and certificate"
+
 #: apps/remix/app/components/tables/admin-document-recipient-item-table.tsx
 msgid "Signing Order"
 msgstr "Signing Order"
@@ -11676,6 +11864,10 @@ msgstr "Signing you in..."
 #: apps/remix/app/components/forms/signup.tsx
 msgid "Signup is currently disabled or not available for your email domain."
 msgstr "Signup is currently disabled or not available for your email domain."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Simple pricing"
+msgstr "Simple pricing"
 
 #. placeholder {0}: DateTime.fromJSDate(publicProfile.badge.since).toFormat('LLL ‘yy')
 #: apps/remix/app/routes/_profile+/p.$url.tsx
@@ -12457,6 +12649,10 @@ msgstr "Template usage"
 msgid "Templates"
 msgstr "Templates"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Templates and public links"
+msgstr "Templates and public links"
+
 #: apps/remix/app/components/dialogs/envelopes-bulk-delete-dialog.tsx
 msgid "Templates deleted"
 msgstr "Templates deleted"
@@ -13054,6 +13250,10 @@ msgstr "The webhook was successfully created."
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.webhooks.$id._index.tsx
 msgid "The webhook you are looking for may have been removed, renamed or may have never existed."
 msgstr "The webhook you are looking for may have been removed, renamed or may have never existed."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "The whole app, the emails and the signed PDF follow your language, right-to-left included."
+msgstr "The whole app, the emails and the signed PDF follow your language, right-to-left included."
 
 #: apps/remix/app/components/general/app-command-menu.tsx
 msgid "Theme"
@@ -14060,6 +14260,10 @@ msgstr "Unlimited"
 msgid "Unlimited documents, API and more"
 msgstr "Unlimited documents, API and more"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Unlimited drafts and templates"
+msgstr "Unlimited drafts and templates"
+
 #: apps/remix/app/routes/_authenticated+/settings+/security.linked-accounts.tsx
 #: apps/remix/app/routes/_authenticated+/settings+/security.linked-accounts.tsx
 msgid "Unlink"
@@ -14269,6 +14473,7 @@ msgid "Upgrade your plan to upload more documents"
 msgstr "Upgrade your plan to upload more documents"
 
 #: apps/remix/app/components/dialogs/template-use-dialog.tsx
+#: apps/remix/app/components/general/landing/landing-page.tsx
 msgid "Upload"
 msgstr "Upload"
 
@@ -14277,6 +14482,10 @@ msgstr "Upload"
 msgctxt "Upload signature"
 msgid "Upload"
 msgstr "Upload"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Upload a contract, mark where to sign, and send it by email or link. Track every step and get a sealed PDF with a full audit trail."
+msgstr "Upload a contract, mark where to sign, and send it by email or link. Track every step and get a sealed PDF with a full audit trail."
 
 #: apps/remix/app/components/dialogs/template-bulk-send-dialog.tsx
 msgid "Upload a CSV file to create multiple documents from this template. Each row represents one document with its recipient details."
@@ -14289,6 +14498,10 @@ msgstr "Upload a custom document to use instead of the template's default docume
 #: apps/remix/app/components/dialogs/template-use-dialog.tsx
 msgid "Upload a custom document to use its file name."
 msgstr "Upload a custom document to use its file name."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Upload a PDF, or start from one of your templates."
+msgstr "Upload a PDF, or start from one of your templates."
 
 #: apps/remix/app/components/dialogs/template-bulk-send-dialog.tsx
 msgid "Upload and Process"
@@ -15380,6 +15593,14 @@ msgstr "Well-known URL is required"
 msgid "Were you trying to edit this document instead?"
 msgstr "Were you trying to edit this document instead?"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "What counts as a send?"
+msgstr "What counts as a send?"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "What happens if I don't renew?"
+msgstr "What happens if I don't renew?"
+
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl._index.tsx
 msgid "What you can do with teams:"
 msgstr "What you can do with teams:"
@@ -15456,6 +15677,7 @@ msgid "Yearly"
 msgstr "Yearly"
 
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
+#: apps/remix/app/components/general/landing/landing-page.tsx
 msgid "Yearly (15% off)"
 msgstr "Yearly (15% off)"
 
@@ -15467,6 +15689,10 @@ msgstr "Yearly (15% off)"
 #: apps/remix/app/components/tables/admin-document-recipients-table.tsx
 msgid "Yes"
 msgstr "Yes"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Yes. Extra seats are added from the billing page at any time; you pay only for the days left in the current period."
+msgstr "Yes. Extra seats are added from the billing page at any time; you pay only for the days left in the current period."
 
 #: apps/remix/app/components/general/document/document-page-view-information.tsx
 #: apps/remix/app/components/general/template/template-page-view-information.tsx
@@ -15860,6 +16086,10 @@ msgstr "You don't need to sign it anymore."
 #: packages/lib/utils/document-audit-logs.ts
 msgid "You failed to validate a 2FA token for the document"
 msgstr "You failed to validate a 2FA token for the document"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "You get a reminder seven days before the period ends. If it ends unpaid, sending is paused until you pay. Your documents stay safe and documents already sent can still be signed."
+msgstr "You get a reminder seven days before the period ends. If it ends unpaid, sending is paused until you pay. Your documents stay safe and documents already sent can still be signed."
 
 #: apps/remix/app/routes/_unauthenticated+/organisation.invite.$token.tsx
 msgid "You have accepted an invitation from <0>{organisationName}</0> to join their organisation."

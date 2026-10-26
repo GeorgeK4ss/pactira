@@ -4,7 +4,11 @@ import { PREFERRED_TEAM_URL_COOKIE } from '@documenso/lib/constants/cookies';
 import { getTeams } from '@documenso/lib/server-only/team/get-teams';
 import { formatDocumentsPath } from '@documenso/lib/utils/teams';
 import { ZTeamUrlSchema } from '@documenso/trpc/server/team-router/schema';
+import { msg } from '@lingui/core/macro';
 import { redirect } from 'react-router';
+
+import { LandingPage } from '~/components/general/landing/landing-page';
+import { appMetaTags } from '~/utils/meta';
 
 import type { Route } from './+types/_index';
 
@@ -49,5 +53,14 @@ export async function loader({ request }: Route.LoaderArgs) {
     throw redirect(formatDocumentsPath(currentTeam.url));
   }
 
-  throw redirect('/signin');
+  // Signed-out visitors see the public website.
+  return null;
+}
+
+export function meta() {
+  return appMetaTags(msg`Electronic signatures for teams`);
+}
+
+export default function Index() {
+  return <LandingPage />;
 }

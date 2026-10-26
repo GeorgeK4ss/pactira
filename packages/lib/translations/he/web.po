@@ -424,6 +424,10 @@ msgstr "{expiresInMinutes, plural, one {תוקף הקוד יפוג בעוד # ד
 msgid "{INCLUDED_SEATS} seats and {SENDS_PER_MONTH} sent documents a month included. Each extra seat is billed per seat."
 msgstr "כוללת {INCLUDED_SEATS} מושבים ו-{SENDS_PER_MONTH} מסמכים לשליחה בחודש. כל מושב נוסף מחויב בנפרד."
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "{INCLUDED_SEATS} team members included"
+msgstr "{INCLUDED_SEATS} חברי צוות כלולים"
+
 #: packages/email/templates/document-invite.tsx
 msgid "{inviterName} <0>({inviterEmail})</0>"
 msgstr "{inviterName} <0>({inviterEmail})</0>"
@@ -551,6 +555,10 @@ msgstr "{rowCount, plural, one {קובץ ה-CSV מכיל # שורה.} other {ק�
 #: apps/remix/app/components/tables/envelopes-table-bulk-action-bar.tsx
 msgid "{selectedCount} selected"
 msgstr "{selectedCount} נבחרו"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "{SENDS_PER_MONTH} documents sent per month"
+msgstr "{SENDS_PER_MONTH} מסמכים לשליחה בחודש"
 
 #: packages/email/template-components/template-document-rejected.tsx
 msgid "{signerName} has rejected the document \"{documentName}\"."
@@ -777,10 +785,12 @@ msgid "{visibleRows, plural, one {Showing # result.} other {Showing # results.}}
 msgstr "{visibleRows, plural, one {מוצגת # תוצאה.} other {מוצגות # תוצאות.}}"
 
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
+#: apps/remix/app/components/general/landing/landing-page.tsx
 msgid "/ month"
 msgstr "/ חודש"
 
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
+#: apps/remix/app/components/general/landing/landing-page.tsx
 msgid "/ year"
 msgstr "/ שנה"
 
@@ -1628,6 +1638,10 @@ msgstr "הוספת חותמים"
 msgid "Add signers and configure signing preferences"
 msgstr "הוסיפו חותמים והגדירו את העדפות החתימה"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Add signers and fields"
+msgstr "הוסיפו חותמים ושדות"
+
 #: apps/remix/app/components/dialogs/team-email-add-dialog.tsx
 msgid "Add team email"
 msgstr "הוספת אימייל צוות"
@@ -1661,6 +1675,10 @@ msgstr "הוסיפו את כתובת ה-URL הזו לכתובות ההפניה �
 #: apps/remix/app/components/dialogs/email-transport-create-dialog.tsx
 msgid "Add transport"
 msgstr "הוספת שירות שליחה"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Add who needs to sign and drag signature, date and text fields onto the page."
+msgstr "הוסיפו את מי שצריך לחתום, וגררו לדף שדות חתימה, תאריך וטקסט."
 
 #: apps/remix/app/components/forms/branding-preferences-form.tsx
 msgid "Additional brand information to display at the bottom of emails"
@@ -2335,6 +2353,10 @@ msgctxt "Recipient role progressive verb"
 msgid "Approving"
 msgstr "מאשר"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Are electronic signatures legally valid?"
+msgstr "האם חתימה אלקטרונית תקפה מבחינה משפטית?"
+
 #: apps/remix/app/components/dialogs/assistant-confirmation-dialog.tsx
 msgid "Are you sure you want to complete the document? This action cannot be undone. Please ensure that you have completed prefilling all relevant fields before proceeding."
 msgstr "האם להשלים את המסמך? לא ניתן לבטל פעולה זו. ודאו שסיימתם למלא מראש את כל השדות הרלוונטיים לפני שתמשיכו."
@@ -2489,6 +2511,10 @@ msgstr "פרטי יומן ביקורת"
 #: apps/remix/app/routes/_authenticated+/admin+/documents.$id.tsx
 msgid "Audit Logs"
 msgstr "יומני ביקורת"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Audit trail and certificate"
+msgstr "יומן פעולות ותעודת חתימה"
 
 #: apps/remix/app/routes/_internal+/[__htmltopdf]+/certificate.tsx
 #: packages/lib/server-only/pdf/render-certificate.ts
@@ -2731,6 +2757,10 @@ msgstr "כתובת URL למיתוג"
 msgid "Browser"
 msgstr "דפדפן"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Built for teams"
+msgstr "בנוי לצוותים"
+
 #: apps/remix/app/components/general/document/document-recipient-link-copy-dialog.tsx
 msgid "Bulk Copy"
 msgstr "העתקה מרוכזת"
@@ -2794,6 +2824,10 @@ msgstr "בהמשך, אתם מסכימים ל{0} שלנו."
 #: apps/remix/app/routes/_unauthenticated+/articles.signature-disclosure.tsx
 msgid "By using the electronic signature feature, you are consenting to conduct transactions and receive disclosures electronically. You acknowledge that your electronic signature on documents is binding and that you accept the terms outlined in the documents you are signing."
 msgstr "בשימוש ביכולת החתימה האלקטרונית, אתם מסכימים לבצע עסקאות ולקבל גילויים באופן אלקטרוני. אתם מאשרים שהחתימה האלקטרונית שלכם על מסמכים מחייבת ושאתם מקבלים את התנאים המפורטים במסמכים שעליהם אתם חותמים."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Can I add more people later?"
+msgstr "אפשר להוסיף אנשים בהמשך?"
 
 #: packages/ui/components/recipient/recipient-role-select.tsx
 msgid "Can prepare"
@@ -3888,6 +3922,11 @@ msgstr "יצירת Webhook"
 msgid "Create Webhook"
 msgstr "יצירת Webhook"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Create your account"
+msgstr "פתיחת חשבון"
+
 #: apps/remix/app/routes/_recipient+/sign.$token+/complete.tsx
 msgid "Create your account and start using state-of-the-art document signing."
 msgstr "צרו חשבון והתחילו להשתמש בחתימה מתקדמת על מסמכים."
@@ -3895,6 +3934,10 @@ msgstr "צרו חשבון והתחילו להשתמש בחתימה מתקדמת 
 #: apps/remix/app/components/forms/signup.tsx
 msgid "Create your account and start using state-of-the-art document signing. Open and beautiful signing is within your grasp."
 msgstr "צרו חשבון והתחילו להשתמש בחתימה מתקדמת על מסמכים. חתימה פתוחה ומעוצבת נמצאת בהישג יד."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Create your account now and have it signed today."
+msgstr "פתחו חשבון עכשיו וקבלו את המסמך חתום עוד היום."
 
 #: apps/remix/app/components/dialogs/public-profile-template-manage-dialog.tsx
 #: apps/remix/app/components/general/document/document-page-view-information.tsx
@@ -4633,6 +4676,10 @@ msgstr "רשומות DNS"
 #: apps/remix/app/routes/_unauthenticated+/team.verify.email.$token.tsx
 msgid "Do not proceed if you are unsure about this request."
 msgstr "אל תמשיכו אם אינכם בטוחים לגבי בקשה זו."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Do the people I send to need an account?"
+msgstr "האם מי שמקבל את המסמך צריך חשבון?"
 
 #: apps/remix/app/components/general/admin-license-card.tsx
 msgid "Documenso License"
@@ -5396,6 +5443,10 @@ msgstr "לדוגמה: הוסר לבקשת השולח"
 msgid "e.g. Resend (free plans)"
 msgstr "לדוגמה: Resend (תוכניות חינמיות)"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Each document you send for signing, by email or by creating its signing links, is one send. Drafts, templates and reminders do not count."
+msgstr "כל מסמך שנשלח לחתימה, באימייל או ביצירת קישורי החתימה שלו, הוא שליחה אחת. טיוטות, תבניות ותזכורות לא נספרות."
+
 #: apps/remix/app/components/general/settings-upsell/email-domains-upsell.tsx
 msgid "Easy DNS setup with auto-generated DKIM and SPF records"
 msgstr "הגדרת DNS קלה עם רשומות DKIM ו-SPF שנוצרות אוטומטית"
@@ -5446,6 +5497,15 @@ msgstr "מסירה אלקטרונית של מסמכים"
 #: apps/remix/app/routes/_unauthenticated+/articles.signature-disclosure.tsx
 msgid "Electronic Signature Disclosure"
 msgstr "גילוי נאות בנוגע לחתימה אלקטרונית"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Electronic signatures are recognised in most countries, including under Israel's Electronic Signature Law and the EU's eIDAS rules. Some documents have special requirements, so check with your lawyer for unusual cases."
+msgstr "חתימה אלקטרונית מוכרת ברוב המדינות, כולל לפי חוק חתימה אלקטרונית בישראל ותקנות eIDAS באיחוד האירופי. לחלק מהמסמכים יש דרישות מיוחדות, לכן במקרים חריגים כדאי להתייעץ עם עורך דין."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+#: apps/remix/app/routes/_index.tsx
+msgid "Electronic signatures for teams"
+msgstr "חתימה אלקטרונית לצוותים"
 
 #: apps/remix/app/components/dialogs/admin-user-create-dialog.tsx
 #: apps/remix/app/components/dialogs/ai-field-detection-dialog.tsx
@@ -5577,6 +5637,10 @@ msgstr "חובה להזין אימייל"
 #: packages/ui/primitives/template-flow/add-template-settings.tsx
 msgid "Email Options"
 msgstr "אפשרויות אימייל"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Email or signing links"
+msgstr "אימייל או קישורי חתימה"
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.email.tsx
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.email.tsx
@@ -6115,6 +6179,10 @@ msgstr "סוג אירוע"
 msgid "Every transfer seen on the receiving wallets. Unmatched ones were not linked to an invoice."
 msgstr "כל העברה שזוהתה בארנקים המקבלים. העברות ללא התאמה לא קושרו לחשבונית."
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Every view and signature is logged, and the finished PDF is sealed with a signing certificate."
+msgstr "כל צפייה וכל חתימה נרשמות, וקובץ ה-PDF הסופי נחתם בתעודת חתימה."
+
 #: apps/remix/app/components/dialogs/folder-update-dialog.tsx
 #: packages/lib/constants/document-visibility.ts
 #: packages/ui/components/document/document-visibility-select.tsx
@@ -6132,6 +6200,10 @@ msgstr "כולם חתמו"
 #: apps/remix/app/routes/_recipient+/sign.$token+/complete.tsx
 msgid "Everyone has signed! You will receive an email copy of the signed document."
 msgstr "כולם חתמו! עותק של המסמך החתום יישלח אליכם באימייל."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Everything you need to sign and send"
+msgstr "כל מה שצריך כדי לשלוח ולחתום"
 
 #: apps/remix/app/components/general/organisation-usage-panel.tsx
 msgid "Exceeded"
@@ -6193,6 +6265,16 @@ msgstr "הארכה בתקופה אחת"
 #: packages/ui/primitives/template-flow/add-template-settings.tsx
 msgid "External ID"
 msgstr "מזהה חיצוני"
+
+#. placeholder {0}: formatUsd(prices.seat)
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Extra members {0} each per month"
+msgstr "חבר צוות נוסף {0} לחודש"
+
+#. placeholder {0}: formatUsd(prices.seat)
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Extra members {0} each per year"
+msgstr "חבר צוות נוסף {0} לשנה"
 
 #: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/admin-crypto-period-panel.tsx
@@ -6356,6 +6438,10 @@ msgstr "נכשלו: {failedCount}"
 msgid "Fair use limit exceeded"
 msgstr "חריגה ממגבלת השימוש ההוגן"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "FAQ"
+msgstr "שאלות נפוצות"
+
 #: apps/remix/app/components/forms/subscription-claim-form.tsx
 #: apps/remix/app/components/tables/admin-claims-table.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
@@ -6363,6 +6449,7 @@ msgid "Feature Flags"
 msgstr "דגלי תכונות"
 
 #: apps/remix/app/components/general/admin-license-card.tsx
+#: apps/remix/app/components/general/landing/landing-page.tsx
 msgid "Features"
 msgstr "תכונות"
 
@@ -6581,6 +6668,10 @@ msgstr "כתובת השולח"
 msgid "From name"
 msgstr "שם השולח"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "From the billing page, choose monthly or yearly and pay in USDT (TRON, Ethereum or BNB Chain) or USDC (Ethereum). Your plan activates as soon as the payment is confirmed, usually within two minutes."
+msgstr "בדף החיוב בוחרים חודשי או שנתי ומשלמים ב-USDT (TRON, Ethereum או BNB Chain) או ב-USDC (Ethereum). התוכנית מופעלת מיד כשהתשלום מאושר, בדרך כלל תוך שתי דקות."
+
 #: apps/remix/app/components/embed/embed-direct-template-client-page.tsx
 #: apps/remix/app/components/embed/embed-document-signing-page-v1.tsx
 #: apps/remix/app/components/embed/multisign/multi-sign-document-signing-view.tsx
@@ -6622,6 +6713,15 @@ msgstr "יצירת קישורים"
 #: packages/lib/constants/i18n.ts
 msgid "German"
 msgstr "גרמנית"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Get documents signed in minutes, not days."
+msgstr "מסמכים חתומים תוך דקות, לא ימים."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Get started"
+msgstr "להתחלה"
 
 #: apps/remix/app/components/general/settings-upsell/sso-portal-upsell.tsx
 msgid "Give your members a dedicated single sign-on portal. The SSO portal is available on the Enterprise plan."
@@ -6766,6 +6866,10 @@ msgstr "אם העוזר הוא החותם האחרון, הוא לא יוכל ל�
 msgid "Hebrew"
 msgstr "עברית"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Hebrew, English and 10 more languages"
+msgstr "עברית, אנגלית ועוד 10 שפות"
+
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-fields-page.tsx
 #: packages/ui/primitives/document-flow/field-item.tsx
 msgid "Height:"
@@ -6899,6 +7003,15 @@ msgstr "מארח"
 #: apps/remix/app/routes/_authenticated+/admin+/crypto.tsx
 msgid "Hours a payment amount stays reserved"
 msgstr "מספר השעות שסכום תשלום נשאר שמור"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "How do I pay?"
+msgstr "איך משלמים?"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "How it works"
+msgstr "איך זה עובד"
 
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-settings-dialog.tsx
 msgid "How long recipients have to complete this document after it is sent. Uses the team default when set to inherit."
@@ -7262,6 +7375,10 @@ msgstr "הזמינו חברי צוות לשיתוף פעולה"
 #: apps/remix/app/components/dialogs/team-member-create-dialog.tsx
 msgid "Invite them to the organisation first"
 msgstr "הזמינו אותם קודם לארגון"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Invite your colleagues, share templates and see every document the team sends."
+msgstr "הזמינו עמיתים, שתפו תבניות וראו כל מסמך שהצוות שולח."
 
 #: apps/remix/app/routes/_authenticated+/admin+/teams.$id.tsx
 msgid "Invited"
@@ -8019,6 +8136,7 @@ msgstr "עריכת הפרטים של החבילת מנוי."
 #: apps/remix/app/components/general/analytics/analytics-documents-over-time-card.tsx
 #: apps/remix/app/components/general/billing-plans.tsx
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
+#: apps/remix/app/components/general/landing/landing-page.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/crypto.tsx
 msgid "Monthly"
 msgstr "חודשי"
@@ -8260,6 +8378,10 @@ msgstr "אין פעילות ב-90 הימים האחרונים."
 #: apps/remix/app/utils/analytics.ts
 msgid "No activity in the selected range."
 msgstr "אין פעילות בטווח שנבחר."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "No card and no bank needed. Payments are confirmed on the blockchain automatically."
+msgstr "בלי כרטיס אשראי ובלי בנק. התשלומים מאושרים בבלוקצ'יין באופן אוטומטי."
 
 #: apps/remix/app/components/general/pdf-viewer/envelope-pdf-viewer.tsx
 #: apps/remix/app/components/general/pdf-viewer/pdf-viewer.tsx
@@ -8514,6 +8636,10 @@ msgstr "לא נמצא ערך."
 msgid "No worries, it happens! Enter your email and we'll email you a special link to reset your password."
 msgstr "לא נורא, זה קורה! הזינו את האימייל שלכם ונשלח לכם קישור מיוחד לאיפוס הסיסמה."
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "No. Signers open the document from the email or the link you share, sign in the browser, and receive the signed copy."
+msgstr "לא. החותמים פותחים את המסמך מהאימייל או מהקישור ששיתפתם, חותמים בדפדפן ומקבלים עותק חתום."
+
 #: apps/remix/app/components/dialogs/envelope-distribute-dialog.tsx
 #: apps/remix/app/components/embed/authoring/configure-document-advanced-settings.tsx
 #: apps/remix/app/components/forms/editor/editor-field-number-form.tsx
@@ -8690,6 +8816,14 @@ msgstr "אחת מבקשות החתימה שלכם דווחה. כדי לשמור 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "One or more of your required fields have not been saved. Please refresh the page, complete any empty required fields, and try again."
 msgstr "אחד או יותר משדות החובה שלכם לא נשמרו. רעננו את הדף, מלאו את שדות החובה הריקים ונסו שוב."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "One plan, everything included. Pay monthly or save 15% yearly."
+msgstr "תוכנית אחת, הכול כלול. תשלום חודשי, או חיסכון של 15% בתשלום שנתי."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "One simple plan with the tools law offices, agencies and sales teams use every day."
+msgstr "תוכנית אחת ופשוטה עם הכלים שמשרדי עורכי דין, סוכנויות וצוותי מכירות משתמשים בהם כל יום."
 
 #: apps/remix/app/components/forms/branding-preferences-form.tsx
 msgid "Only .jpg, .png, and .webp files are accepted"
@@ -9040,6 +9174,7 @@ msgid "Ownership transferred to {organisationMemberName}."
 msgstr "הבעלות הועברה ל-{organisationMemberName}."
 
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
+#: apps/remix/app/components/general/landing/landing-page.tsx
 #: apps/remix/app/components/general/settings-org-switcher.tsx
 msgid "Pactira plan"
 msgstr "תוכנית Pactira"
@@ -9212,6 +9347,14 @@ msgstr "שלמו במטבע יציב (stablecoin) מכל ארנק או בורס�
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
 msgid "Pay with crypto"
 msgstr "תשלום בקריפטו"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Pay with USDT on TRON, Ethereum or BNB Chain, or USDC on Ethereum."
+msgstr "תשלום ב-USDT ברשת TRON, Ethereum או BNB Chain, או ב-USDC ברשת Ethereum."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Pay with USDT or USDC"
+msgstr "תשלום ב-USDT או ב-USDC"
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.billing.pay.$invoiceId.tsx
 msgid "Payment confirmed. Thank you!"
@@ -9678,6 +9821,10 @@ msgstr "תצוגה מקדימה של המסמך לפני השליחה"
 msgid "Preview what the signed document will look like with placeholder data"
 msgstr "תצוגה מקדימה של המסמך החתום עם נתוני דוגמה"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Pricing"
+msgstr "מחירים"
+
 #: apps/remix/app/components/forms/branding-preferences-form.tsx
 msgid "Primary"
 msgstr "ראשי"
@@ -9788,6 +9935,10 @@ msgstr "הוסיפו את המותג שלכם לכל מסמך שאתם שולח�
 msgid "Qualified electronic signatures are not supported in this embed."
 msgstr "חתימות אלקטרוניות מאושרות אינן נתמכות בהטמעה זו."
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Questions and answers"
+msgstr "שאלות ותשובות"
+
 #: apps/remix/app/components/general/envelope-editor/envelope-editor.tsx
 msgid "Quick Actions"
 msgstr "פעולות מהירות"
@@ -9852,6 +10003,10 @@ msgstr "קורא את המסמך שלכם"
 #: apps/remix/app/components/general/document/document-page-view-recipients.tsx
 msgid "Ready"
 msgstr "מוכן"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Ready to send your first document?"
+msgstr "מוכנים לשלוח את המסמך הראשון?"
 
 #: apps/remix/app/components/dialogs/admin-recipient-delete-dialog.tsx
 #: apps/remix/app/routes/_internal+/[__htmltopdf]+/certificate.tsx
@@ -10680,6 +10835,10 @@ msgstr "השמירה נכשלה"
 msgid "Save Template"
 msgstr "שמירת התבנית"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Save the contracts you use every day and let clients fill and sign them from one link."
+msgstr "שמרו את החוזים שאתם משתמשים בהם כל יום, ותנו ללקוחות למלא ולחתום עליהם מקישור אחד."
+
 #: apps/remix/app/routes/_authenticated+/admin+/crypto.tsx
 msgid "Saved"
 msgstr "נשמר"
@@ -10828,6 +10987,10 @@ msgstr "פעילות אבטחה"
 #: apps/remix/app/components/general/admin-license-status-banner.tsx
 msgid "See Documentation"
 msgstr "לתיעוד"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "See pricing"
+msgstr "למחירים"
 
 #: apps/remix/app/routes/_authenticated+/admin+/documents.$id.tsx
 msgid "See the background jobs tab for the status"
@@ -11070,6 +11233,18 @@ msgstr "שלחו אימייל בדיקה דרך ערוץ שליחה זה כדי 
 #: apps/remix/app/components/dialogs/webhook-test-dialog.tsx
 msgid "Send a test webhook with sample data to verify your integration is working correctly."
 msgstr "שלחו Webhook בדיקה עם נתונים לדוגמה כדי לוודא שהאינטגרציה פועלת כראוי."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Send and get it signed"
+msgstr "שלחו וקבלו חתום"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Send by email or link. Everyone signs from their phone, and you get the sealed PDF."
+msgstr "שולחים באימייל או בקישור. כולם חותמים מהטלפון, ואתם מקבלים PDF חתום."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Send by email, or copy each signer's personal link and share it on WhatsApp or anywhere else."
+msgstr "שלחו באימייל, או העתיקו את הקישור האישי של כל חותם ושתפו אותו בוואטסאפ או בכל מקום אחר."
 
 #: apps/remix/app/components/forms/send-confirmation-email.tsx
 msgid "Send confirmation email"
@@ -11394,6 +11569,11 @@ msgstr "חתימה על השדה"
 msgid "Sign Here"
 msgstr "חתמו כאן"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Sign in"
+msgstr "התחברות"
+
 #: apps/remix/app/components/forms/signin.tsx
 #: apps/remix/app/components/forms/signin.tsx
 #: apps/remix/app/routes/_unauthenticated+/o.$orgUrl.signin.tsx
@@ -11463,6 +11643,10 @@ msgstr "הרשמה"
 #: apps/remix/app/routes/_unauthenticated+/signup.tsx
 msgid "Sign Up"
 msgstr "הרשמה"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Sign up in seconds. No email confirmation needed."
+msgstr "הרשמה תוך שניות, בלי אישור באימייל."
 
 #: apps/remix/app/components/forms/signup.tsx
 msgid "Sign Up with Google"
@@ -11627,6 +11811,10 @@ msgstr "קישורי חתימה"
 msgid "Signing links have been generated for this document."
 msgstr "נוצרו קישורי חתימה למסמך זה."
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Signing links, audit trail and certificate"
+msgstr "קישורי חתימה, יומן פעולות ותעודת חתימה"
+
 #: apps/remix/app/components/tables/admin-document-recipient-item-table.tsx
 msgid "Signing Order"
 msgstr "סדר חתימה"
@@ -11676,6 +11864,10 @@ msgstr "מחבר אתכם..."
 #: apps/remix/app/components/forms/signup.tsx
 msgid "Signup is currently disabled or not available for your email domain."
 msgstr "ההרשמה מושבתת כרגע או אינה זמינה לדומיין האימייל שלכם."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Simple pricing"
+msgstr "מחיר פשוט"
 
 #. placeholder {0}: DateTime.fromJSDate(publicProfile.badge.since).toFormat('LLL ‘yy')
 #: apps/remix/app/routes/_profile+/p.$url.tsx
@@ -12457,6 +12649,10 @@ msgstr "שימוש בתבניות"
 msgid "Templates"
 msgstr "תבניות"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Templates and public links"
+msgstr "תבניות וקישורים ציבוריים"
+
 #: apps/remix/app/components/dialogs/envelopes-bulk-delete-dialog.tsx
 msgid "Templates deleted"
 msgstr "התבניות נמחקו"
@@ -13054,6 +13250,10 @@ msgstr "ה-Webhook נוצר בהצלחה."
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.webhooks.$id._index.tsx
 msgid "The webhook you are looking for may have been removed, renamed or may have never existed."
 msgstr "ייתכן שה-Webhook שחיפשתם הוסר, שונה שמו או שמעולם לא היה קיים."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "The whole app, the emails and the signed PDF follow your language, right-to-left included."
+msgstr "המערכת כולה, האימיילים וה-PDF החתום מותאמים לשפה שלכם, כולל כתיבה מימין לשמאל."
 
 #: apps/remix/app/components/general/app-command-menu.tsx
 msgid "Theme"
@@ -14060,6 +14260,10 @@ msgstr "ללא הגבלה"
 msgid "Unlimited documents, API and more"
 msgstr "מסמכים ללא הגבלה, API ועוד"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Unlimited drafts and templates"
+msgstr "טיוטות ותבניות ללא הגבלה"
+
 #: apps/remix/app/routes/_authenticated+/settings+/security.linked-accounts.tsx
 #: apps/remix/app/routes/_authenticated+/settings+/security.linked-accounts.tsx
 msgid "Unlink"
@@ -14269,6 +14473,7 @@ msgid "Upgrade your plan to upload more documents"
 msgstr "שדרגו את התוכנית כדי להעלות מסמכים נוספים"
 
 #: apps/remix/app/components/dialogs/template-use-dialog.tsx
+#: apps/remix/app/components/general/landing/landing-page.tsx
 msgid "Upload"
 msgstr "העלאה"
 
@@ -14277,6 +14482,10 @@ msgstr "העלאה"
 msgctxt "Upload signature"
 msgid "Upload"
 msgstr "העלאה"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Upload a contract, mark where to sign, and send it by email or link. Track every step and get a sealed PDF with a full audit trail."
+msgstr "מעלים חוזה, מסמנים איפה לחתום ושולחים באימייל או בקישור. עוקבים אחרי כל שלב ומקבלים PDF חתום עם יומן פעולות מלא."
 
 #: apps/remix/app/components/dialogs/template-bulk-send-dialog.tsx
 msgid "Upload a CSV file to create multiple documents from this template. Each row represents one document with its recipient details."
@@ -14289,6 +14498,10 @@ msgstr "העלו מסמך מותאם אישית שישמש במקום מסמך �
 #: apps/remix/app/components/dialogs/template-use-dialog.tsx
 msgid "Upload a custom document to use its file name."
 msgstr "העלו מסמך מותאם אישית כדי להשתמש בשם הקובץ שלו."
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Upload a PDF, or start from one of your templates."
+msgstr "העלו קובץ PDF, או התחילו מאחת התבניות שלכם."
 
 #: apps/remix/app/components/dialogs/template-bulk-send-dialog.tsx
 msgid "Upload and Process"
@@ -15380,6 +15593,14 @@ msgstr "יש להזין Well-known URL"
 msgid "Were you trying to edit this document instead?"
 msgstr "אולי התכוונתם לערוך את המסמך הזה?"
 
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "What counts as a send?"
+msgstr "מה נחשב לשליחה?"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "What happens if I don't renew?"
+msgstr "מה קורה אם לא מחדשים?"
+
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl._index.tsx
 msgid "What you can do with teams:"
 msgstr "מה אפשר לעשות עם צוותים:"
@@ -15456,6 +15677,7 @@ msgid "Yearly"
 msgstr "שנתי"
 
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
+#: apps/remix/app/components/general/landing/landing-page.tsx
 msgid "Yearly (15% off)"
 msgstr "שנתי (15% הנחה)"
 
@@ -15467,6 +15689,10 @@ msgstr "שנתי (15% הנחה)"
 #: apps/remix/app/components/tables/admin-document-recipients-table.tsx
 msgid "Yes"
 msgstr "כן"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "Yes. Extra seats are added from the billing page at any time; you pay only for the days left in the current period."
+msgstr "כן. אפשר להוסיף מושבים מדף החיוב בכל עת, ומשלמים רק על הימים שנותרו בתקופה הנוכחית."
 
 #: apps/remix/app/components/general/document/document-page-view-information.tsx
 #: apps/remix/app/components/general/template/template-page-view-information.tsx
@@ -15860,6 +16086,10 @@ msgstr "אין צורך לחתום עליו יותר."
 #: packages/lib/utils/document-audit-logs.ts
 msgid "You failed to validate a 2FA token for the document"
 msgstr "לא הצלחתם לאמת אסימון 2FA עבור המסמך"
+
+#: apps/remix/app/components/general/landing/landing-page.tsx
+msgid "You get a reminder seven days before the period ends. If it ends unpaid, sending is paused until you pay. Your documents stay safe and documents already sent can still be signed."
+msgstr "שבעה ימים לפני סוף התקופה מופיעה תזכורת. אם התקופה מסתיימת ללא תשלום, השליחה נעצרת עד לתשלום. המסמכים שלכם נשמרים, ומסמכים שכבר נשלחו עדיין אפשר לחתום עליהם."
 
 #: apps/remix/app/routes/_unauthenticated+/organisation.invite.$token.tsx
 msgid "You have accepted an invitation from <0>{organisationName}</0> to join their organisation."
