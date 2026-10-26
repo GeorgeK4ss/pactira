@@ -99,19 +99,19 @@ export default function EnvelopeEditorHeader() {
               <>
                 {envelope.templateType === TemplateType.PRIVATE && (
                   <Badge variant="secondary" className="shrink-0">
-                    <LockIcon className="mr-2 h-4 w-4 text-blue-600 dark:text-blue-300" />
+                    <LockIcon className="me-2 h-4 w-4 text-blue-600 dark:text-blue-300" />
                     <Trans>Private Template</Trans>
                   </Badge>
                 )}
                 {envelope.templateType === TemplateType.ORGANISATION && (
                   <Badge variant="orange" className="shrink-0">
-                    <Building2Icon className="mr-2 size-4" />
+                    <Building2Icon className="me-2 size-4" />
                     <Trans>Organisation Template</Trans>
                   </Badge>
                 )}
                 {envelope.templateType === TemplateType.PUBLIC && (
                   <Badge variant="default" className="shrink-0">
-                    <Globe2Icon className="mr-2 h-4 w-4 text-green-500 dark:text-green-300" />
+                    <Globe2Icon className="me-2 h-4 w-4 text-green-500 dark:text-green-300" />
                     <Trans>Public Template</Trans>
                   </Badge>
                 )}
@@ -158,7 +158,7 @@ export default function EnvelopeEditorHeader() {
             {autosaveError && (
               <>
                 <Badge variant="destructive" className="shrink-0">
-                  <AlertTriangleIcon className="mr-2 h-4 w-4" />
+                  <AlertTriangleIcon className="me-2 h-4 w-4" />
                   <Trans>Sync failed, changes not saved</Trans>
                 </Badge>
 
@@ -168,7 +168,7 @@ export default function EnvelopeEditorHeader() {
                   }}
                 >
                   <Badge variant="destructive" className="shrink-0">
-                    <RefreshCwIcon className="mr-2 h-4 w-4" />
+                    <RefreshCwIcon className="me-2 h-4 w-4" />
                     <Trans>Reload</Trans>
                   </Badge>
                 </button>
@@ -202,7 +202,7 @@ export default function EnvelopeEditorHeader() {
                   documentRootPath={relativePath.documentRootPath}
                   trigger={
                     <Button size="sm">
-                      <SendIcon className="mr-2 h-4 w-4" />
+                      <SendIcon className="me-2 h-4 w-4" />
                       <Trans>Send Document</Trans>
                     </Button>
                   }
@@ -212,7 +212,7 @@ export default function EnvelopeEditorHeader() {
                   envelope={envelope}
                   trigger={
                     <Button size="sm">
-                      <SendIcon className="mr-2 h-4 w-4" />
+                      <SendIcon className="me-2 h-4 w-4" />
                       <Trans>Resend Document</Trans>
                     </Button>
                   }

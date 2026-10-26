@@ -431,7 +431,7 @@ export const EnvelopeEditorRecipientForm = () => {
             disabled={isSubmitting || watchedSigners.length >= remaining.recipients}
             onClick={() => onAddSigner()}
           >
-            <PlusIcon className="mr-1 -ml-1 h-5 w-5" />
+            <PlusIcon className="-ms-1 me-1 h-5 w-5" />
             <Trans>Add Signer</Trans>
           </Button>
         </div>
@@ -465,7 +465,7 @@ export const EnvelopeEditorRecipientForm = () => {
                 />
 
                 <label
-                  className="ml-2 text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  className="ms-2 text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                   htmlFor="showAdvancedRecipientSettings"
                 >
                   <Trans>Show advanced settings</Trans>
@@ -514,7 +514,7 @@ export const EnvelopeEditorRecipientForm = () => {
 
                       <Tooltip>
                         <TooltipTrigger asChild>
-                          <span className="ml-1 cursor-help text-muted-foreground">
+                          <span className="ms-1 cursor-help text-muted-foreground">
                             <HelpCircleIcon className="h-3.5 w-3.5" />
                           </span>
                         </TooltipTrigger>
@@ -558,7 +558,7 @@ export const EnvelopeEditorRecipientForm = () => {
 
                       <Tooltip>
                         <TooltipTrigger asChild>
-                          <span className="ml-1 cursor-help text-muted-foreground">
+                          <span className="ms-1 cursor-help text-muted-foreground">
                             <HelpCircleIcon className="h-3.5 w-3.5" />
                           </span>
                         </TooltipTrigger>

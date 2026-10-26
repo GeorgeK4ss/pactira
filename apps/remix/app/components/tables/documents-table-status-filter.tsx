@@ -74,7 +74,7 @@ export const DocumentsTableStatusFilter = ({
         label={<Trans>Status</Trans>}
         value={selectedStatus}
         onChange={onChange}
-        selectedLabel={selectedStatus && <DocumentStatus status={selectedStatus} className="[&>svg]:mr-1.5" />}
+        selectedLabel={selectedStatus && <DocumentStatus status={selectedStatus} className="[&>svg]:me-1.5" />}
         options={selectableStatuses.map((value) => ({
           value,
           label: <DocumentStatus status={value} />,

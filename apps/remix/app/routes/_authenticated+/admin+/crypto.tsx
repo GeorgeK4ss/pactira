@@ -288,7 +288,7 @@ export default function AdminCryptoPage() {
                       {invoice.kind} · {invoice.interval} · {invoice.id}
                     </TableCell>
                     <TableCell>{formatUsd(invoice.amountCents)}</TableCell>
-                    <TableCell className="text-right">
+                    <TableCell className="text-end">
                       <Button size="sm" variant="outline" onClick={async () => onMarkPaid(invoice.id)}>
                         <Trans>Mark paid</Trans>
                       </Button>

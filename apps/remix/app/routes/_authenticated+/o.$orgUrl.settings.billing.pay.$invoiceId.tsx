@@ -187,7 +187,7 @@ export default function PayInvoicePage({ params }: Route.ComponentProps) {
       ? invoice.interval === 'YEAR'
         ? t`Pactira plan, yearly`
         : t`Pactira plan, monthly`
-      : t`${invoice.extraSeats} extra seats`;
+      : t`Extra seats: ${invoice.extraSeats}`;
 
   return (
     <div className="max-w-2xl">

@@ -31,7 +31,7 @@ export const SettingsScopeBreadcrumb = ({ scope, scopeName, crumbs }: SettingsSc
       <Badge
         variant={scope === 'organisation' ? 'default' : scope === 'team' ? 'secondary' : 'neutral'}
         role="presentation"
-        className="ml-auto gap-1.5"
+        className="ms-auto gap-1.5"
         data-testid="settings-scope-breadcrumb-chip"
       >
         {scope === 'organisation' && (

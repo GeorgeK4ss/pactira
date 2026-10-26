@@ -169,7 +169,7 @@ export const AccessAuth2FAForm = ({ onSubmit, token, error }: AccessAuth2FAFormP
               disabled={isRequesting2FAEmail}
             >
               <MailIcon className="h-5 w-5" />
-              <div className="text-left">
+              <div className="text-start">
                 <div className="font-medium">
                   <Trans>Email verification</Trans>
                 </div>
@@ -188,7 +188,7 @@ export const AccessAuth2FAForm = ({ onSubmit, token, error }: AccessAuth2FAFormP
                 disabled={isRequesting2FAEmail}
               >
                 <KeyIcon className="h-5 w-5" />
-                <div className="text-left">
+                <div className="text-start">
                   <div className="font-medium">
                     <Trans>Authenticator app</Trans>
                   </div>

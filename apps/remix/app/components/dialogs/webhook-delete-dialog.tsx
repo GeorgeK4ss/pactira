@@ -87,7 +87,7 @@ export const WebhookDeleteDialog = ({ webhook, children }: WebhookDeleteDialogPr
     <Dialog open={open} onOpenChange={(value) => !form.formState.isSubmitting && setOpen(value)}>
       <DialogTrigger asChild>
         {children ?? (
-          <Button className="mr-4" variant="destructive">
+          <Button className="me-4" variant="destructive">
             <Trans>Delete</Trans>
           </Button>
         )}

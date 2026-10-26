@@ -127,13 +127,13 @@ export default function AdminEmailDomainDetailPage({ loaderData }: Route.Compone
           {match(emailDomain.status)
             .with(EmailDomainStatus.ACTIVE, () => (
               <Badge>
-                <CheckCircle2Icon className="mr-2 h-4 w-4 text-green-500 dark:text-green-300" />
+                <CheckCircle2Icon className="me-2 h-4 w-4 text-green-500 dark:text-green-300" />
                 <Trans>Active</Trans>
               </Badge>
             ))
             .with(EmailDomainStatus.PENDING, () => (
               <Badge variant="warning">
-                <ClockIcon className="mr-2 h-4 w-4 text-yellow-500 dark:text-yellow-200" />
+                <ClockIcon className="me-2 h-4 w-4 text-yellow-500 dark:text-yellow-200" />
                 <Trans>Pending</Trans>
               </Badge>
             ))
@@ -178,7 +178,7 @@ export default function AdminEmailDomainDetailPage({ loaderData }: Route.Compone
         <AlertDialog>
           <AlertDialogTrigger asChild>
             <Button variant="outline" loading={isReregistering}>
-              <RotateCcwIcon className="mr-2 h-4 w-4" />
+              <RotateCcwIcon className="me-2 h-4 w-4" />
               <Trans>Re-register</Trans>
             </Button>
           </AlertDialogTrigger>
@@ -226,7 +226,7 @@ export default function AdminEmailDomainDetailPage({ loaderData }: Route.Compone
               </div>
 
               <Button variant="ghost" size="sm" onClick={() => void onCopyToClipboard(record.value)}>
-                <CopyIcon className="mr-2 h-4 w-4" />
+                <CopyIcon className="me-2 h-4 w-4" />
                 <Trans>Copy Value</Trans>
               </Button>
             </div>

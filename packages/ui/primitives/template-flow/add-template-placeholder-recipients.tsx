@@ -512,7 +512,7 @@ export const AddTemplatePlaceholderRecipientsFormPartial = ({
 
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <span className="ml-1 cursor-help text-muted-foreground">
+                        <span className="ms-1 cursor-help text-muted-foreground">
                           <HelpCircle className="h-3.5 w-3.5" />
                         </span>
                       </TooltipTrigger>
@@ -570,7 +570,7 @@ export const AddTemplatePlaceholderRecipientsFormPartial = ({
                               disabled={isSubmitting || isSignerDirectRecipient(signer)}
                               className={cn('grid grid-cols-10 items-end gap-2 pb-2', {
                                 'border-b pt-2': showAdvancedSettings,
-                                'grid-cols-12 pr-3': isSigningOrderSequential,
+                                'grid-cols-12 pe-3': isSigningOrderSequential,
                               })}
                             >
                               {isSigningOrderSequential && (
@@ -790,7 +790,7 @@ export const AddTemplatePlaceholderRecipientsFormPartial = ({
                 disabled={isSubmitting}
                 onClick={() => onAddPlaceholderRecipient()}
               >
-                <Plus className="mr-2 -ml-1 h-5 w-5" />
+                <Plus className="-ms-1 me-2 h-5 w-5" />
                 <Trans>Add Placeholder Recipient</Trans>
               </Button>
 
@@ -801,7 +801,7 @@ export const AddTemplatePlaceholderRecipientsFormPartial = ({
                 disabled={isSubmitting || form.getValues('signers').some((signer) => signer.email === user?.email)}
                 onClick={() => onAddPlaceholderSelfRecipient()}
               >
-                <Plus className="mr-2 -ml-1 h-5 w-5" />
+                <Plus className="-ms-1 me-2 h-5 w-5" />
                 <Trans>Add Myself</Trans>
               </Button>
             </div>
@@ -815,7 +815,7 @@ export const AddTemplatePlaceholderRecipientsFormPartial = ({
                   onCheckedChange={(value) => setShowAdvancedSettings(Boolean(value))}
                 />
 
-                <label className="ml-2 text-muted-foreground text-sm" htmlFor="showAdvancedRecipientSettings">
+                <label className="ms-2 text-muted-foreground text-sm" htmlFor="showAdvancedRecipientSettings">
                   <Trans>Show advanced settings</Trans>
                 </label>
               </div>

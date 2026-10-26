@@ -139,7 +139,7 @@ export default function TeamsSettingsPage() {
               </AlertTitle>
 
               <AlertDescription>
-                <ul className="list-disc pl-5">
+                <ul className="list-disc ps-5">
                   {cssWarnings.map((warning, index) => (
                     <li key={index}>
                       {warning.detail}
@@ -165,7 +165,7 @@ export default function TeamsSettingsPage() {
               <Trans>Branding Preferences</Trans>
             </AlertTitle>
 
-            <AlertDescription className="mr-2">
+            <AlertDescription className="me-2">
               <Trans>Currently branding can only be configured for Teams and above plans.</Trans>
             </AlertDescription>
           </div>

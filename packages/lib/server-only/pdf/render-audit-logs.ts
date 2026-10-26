@@ -20,7 +20,7 @@ import { RECIPIENT_ROLES_DESCRIPTION } from '../../constants/recipient-roles';
 import type { TDocumentAuditLog } from '../../types/document-audit-logs';
 import { DOCUMENT_AUDIT_LOG_TYPE } from '../../types/document-audit-logs';
 import { formatDocumentAuditLogAction } from '../../utils/document-audit-logs';
-import { ensureFontLibrary } from './helpers';
+import { applyTextDirection, ensureFontLibrary, PDF_TEXT_FONT_FAMILY } from './helpers';
 
 export type AuditLogRecipient = {
   id: number;
@@ -83,7 +83,7 @@ const renderOverviewCardLabels = (options: RenderOverviewCardLabelAndTextOptions
     y: 0,
     text: options.label,
     fontStyle: fontMedium,
-    fontFamily: 'Inter',
+    fontFamily: PDF_TEXT_FONT_FAMILY,
     fill: textForeground,
     fontSize: textSm,
   });
@@ -95,7 +95,7 @@ const renderOverviewCardLabels = (options: RenderOverviewCardLabelAndTextOptions
       x: 0,
       y: label.height() + labelYSpacing,
       width: width - label.width(),
-      fontFamily: 'Inter',
+      fontFamily: PDF_TEXT_FONT_FAMILY,
       text,
       fill: textForeground,
       wrap: 'char',
@@ -109,7 +109,7 @@ const renderOverviewCardLabels = (options: RenderOverviewCardLabelAndTextOptions
         x: 0,
         y: group.getClientRect().height + 4,
         width: width - label.width(),
-        fontFamily: 'Inter',
+        fontFamily: PDF_TEXT_FONT_FAMILY,
         text: '• ' + textValue,
         fill: textForeground,
         wrap: 'char',
@@ -143,7 +143,7 @@ const renderVerticalLabelAndText = (options: RenderVerticalLabelAndTextOptions) 
 
   const konvaLabel = new Konva.Text({
     align: align ?? 'left',
-    fontFamily: 'Inter',
+    fontFamily: PDF_TEXT_FONT_FAMILY,
     width,
     text: label,
     fontSize: textXs,
@@ -331,7 +331,7 @@ const renderRow = (options: RenderRowOptions) => {
     y: 0,
     width: columnWidth - indicatorWidth - indicatorPaddingRight,
     text: auditLog.type.replace(/_/g, ' '),
-    fontFamily: 'Inter',
+    fontFamily: PDF_TEXT_FONT_FAMILY,
     fontSize: textSm,
     fontStyle: fontMedium,
     fill: textMutedForeground,
@@ -342,7 +342,7 @@ const renderRow = (options: RenderRowOptions) => {
     y: auditLogTypeText.height() + 4,
     width: columnWidth - indicatorWidth - indicatorPaddingRight,
     text: formatDocumentAuditLogAction(i18n, auditLog).description,
-    fontFamily: 'Inter',
+    fontFamily: PDF_TEXT_FONT_FAMILY,
     fontSize: textSm,
     fill: textForeground,
   });
@@ -351,7 +351,7 @@ const renderRow = (options: RenderRowOptions) => {
     x: columnWidth + columnSpacing,
     width: columnWidth,
     text: DateTime.fromJSDate(auditLog.createdAt).setLocale(APP_I18N_OPTIONS.defaultLocale).toLocaleString(dateFormat),
-    fontFamily: 'Inter',
+    fontFamily: PDF_TEXT_FONT_FAMILY,
     align: 'right',
     fontSize: textSm,
     fill: textMutedForeground,
@@ -527,7 +527,7 @@ const renderPages = (options: RenderPagesOptions) => {
       verticalAlign: 'middle',
       text: i18n._(msg`Audit Log`),
       fill: textForeground,
-      fontFamily: 'Inter',
+      fontFamily: PDF_TEXT_FONT_FAMILY,
       fontSize: titleFontSize,
       fontStyle: '700',
     });
@@ -622,7 +622,7 @@ export async function renderAuditLogs({
       x: margin,
       y: pageHeight - textXs - 10,
       text: `${i18n._(msg`Envelope ID`)}: ${envelope.id}`,
-      fontFamily: 'Inter',
+      fontFamily: PDF_TEXT_FONT_FAMILY,
       fontSize: textXs,
       fill: textMutedForegroundLight,
     });
@@ -645,6 +645,7 @@ export async function renderAuditLogs({
       }
     }
 
+    applyTextDirection(page, i18n.locale, pageWidth);
     stage.add(page);
 
     // Export the page and save it.
@@ -667,13 +668,14 @@ export async function renderAuditLogs({
       x: margin,
       y: pageHeight - textXs - 10,
       text: `${i18n._(msg`Envelope ID`)}: ${envelope.id}`,
-      fontFamily: 'Inter',
+      fontFamily: PDF_TEXT_FONT_FAMILY,
       fontSize: textXs,
       fill: textMutedForegroundLight,
     });
     page.add(overflowFooterText);
 
     page.add(brandingGroup);
+    applyTextDirection(page, i18n.locale, pageWidth);
     stage.add(page);
 
     // eslint-disable-next-line @typescript-eslint/consistent-type-assertions

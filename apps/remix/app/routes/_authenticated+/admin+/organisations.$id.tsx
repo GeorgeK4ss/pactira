@@ -293,7 +293,7 @@ export default function OrganisationGroupSettingsPage({ params, loaderData }: Ro
         <Accordion type="single" collapsible>
           <AccordionItem value="global-settings" className="border-b-0">
             <AccordionTrigger className="py-0">
-              <div className="text-left">
+              <div className="text-start">
                 <p className="font-semibold text-base">
                   <Trans>Global Settings</Trans>
                 </p>
@@ -332,7 +332,7 @@ export default function OrganisationGroupSettingsPage({ params, loaderData }: Ro
             <Trans>Subscription</Trans>
           </AlertTitle>
 
-          <AlertDescription className="mr-2">
+          <AlertDescription className="me-2">
             {organisation.subscription ? (
               <span className="flex items-center gap-2">
                 {organisation.subscription.status === SubscriptionStatus.ACTIVE && (
@@ -369,7 +369,7 @@ export default function OrganisationGroupSettingsPage({ params, loaderData }: Ro
                 to={`https://dashboard.stripe.com/customers/${organisation.customerId}?create=subscription&subscription_default_customer=${organisation.customerId}`}
               >
                 <Trans>Create subscription</Trans>
-                <ExternalLinkIcon className="ml-2 h-4 w-4" />
+                <ExternalLinkIcon className="ms-2 h-4 w-4" />
               </Link>
             </Button>
           </div>
@@ -392,7 +392,7 @@ export default function OrganisationGroupSettingsPage({ params, loaderData }: Ro
                 to={`https://dashboard.stripe.com/subscriptions/${organisation.subscription.planId}`}
               >
                 <Trans>Manage subscription</Trans>
-                <ExternalLinkIcon className="ml-2 h-4 w-4" />
+                <ExternalLinkIcon className="ms-2 h-4 w-4" />
               </Link>
             </Button>
           </div>
@@ -442,7 +442,7 @@ export default function OrganisationGroupSettingsPage({ params, loaderData }: Ro
             <Trans>Delete organisation</Trans>
           </AlertTitle>
 
-          <AlertDescription className="mr-2">
+          <AlertDescription className="me-2">
             <Trans>
               Permanently delete this organisation. Documents will be orphaned (not deleted) so they remain accessible
               via the deleted-account service account.
@@ -867,7 +867,7 @@ const OrganisationAdminForm = ({ organisation, licenseFlags }: OrganisationAdmin
                           />
 
                           <label
-                            className="ml-2 flex flex-row items-center text-muted-foreground text-sm"
+                            className="ms-2 flex flex-row items-center text-muted-foreground text-sm"
                             htmlFor={`flag-${key}`}
                           >
                             {label}
@@ -945,7 +945,7 @@ const OrganisationAdminForm = ({ organisation, licenseFlags }: OrganisationAdmin
                   <Checkbox id="notify-organisation" checked={field.value} onCheckedChange={field.onChange} />
                 </FormControl>
 
-                <label className="ml-2 text-muted-foreground text-sm" htmlFor="notify-organisation">
+                <label className="ms-2 text-muted-foreground text-sm" htmlFor="notify-organisation">
                   <Trans>Notify the organisation about limit changes</Trans>
                 </label>
               </div>

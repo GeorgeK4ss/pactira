@@ -451,7 +451,7 @@ export const AppCommandMenu = ({ open, onOpenChange }: AppCommandMenuProps) => {
               value={search}
               onValueChange={setSearch}
               placeholder={_(placeholder)}
-              className="h-14 pr-14 text-[15px]"
+              className="h-14 pe-14 text-[15px]"
             />
 
             <button
@@ -594,14 +594,10 @@ export const AppCommandMenu = ({ open, onOpenChange }: AppCommandMenuProps) => {
               </span>
             </div>
 
-            <span className="ml-auto text-muted-foreground text-xs">
+            <span className="ms-auto text-muted-foreground text-xs">
               {hasValidSearch ? (
                 isVisibleCountCapped ? (
-                  <Plural
-                    value={totalVisibleCount}
-                    one="≥# result"
-                    other="≥# results"
-                  />
+                  <Plural value={totalVisibleCount} one="≥# result" other="≥# results" />
                 ) : (
                   <Plural value={totalVisibleCount} one="# result" other="# results" />
                 )

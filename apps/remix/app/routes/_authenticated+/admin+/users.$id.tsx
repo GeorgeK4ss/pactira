@@ -210,7 +210,7 @@ const AdminUserPage = ({ user }: { user: TGetUserResponse }) => {
       <Accordion type="single" collapsible>
         <AccordionItem value="team-memberships" className="border-b-0">
           <AccordionTrigger className="py-0">
-            <div className="text-left">
+            <div className="text-start">
               <h3 className="font-semibold text-lg leading-none tracking-tight">
                 <Trans>Team Memberships</Trans>
               </h3>

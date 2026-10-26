@@ -62,6 +62,16 @@ type ExtractLocaleDataOptions = {
 export const extractLocaleData = ({ headers }: ExtractLocaleDataOptions): I18nLocaleData => {
   const headerLocales = (headers.get('accept-language') ?? '').split(',');
 
+  // A configured default language wins over the browser's; people can still switch in the app.
+  const defaultLanguage = env('NEXT_PUBLIC_DEFAULT_LANGUAGE');
+
+  if (defaultLanguage && APP_I18N_OPTIONS.supportedLangs.includes(defaultLanguage as SupportedLanguageCodes)) {
+    return {
+      lang: defaultLanguage as SupportedLanguageCodes,
+      locales: headerLocales,
+    };
+  }
+
   const unknownLanguages = headerLocales
     .map((locale) => parseLanguageFromLocale(locale))
     .filter((value): value is SupportedLanguageCodes => value !== null);

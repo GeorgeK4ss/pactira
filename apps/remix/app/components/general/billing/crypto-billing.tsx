@@ -172,7 +172,7 @@ export const CryptoBilling = () => {
               {extraSeats > 0 && (
                 <p className="text-sm">
                   <Trans>
-                    With your {extraSeats} extra seats:{' '}
+                    Total with extra seats ({extraSeats}):{' '}
                     <span className="font-semibold">{formatUsd(renewalAmountCents(interval, extraSeats))}</span>
                   </Trans>
                 </p>
@@ -207,7 +207,7 @@ export const CryptoBilling = () => {
           </CardTitle>
           <CardDescription className="mt-1">
             <Trans>
-              {seats.members} members and {seats.invites} pending invitations, out of {seats.cap} seats.
+              Members: {seats.members} · Pending invitations: {seats.invites} · Seats in plan: {seats.cap}
             </Trans>
           </CardDescription>
         </CardHeader>
@@ -290,7 +290,7 @@ export const CryptoBilling = () => {
                         <Trans>Pactira plan, monthly</Trans>
                       )
                     ) : (
-                      <Trans>{invoice.extraSeats} extra seats</Trans>
+                      <Trans>Extra seats: {invoice.extraSeats}</Trans>
                     )}
                   </TableCell>
                   <TableCell className="text-muted-foreground">
@@ -316,7 +316,7 @@ export const CryptoBilling = () => {
                         </Badge>
                       ))}
                   </TableCell>
-                  <TableCell className="text-right">
+                  <TableCell className="text-end">
                     {invoice.status === 'OPEN' && canManageBilling && (
                       <Button asChild size="sm" variant="outline">
                         <Link to={payPath(invoice.id)}>

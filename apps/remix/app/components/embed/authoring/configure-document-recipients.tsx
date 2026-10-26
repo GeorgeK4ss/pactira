@@ -196,7 +196,7 @@ export const ConfigureDocumentRecipients = ({ control, isSubmitting }: Configure
               </FormLabel>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <span className="ml-1 cursor-help text-muted-foreground">
+                  <span className="ms-1 cursor-help text-muted-foreground">
                     <HelpCircle className="h-3.5 w-3.5" />
                   </span>
                 </TooltipTrigger>
@@ -379,7 +379,7 @@ export const ConfigureDocumentRecipients = ({ control, isSubmitting }: Configure
 
       <div className="mt-4 flex justify-end">
         <Button type="button" variant="outline" className="w-auto" disabled={isSubmitting} onClick={onAddSigner}>
-          <Plus className="mr-2 -ml-1 h-5 w-5" />
+          <Plus className="-ms-1 me-2 h-5 w-5" />
           <Trans>Add Signer</Trans>
         </Button>
       </div>

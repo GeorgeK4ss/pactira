@@ -147,7 +147,7 @@ export const SettingsPublicProfileTemplatesTable = () => {
                 </DropdownMenuLabel>
 
                 <DropdownMenuItem onClick={() => void onCopyClick(template.directLink.token)}>
-                  <LinkIcon className="mr-2 h-4 w-4" />
+                  <LinkIcon className="me-2 h-4 w-4" />
                   <Trans>Copy sharable link</Trans>
                 </DropdownMenuItem>
 
@@ -159,7 +159,7 @@ export const SettingsPublicProfileTemplatesTable = () => {
                     });
                   }}
                 >
-                  <EditIcon className="mr-2 h-4 w-4" />
+                  <EditIcon className="me-2 h-4 w-4" />
                   <Trans>Update</Trans>
                 </DropdownMenuItem>
 
@@ -171,7 +171,7 @@ export const SettingsPublicProfileTemplatesTable = () => {
                     })
                   }
                 >
-                  <Trash2Icon className="mr-2 h-4 w-4" />
+                  <Trash2Icon className="me-2 h-4 w-4" />
                   <Trans>Remove</Trans>
                 </DropdownMenuItem>
               </DropdownMenuContent>

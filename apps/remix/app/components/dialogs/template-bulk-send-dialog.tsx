@@ -136,7 +136,7 @@ export const TemplateBulkSendDialog = ({ templateId, recipients, trigger, onSucc
       <DialogTrigger asChild>
         {trigger ?? (
           <Button variant="outline" className="shrink-0" size="sm">
-            <Upload className="mr-2 h-4 w-4" />
+            <Upload className="me-2 h-4 w-4" />
             <Trans>Bulk Send via CSV</Trans>
           </Button>
         )}
@@ -215,7 +215,7 @@ export const TemplateBulkSendDialog = ({ templateId, recipients, trigger, onSucc
                             }}
                             disabled={form.formState.isSubmitting}
                           />
-                          <Upload className="mr-2 h-4 w-4" />
+                          <Upload className="me-2 h-4 w-4" />
                           <Trans>Upload CSV</Trans>
                         </label>
                       </Button>
@@ -334,7 +334,7 @@ export const TemplateBulkSendDialog = ({ templateId, recipients, trigger, onSucc
 
                       <label
                         htmlFor="send-immediately"
-                        className="ml-2 flex items-center text-muted-foreground text-sm"
+                        className="ms-2 flex items-center text-muted-foreground text-sm"
                       >
                         <Trans>Send documents to recipients immediately</Trans>
                       </label>

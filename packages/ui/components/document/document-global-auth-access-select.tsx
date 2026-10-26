@@ -87,7 +87,7 @@ export const DocumentGlobalAuthAccessTooltip = () => (
         <Trans>Multiple access methods can be selected.</Trans>
       </p>
 
-      <ul className="ml-3.5 list-outside list-disc space-y-0.5 py-2">
+      <ul className="ms-3.5 list-outside list-disc space-y-0.5 py-2">
         <li>
           <Trans>
             <strong>Require account</strong> - The recipient must be signed in to view the document

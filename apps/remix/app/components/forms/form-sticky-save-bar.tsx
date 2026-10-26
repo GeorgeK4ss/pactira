@@ -124,7 +124,7 @@ export const FormStickySaveBar = ({ isDirty, isSubmitting, onReset, resetToDefau
           )}
         </AnimatePresence>
 
-        <div className="ml-auto flex flex-shrink-0 items-center gap-x-2">
+        <div className="ms-auto flex flex-shrink-0 items-center gap-x-2">
           {!isFloating && resetToDefaults}
 
           {isDirty && (

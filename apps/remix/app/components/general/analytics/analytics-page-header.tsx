@@ -39,7 +39,7 @@ export const AnalyticsPageHeader = ({
   return (
     <div className={cn('flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between', className)}>
       <div className="flex flex-row items-center">
-        <Avatar className="mr-3 h-12 w-12 border-2 border-white border-solid dark:border-border">
+        <Avatar className="me-3 h-12 w-12 border-2 border-white border-solid dark:border-border">
           {avatarImageId && <AvatarImage src={formatAvatarUrl(avatarImageId)} />}
           <AvatarFallback className="text-muted-foreground text-xs">{name.slice(0, 1)}</AvatarFallback>
         </Avatar>

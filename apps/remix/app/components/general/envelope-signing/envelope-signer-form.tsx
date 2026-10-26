@@ -65,7 +65,7 @@ export default function EnvelopeSignerForm() {
                         {r.name}
 
                         {r.id === recipient.id && (
-                          <span className="ml-2 text-muted-foreground">
+                          <span className="ms-2 text-muted-foreground">
                             <Trans>(You)</Trans>
                           </span>
                         )}

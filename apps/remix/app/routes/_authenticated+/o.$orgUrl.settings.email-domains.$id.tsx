@@ -74,7 +74,7 @@ export default function OrganisationEmailDomainSettingsPage({ params }: Route.Co
                 organisationEmail={row.original}
                 trigger={
                   <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
-                    <EditIcon className="mr-2 h-4 w-4" />
+                    <EditIcon className="me-2 h-4 w-4" />
                     <Trans>Update</Trans>
                   </DropdownMenuItem>
                 }
@@ -85,7 +85,7 @@ export default function OrganisationEmailDomainSettingsPage({ params }: Route.Co
                 email={row.original.email}
                 trigger={
                   <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
-                    <Trash2Icon className="mr-2 h-4 w-4" />
+                    <Trash2Icon className="me-2 h-4 w-4" />
                     <Trans>Remove</Trans>
                   </DropdownMenuItem>
                 }
@@ -166,7 +166,7 @@ export default function OrganisationEmailDomainSettingsPage({ params }: Route.Co
             <Trans>DNS Records</Trans>
           </AlertTitle>
 
-          <AlertDescription className="mr-2">
+          <AlertDescription className="me-2">
             <Trans>View the DNS records for this email domain</Trans>
           </AlertDescription>
         </div>
@@ -187,7 +187,7 @@ export default function OrganisationEmailDomainSettingsPage({ params }: Route.Co
             <Trans>Delete email domain</Trans>
           </AlertTitle>
 
-          <AlertDescription className="mr-2">
+          <AlertDescription className="me-2">
             <Trans>This will remove all emails associated with this email domain</Trans>
           </AlertDescription>
         </div>

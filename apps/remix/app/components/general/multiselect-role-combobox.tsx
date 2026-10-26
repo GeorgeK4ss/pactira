@@ -41,7 +41,7 @@ const MultiSelectRoleCombobox = ({ listValues, onChange }: ComboboxProps) => {
       <PopoverTrigger asChild>
         <Button variant="outline" role="combobox" aria-expanded={open} className="w-[200px] justify-between">
           {selectedValues.length > 0 ? selectedValues.join(', ') : 'Select values...'}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <ChevronsUpDown className="ms-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
@@ -53,7 +53,7 @@ const MultiSelectRoleCombobox = ({ listValues, onChange }: ComboboxProps) => {
           <CommandGroup>
             {allRoles.map((value: string, i: number) => (
               <CommandItem key={i} onSelect={() => handleSelect(value)}>
-                <Check className={cn('mr-2 h-4 w-4', selectedValues.includes(value) ? 'opacity-100' : 'opacity-0')} />
+                <Check className={cn('me-2 h-4 w-4', selectedValues.includes(value) ? 'opacity-100' : 'opacity-0')} />
                 {value}
               </CommandItem>
             ))}

@@ -121,11 +121,11 @@ export const OrganisationBillingInvoicesTable = ({
         rows: 3,
         component: (
           <>
-            <TableCell className="w-1/3 py-4 pr-4">
+            <TableCell className="w-1/3 py-4 pe-4">
               <div className="flex w-full flex-row items-center">
                 <Skeleton className="h-7 w-7 flex-shrink-0 rounded" />
 
-                <div className="ml-2 flex flex-grow flex-col">
+                <div className="ms-2 flex flex-grow flex-col">
                   <Skeleton className="h-4 w-1/2 max-w-[8rem]" />
                   <Skeleton className="mt-1 h-4 w-2/3 max-w-[12rem]" />
                 </div>

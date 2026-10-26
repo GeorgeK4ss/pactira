@@ -143,7 +143,7 @@ export const TokenCreateDialog = ({ trigger, ...props }: TokenCreateDialogProps)
 
             <div className="relative">
               <Input
-                className="pr-12 font-mono text-sm"
+                className="pe-12 font-mono text-sm"
                 aria-label={_(msg`Your new API token`)}
                 name="createdToken"
                 readOnly

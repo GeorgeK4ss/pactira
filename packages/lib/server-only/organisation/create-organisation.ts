@@ -8,6 +8,7 @@ import { ORGANISATION_INTERNAL_GROUPS } from '../../constants/organisations';
 import { AppError, AppErrorCode } from '../../errors/app-error';
 import { INTERNAL_CLAIM_ID } from '../../types/subscription';
 import { generateDatabaseId, prefixedId } from '../../universal/id';
+import { env } from '../../utils/env';
 import { generateDefaultOrganisationSettings } from '../../utils/organisations';
 import { createTeam } from '../team/create-team';
 
@@ -144,6 +145,9 @@ type CreatePersonalOrganisationOptions = {
   type?: OrganisationType;
 };
 
+// Stored names, not interface text: give new accounts names in the site's default language.
+const isHebrewDefault = () => env('NEXT_PUBLIC_DEFAULT_LANGUAGE') === 'he';
+
 export const createPersonalOrganisation = async ({
   userId,
   orgUrl,
@@ -154,7 +158,7 @@ export const createPersonalOrganisation = async ({
   const freeSubscriptionClaim = await getSubscriptionClaim(INTERNAL_CLAIM_ID.FREE);
 
   const organisation = await createOrganisation({
-    name: 'Personal Organisation',
+    name: isHebrewDefault() ? 'ארגון אישי' : 'Personal Organisation',
     userId,
     url: orgUrl,
     type,
@@ -172,7 +176,7 @@ export const createPersonalOrganisation = async ({
   if (organisation) {
     await createTeam({
       userId,
-      teamName: 'Personal Team',
+      teamName: isHebrewDefault() ? 'צוות אישי' : 'Personal Team',
       teamUrl: prefixedId('personal'),
       organisationId: organisation.id,
       inheritMembers,

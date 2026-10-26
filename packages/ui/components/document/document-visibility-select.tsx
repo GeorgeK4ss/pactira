@@ -65,7 +65,7 @@ export const DocumentVisibilityTooltip = () => {
           <Trans>The visibility of the document to the recipient.</Trans>
         </p>
 
-        <ul className="ml-3.5 list-outside list-disc space-y-0.5 py-2">
+        <ul className="ms-3.5 list-outside list-disc space-y-0.5 py-2">
           <li>
             <Trans>
               <strong>Everyone</strong> - Everyone can access and view the document

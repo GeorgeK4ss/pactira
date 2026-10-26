@@ -36,7 +36,7 @@ export default function OrganisationSettingsGeneral() {
               <Trans>Delete organisation</Trans>
             </AlertTitle>
 
-            <AlertDescription className="mr-2">
+            <AlertDescription className="me-2">
               <Trans>This organisation, and any associated data will be permanently deleted.</Trans>
             </AlertDescription>
           </div>

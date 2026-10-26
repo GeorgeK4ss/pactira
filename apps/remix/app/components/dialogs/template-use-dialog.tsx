@@ -294,7 +294,7 @@ export function TemplateUseDialog({
       <DialogTrigger asChild>
         {trigger || (
           <Button variant="outline" className="bg-background">
-            <Plus className="mr-2 -ml-1 h-4 w-4" />
+            <Plus className="-ms-1 me-2 h-4 w-4" />
             <Trans>Use Template</Trans>
           </Button>
         )}
@@ -404,7 +404,7 @@ export function TemplateUseDialog({
 
                             {documentDistributionMethod === DocumentDistributionMethod.EMAIL && (
                               <label
-                                className="ml-2 flex items-center text-muted-foreground text-sm"
+                                className="ms-2 flex items-center text-muted-foreground text-sm"
                                 htmlFor="distributeDocument"
                               >
                                 <Trans>Send document</Trans>
@@ -430,7 +430,7 @@ export function TemplateUseDialog({
 
                             {documentDistributionMethod === DocumentDistributionMethod.NONE && (
                               <label
-                                className="ml-2 flex items-center text-muted-foreground text-sm"
+                                className="ms-2 flex items-center text-muted-foreground text-sm"
                                 htmlFor="distributeDocument"
                               >
                                 <Trans>Create as pending</Trans>
@@ -492,7 +492,7 @@ export function TemplateUseDialog({
                           }}
                         />
                         <label
-                          className="ml-2 flex items-center text-muted-foreground text-sm"
+                          className="ms-2 flex items-center text-muted-foreground text-sm"
                           htmlFor="useCustomDocument"
                         >
                           <Trans>Upload custom document</Trans>
@@ -577,7 +577,7 @@ export function TemplateUseDialog({
                                             }
                                           }}
                                         >
-                                          <X className="mr-2 h-4 w-4" />
+                                          <X className="me-2 h-4 w-4" />
                                           <Trans>Remove</Trans>
                                         </Button>
                                       </div>
@@ -597,7 +597,7 @@ export function TemplateUseDialog({
                                           }
                                         }}
                                       >
-                                        <UploadCloudIcon className="mr-2 h-4 w-4" />
+                                        <UploadCloudIcon className="me-2 h-4 w-4" />
                                         <Trans>Upload</Trans>
                                       </Button>
                                     )}
@@ -745,7 +745,7 @@ export function TemplateUseDialog({
                     control={form.control}
                     name="customDocumentName"
                     render={({ field }) => (
-                      <FormItem className="ml-6">
+                      <FormItem className="ms-6">
                         <FormControl>
                           <Input
                             {...field}

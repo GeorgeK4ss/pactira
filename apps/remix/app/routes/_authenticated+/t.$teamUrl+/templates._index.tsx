@@ -112,7 +112,7 @@ export default function TemplatesPage() {
 
         <div className="mt-8">
           <div className="flex flex-row items-center">
-            <Avatar className="mr-3 h-12 w-12 border-2 border-white border-solid dark:border-border">
+            <Avatar className="me-3 h-12 w-12 border-2 border-white border-solid dark:border-border">
               {team.avatarImageId && <AvatarImage src={formatAvatarUrl(team.avatarImageId)} />}
               <AvatarFallback className="text-muted-foreground text-xs">{team.name.slice(0, 1)}</AvatarFallback>
             </Avatar>
@@ -134,7 +134,7 @@ export default function TemplatesPage() {
             {hasActiveFilters && (
               <Button variant="ghost" className="px-2 text-muted-foreground lg:px-3" onClick={onResetFilters}>
                 <Trans>Reset</Trans>
-                <XIcon className="ml-1 h-4 w-4" />
+                <XIcon className="ms-1 h-4 w-4" />
               </Button>
             )}
           </div>

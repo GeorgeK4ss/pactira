@@ -69,7 +69,7 @@ export const OrganisationEmailDomainRecordContent = ({ records }: { records: Dom
                 </Label>
 
                 <div className="relative">
-                  <Input className="pr-12" disabled value={record.type} />
+                  <Input className="pe-12" disabled value={record.type} />
                   <div className="absolute top-0 right-2 bottom-0 flex items-center justify-center">
                     <CopyTextButton
                       value={record.type}
@@ -85,7 +85,7 @@ export const OrganisationEmailDomainRecordContent = ({ records }: { records: Dom
                 </Label>
 
                 <div className="relative">
-                  <Input className="pr-12" disabled value={record.name} />
+                  <Input className="pe-12" disabled value={record.name} />
                   <div className="absolute top-0 right-2 bottom-0 flex items-center justify-center">
                     <CopyTextButton
                       value={record.name}
@@ -101,7 +101,7 @@ export const OrganisationEmailDomainRecordContent = ({ records }: { records: Dom
                 </Label>
 
                 <div className="relative">
-                  <Input className="pr-12" disabled value={record.value} />
+                  <Input className="pe-12" disabled value={record.value} />
                   <div className="absolute top-0 right-2 bottom-0 flex items-center justify-center">
                     <CopyTextButton
                       value={record.value}

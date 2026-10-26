@@ -326,7 +326,7 @@ export function BrandingPreferencesForm({
                           className={cn(
                             'h-auto p-2',
                             'file:text-primary hover:file:bg-primary/90',
-                            'file:mr-4 file:cursor-pointer file:rounded-md file:border-0',
+                            'file:me-4 file:cursor-pointer file:rounded-md file:border-0',
                             'file:p-2 file:py-2 file:font-medium',
                             'file:bg-primary file:text-primary-foreground',
                             !isBrandingEnabled && 'cursor-not-allowed',
@@ -625,7 +625,7 @@ export function BrandingPreferencesForm({
 
               <Accordion type="single" collapsible>
                 <AccordionItem value="custom-css" className="border-none">
-                  <AccordionTrigger className="rounded border px-3 py-2 text-left text-foreground hover:bg-muted/40 hover:no-underline">
+                  <AccordionTrigger className="rounded border px-3 py-2 text-start text-foreground hover:bg-muted/40 hover:no-underline">
                     <Trans>Advanced — Custom CSS</Trans>
                   </AccordionTrigger>
 

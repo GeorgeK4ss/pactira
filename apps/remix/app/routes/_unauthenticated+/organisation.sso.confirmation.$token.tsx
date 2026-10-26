@@ -274,7 +274,7 @@ export default function OrganisationSsoConfirmationTokenPage({ loaderData }: Rou
             />
 
             <label
-              className="ml-2 flex flex-row items-center text-muted-foreground text-sm"
+              className="ms-2 flex flex-row items-center text-muted-foreground text-sm"
               htmlFor={`accept-conditions`}
             >
               <Trans>I agree to link my account with this organization</Trans>

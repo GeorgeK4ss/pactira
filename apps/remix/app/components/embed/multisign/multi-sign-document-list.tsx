@@ -132,8 +132,8 @@ export function MultiSignDocumentList({ envelopes, onDocumentSelect }: MultiSign
               ))
               .otherwise(() => null)}
 
-            <Button className="-mr-2" variant="outline" size="sm" onClick={() => handleView(envelope.document)}>
-              <EyeIcon className="mr-1 h-4 w-4" />
+            <Button className="-me-2" variant="outline" size="sm" onClick={() => handleView(envelope.document)}>
+              <EyeIcon className="me-1 h-4 w-4" />
               <Trans>View</Trans>
             </Button>
           </div>
@@ -145,7 +145,7 @@ export function MultiSignDocumentList({ envelopes, onDocumentSelect }: MultiSign
         <div className="mt-6">
           <Button onClick={handleNextDocument} className="w-full" size="lg">
             <Trans>View next document</Trans>
-            <ArrowRight className="ml-2 h-4 w-4" />
+            <ArrowRight className="ms-2 h-4 w-4" />
           </Button>
         </div>
       )}

@@ -66,7 +66,7 @@ export const AdminUserDisableDialog = ({ className, userToDisable }: AdminUserDi
       <Alert className="flex flex-col items-center justify-between gap-4 p-6 md:flex-row" variant="neutral">
         <div>
           <AlertTitle>Disable Account</AlertTitle>
-          <AlertDescription className="mr-2">
+          <AlertDescription className="me-2">
             <Trans>
               Disabling the user results in the user not being able to use the account. It also disables all the related
               contents such as subscription, webhooks, teams, and API keys.

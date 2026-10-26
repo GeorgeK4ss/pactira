@@ -33,7 +33,7 @@ export const DocumentSigningAttachmentsPopover = ({
             <PaperclipIcon className="h-4 w-4" />
             <span>
               <Trans>Attachments</Trans>{' '}
-              {attachments && attachments.data.length > 0 && <span className="ml-1">({attachments.data.length})</span>}
+              {attachments && attachments.data.length > 0 && <span className="ms-1">({attachments.data.length})</span>}
             </span>
           </Button>
         )}

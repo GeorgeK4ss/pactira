@@ -11,12 +11,12 @@ const PasswordInput = React.forwardRef<HTMLInputElement, Omit<InputProps, 'type'
 
   return (
     <div className="relative">
-      <Input type={showPassword ? 'text' : 'password'} className={cn('pr-10', className)} ref={ref} {...props} />
+      <Input type={showPassword ? 'text' : 'password'} className={cn('pe-10', className)} ref={ref} {...props} />
 
       <Button
         variant="link"
         type="button"
-        className="absolute top-0 right-0 flex h-full items-center justify-center pr-3"
+        className="absolute end-0 top-0 flex h-full items-center justify-center pe-3"
         aria-label={showPassword ? 'Mask password' : 'Reveal password'}
         onClick={() => setShowPassword((show) => !show)}
       >

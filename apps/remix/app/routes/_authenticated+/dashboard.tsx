@@ -103,7 +103,7 @@ export default function DashboardPage() {
               {organisations.map((org) => (
                 <div key={org.id} className="group relative">
                   <Link to={`/o/${org.url}`}>
-                    <Card className="h-full border pr-6 transition-all hover:bg-muted/50">
+                    <Card className="h-full border pe-6 transition-all hover:bg-muted/50">
                       <CardContent className="p-4">
                         <div className="flex items-center gap-3">
                           <Avatar className="h-10 w-10 border border-solid">

@@ -134,14 +134,14 @@ export const OrgMenuSwitcher = () => {
             avatarFallback={dropdownMenuAvatarText.avatarFallback}
             primaryText={dropdownMenuAvatarText.primaryText}
             secondaryText={dropdownMenuAvatarText.secondaryText}
-            rightSideComponent={<ChevronsUpDown className="ml-auto h-4 w-4 text-muted-foreground" />}
+            rightSideComponent={<ChevronsUpDown className="ms-auto h-4 w-4 text-muted-foreground" />}
             textSectionClassName="hidden lg:flex"
           />
         </Button>
       </DropdownMenuTrigger>
 
       <DropdownMenuContent
-        className={cn('z-[60] ml-6 flex w-full divide-x divide-border p-0 md:ml-0 md:min-w-[40rem]')}
+        className={cn('z-[60] ms-6 flex w-full divide-x divide-border p-0 md:ms-0 md:min-w-[40rem]')}
         align="end"
         forceMount
       >
@@ -150,7 +150,7 @@ export const OrgMenuSwitcher = () => {
           <div className="flex w-full flex-col md:w-1/3">
             <div className="flex h-12 items-center border-b p-2">
               <h3 className="flex items-center px-2 font-medium text-muted-foreground text-sm">
-                <Building2Icon className="mr-2 h-3.5 w-3.5" />
+                <Building2Icon className="me-2 h-3.5 w-3.5" />
                 <Trans>Organisations</Trans>
               </h3>
             </div>
@@ -165,7 +165,7 @@ export const OrgMenuSwitcher = () => {
                     )}
                     asChild
                   >
-                    <Link to={`/o/${org.url}`} className="flex items-center space-x-2 pr-8">
+                    <Link to={`/o/${org.url}`} className="flex items-center space-x-2 pe-8">
                       <span
                         className={cn('min-w-0 flex-1 truncate', {
                           'font-semibold': org.id === selectedOrg?.id,
@@ -180,7 +180,7 @@ export const OrgMenuSwitcher = () => {
                     <div className="absolute top-0 right-0 bottom-0 flex items-center justify-center">
                       <Link
                         to={`/o/${org.url}/settings/general`}
-                        className="mr-2 rounded-sm border p-1 text-muted-foreground transition-opacity duration-200 group-hover:opacity-100 md:opacity-0"
+                        className="me-2 rounded-sm border p-1 text-muted-foreground transition-opacity duration-200 group-hover:opacity-100 md:opacity-0"
                       >
                         <Settings2Icon className="h-3.5 w-3.5" />
                       </Link>
@@ -191,7 +191,7 @@ export const OrgMenuSwitcher = () => {
 
               <Button variant="ghost" className="w-full justify-start" asChild>
                 <Link to="/settings/organisations?action=add-organisation">
-                  <Plus className="mr-2 h-4 w-4" />
+                  <Plus className="me-2 h-4 w-4" />
                   <Trans>Create Organisation</Trans>
                 </Link>
               </Button>
@@ -202,7 +202,7 @@ export const OrgMenuSwitcher = () => {
           <div className="hidden w-1/3 flex-col md:flex">
             <div className="flex h-12 items-center border-b p-2">
               <h3 className="flex items-center px-2 font-medium text-muted-foreground text-sm">
-                <UsersIcon className="mr-2 h-3.5 w-3.5" />
+                <UsersIcon className="me-2 h-3.5 w-3.5" />
                 <Trans>Teams</Trans>
               </h3>
             </div>
@@ -218,7 +218,7 @@ export const OrgMenuSwitcher = () => {
                         )}
                         asChild
                       >
-                        <Link to={`/t/${team.url}`} className="flex items-center space-x-2 pr-8">
+                        <Link to={`/t/${team.url}`} className="flex items-center space-x-2 pe-8">
                           <span
                             className={cn('min-w-0 flex-1 truncate', {
                               'font-semibold': team.id === currentTeam?.id,
@@ -233,7 +233,7 @@ export const OrgMenuSwitcher = () => {
                         <div className="absolute top-0 right-0 bottom-0 flex items-center justify-center">
                           <Link
                             to={`/t/${team.url}/settings/general`}
-                            className="mr-2 rounded-sm border p-1 text-muted-foreground opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                            className="me-2 rounded-sm border p-1 text-muted-foreground opacity-0 transition-opacity duration-200 group-hover:opacity-100"
                           >
                             <Settings2Icon className="h-3.5 w-3.5" />
                           </Link>
@@ -250,7 +250,7 @@ export const OrgMenuSwitcher = () => {
                 {displayedOrg && (
                   <Button variant="ghost" className="w-full justify-start" asChild>
                     <Link to={`/o/${displayedOrg.url}/settings/teams?action=add-team`}>
-                      <Plus className="mr-2 h-4 w-4" />
+                      <Plus className="me-2 h-4 w-4" />
                       <Trans>Create Team</Trans>
                     </Link>
                   </Button>
@@ -263,7 +263,7 @@ export const OrgMenuSwitcher = () => {
           <div className="hidden w-1/3 flex-col md:flex">
             <div className="flex h-12 items-center border-b p-2">
               <h3 className="flex items-center px-2 font-medium text-muted-foreground text-sm">
-                <SettingsIcon className="mr-2 h-3.5 w-3.5" />
+                <SettingsIcon className="me-2 h-3.5 w-3.5" />
                 <Trans>Settings</Trans>
               </h3>
             </div>

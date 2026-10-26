@@ -334,13 +334,13 @@ const BillingPlanForm = ({ value, onChange, plans, canCreateFreeOrganisation }: 
           )}
           disabled={!canCreateFreeOrganisation}
         >
-          <div className="w-full text-left">
+          <div className="w-full text-start">
             <div className="flex items-center justify-between">
               <p className="font-medium">
                 <Trans context="Plan price">Free</Trans>
               </p>
 
-              <Badge size="small" variant="neutral" className="ml-1.5">
+              <Badge size="small" variant="neutral" className="ms-1.5">
                 {canCreateFreeOrganisation ? (
                   <Trans>1 Free organisations left</Trans>
                 ) : (
@@ -366,11 +366,11 @@ const BillingPlanForm = ({ value, onChange, plans, canCreateFreeOrganisation }: 
               },
             )}
           >
-            <div className="w-full text-left">
+            <div className="w-full text-start">
               <p className="font-medium">{plan.name}</p>
               <p className="text-muted-foreground">{plan.description}</p>
             </div>
-            <div className="whitespace-nowrap text-right font-medium text-sm">
+            <div className="whitespace-nowrap text-end font-medium text-sm">
               <p>{plan[billingPeriod]?.friendlyPrice}</p>
               <span className="text-muted-foreground text-xs">
                 {billingPeriod === 'monthlyPrice' ? <Trans>per month</Trans> : <Trans>per year</Trans>}

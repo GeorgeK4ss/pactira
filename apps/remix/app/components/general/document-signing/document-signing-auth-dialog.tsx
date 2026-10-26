@@ -117,7 +117,7 @@ export const DocumentSigningAuthDialog = ({
                   className="h-auto justify-start p-4"
                   onClick={() => setSelectedAuthType(authType)}
                 >
-                  <div className="text-left">
+                  <div className="text-start">
                     <div className="font-medium">
                       {match(authType)
                         .with(DocumentAuth.ACCOUNT, () => <Trans>Account</Trans>)

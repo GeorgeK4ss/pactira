@@ -261,7 +261,7 @@ export const TeamCreateDialog = ({ trigger, onCreated, ...props }: TeamCreateDia
                         <div className="flex items-center">
                           <Checkbox id="inherit-members" checked={field.value} onCheckedChange={field.onChange} />
 
-                          <label className="ml-2 text-muted-foreground text-sm" htmlFor="inherit-members">
+                          <label className="ms-2 text-muted-foreground text-sm" htmlFor="inherit-members">
                             <Trans>Allow all organisation members to access this team</Trans>
                           </label>
                         </div>

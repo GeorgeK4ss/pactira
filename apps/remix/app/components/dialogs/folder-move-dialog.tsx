@@ -120,7 +120,7 @@ export const FolderMoveDialog = ({ foldersData, folder, isOpen, onOpenChange }: 
             placeholder={t`Search folders...`}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="pl-8"
+            className="ps-8"
           />
         </div>
 
@@ -141,7 +141,7 @@ export const FolderMoveDialog = ({ foldersData, folder, isOpen, onOpenChange }: 
                           disabled={!folder?.parentId}
                           onClick={() => field.onChange(null)}
                         >
-                          <HomeIcon className="mr-2 h-4 w-4" />
+                          <HomeIcon className="me-2 h-4 w-4" />
                           <Trans>Home</Trans>
                         </Button>
 
@@ -155,7 +155,7 @@ export const FolderMoveDialog = ({ foldersData, folder, isOpen, onOpenChange }: 
                               className="w-full justify-start"
                               onClick={() => field.onChange(f.id)}
                             >
-                              <FolderIcon className="mr-2 h-4 w-4" />
+                              <FolderIcon className="me-2 h-4 w-4" />
                               {f.name}
                             </Button>
                           ))}

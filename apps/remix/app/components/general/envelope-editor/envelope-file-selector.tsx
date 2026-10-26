@@ -36,7 +36,7 @@ export const EnvelopeItemSelector = ({
       >
         {number}
       </div>
-      <div className="min-w-0 text-left">
+      <div className="min-w-0 text-start">
         <div className="truncate font-medium text-sm">{primaryText}</div>
         <div className="text-gray-500 text-xs">{secondaryText}</div>
       </div>

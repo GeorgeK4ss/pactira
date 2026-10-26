@@ -189,7 +189,7 @@ export const TemplateDirectLinkDialog = ({
       <DialogTrigger asChild>
         {trigger || (
           <Button variant="outline" className="shrink-0 px-3" size={triggerSizeVariant}>
-            <LinkIcon className="mr-1.5 h-3.5 w-3.5" />
+            <LinkIcon className="me-1.5 h-3.5 w-3.5" />
 
             {directLink ? <Trans>Manage Direct Link</Trans> : <Trans>Create Direct Link</Trans>}
           </Button>
@@ -211,7 +211,7 @@ export const TemplateDirectLinkDialog = ({
                     </DialogDescription>
                   </DialogHeader>
 
-                  <ul className="mt-4 space-y-4 pl-12">
+                  <ul className="mt-4 space-y-4 ps-12">
                     {DIRECT_TEMPLATE_DOCUMENTATION.map((step, index) => (
                       <li className="relative" key={index}>
                         <div className="absolute -left-12">
@@ -372,7 +372,7 @@ export const TemplateDirectLinkDialog = ({
                       <Label className="flex flex-row">
                         <Trans>Enable Direct Link Signing</Trans>
                         <Tooltip>
-                          <TooltipTrigger tabIndex={-1} className="ml-2">
+                          <TooltipTrigger tabIndex={-1} className="ms-2">
                             <InfoIcon className="h-4 w-4" />
                           </TooltipTrigger>
                           <TooltipContent className="z-9999 max-w-md p-4 text-foreground">
@@ -395,7 +395,7 @@ export const TemplateDirectLinkDialog = ({
                           disabled
                           value={formatDirectTemplatePath(token).replace(/https?:\/\//, '')}
                           readOnly
-                          className="pr-12"
+                          className="pe-12"
                         />
 
                         <div className="absolute top-0 right-1 bottom-0 flex items-center justify-center">
@@ -416,7 +416,7 @@ export const TemplateDirectLinkDialog = ({
                     <Button
                       type="button"
                       variant="destructive"
-                      className="mr-auto w-full sm:w-auto"
+                      className="me-auto w-full sm:w-auto"
                       loading={isDeletingTemplateDirectLink}
                       onClick={() => setCurrentStep('CONFIRM_DELETE')}
                     >

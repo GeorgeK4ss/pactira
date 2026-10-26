@@ -126,7 +126,7 @@ export const DocumentSigningPageViewV2 = () => {
                   .with(RecipientRole.ASSISTANT, () => <Trans>Assist Document</Trans>)
                   .otherwise(() => null)}
 
-                <div className="ml-2 flex items-center gap-1">
+                <div className="ms-2 flex items-center gap-1">
                   <span className="rounded border bg-muted/50 px-2 py-0.5 text-muted-foreground text-xs">
                     <Plural
                       value={recipientFieldsRemaining.length}
@@ -176,7 +176,7 @@ export const DocumentSigningPageViewV2 = () => {
                   token={recipient.token}
                   trigger={
                     <Button variant="ghost" size="sm" className="w-full justify-start">
-                      <PaperclipIcon className="mr-2 h-4 w-4" />
+                      <PaperclipIcon className="me-2 h-4 w-4" />
                       <Trans>Attachments</Trans>
                     </Button>
                   }
@@ -189,7 +189,7 @@ export const DocumentSigningPageViewV2 = () => {
                   token={recipient.token}
                   trigger={
                     <Button variant="ghost" size="sm" className="w-full justify-start">
-                      <DownloadCloudIcon className="mr-2 h-4 w-4" />
+                      <DownloadCloudIcon className="me-2 h-4 w-4" />
                       <Trans>Download PDF</Trans>
                     </Button>
                   }
@@ -212,7 +212,7 @@ export const DocumentSigningPageViewV2 = () => {
                     }
                     trigger={
                       <Button variant="ghost" size="sm" className="w-full justify-start hover:text-destructive">
-                        <BanIcon className="mr-2 h-4 w-4" />
+                        <BanIcon className="me-2 h-4 w-4" />
                         <Trans>Reject Document</Trans>
                       </Button>
                     }
@@ -227,7 +227,7 @@ export const DocumentSigningPageViewV2 = () => {
                 <div className="px-4">
                   <Button asChild variant="ghost" className="w-full justify-start">
                     <Link to="/">
-                      <ArrowLeftIcon className="mr-2 h-4 w-4" />
+                      <ArrowLeftIcon className="me-2 h-4 w-4" />
                       <Trans>Return</Trans>
                     </Link>
                   </Button>
@@ -295,7 +295,7 @@ export const DocumentSigningPageViewV2 = () => {
                   <span>
                     <Trans>Powered by</Trans>
                   </span>
-                  <BrandingLogo className="ml-2 inline-block h-[14px]" />
+                  <BrandingLogo className="ms-2 inline-block h-[14px]" />
                 </a>
               )}
             </div>

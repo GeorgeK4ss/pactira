@@ -72,7 +72,7 @@ export const AdminDashboardUsersTable = ({ users, totalPages, perPage, page }: A
           return (
             <Button className="w-24" asChild>
               <Link to={`/admin/users/${row.original.id}`}>
-                <Edit className="mr-2 -ml-1 h-4 w-4" />
+                <Edit className="-ms-1 me-2 h-4 w-4" />
                 <Trans>Edit</Trans>
               </Link>
             </Button>

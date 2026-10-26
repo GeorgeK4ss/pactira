@@ -160,7 +160,7 @@ export const EnvelopesBulkMoveDialog = ({
             placeholder={t`Search folders...`}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="pl-8"
+            className="ps-8"
           />
         </div>
 
@@ -190,7 +190,7 @@ export const EnvelopesBulkMoveDialog = ({
                             onClick={() => field.onChange(null)}
                             disabled={currentFolderId === undefined}
                           >
-                            <HomeIcon className="mr-2 h-4 w-4" />
+                            <HomeIcon className="me-2 h-4 w-4" />
                             <Trans>Home (No Folder)</Trans>
                           </Button>
 
@@ -203,7 +203,7 @@ export const EnvelopesBulkMoveDialog = ({
                               onClick={() => field.onChange(folder.id)}
                               disabled={currentFolderId === folder.id}
                             >
-                              <FolderIcon className="mr-2 h-4 w-4" />
+                              <FolderIcon className="me-2 h-4 w-4" />
                               {folder.name}
                             </Button>
                           ))}

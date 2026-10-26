@@ -276,7 +276,7 @@ export default function AdminTeamPage({ params }: Route.ComponentProps) {
           <Accordion type="single" collapsible>
             <AccordionItem value="global-settings" className="border-b-0">
               <AccordionTrigger className="py-0">
-                <div className="text-left">
+                <div className="text-start">
                   <p className="font-medium text-sm">
                     <Trans>Global Settings</Trans>
                   </p>

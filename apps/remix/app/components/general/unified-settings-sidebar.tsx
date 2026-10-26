@@ -187,7 +187,7 @@ const FlatNavItem = ({ item, activeBgClassName, scope }: FlatNavItemProps) => {
           isActive && cn(activeBgClassName, 'font-medium'),
         )}
       >
-        {item.icon && <item.icon className="mr-2 h-4 w-4" />}
+        {item.icon && <item.icon className="me-2 h-4 w-4" />}
         {_(item.label)}
       </Button>
     </NavLink>
@@ -234,10 +234,10 @@ const CollapsibleNavSection = ({ parent, childItems, activeBgClassName, scope }:
           data-testid={`unified-settings-nav-${scope}-${parent.key}`}
           aria-expanded={isOpen}
         >
-          {ParentIcon && <ParentIcon className="mr-2 h-4 w-4" />}
+          {ParentIcon && <ParentIcon className="me-2 h-4 w-4" />}
           {_(parent.label)}
           <ChevronRightIcon
-            className={cn('ml-auto h-4 w-4 transition-transform duration-200', isOpen && 'rotate-90')}
+            className={cn('ms-auto h-4 w-4 transition-transform duration-200', isOpen && 'rotate-90')}
           />
         </Button>
       </CollapsibleTrigger>
@@ -253,7 +253,7 @@ const CollapsibleNavSection = ({ parent, childItems, activeBgClassName, scope }:
             <NavLink
               key={`${child.key}-${child.path}`}
               to={child.path}
-              className="group block pl-6"
+              className="group block ps-6"
               data-testid={`unified-settings-nav-${scope}-${child.key}`}
             >
               <Button

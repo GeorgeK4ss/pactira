@@ -230,7 +230,7 @@ export const TemplatePageViewDocumentsTable = ({ templateId }: TemplatePageViewD
               <TableCell>
                 <Skeleton className="h-4 w-24 rounded-full" />
               </TableCell>
-              <TableCell className="py-4 pr-4">
+              <TableCell className="py-4 pe-4">
                 <Skeleton className="h-12 w-12 flex-shrink-0 rounded-full" />
               </TableCell>
               <TableCell>

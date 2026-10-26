@@ -62,7 +62,7 @@ export const SignFieldTextDialog = createCallable<SignFieldTextDialogProps, stri
                         id="custom-text"
                         placeholder={fieldMeta?.placeholder ?? t`Enter your text here`}
                         className={cn('w-full rounded-md', {
-                          'border-2 border-red-300 text-left ring-2 ring-red-200 ring-offset-2 ring-offset-red-200 focus-visible:border-red-400 focus-visible:ring-4 focus-visible:ring-red-200 focus-visible:ring-offset-2 focus-visible:ring-offset-red-200':
+                          'border-2 border-red-300 text-start ring-2 ring-red-200 ring-offset-2 ring-offset-red-200 focus-visible:border-red-400 focus-visible:ring-4 focus-visible:ring-red-200 focus-visible:ring-offset-2 focus-visible:ring-offset-red-200':
                             fieldState.error,
                         })}
                         {...field}

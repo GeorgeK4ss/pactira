@@ -126,7 +126,7 @@ export const SignFieldCheckboxDialog = createCallable<SignFieldCheckboxDialogPro
                                 />
 
                                 <label
-                                  className="ml-2 w-full text-muted-foreground text-sm"
+                                  className="ms-2 w-full text-muted-foreground text-sm"
                                   htmlFor={`checkbox-value-${index}`}
                                 >
                                   {value.value}

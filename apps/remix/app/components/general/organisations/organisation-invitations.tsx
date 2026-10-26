@@ -32,9 +32,9 @@ export const OrganisationInvitations = ({ className }: { className?: string }) =
         <AnimateGenericFadeInOut>
           <Alert variant="secondary" className={className}>
             <div className="flex h-full flex-row items-center p-2">
-              <BellIcon className="mr-4 h-5 w-5 text-blue-800" />
+              <BellIcon className="me-4 h-5 w-5 text-blue-800" />
 
-              <AlertDescription className="mr-2">
+              <AlertDescription className="me-2">
                 <Plural
                   value={data.length}
                   one={
@@ -52,7 +52,7 @@ export const OrganisationInvitations = ({ className }: { className?: string }) =
 
               <Dialog>
                 <DialogTrigger asChild>
-                  <button className="ml-auto font-medium text-blue-700 text-sm hover:text-blue-600">
+                  <button className="ms-auto font-medium text-blue-700 text-sm hover:text-blue-600">
                     <Trans>View invites</Trans>
                   </button>
                 </DialogTrigger>
@@ -93,7 +93,7 @@ export const OrganisationInvitations = ({ className }: { className?: string }) =
                             }
                             secondaryText={`/o/${invitation.organisation.url}`}
                             rightSideComponent={
-                              <div className="ml-auto space-x-2">
+                              <div className="ms-auto space-x-2">
                                 <DeclineOrganisationInvitationButton token={invitation.token} />
                                 <AcceptOrganisationInvitationButton token={invitation.token} />
                               </div>

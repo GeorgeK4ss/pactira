@@ -207,7 +207,7 @@ const SSOProviderForm = ({ authenticationPortal }: SSOProviderFormProps) => {
             </Label>
 
             <div className="relative">
-              <Input className="pr-12" disabled value={formatOrganisationLoginUrl(organisation.url)} />
+              <Input className="pe-12" disabled value={formatOrganisationLoginUrl(organisation.url)} />
               <div className="absolute top-0 right-2 bottom-0 flex items-center justify-center">
                 <CopyTextButton
                   value={formatOrganisationLoginUrl(organisation.url)}
@@ -227,7 +227,7 @@ const SSOProviderForm = ({ authenticationPortal }: SSOProviderFormProps) => {
             </Label>
 
             <div className="relative">
-              <Input className="pr-12" disabled value={formatOrganisationCallbackUrl(organisation.url)} />
+              <Input className="pe-12" disabled value={formatOrganisationCallbackUrl(organisation.url)} />
               <div className="absolute top-0 right-2 bottom-0 flex items-center justify-center">
                 <CopyTextButton
                   value={formatOrganisationCallbackUrl(organisation.url)}
@@ -246,7 +246,7 @@ const SSOProviderForm = ({ authenticationPortal }: SSOProviderFormProps) => {
               <Trans>Required scopes</Trans>
             </Label>
 
-            <Input className="pr-12" disabled value={`openid profile email`} />
+            <Input className="pe-12" disabled value={`openid profile email`} />
 
             <p className="text-muted-foreground text-xs">
               <Trans>This is the required scopes you must set in your provider's settings</Trans>

@@ -56,10 +56,10 @@ export const EnvelopeRecipientSelector = ({
           )}
         >
           {selectedRecipient && (
-            <span className="flex-1 truncate text-left">{getRecipientLabel(selectedRecipient)}</span>
+            <span className="flex-1 truncate text-start">{getRecipientLabel(selectedRecipient)}</span>
           )}
 
-          <ChevronsUpDown className="ml-2 h-4 w-4" />
+          <ChevronsUpDown className="ms-2 h-4 w-4" />
         </Button>
       </PopoverTrigger>
 
@@ -154,7 +154,7 @@ export const EnvelopeRecipientSelectorCommand = ({
 
       {recipientsByRoleToDisplay().map(([role, roleRecipients], roleIndex) => (
         <CommandGroup key={roleIndex}>
-          <div className="mt-2 mb-1 ml-2 font-medium text-muted-foreground text-xs">
+          <div className="ms-2 mt-2 mb-1 font-medium text-muted-foreground text-xs">
             {t(RECIPIENT_ROLES_DESCRIPTION[role].roleNamePlural)}
           </div>
 
@@ -190,7 +190,7 @@ export const EnvelopeRecipientSelectorCommand = ({
                 {getRecipientLabel(recipient)}
               </span>
 
-              <div className="ml-auto flex items-center justify-center">
+              <div className="ms-auto flex items-center justify-center">
                 {!isRecipientDisabled(recipient.id) ? (
                   <Check
                     aria-hidden={recipient.id !== selectedRecipient?.id}
@@ -202,7 +202,7 @@ export const EnvelopeRecipientSelectorCommand = ({
                 ) : (
                   <Tooltip>
                     <TooltipTrigger disabled={false}>
-                      <Info className="z-50 ml-2 h-4 w-4" />
+                      <Info className="z-50 ms-2 h-4 w-4" />
                     </TooltipTrigger>
 
                     <TooltipContent className="max-w-xs text-muted-foreground">

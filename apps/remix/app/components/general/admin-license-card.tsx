@@ -98,19 +98,19 @@ export const AdminLicenseCard = ({ licenseData }: AdminLicenseCardProps) => {
         {match(license.status)
           .with('ACTIVE', () => (
             <Badge variant="default" size="small">
-              <CheckCircle2Icon className="mr-1 h-3 w-3" />
+              <CheckCircle2Icon className="me-1 h-3 w-3" />
               <Trans context="Subscription status">Active</Trans>
             </Badge>
           ))
           .with('PAST_DUE', () => (
             <Badge variant="warning" size="small">
-              <XCircleIcon className="mr-1 h-3 w-3" />
+              <XCircleIcon className="me-1 h-3 w-3" />
               <Trans context="Subscription status">Past Due</Trans>
             </Badge>
           ))
           .with('EXPIRED', () => (
             <Badge variant="destructive" size="small">
-              <XCircleIcon className="mr-1 h-3 w-3" />
+              <XCircleIcon className="me-1 h-3 w-3" />
               <Trans context="Subscription status">Expired</Trans>
             </Badge>
           ))

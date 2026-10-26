@@ -59,7 +59,7 @@ export const AdminStatsUsersWithDocumentsChart = ({
 
   return (
     <div className={className}>
-      <div className="flex flex-1 flex-col justify-center rounded-2xl border border-border p-6 pl-2">
+      <div className="flex flex-1 flex-col justify-center rounded-2xl border border-border p-6 ps-2">
         <div className="mb-6 flex h-12 px-4">
           <h3 className="font-semibold text-lg">{title}</h3>
         </div>

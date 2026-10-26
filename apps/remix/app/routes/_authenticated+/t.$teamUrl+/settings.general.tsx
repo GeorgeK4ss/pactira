@@ -124,7 +124,7 @@ export default function TeamsSettingsPage({ loaderData }: Route.ComponentProps) 
               <Trans>Team email</Trans>
             </AlertTitle>
 
-            <AlertDescription className="mr-2">
+            <AlertDescription className="me-2">
               <Trans>
                 You can view documents associated with this email and use this identity when sending documents.
               </Trans>
@@ -145,15 +145,15 @@ export default function TeamsSettingsPage({ loaderData }: Route.ComponentProps) 
                 secondaryText={<span className="text-sm">{teamEmail?.email || emailVerification?.email}</span>}
               />
 
-              <div className="flex flex-row items-center pr-2">
-                <div className="mr-4 flex flex-row items-center text-muted-foreground text-sm xl:mr-8">
+              <div className="flex flex-row items-center pe-2">
+                <div className="me-4 flex flex-row items-center text-muted-foreground text-sm xl:me-8">
                   {match({
                     teamEmail,
                     emailVerification: emailVerification,
                   })
                     .with({ teamEmail: P.not(null) }, () => (
                       <>
-                        <CheckCircle2 className="mr-1.5 text-green-500 dark:text-green-300" />
+                        <CheckCircle2 className="me-1.5 text-green-500 dark:text-green-300" />
                         <Trans>Active</Trans>
                       </>
                     ))
@@ -165,14 +165,14 @@ export default function TeamsSettingsPage({ loaderData }: Route.ComponentProps) 
                       },
                       () => (
                         <>
-                          <Clock className="mr-1.5 text-yellow-500 dark:text-yellow-200" />
+                          <Clock className="me-1.5 text-yellow-500 dark:text-yellow-200" />
                           <Trans>Expired</Trans>
                         </>
                       ),
                     )
                     .with({ emailVerification: P.not(null) }, () => (
                       <>
-                        <Clock className="mr-1.5 text-blue-600 dark:text-blue-300" />
+                        <Clock className="me-1.5 text-blue-600 dark:text-blue-300" />
                         <Trans>Awaiting email confirmation</Trans>
                       </>
                     ))
@@ -194,9 +194,9 @@ export default function TeamsSettingsPage({ loaderData }: Route.ComponentProps) 
                         }}
                       >
                         {isResendingEmailVerification ? (
-                          <LoaderIcon className="mr-2 h-4 w-4 animate-spin" />
+                          <LoaderIcon className="me-2 h-4 w-4 animate-spin" />
                         ) : (
-                          <MailIcon className="mr-2 h-4 w-4" />
+                          <MailIcon className="me-2 h-4 w-4" />
                         )}
                         <Trans>Resend verification</Trans>
                       </DropdownMenuItem>
@@ -208,7 +208,7 @@ export default function TeamsSettingsPage({ loaderData }: Route.ComponentProps) 
                         teamEmail={teamEmail}
                         trigger={
                           <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
-                            <EditIcon className="mr-2 h-4 w-4" />
+                            <EditIcon className="me-2 h-4 w-4" />
                             <Trans>Edit</Trans>
                           </DropdownMenuItem>
                         }
@@ -222,7 +222,7 @@ export default function TeamsSettingsPage({ loaderData }: Route.ComponentProps) 
                       teamName={team.name}
                       trigger={
                         <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
-                          <XIcon className="mr-2 h-4 w-4" />
+                          <XIcon className="me-2 h-4 w-4" />
                           <Trans>Remove</Trans>
                         </DropdownMenuItem>
                       }
@@ -241,7 +241,7 @@ export default function TeamsSettingsPage({ loaderData }: Route.ComponentProps) 
                 <Trans>Team email</Trans>
               </AlertTitle>
 
-              <AlertDescription className="mr-2">
+              <AlertDescription className="me-2">
                 <ul className="mt-0.5 list-inside list-disc text-muted-foreground text-sm">
                   {/* Feature not available yet. */}
                   {/* <li>Display this name and email when sending documents</li> */}
@@ -265,7 +265,7 @@ export default function TeamsSettingsPage({ loaderData }: Route.ComponentProps) 
                 <Trans>Delete team</Trans>
               </AlertTitle>
 
-              <AlertDescription className="mr-2">
+              <AlertDescription className="me-2">
                 <Trans>
                   This team, and any associated data excluding billing invoices will be permanently deleted.
                 </Trans>

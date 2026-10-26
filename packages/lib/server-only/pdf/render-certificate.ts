@@ -20,7 +20,7 @@ import { getSignatureFontFamily } from '../../constants/pdf';
 import { RECIPIENT_ROLE_SIGNING_REASONS, RECIPIENT_ROLES_DESCRIPTION } from '../../constants/recipient-roles';
 import type { TDocumentAuditLogBaseSchema } from '../../types/document-audit-logs';
 import { svgToPng } from '../../utils/images/svg-to-png';
-import { ensureFontLibrary } from './helpers';
+import { applyTextDirection, ensureFontLibrary, PDF_TEXT_FONT_FAMILY } from './helpers';
 
 type ColumnWidths = [number, number, number];
 
@@ -102,6 +102,8 @@ type RenderLabelAndTextOptions = {
   valueFill?: string;
 };
 
+const LABEL_VALUE_GAP = 4;
+
 const renderLabelAndText = (options: RenderLabelAndTextOptions) => {
   const { width, y } = options;
 
@@ -115,9 +117,10 @@ const renderLabelAndText = (options: RenderLabelAndTextOptions) => {
   const label = new Konva.Text({
     x: 0,
     y: 0,
-    text: `${options.label}: `,
+    // A measured gap instead of a trailing space: the space lands on the wrong side in right-to-left text.
+    text: `${options.label}:`,
     fontStyle: fontMedium,
-    fontFamily: 'Inter',
+    fontFamily: PDF_TEXT_FONT_FAMILY,
     fill: labelFill,
     fontSize: textSm,
   });
@@ -125,10 +128,10 @@ const renderLabelAndText = (options: RenderLabelAndTextOptions) => {
   group.add(label);
 
   const value = new Konva.Text({
-    x: label.width(),
+    x: label.width() + LABEL_VALUE_GAP,
     y: 0,
-    width: width - label.width(),
-    fontFamily: 'Inter',
+    width: width - label.width() - LABEL_VALUE_GAP,
+    fontFamily: PDF_TEXT_FONT_FAMILY,
     text: options.text,
     fill: valueFill,
     wrap: 'char',
@@ -155,7 +158,7 @@ const renderRowHeader = (options: RenderRowHeaderOptions) => {
   const headerRow = new Konva.Group();
 
   const headerFontStyling = {
-    fontFamily: 'Inter',
+    fontFamily: PDF_TEXT_FONT_FAMILY,
     fontSize: 11,
     fontStyle: fontMedium,
     verticalAlign: 'middle',
@@ -211,7 +214,7 @@ const renderColumnOne = (options: RenderColumnOptions) => {
 
   const textFontStyling = {
     x: 0,
-    fontFamily: 'Inter',
+    fontFamily: PDF_TEXT_FONT_FAMILY,
     wrap: 'char',
     lineHeight: 1.2,
     fill: textMutedForeground,
@@ -357,7 +360,7 @@ const renderColumnTwo = (options: RenderColumnOptions) => {
       text: `${i18n._(msg`Signature ID`)}:`,
       fill: textMutedForeground,
       width: columnWidth,
-      fontFamily: 'Inter',
+      fontFamily: PDF_TEXT_FONT_FAMILY,
       fontSize: textSm,
       fontStyle: fontMedium,
       lineHeight: 1.4,
@@ -381,7 +384,7 @@ const renderColumnTwo = (options: RenderColumnOptions) => {
       y: 0,
       text: 'N/A',
       fill: textMutedForeground,
-      fontFamily: 'Inter',
+      fontFamily: PDF_TEXT_FONT_FAMILY,
       fontSize: textSm,
     });
     column.add(naText);
@@ -575,7 +578,7 @@ const renderBranding = async ({ qrToken, i18n }: { qrToken: string | null; i18n:
     verticalAlign: 'middle',
     text: i18n._(msg`Signing certificate provided by`) + ':',
     fontStyle: fontMedium,
-    fontFamily: 'Inter',
+    fontFamily: PDF_TEXT_FONT_FAMILY,
     fontSize: textSm,
     height: brandingHeight,
   });
@@ -775,7 +778,7 @@ export async function renderCertificate({
       height: pageTopMargin,
       verticalAlign: 'middle',
       text: i18n._(msg`Signing Certificate`),
-      fontFamily: 'Inter',
+      fontFamily: PDF_TEXT_FONT_FAMILY,
       fontSize: titleFontSize,
       fontStyle: '700',
     });
@@ -807,13 +810,14 @@ export async function renderCertificate({
       x: margin,
       y: pageHeight - textXs - 10,
       text: `${i18n._(msg`Envelope ID`)}: ${envelopeId}`,
-      fontFamily: 'Inter',
+      fontFamily: PDF_TEXT_FONT_FAMILY,
       fontSize: textXs,
       fill: textMutedForegroundLight,
     });
     page.add(footerText);
 
     page.add(group);
+    applyTextDirection(page, i18n.locale, pageWidth);
     stage.add(page);
 
     // Export the page and save it.
@@ -835,13 +839,14 @@ export async function renderCertificate({
       x: margin,
       y: pageHeight - textXs - 10,
       text: `${i18n._(msg`Envelope ID`)}: ${envelopeId}`,
-      fontFamily: 'Inter',
+      fontFamily: PDF_TEXT_FONT_FAMILY,
       fontSize: textXs,
       fill: textMutedForegroundLight,
     });
     page.add(overflowFooterText);
 
     page.add(brandingGroup);
+    applyTextDirection(page, i18n.locale, pageWidth);
     stage.add(page);
 
     // eslint-disable-next-line @typescript-eslint/consistent-type-assertions

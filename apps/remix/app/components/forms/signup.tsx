@@ -379,7 +379,7 @@ export const SignUpForm = ({
                   disabled={isSubmitting}
                   onClick={onSignUpWithGoogleClick}
                 >
-                  <FcGoogle className="mr-2 h-5 w-5" />
+                  <FcGoogle className="me-2 h-5 w-5" />
                   <Trans>Sign Up with Google</Trans>
                 </Button>
               )}
@@ -393,7 +393,7 @@ export const SignUpForm = ({
                   disabled={isSubmitting}
                   onClick={onSignUpWithMicrosoftClick}
                 >
-                  <img className="mr-2 h-4 w-4" alt="Microsoft Logo" src={'/static/microsoft.svg'} />
+                  <img className="me-2 h-4 w-4" alt="Microsoft Logo" src={'/static/microsoft.svg'} />
                   <Trans>Sign Up with Microsoft</Trans>
                 </Button>
               )}
@@ -407,7 +407,7 @@ export const SignUpForm = ({
                   disabled={isSubmitting}
                   onClick={onSignUpWithOIDCClick}
                 >
-                  <FaIdCardClip className="mr-2 h-5 w-5" />
+                  <FaIdCardClip className="me-2 h-5 w-5" />
                   <Trans>Sign Up with OIDC</Trans>
                 </Button>
               )}

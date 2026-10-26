@@ -159,12 +159,12 @@ export const AdminOrganisationStatsTable = ({ displayMode = 'usage' }: AdminOrga
         {label}
         {orderByColumn === column ? (
           orderByDirection === 'asc' ? (
-            <ChevronUpIcon className="ml-2 h-4 w-4" />
+            <ChevronUpIcon className="ms-2 h-4 w-4" />
           ) : (
-            <ChevronDownIcon className="ml-2 h-4 w-4" />
+            <ChevronDownIcon className="ms-2 h-4 w-4" />
           )
         ) : (
-          <ChevronsUpDownIcon className="ml-2 h-4 w-4" />
+          <ChevronsUpDownIcon className="ms-2 h-4 w-4" />
         )}
       </button>
     );
@@ -245,7 +245,7 @@ export const AdminOrganisationStatsTable = ({ displayMode = 'usage' }: AdminOrga
           rows: 5,
           component: (
             <>
-              <TableCell className="py-4 pr-4">
+              <TableCell className="py-4 pe-4">
                 <Skeleton className="h-4 w-32 rounded-full" />
               </TableCell>
               <TableCell>

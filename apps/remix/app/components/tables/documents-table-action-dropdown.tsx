@@ -115,21 +115,21 @@ export const DocumentsTableActionDropdown = ({ row, onMoveDocument }: DocumentsT
               <a href={`/sign/${recipient?.token}`}>
                 {recipient?.role === RecipientRole.VIEWER && (
                   <>
-                    <EyeIcon className="mr-2 h-4 w-4" />
+                    <EyeIcon className="me-2 h-4 w-4" />
                     <Trans>View</Trans>
                   </>
                 )}
 
                 {recipient?.role === RecipientRole.SIGNER && (
                   <>
-                    <Pencil className="mr-2 h-4 w-4" />
+                    <Pencil className="me-2 h-4 w-4" />
                     <Trans>Sign</Trans>
                   </>
                 )}
 
                 {recipient?.role === RecipientRole.APPROVER && (
                   <>
-                    <CheckCircle className="mr-2 h-4 w-4" />
+                    <CheckCircle className="me-2 h-4 w-4" />
                     <Trans>Approve</Trans>
                   </>
                 )}
@@ -139,14 +139,14 @@ export const DocumentsTableActionDropdown = ({ row, onMoveDocument }: DocumentsT
 
         <DropdownMenuItem disabled={!canManageDocument || isComplete} asChild>
           <Link to={formatPath}>
-            <Edit className="mr-2 h-4 w-4" />
+            <Edit className="me-2 h-4 w-4" />
             <Trans>Edit</Trans>
           </Link>
         </DropdownMenuItem>
 
         {canManageDocument && canTitleBeChanged && (
           <DropdownMenuItem onClick={() => setRenameDialogOpen(true)}>
-            <Pencil className="mr-2 h-4 w-4" />
+            <Pencil className="me-2 h-4 w-4" />
             <Trans>Rename</Trans>
           </DropdownMenuItem>
         )}
@@ -159,7 +159,7 @@ export const DocumentsTableActionDropdown = ({ row, onMoveDocument }: DocumentsT
           trigger={
             <DropdownMenuItem asChild onSelect={(e) => e.preventDefault()}>
               <div>
-                <Download className="mr-2 h-4 w-4" />
+                <Download className="me-2 h-4 w-4" />
                 <Trans>Download</Trans>
               </div>
             </DropdownMenuItem>
@@ -172,7 +172,7 @@ export const DocumentsTableActionDropdown = ({ row, onMoveDocument }: DocumentsT
           trigger={
             <DropdownMenuItem asChild onSelect={(e) => e.preventDefault()}>
               <div>
-                <Copy className="mr-2 h-4 w-4" />
+                <Copy className="me-2 h-4 w-4" />
                 <Trans>Duplicate</Trans>
               </div>
             </DropdownMenuItem>
@@ -180,13 +180,13 @@ export const DocumentsTableActionDropdown = ({ row, onMoveDocument }: DocumentsT
         />
 
         <DropdownMenuItem onClick={() => setSaveAsTemplateDialogOpen(true)}>
-          <FileOutputIcon className="mr-2 h-4 w-4" />
+          <FileOutputIcon className="me-2 h-4 w-4" />
           <Trans>Save as Template</Trans>
         </DropdownMenuItem>
 
         {onMoveDocument && canManageDocument && (
           <DropdownMenuItem onClick={onMoveDocument} onSelect={(e) => e.preventDefault()}>
-            <FolderInput className="mr-2 h-4 w-4" />
+            <FolderInput className="me-2 h-4 w-4" />
             <Trans>Move to Folder</Trans>
           </DropdownMenuItem>
         )}
@@ -201,7 +201,7 @@ export const DocumentsTableActionDropdown = ({ row, onMoveDocument }: DocumentsT
             trigger={
               <DropdownMenuItem asChild onSelect={(e) => e.preventDefault()}>
                 <div>
-                  <XCircle className="mr-2 h-4 w-4" />
+                  <XCircle className="me-2 h-4 w-4" />
                   <Trans>Cancel</Trans>
                 </div>
               </DropdownMenuItem>
@@ -218,7 +218,7 @@ export const DocumentsTableActionDropdown = ({ row, onMoveDocument }: DocumentsT
           trigger={
             <DropdownMenuItem asChild onSelect={(e) => e.preventDefault()}>
               <div>
-                <Trash2 className="mr-2 h-4 w-4" />
+                <Trash2 className="me-2 h-4 w-4" />
                 {canManageDocument ? _(msg`Delete`) : _(msg`Hide`)}
               </div>
             </DropdownMenuItem>
@@ -235,7 +235,7 @@ export const DocumentsTableActionDropdown = ({ row, onMoveDocument }: DocumentsT
             trigger={
               <DropdownMenuItem disabled={!isPending} asChild onSelect={(e) => e.preventDefault()}>
                 <div>
-                  <Copy className="mr-2 h-4 w-4" />
+                  <Copy className="me-2 h-4 w-4" />
                   <Trans>Signing Links</Trans>
                 </div>
               </DropdownMenuItem>
@@ -255,7 +255,7 @@ export const DocumentsTableActionDropdown = ({ row, onMoveDocument }: DocumentsT
             trigger={
               <DropdownMenuItem asChild onSelect={(e) => e.preventDefault()}>
                 <div>
-                  <History className="mr-2 h-4 w-4" />
+                  <History className="me-2 h-4 w-4" />
                   <Trans>Resend</Trans>
                 </div>
               </DropdownMenuItem>
@@ -269,7 +269,7 @@ export const DocumentsTableActionDropdown = ({ row, onMoveDocument }: DocumentsT
           trigger={({ loading, disabled }) => (
             <DropdownMenuItem disabled={disabled || isDraft} onSelect={(e) => e.preventDefault()}>
               <div className="flex items-center">
-                {loading ? <Loader className="mr-2 h-4 w-4" /> : <Share className="mr-2 h-4 w-4" />}
+                {loading ? <Loader className="me-2 h-4 w-4" /> : <Share className="me-2 h-4 w-4" />}
                 <Trans>Share Signing Card</Trans>
               </div>
             </DropdownMenuItem>

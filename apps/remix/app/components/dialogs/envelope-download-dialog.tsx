@@ -203,7 +203,7 @@ export const EnvelopeDownloadDialog = ({
                       loading={isDownloadingState[generateDownloadKey(item.id, 'original')]}
                     >
                       {!isDownloadingState[generateDownloadKey(item.id, 'original')] && (
-                        <DownloadIcon className="mr-2 h-4 w-4" />
+                        <DownloadIcon className="me-2 h-4 w-4" />
                       )}
                       <Trans context="Original document (adjective)">Original</Trans>
                     </Button>
@@ -217,7 +217,7 @@ export const EnvelopeDownloadDialog = ({
                         loading={isDownloadingState[generateDownloadKey(item.id, secondaryDownload.version)]}
                       >
                         {!isDownloadingState[generateDownloadKey(item.id, secondaryDownload.version)] && (
-                          <DownloadIcon className="mr-2 h-4 w-4" />
+                          <DownloadIcon className="me-2 h-4 w-4" />
                         )}
                         {secondaryDownload.label}
                       </Button>

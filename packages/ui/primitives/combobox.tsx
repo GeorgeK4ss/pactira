@@ -53,7 +53,7 @@ const Combobox = ({
           data-testid={testId}
         >
           {value ? value : triggerPlaceholder || placeholderValue}
-          <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <ChevronDown className="ms-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
 
@@ -68,7 +68,7 @@ const Combobox = ({
           <CommandGroup className="max-h-[250px] overflow-y-auto">
             {options.map((option, index) => (
               <CommandItem key={index} onSelect={() => onOptionSelected(option)}>
-                <Check className={cn('mr-2 h-4 w-4', option === value ? 'opacity-100' : 'opacity-0')} />
+                <Check className={cn('me-2 h-4 w-4', option === value ? 'opacity-100' : 'opacity-0')} />
 
                 {option}
               </CommandItem>

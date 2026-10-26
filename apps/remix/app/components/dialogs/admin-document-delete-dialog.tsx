@@ -66,7 +66,7 @@ export const AdminDocumentDeleteDialog = ({ envelopeId }: AdminDocumentDeleteDia
             <AlertTitle>
               <Trans>Delete Document</Trans>
             </AlertTitle>
-            <AlertDescription className="mr-2">
+            <AlertDescription className="me-2">
               <Trans>Delete the document. This action is irreversible so proceed with caution.</Trans>
             </AlertDescription>
           </div>

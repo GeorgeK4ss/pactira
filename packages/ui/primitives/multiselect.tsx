@@ -423,7 +423,7 @@ const MultiSelect = ({
               <div
                 key={option.value}
                 className={cn(
-                  'relative inline-flex h-7 animate-fadeIn cursor-default items-center rounded-md border bg-background ps-2 pe-7 pl-2 font-medium text-secondary-foreground text-xs transition-all hover:bg-background disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 data-fixed:pe-2',
+                  'relative inline-flex h-7 animate-fadeIn cursor-default items-center rounded-md border bg-background ps-2 ps-2 pe-7 font-medium text-secondary-foreground text-xs transition-all hover:bg-background disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 data-fixed:pe-2',
                   badgeClassName,
                 )}
                 data-fixed={option.fixed}
@@ -479,7 +479,7 @@ const MultiSelect = ({
               {
                 'w-full': hidePlaceholderWhenSelected,
                 'px-3 py-2': selected.length === 0,
-                'ml-1': selected.length !== 0,
+                'ms-1': selected.length !== 0,
               },
               inputProps?.className,
             )}

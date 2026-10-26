@@ -69,7 +69,7 @@ export default function AdminLayout({ loaderData }: Route.ComponentProps) {
             asChild
           >
             <Link to="/admin/stats">
-              <BarChart3 className="mr-2 h-5 w-5" />
+              <BarChart3 className="me-2 h-5 w-5" />
               <Trans>Stats</Trans>
             </Link>
           </Button>
@@ -80,7 +80,7 @@ export default function AdminLayout({ loaderData }: Route.ComponentProps) {
             asChild
           >
             <Link to="/admin/organisations">
-              <Building2Icon className="mr-2 h-5 w-5" />
+              <Building2Icon className="me-2 h-5 w-5" />
               <Trans>Organisations</Trans>
             </Link>
           </Button>
@@ -91,7 +91,7 @@ export default function AdminLayout({ loaderData }: Route.ComponentProps) {
             asChild
           >
             <Link to="/admin/crypto">
-              <Wallet className="mr-2 h-5 w-5" />
+              <Wallet className="me-2 h-5 w-5" />
               <Trans>Crypto payments</Trans>
             </Link>
           </Button>
@@ -102,7 +102,7 @@ export default function AdminLayout({ loaderData }: Route.ComponentProps) {
             asChild
           >
             <Link to="/admin/claims">
-              <Wallet2 className="mr-2 h-5 w-5" />
+              <Wallet2 className="me-2 h-5 w-5" />
               <Trans>Claims</Trans>
             </Link>
           </Button>
@@ -113,7 +113,7 @@ export default function AdminLayout({ loaderData }: Route.ComponentProps) {
             asChild
           >
             <Link to="/admin/users">
-              <Users className="mr-2 h-5 w-5" />
+              <Users className="me-2 h-5 w-5" />
               <Trans>Users</Trans>
             </Link>
           </Button>
@@ -124,7 +124,7 @@ export default function AdminLayout({ loaderData }: Route.ComponentProps) {
             asChild
           >
             <Link to="/admin/documents">
-              <FileStack className="mr-2 h-5 w-5" />
+              <FileStack className="me-2 h-5 w-5" />
               <Trans>Documents</Trans>
             </Link>
           </Button>
@@ -138,7 +138,7 @@ export default function AdminLayout({ loaderData }: Route.ComponentProps) {
             asChild
           >
             <Link to="/admin/unsealed-documents">
-              <AlertTriangleIcon className="mr-2 h-5 w-5" />
+              <AlertTriangleIcon className="me-2 h-5 w-5" />
               <Trans>Unsealed Documents</Trans>
             </Link>
           </Button>
@@ -149,7 +149,7 @@ export default function AdminLayout({ loaderData }: Route.ComponentProps) {
             asChild
           >
             <Link to="/admin/email-transports">
-              <MailIcon className="mr-2 h-5 w-5" />
+              <MailIcon className="me-2 h-5 w-5" />
               <Trans>Email Transports</Trans>
             </Link>
           </Button>
@@ -160,7 +160,7 @@ export default function AdminLayout({ loaderData }: Route.ComponentProps) {
             asChild
           >
             <Link to="/admin/email-domains">
-              <MailIcon className="mr-2 h-5 w-5" />
+              <MailIcon className="me-2 h-5 w-5" />
               <Trans>Email Domains</Trans>
             </Link>
           </Button>
@@ -174,7 +174,7 @@ export default function AdminLayout({ loaderData }: Route.ComponentProps) {
             asChild
           >
             <Link to="/admin/organisation-insights">
-              <Trophy className="mr-2 h-5 w-5" />
+              <Trophy className="me-2 h-5 w-5" />
               <Trans>Organisation Insights</Trans>
             </Link>
           </Button>
@@ -188,7 +188,7 @@ export default function AdminLayout({ loaderData }: Route.ComponentProps) {
             asChild
           >
             <Link to="/admin/organisation-stats">
-              <LineChartIcon className="mr-2 h-5 w-5" />
+              <LineChartIcon className="me-2 h-5 w-5" />
               <Trans>Organisation Stats</Trans>
             </Link>
           </Button>
@@ -199,7 +199,7 @@ export default function AdminLayout({ loaderData }: Route.ComponentProps) {
             asChild
           >
             <Link to="/admin/site-settings">
-              <Settings className="mr-2 h-5 w-5" />
+              <Settings className="me-2 h-5 w-5" />
               <Trans>Site Settings</Trans>
             </Link>
           </Button>

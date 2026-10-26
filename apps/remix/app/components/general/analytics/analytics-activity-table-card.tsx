@@ -158,7 +158,7 @@ export const AnalyticsActivityTableCard = ({
 
               <Input
                 type="search"
-                className="pl-9"
+                className="ps-9"
                 placeholder={searchPlaceholder}
                 aria-label={searchPlaceholder}
                 value={searchTerm}
@@ -179,19 +179,19 @@ export const AnalyticsActivityTableCard = ({
                     <TableHeader>
                       <TableRow className="hover:bg-transparent">
                         <TableHead className={FIRST_CELL_CLASS}>{columnLabel}</TableHead>
-                        <TableHead className="text-right">
+                        <TableHead className="text-end">
                           <Trans>Sent</Trans>
                         </TableHead>
-                        <TableHead className="hidden text-right md:table-cell">
+                        <TableHead className="hidden text-end md:table-cell">
                           <Trans>Completed</Trans>
                         </TableHead>
-                        <TableHead className="hidden text-right md:table-cell">
+                        <TableHead className="hidden text-end md:table-cell">
                           <Trans>Pending</Trans>
                         </TableHead>
-                        <TableHead className={cn('text-right', LAST_CELL_ON_MOBILE_CLASS)}>
+                        <TableHead className={cn('text-end', LAST_CELL_ON_MOBILE_CLASS)}>
                           <Trans>Completion rate</Trans>
                         </TableHead>
-                        <TableHead className={cn('hidden text-right md:table-cell', LAST_CELL_CLASS)}>
+                        <TableHead className={cn('hidden text-end md:table-cell', LAST_CELL_CLASS)}>
                           <Trans>Last active</Trans>
                         </TableHead>
                       </TableRow>
@@ -214,7 +214,7 @@ export const AnalyticsActivityTableCard = ({
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="-mr-2"
+                      className="-me-2"
                       onClick={() => setExpandedRangeKey(rangeKey)}
                       data-testid={testId('show-all')}
                     >
@@ -246,8 +246,8 @@ const ActivityRow = ({ row, locale, testIdPrefix }: ActivityRowProps) => {
   const testId = (suffix: string) => `analytics-${testIdPrefix}-${suffix}`;
 
   // Only "Completed" and the rate are emphasised; supporting counts stay muted. Inactive rows are muted throughout.
-  const primaryNumberClass = cn('text-right tabular-nums', isActive ? 'text-foreground' : 'text-muted-foreground');
-  const secondaryNumberClass = 'text-right text-muted-foreground tabular-nums';
+  const primaryNumberClass = cn('text-end tabular-nums', isActive ? 'text-foreground' : 'text-muted-foreground');
+  const secondaryNumberClass = 'text-end text-muted-foreground tabular-nums';
 
   // role="img" so the aria-label is valid (a bare span has no role that supports it).
   const notAvailable = (
@@ -340,7 +340,7 @@ const ActivityRow = ({ row, locale, testIdPrefix }: ActivityRowProps) => {
               <div className="h-full rounded-full bg-primary" style={{ width: `${row.completionRate}%` }} />
             </div>
 
-            <span className="w-9 text-right">{Math.round(row.completionRate)}%</span>
+            <span className="w-9 text-end">{Math.round(row.completionRate)}%</span>
           </div>
         )}
       </TableCell>

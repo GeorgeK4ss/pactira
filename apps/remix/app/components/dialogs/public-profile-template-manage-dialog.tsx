@@ -370,7 +370,7 @@ export const ManagePublicTemplateDialog = ({
                       {selectedTemplate?.type === TemplateType.PUBLIC && (
                         <Button
                           variant="destructive"
-                          className="mr-auto w-full sm:w-auto"
+                          className="me-auto w-full sm:w-auto"
                           onClick={() => setCurrentStep('CONFIRM_DISABLE')}
                         >
                           <Trans>Disable</Trans>

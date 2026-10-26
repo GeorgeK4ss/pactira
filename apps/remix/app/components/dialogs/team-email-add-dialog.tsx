@@ -100,7 +100,7 @@ export const TeamEmailAddDialog = ({ teamId, trigger, ...props }: TeamEmailAddDi
       <DialogTrigger onClick={(e) => e.stopPropagation()} asChild={true}>
         {trigger ?? (
           <Button variant="outline" loading={isPending} className="bg-background">
-            <Plus className="mr-1 -ml-1 h-5 w-5" />
+            <Plus className="-ms-1 me-1 h-5 w-5" />
             <Trans>Add email</Trans>
           </Button>
         )}

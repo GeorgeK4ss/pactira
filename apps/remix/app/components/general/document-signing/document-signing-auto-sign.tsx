@@ -172,7 +172,7 @@ export const DocumentSigningAutoSign = ({ recipient, fields }: DocumentSigningAu
             {AUTO_SIGNABLE_FIELD_TYPES.map((fieldType) => (
               <li key={fieldType}>
                 <Trans>{_(FRIENDLY_FIELD_TYPE[fieldType as FieldType])}</Trans>
-                <span className="pl-2 text-sm">
+                <span className="ps-2 text-sm">
                   (
                   <Plural
                     value={autoSignableFields.filter((f) => f.type === fieldType).length}

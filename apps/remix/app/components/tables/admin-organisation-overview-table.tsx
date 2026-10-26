@@ -58,12 +58,12 @@ export const AdminOrganisationOverviewTable = ({
             {_(msg`Name`)}
             {sortBy === 'name' ? (
               sortOrder === 'asc' ? (
-                <ChevronUpIcon className="ml-2 h-4 w-4" />
+                <ChevronUpIcon className="ms-2 h-4 w-4" />
               ) : (
-                <ChevronDownIcon className="ml-2 h-4 w-4" />
+                <ChevronDownIcon className="ms-2 h-4 w-4" />
               )
             ) : (
-              <ChevronsUpDown className="ml-2 h-4 w-4" />
+              <ChevronsUpDown className="ms-2 h-4 w-4" />
             )}
           </div>
         ),
@@ -90,12 +90,12 @@ export const AdminOrganisationOverviewTable = ({
             </span>
             {sortBy === 'signingVolume' ? (
               sortOrder === 'asc' ? (
-                <ChevronUpIcon className="ml-2 h-4 w-4" />
+                <ChevronUpIcon className="ms-2 h-4 w-4" />
               ) : (
-                <ChevronDownIcon className="ml-2 h-4 w-4" />
+                <ChevronDownIcon className="ms-2 h-4 w-4" />
               )
             ) : (
-              <ChevronsUpDown className="ml-2 h-4 w-4" />
+              <ChevronsUpDown className="ms-2 h-4 w-4" />
             )}
           </div>
         ),
@@ -128,12 +128,12 @@ export const AdminOrganisationOverviewTable = ({
               </span>
               {sortBy === 'createdAt' ? (
                 sortOrder === 'asc' ? (
-                  <ChevronUpIcon className="ml-2 h-4 w-4" />
+                  <ChevronUpIcon className="ms-2 h-4 w-4" />
                 ) : (
-                  <ChevronDownIcon className="ml-2 h-4 w-4" />
+                  <ChevronDownIcon className="ms-2 h-4 w-4" />
                 )
               ) : (
-                <ChevronsUpDown className="ml-2 h-4 w-4" />
+                <ChevronsUpDown className="ms-2 h-4 w-4" />
               )}
             </div>
           );

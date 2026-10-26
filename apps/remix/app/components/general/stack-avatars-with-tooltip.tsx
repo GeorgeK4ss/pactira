@@ -150,7 +150,7 @@ const RecipientRow = ({ recipient, signingToken }: RecipientRowProps) => {
       type="button"
       className={cn(
         recipientRowClassName,
-        'group w-[calc(100%+1rem)] cursor-pointer text-left transition-colors duration-300 hover:bg-muted',
+        'group w-[calc(100%+1rem)] cursor-pointer text-start transition-colors duration-300 hover:bg-muted',
       )}
       title={_(msg`Click to copy signing link for sending to recipient`)}
       onClick={onCopySigningLink}

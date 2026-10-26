@@ -176,7 +176,7 @@ export const RecipientStepCard = ({
                   {...(draggableProvided.dragHandleProps ?? {})}
                   data-testid="step-drag-handle"
                   className={cn(
-                    '-my-1 -ml-1.5 flex h-8 w-8 flex-shrink-0 cursor-grab items-center justify-center rounded-md hover:bg-foreground/5 active:cursor-grabbing',
+                    '-my-1 -ms-1.5 flex h-8 w-8 flex-shrink-0 cursor-grab items-center justify-center rounded-md hover:bg-foreground/5 active:cursor-grabbing',
                     { 'pointer-events-none opacity-30': isStepLocked },
                   )}
                 >
@@ -189,7 +189,7 @@ export const RecipientStepCard = ({
 
                 {isGroup && (
                   <>
-                    <span className="ml-1 flex items-center gap-x-1.5 text-green-700 text-xs dark:text-green-400">
+                    <span className="ms-1 flex items-center gap-x-1.5 text-green-700 text-xs dark:text-green-400">
                       <Users2Icon className="h-3.5 w-3.5" />
                       <Plural
                         value={step.members.length}
@@ -203,7 +203,7 @@ export const RecipientStepCard = ({
                       variant="link"
                       size="sm"
                       data-testid="ungroup-step-button"
-                      className="ml-auto h-auto p-0 text-xs"
+                      className="ms-auto h-auto p-0 text-xs"
                       disabled={isStepLocked || isSubmitting}
                       onClick={() => onUngroup(stepIndex)}
                     >

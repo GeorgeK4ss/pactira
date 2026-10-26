@@ -321,12 +321,12 @@ export const OrganisationMemberInviteDialog = ({ trigger, ...props }: Organisati
           >
             <TabsList className="w-full">
               <TabsTrigger value="INDIVIDUAL" className="w-full hover:text-foreground">
-                <MailIcon size={20} className="mr-2" />
+                <MailIcon size={20} className="me-2" />
                 <Trans>Invite Members</Trans>
               </TabsTrigger>
 
               <TabsTrigger value="BULK" className="w-full hover:text-foreground">
-                <UsersIcon size={20} className="mr-2" /> <Trans>Bulk Import</Trans>
+                <UsersIcon size={20} className="me-2" /> <Trans>Bulk Import</Trans>
               </TabsTrigger>
             </TabsList>
 
@@ -409,7 +409,7 @@ export const OrganisationMemberInviteDialog = ({ trigger, ...props }: Organisati
                       className="w-fit"
                       onClick={() => onAddOrganisationMemberInvite()}
                     >
-                      <PlusCircle className="mr-2 h-4 w-4" />
+                      <PlusCircle className="me-2 h-4 w-4" />
                       <Trans>Add more</Trans>
                     </Button>
 
@@ -419,7 +419,7 @@ export const OrganisationMemberInviteDialog = ({ trigger, ...props }: Organisati
                       </Button>
 
                       <Button type="submit" loading={form.formState.isSubmitting}>
-                        {!form.formState.isSubmitting && <Mail className="mr-2 h-4 w-4" />}
+                        {!form.formState.isSubmitting && <Mail className="me-2 h-4 w-4" />}
                         <Trans>Invite</Trans>
                       </Button>
                     </DialogFooter>
@@ -447,7 +447,7 @@ export const OrganisationMemberInviteDialog = ({ trigger, ...props }: Organisati
 
                 <DialogFooter>
                   <Button type="button" variant="secondary" onClick={downloadTemplate}>
-                    <Download className="mr-2 h-4 w-4" />
+                    <Download className="me-2 h-4 w-4" />
                     <Trans>Template</Trans>
                   </Button>
                 </DialogFooter>

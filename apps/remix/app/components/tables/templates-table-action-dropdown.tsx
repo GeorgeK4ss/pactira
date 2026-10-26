@@ -69,7 +69,7 @@ export const TemplatesTableActionDropdown = ({
           trigger={
             <DropdownMenuItem asChild onSelect={(e) => e.preventDefault()}>
               <div>
-                <Download className="mr-2 h-4 w-4" />
+                <Download className="me-2 h-4 w-4" />
                 <Trans>Download</Trans>
               </div>
             </DropdownMenuItem>
@@ -80,13 +80,13 @@ export const TemplatesTableActionDropdown = ({
           <>
             <DropdownMenuItem asChild>
               <Link to={formatPath}>
-                <Edit className="mr-2 h-4 w-4" />
+                <Edit className="me-2 h-4 w-4" />
                 <Trans>Edit</Trans>
               </Link>
             </DropdownMenuItem>
 
             <DropdownMenuItem onClick={() => setRenameDialogOpen(true)}>
-              <Pencil className="mr-2 h-4 w-4" />
+              <Pencil className="me-2 h-4 w-4" />
               <Trans>Rename</Trans>
             </DropdownMenuItem>
 
@@ -96,7 +96,7 @@ export const TemplatesTableActionDropdown = ({
               trigger={
                 <DropdownMenuItem asChild onSelect={(e) => e.preventDefault()}>
                   <div>
-                    <Copy className="mr-2 h-4 w-4" />
+                    <Copy className="me-2 h-4 w-4" />
                     <Trans>Duplicate</Trans>
                   </div>
                 </DropdownMenuItem>
@@ -112,14 +112,14 @@ export const TemplatesTableActionDropdown = ({
                   data-testid="template-direct-link"
                   className="relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
                 >
-                  <Share2Icon className="mr-2 h-4 w-4" />
+                  <Share2Icon className="me-2 h-4 w-4" />
                   <Trans>Direct link</Trans>
                 </div>
               }
             />
 
             <DropdownMenuItem onClick={() => setMoveToFolderDialogOpen(true)}>
-              <FolderIcon className="mr-2 h-4 w-4" />
+              <FolderIcon className="me-2 h-4 w-4" />
               <Trans>Move to Folder</Trans>
             </DropdownMenuItem>
 
@@ -128,7 +128,7 @@ export const TemplatesTableActionDropdown = ({
               recipients={row.recipients}
               trigger={
                 <div className="relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground">
-                  <Upload className="mr-2 h-4 w-4" />
+                  <Upload className="me-2 h-4 w-4" />
                   <Trans>Bulk Send via CSV</Trans>
                 </div>
               }
@@ -144,7 +144,7 @@ export const TemplatesTableActionDropdown = ({
               trigger={
                 <DropdownMenuItem asChild onSelect={(e) => e.preventDefault()}>
                   <div>
-                    <Trash2 className="mr-2 h-4 w-4" />
+                    <Trash2 className="me-2 h-4 w-4" />
                     <Trans>Delete</Trans>
                   </div>
                 </DropdownMenuItem>

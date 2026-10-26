@@ -594,18 +594,20 @@ export const AddTemplateFieldsFormPartial = ({
                     )}
                   >
                     {selectedSigner?.email && !isTemplateRecipientEmailPlaceholder(selectedSigner.email) && (
-                      <span className="flex-1 truncate text-left">
+                      <span className="flex-1 truncate text-start">
                         {selectedSigner?.name} ({selectedSigner?.email})
                       </span>
                     )}
 
                     {selectedSigner?.email && isTemplateRecipientEmailPlaceholder(selectedSigner.email) && (
-                      <span className="flex-1 truncate text-left">{selectedSigner?.name}</span>
+                      <span className="flex-1 truncate text-start">{selectedSigner?.name}</span>
                     )}
 
-                    {!selectedSigner?.email && <span className="flex-1 truncate text-left">No recipient selected</span>}
+                    {!selectedSigner?.email && (
+                      <span className="flex-1 truncate text-start">No recipient selected</span>
+                    )}
 
-                    <ChevronsUpDown className="ml-2 h-4 w-4" />
+                    <ChevronsUpDown className="ms-2 h-4 w-4" />
                   </Button>
                 </PopoverTrigger>
 
@@ -622,7 +624,7 @@ export const AddTemplateFieldsFormPartial = ({
                     {/* Note: This is duplicated in `add-fields.tsx` */}
                     {recipientsByRoleToDisplay.map(([role, roleRecipients], roleIndex) => (
                       <CommandGroup key={roleIndex}>
-                        <div className="mt-2 mb-1 ml-2 font-medium text-muted-foreground text-xs">
+                        <div className="ms-2 mt-2 mb-1 font-medium text-muted-foreground text-xs">
                           {_(RECIPIENT_ROLES_DESCRIPTION[role].roleNamePlural)}
                         </div>
 

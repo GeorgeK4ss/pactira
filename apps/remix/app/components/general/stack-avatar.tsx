@@ -21,7 +21,7 @@ export type StackAvatarProps = {
 export const StackAvatar = ({ first, zIndex, fallbackText = '', type, className }: StackAvatarProps) => {
   let classes = '';
   let zIndexClass = '';
-  const firstClass = first ? '' : '-ml-3';
+  const firstClass = first ? '' : '-ms-3';
 
   if (zIndex) {
     zIndexClass = ZIndexes[zIndex] ?? '';

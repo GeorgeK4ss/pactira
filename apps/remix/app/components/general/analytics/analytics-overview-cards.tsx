@@ -163,7 +163,7 @@ const DeltaBadge = ({ tone, testId, children }: DeltaBadgeProps) => {
       )}
       data-testid={testId}
     >
-      {DeltaIcon && <DeltaIcon className="-ml-0.5 h-3 w-3" aria-hidden="true" />}
+      {DeltaIcon && <DeltaIcon className="-ms-0.5 h-3 w-3" aria-hidden="true" />}
       {children}
     </span>
   );

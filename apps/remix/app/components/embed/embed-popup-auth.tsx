@@ -56,12 +56,12 @@ export const EmbedPopupAuth = ({ className, email, signedInAs, onSuccess }: Embe
           <Button type="button" size="lg" onClick={() => onProviderClick('account')}>
             {isEmailPasswordSigninEnabled ? (
               <>
-                <MailIcon className="mr-2 h-4 w-4" />
+                <MailIcon className="me-2 h-4 w-4" />
                 <Trans>Sign in with email or passkey</Trans>
               </>
             ) : (
               <>
-                <KeyRoundIcon className="mr-2 h-4 w-4" />
+                <KeyRoundIcon className="me-2 h-4 w-4" />
                 <Trans>Sign in with passkey</Trans>
               </>
             )}
@@ -76,7 +76,7 @@ export const EmbedPopupAuth = ({ className, email, signedInAs, onSuccess }: Embe
             className="border bg-background text-muted-foreground"
             onClick={() => onProviderClick('google')}
           >
-            <FcGoogle className="mr-2 h-5 w-5" />
+            <FcGoogle className="me-2 h-5 w-5" />
             Google
           </Button>
         )}
@@ -89,7 +89,7 @@ export const EmbedPopupAuth = ({ className, email, signedInAs, onSuccess }: Embe
             className="border bg-background text-muted-foreground"
             onClick={() => onProviderClick('microsoft')}
           >
-            <img className="mr-2 h-4 w-4" alt="Microsoft Logo" src={'/static/microsoft.svg'} />
+            <img className="me-2 h-4 w-4" alt="Microsoft Logo" src={'/static/microsoft.svg'} />
             Microsoft
           </Button>
         )}
@@ -102,7 +102,7 @@ export const EmbedPopupAuth = ({ className, email, signedInAs, onSuccess }: Embe
             className="border bg-background text-muted-foreground"
             onClick={() => onProviderClick('oidc')}
           >
-            <FaIdCardClip className="mr-2 h-5 w-5" />
+            <FaIdCardClip className="me-2 h-5 w-5" />
             {providers.oidcProviderLabel || 'OIDC'}
           </Button>
         )}

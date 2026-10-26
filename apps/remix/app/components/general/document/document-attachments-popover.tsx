@@ -131,7 +131,7 @@ export const DocumentAttachmentsPopover = ({
 
           <span>
             <Trans>Attachments</Trans>
-            {attachments && attachments.data.length > 0 && <span className="ml-1">({attachments.data.length})</span>}
+            {attachments && attachments.data.length > 0 && <span className="ms-1">({attachments.data.length})</span>}
           </span>
         </Button>
       </PopoverTrigger>
@@ -170,7 +170,7 @@ export const DocumentAttachmentsPopover = ({
                     variant="ghost"
                     size="sm"
                     onClick={() => void onDeleteAttachment(attachment.id)}
-                    className="ml-2 h-8 w-8 p-0"
+                    className="ms-2 h-8 w-8 p-0"
                   >
                     <X className="h-4 w-4" />
                   </Button>
@@ -181,7 +181,7 @@ export const DocumentAttachmentsPopover = ({
 
           {!isAdding && (
             <Button variant="outline" size="sm" className="w-full" onClick={() => setIsAdding(true)}>
-              <Plus className="mr-2 h-4 w-4" />
+              <Plus className="me-2 h-4 w-4" />
               <Trans>Add Attachment</Trans>
             </Button>
           )}

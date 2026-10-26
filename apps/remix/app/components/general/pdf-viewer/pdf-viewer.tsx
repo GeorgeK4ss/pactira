@@ -198,7 +198,8 @@ export default function PDFViewer({
   }
 
   return (
-    <div ref={$el} className={cn('h-full w-full', className)} {...props}>
+    // Pages and the fields placed on them keep left-to-right geometry in right-to-left languages.
+    <div ref={$el} dir="ltr" className={cn('h-full w-full', className)} {...props}>
       {/* Loading State */}
       {isLoading && <PdfViewerLoadingState />}
 

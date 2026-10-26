@@ -138,7 +138,7 @@ export const DocumentCertificateQRView = ({
               token={token}
               trigger={
                 <Button type="button" variant="outline" className="w-fit">
-                  <DownloadIcon className="mr-2 h-5 w-5" />
+                  <DownloadIcon className="me-2 h-5 w-5" />
                   <Trans>Download</Trans>
                 </Button>
               }
@@ -198,7 +198,7 @@ const DocumentCertificateQrV2 = ({ title, recipientCount, formattedDate, token }
           token={token}
           trigger={
             <Button type="button" variant="outline" className="w-fit">
-              <DownloadIcon className="mr-2 h-5 w-5" />
+              <DownloadIcon className="me-2 h-5 w-5" />
               <Trans>Download</Trans>
             </Button>
           }

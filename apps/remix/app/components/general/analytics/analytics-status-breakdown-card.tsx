@@ -89,7 +89,7 @@ export const AnalyticsStatusBreakdownCard = ({ query, className }: AnalyticsStat
                     <span className="font-medium text-foreground" data-testid={`analytics-status-${row.key}`}>
                       {row.count.toLocaleString(i18n.locale)}
                     </span>
-                    <span className="w-10 text-right text-muted-foreground">{row.percent}%</span>
+                    <span className="w-10 text-end text-muted-foreground">{row.percent}%</span>
                   </div>
                 </li>
               ))}

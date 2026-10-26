@@ -3,7 +3,10 @@ import { AppError, AppErrorCode } from '@documenso/lib/errors/app-error';
 import { FontLibrary } from '@documenso/skia-canvas';
 import type { Recipient } from '@prisma/client';
 import { FieldType } from '@prisma/client';
+import type Konva from 'konva';
 import { match } from 'ts-pattern';
+
+import { isRtlLanguage } from '../../constants/locales';
 
 /**
  * Ensure all required fonts are registered in the skia-canvas FontLibrary.
@@ -35,6 +38,10 @@ export const ensureFontLibrary = () => {
       ['Noto Sans Japanese']: [path.join(fontPath, 'noto-sans-japanese.ttf')],
       ['Noto Sans Chinese']: [path.join(fontPath, 'noto-sans-chinese.ttf')],
       ['Noto Sans Korean']: [path.join(fontPath, 'noto-sans-korean.ttf')],
+      ['Noto Sans Hebrew']: [
+        path.join(fontPath, 'noto-sans-hebrew.ttf'),
+        path.join(fontPath, 'noto-sans-hebrew-bold.ttf'),
+      ],
     });
   }
 };
@@ -184,4 +191,53 @@ export const findRecipientByPlaceholder = (
   }
 
   return recipient;
+};
+
+/**
+ * Font for text the app draws onto PDFs (certificate, audit log). Inter has no Hebrew letters, and
+ * the production container has no system fonts to fall back on, so Hebrew is named explicitly.
+ */
+export const PDF_TEXT_FONT_FAMILY = 'Inter, "Noto Sans Hebrew"';
+
+/**
+ * Mirrors a laid-out page horizontally: every visible node (text, shape, image) moves to the
+ * opposite side of the page, keeping its size, so columns and label/value pairs read right to
+ * left. Groups are left in place, so all positions are measured once against the same page.
+ * Images and shapes are moved, never flipped.
+ */
+const mirrorHorizontally = (page: Konva.Container, pageWidth: number) => {
+  const leaves = page.find((node: Konva.Node) => typeof (node as Konva.Container).getChildren !== 'function');
+
+  const moves = leaves.map((node) => {
+    const box = node.getClientRect({ relativeTo: page, skipShadow: true, skipStroke: true });
+
+    return { node, delta: pageWidth - box.x - box.width - box.x };
+  });
+
+  for (const { node, delta } of moves) {
+    node.x(node.x() + delta);
+
+    if (node.getClassName() === 'Text') {
+      const text = node as Konva.Text;
+
+      // Text without Hebrew letters (dates, emails, IDs) keeps its own reading order; right-to-left
+      // reordering would scramble "2026-10-26 03:36 PM (GMT+2)".
+      text.direction(/[\u0590-\u05FF]/.test(text.text()) ? 'rtl' : 'ltr');
+
+      if (text.getAttr('width') !== undefined && text.align() !== 'center') {
+        text.align('right');
+      }
+    }
+  }
+};
+
+/**
+ * For right-to-left languages, lays a rendered page out right to left (see `mirrorHorizontally`).
+ */
+export const applyTextDirection = (page: Konva.Container, language: string, pageWidth: number) => {
+  if (!isRtlLanguage(language)) {
+    return;
+  }
+
+  mirrorHorizontally(page, pageWidth);
 };

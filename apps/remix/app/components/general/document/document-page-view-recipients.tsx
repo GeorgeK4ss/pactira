@@ -70,7 +70,7 @@ export const DocumentPageViewRecipients = ({ envelope, documentRootPath }: Docum
             title={_(msg`Modify recipients`)}
             className="flex flex-row items-center justify-between"
           >
-            {recipients.length === 0 ? <PlusIcon className="ml-2 h-4 w-4" /> : <PenIcon className="ml-2 h-3 w-3" />}
+            {recipients.length === 0 ? <PlusIcon className="ms-2 h-4 w-4" /> : <PenIcon className="ms-2 h-3 w-3" />}
           </Link>
         )}
       </div>
@@ -100,19 +100,19 @@ export const DocumentPageViewRecipients = ({ envelope, documentRootPath }: Docum
                   {match(recipient.role)
                     .with(RecipientRole.APPROVER, () => (
                       <>
-                        <CheckIcon className="mr-1 h-3 w-3" />
+                        <CheckIcon className="me-1 h-3 w-3" />
                         <Trans>Approved</Trans>
                       </>
                     ))
                     .with(RecipientRole.CC, () =>
                       envelope.status === DocumentStatus.COMPLETED ? (
                         <>
-                          <MailIcon className="mr-1 h-3 w-3" />
+                          <MailIcon className="me-1 h-3 w-3" />
                           <Trans>Sent</Trans>
                         </>
                       ) : (
                         <>
-                          <CheckIcon className="mr-1 h-3 w-3" />
+                          <CheckIcon className="me-1 h-3 w-3" />
                           <Trans>Ready</Trans>
                         </>
                       ),
@@ -120,19 +120,19 @@ export const DocumentPageViewRecipients = ({ envelope, documentRootPath }: Docum
 
                     .with(RecipientRole.SIGNER, () => (
                       <>
-                        <SignatureIcon className="mr-1 h-3 w-3" />
+                        <SignatureIcon className="me-1 h-3 w-3" />
                         <Trans>Signed</Trans>
                       </>
                     ))
                     .with(RecipientRole.VIEWER, () => (
                       <>
-                        <MailOpenIcon className="mr-1 h-3 w-3" />
+                        <MailOpenIcon className="me-1 h-3 w-3" />
                         <Trans>Viewed</Trans>
                       </>
                     ))
                     .with(RecipientRole.ASSISTANT, () => (
                       <>
-                        <UserIcon className="mr-1 h-3 w-3" />
+                        <UserIcon className="me-1 h-3 w-3" />
                         <Trans>Assisted</Trans>
                       </>
                     ))
@@ -144,7 +144,7 @@ export const DocumentPageViewRecipients = ({ envelope, documentRootPath }: Docum
                 recipient.signingStatus === SigningStatus.NOT_SIGNED &&
                 isRecipientExpired(recipient) && (
                   <Badge variant="destructive">
-                    <Clock8Icon className="mr-1 h-3 w-3" />
+                    <Clock8Icon className="me-1 h-3 w-3" />
                     <Trans>Expired</Trans>
                   </Badge>
                 )}
@@ -156,7 +156,7 @@ export const DocumentPageViewRecipients = ({ envelope, documentRootPath }: Docum
                   <PopoverHover
                     trigger={
                       <Badge variant="secondary">
-                        <Clock className="mr-1 h-3 w-3" />
+                        <Clock className="me-1 h-3 w-3" />
                         <Trans>Pending</Trans>
                       </Badge>
                     }
@@ -169,7 +169,7 @@ export const DocumentPageViewRecipients = ({ envelope, documentRootPath }: Docum
                   </PopoverHover>
                 ) : (
                   <Badge variant="secondary">
-                    <Clock className="mr-1 h-3 w-3" />
+                    <Clock className="me-1 h-3 w-3" />
                     <Trans>Pending</Trans>
                   </Badge>
                 ))}
@@ -178,7 +178,7 @@ export const DocumentPageViewRecipients = ({ envelope, documentRootPath }: Docum
                 <PopoverHover
                   trigger={
                     <Badge variant="destructive">
-                      <AlertTriangle className="mr-1 h-3 w-3" />
+                      <AlertTriangle className="me-1 h-3 w-3" />
                       <Trans>Rejected</Trans>
                     </Badge>
                   }

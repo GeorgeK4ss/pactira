@@ -346,7 +346,7 @@ export const AddTemplateSettingsFormPartial = ({
                           </Trans>
                         </p>
 
-                        <ul className="ml-3.5 list-outside list-disc space-y-0.5 py-2">
+                        <ul className="ms-3.5 list-outside list-disc space-y-0.5 py-2">
                           <li>
                             <Trans>
                               <strong>Email</strong> - The recipient will be emailed the document to sign, approve, etc.
@@ -454,7 +454,7 @@ export const AddTemplateSettingsFormPartial = ({
             {distributionMethod === DocumentDistributionMethod.EMAIL && (
               <Accordion type="multiple">
                 <AccordionItem value="email-options" className="border-none">
-                  <AccordionTrigger className="rounded border px-3 py-2 text-left text-foreground hover:bg-neutral-200/30 hover:no-underline">
+                  <AccordionTrigger className="rounded border px-3 py-2 text-start text-foreground hover:bg-neutral-200/30 hover:no-underline">
                     <Trans>Email Options</Trans>
                   </AccordionTrigger>
 
@@ -588,7 +588,7 @@ export const AddTemplateSettingsFormPartial = ({
 
             <Accordion type="multiple">
               <AccordionItem value="advanced-options" className="border-none">
-                <AccordionTrigger className="rounded border px-3 py-2 text-left text-foreground hover:bg-neutral-200/30 hover:no-underline">
+                <AccordionTrigger className="rounded border px-3 py-2 text-start text-foreground hover:bg-neutral-200/30 hover:no-underline">
                   <Trans>Advanced Options</Trans>
                 </AccordionTrigger>
 

@@ -44,7 +44,7 @@ export const EnvelopeEditorInvalidDirectTemplateAlert = ({
           Recipients cannot use this direct link template because the following signers are missing a signature field
         </Trans>
 
-        <ul className="list-disc pl-5">
+        <ul className="list-disc ps-5">
           {signersMissingSignatureFields.map((recipient, i) => (
             <li key={recipient.id}>{recipient.email || recipient.name || `Recipient ${i + 1}`}</li>
           ))}

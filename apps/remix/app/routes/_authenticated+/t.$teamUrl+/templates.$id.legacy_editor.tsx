@@ -66,7 +66,7 @@ export default function TemplateEditPage() {
             to={`${templateRootPath}/${template.envelopeId}`}
             className="flex items-center text-documenso-700 hover:opacity-80"
           >
-            <ChevronLeft className="mr-2 inline-block h-5 w-5" />
+            <ChevronLeft className="me-2 inline-block h-5 w-5" />
             <Trans>Template</Trans>
           </Link>
 
@@ -82,7 +82,7 @@ export default function TemplateEditPage() {
 
             {template.directLink?.token && (
               <TemplateDirectLinkBadge
-                className="ml-4"
+                className="ms-4"
                 token={template.directLink.token}
                 enabled={template.directLink.enabled}
               />

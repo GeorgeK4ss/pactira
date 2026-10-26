@@ -592,7 +592,7 @@ export const AddSignersFormPartial = ({
 
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <span className="ml-1 cursor-help text-muted-foreground">
+                        <span className="ms-1 cursor-help text-muted-foreground">
                           <HelpCircle className="h-3.5 w-3.5" />
                         </span>
                       </TooltipTrigger>
@@ -635,7 +635,7 @@ export const AddSignersFormPartial = ({
 
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <span className="ml-1 cursor-help text-muted-foreground">
+                        <span className="ms-1 cursor-help text-muted-foreground">
                           <HelpCircle className="h-3.5 w-3.5" />
                         </span>
                       </TooltipTrigger>
@@ -692,7 +692,7 @@ export const AddSignersFormPartial = ({
                               disabled={isSubmitting || !canRecipientBeModified(signer.nativeId)}
                               className={cn('grid grid-cols-10 items-end gap-2 pb-2', {
                                 'border-b pt-2': showAdvancedSettings,
-                                'grid-cols-12 pr-3': isSigningOrderSequential,
+                                'grid-cols-12 pe-3': isSigningOrderSequential,
                               })}
                             >
                               {isSigningOrderSequential && isCcRecipient(signer) && <div className="col-span-2" />}
@@ -950,7 +950,7 @@ export const AddSignersFormPartial = ({
                 disabled={isSubmitting || signers.length >= remaining.recipients}
                 onClick={() => onAddSigner()}
               >
-                <Plus className="mr-2 -ml-1 h-5 w-5" />
+                <Plus className="-ms-1 me-2 h-5 w-5" />
                 <Trans>Add Signer</Trans>
               </Button>
 
@@ -961,7 +961,7 @@ export const AddSignersFormPartial = ({
                 disabled={isSubmitting || isUserAlreadyARecipient}
                 onClick={() => onAddSelfSigner()}
               >
-                <Plus className="mr-2 -ml-1 h-5 w-5" />
+                <Plus className="-ms-1 me-2 h-5 w-5" />
                 <Trans>Add myself</Trans>
               </Button>
             </div>
@@ -975,7 +975,7 @@ export const AddSignersFormPartial = ({
                   onCheckedChange={(value) => setShowAdvancedSettings(Boolean(value))}
                 />
 
-                <label className="ml-2 text-muted-foreground text-sm" htmlFor="showAdvancedRecipientSettings">
+                <label className="ms-2 text-muted-foreground text-sm" htmlFor="showAdvancedRecipientSettings">
                   <Trans>Show advanced settings</Trans>
                 </label>
               </div>

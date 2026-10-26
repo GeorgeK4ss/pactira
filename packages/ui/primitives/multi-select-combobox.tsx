@@ -126,8 +126,8 @@ export function MultiSelectCombobox<T = OptionValue>({
                   <span className="truncate">{buttonLabel}</span>
 
                   <div
-                    className={cn('ml-2 flex flex-row items-center', {
-                      'ml-6': showClearButton,
+                    className={cn('ms-2 flex flex-row items-center', {
+                      'ms-6': showClearButton,
                     })}
                   >
                     <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50" />
@@ -140,7 +140,7 @@ export function MultiSelectCombobox<T = OptionValue>({
 
         {/* This is placed outside the trigger since we can't have nested buttons. */}
         {showClearButton && !loading && (
-          <div className="absolute top-0 right-8 bottom-0 flex items-center justify-center">
+          <div className="absolute end-8 top-0 bottom-0 flex items-center justify-center">
             <button
               type="button"
               className="flex h-4 w-4 items-center justify-center rounded-full bg-muted-foreground/20"
@@ -162,7 +162,7 @@ export function MultiSelectCombobox<T = OptionValue>({
             {options.map((option, i) => (
               <CommandItem key={i} onSelect={() => handleSelect(option.value)}>
                 <Check
-                  className={cn('mr-2 h-4 w-4', selectedValues.includes(option.value) ? 'opacity-100' : 'opacity-0')}
+                  className={cn('me-2 h-4 w-4', selectedValues.includes(option.value) ? 'opacity-100' : 'opacity-0')}
                 />
                 {option.label}
               </CommandItem>

@@ -20,7 +20,7 @@ export const DocumentSignatureSettingsTooltip = () => {
           <Trans>The types of signatures that recipients are allowed to use when signing the document.</Trans>
         </p>
 
-        <ul className="ml-3.5 list-outside list-disc space-y-0.5 py-2">
+        <ul className="ms-3.5 list-outside list-disc space-y-0.5 py-2">
           <li>
             <Trans>
               <strong>

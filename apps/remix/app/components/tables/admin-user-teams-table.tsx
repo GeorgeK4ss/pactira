@@ -115,7 +115,7 @@ export const AdminUserTeamsTable = ({ userId }: AdminUserTeamsTableProps) => {
         rows: 3,
         component: (
           <>
-            <TableCell className="py-4 pr-4">
+            <TableCell className="py-4 pe-4">
               <Skeleton className="h-4 w-20 rounded-full" />
             </TableCell>
             <TableCell>

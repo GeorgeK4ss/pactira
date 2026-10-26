@@ -68,7 +68,7 @@ export const GenericErrorLayout = ({
           <img
             src={backgroundPattern}
             alt="background pattern"
-            className="-mt-[15vh] -ml-[50vw] h-full scale-100 object-cover md:scale-100 lg:scale-[100%] dark:contrast-[70%] dark:invert dark:sepia"
+            className="-ms-[50vw] -mt-[15vh] h-full scale-100 object-cover md:scale-100 lg:scale-[100%] dark:contrast-[70%] dark:invert dark:sepia"
             style={{
               mask: 'radial-gradient(rgba(255, 255, 255, 1) 0%, transparent 80%)',
               WebkitMask: 'radial-gradient(rgba(255, 255, 255, 1) 0%, transparent 80%)',
@@ -95,7 +95,7 @@ export const GenericErrorLayout = ({
                     void navigate(-1);
                   }}
                 >
-                  <ChevronLeft className="mr-2 h-4 w-4" />
+                  <ChevronLeft className="me-2 h-4 w-4" />
                   <Trans>Go Back</Trans>
                 </Button>
               ))}

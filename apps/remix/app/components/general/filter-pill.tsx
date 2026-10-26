@@ -111,7 +111,7 @@ export const FilterPill = (props: FilterPillProps) => {
           })}
           data-testid={testId}
         >
-          <Icon className="mr-2 h-4 w-4" />
+          <Icon className="me-2 h-4 w-4" />
           {label}
 
           {hasSelection && (
@@ -138,7 +138,7 @@ export const FilterPill = (props: FilterPillProps) => {
             </>
           )}
 
-          <ChevronDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <ChevronDownIcon className="ms-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
 
@@ -156,7 +156,7 @@ export const FilterPill = (props: FilterPillProps) => {
                 <CommandItem key={option.value} onSelect={() => onSelect(option.value)}>
                   <CheckIcon
                     className={cn(
-                      'mr-2 h-4 w-4 shrink-0',
+                      'me-2 h-4 w-4 shrink-0',
                       selectedValues.includes(option.value) ? 'opacity-100' : 'opacity-0',
                     )}
                   />
@@ -164,7 +164,7 @@ export const FilterPill = (props: FilterPillProps) => {
                   {option.label}
 
                   {option.trailing !== undefined && (
-                    <span className="ml-auto pl-4 text-muted-foreground text-xs">{option.trailing}</span>
+                    <span className="ms-auto ps-4 text-muted-foreground text-xs">{option.trailing}</span>
                   )}
                 </CommandItem>
               ))}

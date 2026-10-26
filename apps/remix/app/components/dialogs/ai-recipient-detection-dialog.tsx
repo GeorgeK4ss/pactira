@@ -293,7 +293,7 @@ export const AiRecipientDetectionDialog = ({
 
               {detectedRecipients.length > 0 && (
                 <Button type="button" onClick={onAddRecipients}>
-                  <CheckIcon className="mr-2 -ml-1 h-4 w-4" />
+                  <CheckIcon className="-ms-1 me-2 h-4 w-4" />
                   <Trans>Add recipients</Trans>
                 </Button>
               )}

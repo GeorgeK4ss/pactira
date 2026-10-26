@@ -42,7 +42,7 @@ export const LanguageSwitcherDialog = ({ open, setOpen }: LanguageSwitcherDialog
               value={_(language.full)}
               onSelect={async () => setLanguage(language.short)}
             >
-              <CheckIcon className={cn('mr-2 h-4 w-4', i18n.locale === language.short ? 'opacity-100' : 'opacity-0')} />
+              <CheckIcon className={cn('me-2 h-4 w-4', i18n.locale === language.short ? 'opacity-100' : 'opacity-0')} />
               {_(language.full)}
             </CommandItem>
           ))}

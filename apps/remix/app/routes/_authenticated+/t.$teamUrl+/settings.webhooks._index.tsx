@@ -161,7 +161,7 @@ const WebhookTableActionDropdown = ({ webhook }: { webhook: Webhook }) => {
 
         <DropdownMenuItem asChild>
           <Link to={`/t/${team.url}/settings/webhooks/${webhook.id}`}>
-            <ScrollTextIcon className="mr-2 h-4 w-4" />
+            <ScrollTextIcon className="me-2 h-4 w-4" />
             <Trans>Logs</Trans>
           </Link>
         </DropdownMenuItem>
@@ -171,7 +171,7 @@ const WebhookTableActionDropdown = ({ webhook }: { webhook: Webhook }) => {
           trigger={
             <DropdownMenuItem asChild onSelect={(e) => e.preventDefault()}>
               <div>
-                <EditIcon className="mr-2 h-4 w-4" />
+                <EditIcon className="me-2 h-4 w-4" />
                 <Trans>Edit</Trans>
               </div>
             </DropdownMenuItem>
@@ -181,7 +181,7 @@ const WebhookTableActionDropdown = ({ webhook }: { webhook: Webhook }) => {
         <WebhookDeleteDialog webhook={webhook}>
           <DropdownMenuItem asChild onSelect={(e) => e.preventDefault()}>
             <div>
-              <Trash2Icon className="mr-2 h-4 w-4" />
+              <Trash2Icon className="me-2 h-4 w-4" />
               <Trans>Delete</Trans>
             </div>
           </DropdownMenuItem>

@@ -57,7 +57,7 @@ export const AppNavDesktop = ({ className, setIsCommandMenuOpen, ...props }: App
   }, [currentTeam, organisations]);
 
   return (
-    <div className={cn('ml-8 hidden flex-1 items-center gap-x-12 md:flex md:justify-between', className)} {...props}>
+    <div className={cn('ms-8 hidden flex-1 items-center gap-x-12 md:flex md:justify-between', className)} {...props}>
       <div>
         <AnimatePresence>
           {menuNavigationLinks.length > 0 && (
@@ -92,7 +92,7 @@ export const AppNavDesktop = ({ className, setIsCommandMenuOpen, ...props }: App
         onClick={() => setIsCommandMenuOpen(true)}
       >
         <div className="flex items-center">
-          <Search className="mr-2 h-5 w-5" />
+          <Search className="me-2 h-5 w-5" />
           <Trans>Search</Trans>
         </div>
 

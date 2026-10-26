@@ -96,7 +96,7 @@ export default function TokenDeleteDialog({ token, onDelete, children }: TokenDe
     <Dialog open={isOpen} onOpenChange={(value) => !form.formState.isSubmitting && setIsOpen(value)}>
       <DialogTrigger asChild={true}>
         {children ?? (
-          <Button className="mr-4" variant="destructive">
+          <Button className="me-4" variant="destructive">
             <Trans>Delete</Trans>
           </Button>
         )}

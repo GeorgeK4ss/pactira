@@ -33,7 +33,7 @@ export const DocumentEmailCheckboxes = ({ value, onChange, className, hiddenEven
           />
 
           <label
-            className="ml-2 flex flex-row items-center text-muted-foreground text-sm"
+            className="ms-2 flex flex-row items-center text-muted-foreground text-sm"
             htmlFor={DocumentEmailEvents.RecipientSigned}
           >
             <Trans>Email the owner when a recipient signs</Trans>
@@ -71,7 +71,7 @@ export const DocumentEmailCheckboxes = ({ value, onChange, className, hiddenEven
           />
 
           <label
-            className="ml-2 flex flex-row items-center text-muted-foreground text-sm"
+            className="ms-2 flex flex-row items-center text-muted-foreground text-sm"
             htmlFor={DocumentEmailEvents.RecipientSigningRequest}
           >
             <Trans>Email recipients with a signing request</Trans>
@@ -109,7 +109,7 @@ export const DocumentEmailCheckboxes = ({ value, onChange, className, hiddenEven
           />
 
           <label
-            className="ml-2 flex flex-row items-center text-muted-foreground text-sm"
+            className="ms-2 flex flex-row items-center text-muted-foreground text-sm"
             htmlFor={DocumentEmailEvents.RecipientRemoved}
           >
             <Trans>Email recipients when they're removed from a pending document</Trans>
@@ -147,7 +147,7 @@ export const DocumentEmailCheckboxes = ({ value, onChange, className, hiddenEven
           />
 
           <label
-            className="ml-2 flex flex-row items-center text-muted-foreground text-sm"
+            className="ms-2 flex flex-row items-center text-muted-foreground text-sm"
             htmlFor={DocumentEmailEvents.DocumentPending}
           >
             <Trans>Email the signer if the document is still pending</Trans>
@@ -188,7 +188,7 @@ export const DocumentEmailCheckboxes = ({ value, onChange, className, hiddenEven
           />
 
           <label
-            className="ml-2 flex flex-row items-center text-muted-foreground text-sm"
+            className="ms-2 flex flex-row items-center text-muted-foreground text-sm"
             htmlFor={DocumentEmailEvents.DocumentCompleted}
           >
             <Trans>Email recipients when the document is completed</Trans>
@@ -226,7 +226,7 @@ export const DocumentEmailCheckboxes = ({ value, onChange, className, hiddenEven
           />
 
           <label
-            className="ml-2 flex flex-row items-center text-muted-foreground text-sm"
+            className="ms-2 flex flex-row items-center text-muted-foreground text-sm"
             htmlFor={DocumentEmailEvents.DocumentDeleted}
           >
             <Trans>Email recipients when a pending document is deleted</Trans>
@@ -264,7 +264,7 @@ export const DocumentEmailCheckboxes = ({ value, onChange, className, hiddenEven
           />
 
           <label
-            className="ml-2 flex flex-row items-center text-muted-foreground text-sm"
+            className="ms-2 flex flex-row items-center text-muted-foreground text-sm"
             htmlFor={DocumentEmailEvents.OwnerDocumentCompleted}
           >
             <Trans>Email the owner when the document is completed</Trans>
@@ -302,7 +302,7 @@ export const DocumentEmailCheckboxes = ({ value, onChange, className, hiddenEven
           />
 
           <label
-            className="ml-2 flex flex-row items-center text-muted-foreground text-sm"
+            className="ms-2 flex flex-row items-center text-muted-foreground text-sm"
             htmlFor={DocumentEmailEvents.OwnerDocumentCreated}
           >
             <Trans>Email the owner when a document is created from a direct template</Trans>
@@ -343,7 +343,7 @@ export const DocumentEmailCheckboxes = ({ value, onChange, className, hiddenEven
           />
 
           <label
-            className="ml-2 flex flex-row items-center text-muted-foreground text-sm"
+            className="ms-2 flex flex-row items-center text-muted-foreground text-sm"
             htmlFor={DocumentEmailEvents.OwnerRecipientExpired}
           >
             <Trans>Send recipient expired email to the owner</Trans>

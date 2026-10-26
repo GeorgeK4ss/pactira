@@ -170,7 +170,7 @@ export const DropdownFieldAdvancedSettings = ({
             </div>
           ))}
           <Button
-            className="mt-4 ml-9 border border-foreground/10 bg-foreground/10 hover:bg-foreground/5"
+            className="ms-9 mt-4 border border-foreground/10 bg-foreground/10 hover:bg-foreground/5"
             variant="outline"
             onClick={addValue}
           >

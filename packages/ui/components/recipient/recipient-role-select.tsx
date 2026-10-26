@@ -30,7 +30,7 @@ export const RecipientRoleSelect = forwardRef<HTMLButtonElement, RecipientRoleSe
         <SelectItem value={RecipientRole.SIGNER}>
           <div className="flex items-center">
             <div className="flex w-[150px] items-center">
-              <span className="mr-2">{ROLE_ICONS[RecipientRole.SIGNER]}</span>
+              <span className="me-2">{ROLE_ICONS[RecipientRole.SIGNER]}</span>
               <Trans>Needs to sign</Trans>
             </div>
             <Tooltip>
@@ -50,7 +50,7 @@ export const RecipientRoleSelect = forwardRef<HTMLButtonElement, RecipientRoleSe
           <SelectItem value={RecipientRole.APPROVER}>
             <div className="flex items-center">
               <div className="flex w-[150px] items-center">
-                <span className="mr-2">{ROLE_ICONS[RecipientRole.APPROVER]}</span>
+                <span className="me-2">{ROLE_ICONS[RecipientRole.APPROVER]}</span>
                 <Trans>Needs to approve</Trans>
               </div>
               <Tooltip>
@@ -71,7 +71,7 @@ export const RecipientRoleSelect = forwardRef<HTMLButtonElement, RecipientRoleSe
           <SelectItem value={RecipientRole.VIEWER}>
             <div className="flex items-center">
               <div className="flex w-[150px] items-center">
-                <span className="mr-2">{ROLE_ICONS[RecipientRole.VIEWER]}</span>
+                <span className="me-2">{ROLE_ICONS[RecipientRole.VIEWER]}</span>
                 <Trans>Needs to view</Trans>
               </div>
               <Tooltip>
@@ -92,7 +92,7 @@ export const RecipientRoleSelect = forwardRef<HTMLButtonElement, RecipientRoleSe
           <SelectItem value={RecipientRole.CC}>
             <div className="flex items-center">
               <div className="flex w-[150px] items-center">
-                <span className="mr-2">{ROLE_ICONS[RecipientRole.CC]}</span>
+                <span className="me-2">{ROLE_ICONS[RecipientRole.CC]}</span>
                 <Trans>Receives copy</Trans>
               </div>
               <Tooltip>
@@ -120,7 +120,7 @@ export const RecipientRoleSelect = forwardRef<HTMLButtonElement, RecipientRoleSe
           >
             <div className="flex items-center">
               <div className="flex w-[150px] items-center">
-                <span className="mr-2">{ROLE_ICONS[RecipientRole.ASSISTANT]}</span>
+                <span className="me-2">{ROLE_ICONS[RecipientRole.ASSISTANT]}</span>
                 <Trans>Can prepare</Trans>
               </div>
               <Tooltip>

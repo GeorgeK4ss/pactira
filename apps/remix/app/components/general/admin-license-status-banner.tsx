@@ -25,7 +25,7 @@ export const AdminLicenseStatusBanner = ({ license }: AdminLicenseStatusBannerPr
     >
       <div className="flex items-center justify-between gap-x-4 px-4 py-3 font-medium text-sm">
         <div className="flex items-center">
-          <AlertTriangleIcon className="mr-2.5 h-5 w-5" />
+          <AlertTriangleIcon className="me-2.5 h-5 w-5" />
 
           {match(licenseStatus)
             .with('PAST_DUE', () => (
@@ -58,7 +58,7 @@ export const AdminLicenseStatusBanner = ({ license }: AdminLicenseStatusBannerPr
           asChild
         >
           <Link to="https://docs.documenso.com/users/licenses/enterprise-edition" target="_blank">
-            <KeyRoundIcon className="mr-1.5 h-4 w-4" />
+            <KeyRoundIcon className="me-1.5 h-4 w-4" />
             <Trans>See Documentation</Trans>
           </Link>
         </Button>

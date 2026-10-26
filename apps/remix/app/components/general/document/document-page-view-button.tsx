@@ -42,19 +42,19 @@ export const DocumentPageViewButton = ({ envelope }: DocumentPageViewButtonProps
           {match(role)
             .with(RecipientRole.SIGNER, () => (
               <>
-                <Pencil className="mr-2 -ml-1 h-4 w-4" />
+                <Pencil className="-ms-1 me-2 h-4 w-4" />
                 <Trans>Sign</Trans>
               </>
             ))
             .with(RecipientRole.APPROVER, () => (
               <>
-                <CheckCircle className="mr-2 -ml-1 h-4 w-4" />
+                <CheckCircle className="-ms-1 me-2 h-4 w-4" />
                 <Trans>Approve</Trans>
               </>
             ))
             .otherwise(() => (
               <>
-                <EyeIcon className="mr-2 -ml-1 h-4 w-4" />
+                <EyeIcon className="-ms-1 me-2 h-4 w-4" />
                 <Trans>View</Trans>
               </>
             ))}
@@ -76,7 +76,7 @@ export const DocumentPageViewButton = ({ envelope }: DocumentPageViewButtonProps
         token={recipient?.token}
         trigger={
           <Button className="w-full">
-            <Download className="mr-2 -ml-1 inline h-4 w-4" />
+            <Download className="-ms-1 me-2 inline h-4 w-4" />
             <Trans>Download</Trans>
           </Button>
         }

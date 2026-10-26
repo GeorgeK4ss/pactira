@@ -114,7 +114,7 @@ export const DocumentSigningMobileWidget = () => {
                   <span>
                     <Trans>Powered by</Trans>
                   </span>
-                  <BrandingLogo className="ml-2 inline-block h-[14px]" />
+                  <BrandingLogo className="ms-2 inline-block h-[14px]" />
                 </div>
               )}
             </div>

@@ -110,9 +110,9 @@ export default function WebhookPage({ params }: Route.ComponentProps) {
         cell: ({ row }) => (
           <Badge variant={row.original.status === 'SUCCESS' ? 'default' : 'destructive'}>
             {row.original.status === 'SUCCESS' ? (
-              <CheckCircle2Icon className="mr-2 h-4 w-4" />
+              <CheckCircle2Icon className="me-2 h-4 w-4" />
             ) : (
-              <XCircleIcon className="mr-2 h-4 w-4" />
+              <XCircleIcon className="me-2 h-4 w-4" />
             )}
             {row.original.responseCode}
           </Badge>
@@ -218,7 +218,7 @@ export default function WebhookPage({ params }: Route.ComponentProps) {
         <div className="flex gap-2">
           <WebhookTestDialog webhook={webhook}>
             <Button variant="outline">
-              <TerminalIcon className="mr-2 h-4 w-4" />
+              <TerminalIcon className="me-2 h-4 w-4" />
               <Trans>Test</Trans>
             </Button>
           </WebhookTestDialog>
@@ -227,7 +227,7 @@ export default function WebhookPage({ params }: Route.ComponentProps) {
             webhook={webhook}
             trigger={
               <Button>
-                <PencilIcon className="mr-2 h-4 w-4" />
+                <PencilIcon className="me-2 h-4 w-4" />
                 <Trans>Edit</Trans>
               </Button>
             }

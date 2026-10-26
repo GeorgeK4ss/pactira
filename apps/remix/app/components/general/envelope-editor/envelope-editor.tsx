@@ -232,7 +232,7 @@ export const EnvelopeEditor = () => {
               <h3 className="flex items-end justify-between font-semibold text-foreground text-sm">
                 {isDocument ? <Trans>Document Editor</Trans> : <Trans>Template Editor</Trans>}
 
-                <span className="ml-2 rounded border bg-muted/50 px-2 py-0.5 text-muted-foreground text-xs">
+                <span className="ms-2 rounded border bg-muted/50 px-2 py-0.5 text-muted-foreground text-xs">
                   <Trans context="The step counter">
                     Step {currentStepData.order}/{envelopeEditorSteps.length}
                   </Trans>
@@ -268,7 +268,7 @@ export const EnvelopeEditor = () => {
                   data-testid={`envelope-editor-step-${step.id}`}
                   type="button"
                   className={cn(
-                    `cursor-pointer rounded-lg text-left transition-colors ${
+                    `cursor-pointer rounded-lg text-start transition-colors ${
                       isActive
                         ? 'border border-green-200 bg-green-50 dark:border-green-500/20 dark:bg-green-500/10'
                         : 'border border-gray-200 hover:bg-gray-50 dark:border-gray-400/20 dark:hover:bg-gray-400/10'
@@ -335,7 +335,7 @@ export const EnvelopeEditor = () => {
                     <SettingsIcon className="h-4 w-4" />
 
                     {!minimizeLeftSidebar && (
-                      <span className="ml-2">
+                      <span className="ms-2">
                         {isDocument ? <Trans>Document Settings</Trans> : <Trans>Template Settings</Trans>}
                       </span>
                     )}
@@ -353,7 +353,7 @@ export const EnvelopeEditor = () => {
                       <SendIcon className="h-4 w-4" />
 
                       {!minimizeLeftSidebar && (
-                        <span className="ml-2">
+                        <span className="ms-2">
                           <Trans>Send Document</Trans>
                         </span>
                       )}
@@ -368,7 +368,7 @@ export const EnvelopeEditor = () => {
                       <SendIcon className="h-4 w-4" />
 
                       {!minimizeLeftSidebar && (
-                        <span className="ml-2">
+                        <span className="ms-2">
                           <Trans>Resend Document</Trans>
                         </span>
                       )}
@@ -390,7 +390,7 @@ export const EnvelopeEditor = () => {
                     <LinkIcon className="h-4 w-4" />
 
                     {!minimizeLeftSidebar && (
-                      <span className="ml-2">
+                      <span className="ms-2">
                         <Trans>Direct Link</Trans>
                       </span>
                     )}
@@ -408,7 +408,7 @@ export const EnvelopeEditor = () => {
                     <CopyPlusIcon className="h-4 w-4" />
 
                     {!minimizeLeftSidebar && (
-                      <span className="ml-2">
+                      <span className="ms-2">
                         {isDocument ? <Trans>Duplicate Document</Trans> : <Trans>Duplicate Template</Trans>}
                       </span>
                     )}
@@ -425,7 +425,7 @@ export const EnvelopeEditor = () => {
                     <FileOutputIcon className="h-4 w-4" />
 
                     {!minimizeLeftSidebar && (
-                      <span className="ml-2">
+                      <span className="ms-2">
                         <Trans>Save as Template</Trans>
                       </span>
                     )}
@@ -445,7 +445,7 @@ export const EnvelopeEditor = () => {
                     <DownloadCloudIcon className="h-4 w-4" />
 
                     {!minimizeLeftSidebar && (
-                      <span className="ml-2">
+                      <span className="ms-2">
                         <Trans>Download PDF</Trans>
                       </span>
                     )}
@@ -473,7 +473,7 @@ export const EnvelopeEditor = () => {
                     <Trash2Icon className="h-4 w-4" />
 
                     {!minimizeLeftSidebar && (
-                      <span className="ml-2">
+                      <span className="ms-2">
                         {isDocument ? <Trans>Delete Document</Trans> : <Trans>Delete Template</Trans>}
                       </span>
                     )}
@@ -508,7 +508,7 @@ export const EnvelopeEditor = () => {
                   <ArrowLeftIcon className="h-4 w-4 flex-shrink-0" />
 
                   {!minimizeLeftSidebar && (
-                    <span className="ml-2">
+                    <span className="ms-2">
                       {isDocument ? <Trans>Return to documents</Trans> : <Trans>Return to templates</Trans>}
                     </span>
                   )}

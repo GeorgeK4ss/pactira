@@ -64,7 +64,7 @@ export default function TemplatesFoldersPage() {
       <div className="flex w-full items-center justify-between">
         <div className="flex flex-1 items-center font-medium text-muted-foreground text-sm">
           <Link to={formatTemplatesPath(team.url)} className="flex items-center hover:text-muted-foreground/80">
-            <HomeIcon className="mr-2 h-4 w-4" />
+            <HomeIcon className="me-2 h-4 w-4" />
             <Trans>Home</Trans>
           </Link>
 
@@ -72,7 +72,7 @@ export default function TemplatesFoldersPage() {
             <div key={folder.id} className="flex items-center">
               <span className="px-3">/</span>
               <Link to={formatBreadcrumbPath(folder.id)} className="flex items-center hover:text-muted-foreground/80">
-                <FolderIcon className="mr-2 h-4 w-4" />
+                <FolderIcon className="me-2 h-4 w-4" />
                 <span>{folder.name}</span>
               </Link>
             </div>
@@ -90,7 +90,7 @@ export default function TemplatesFoldersPage() {
           placeholder={t`Search folders...`}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="pl-8"
+          className="ps-8"
         />
       </div>
 

@@ -65,7 +65,7 @@ export const AccountDeleteDialog = ({ className }: AccountDeleteDialogProps) => 
           <AlertTitle>
             <Trans>Delete Account</Trans>
           </AlertTitle>
-          <AlertDescription className="mr-2">
+          <AlertDescription className="me-2">
             <Trans>
               Delete your account and all its contents, including completed documents. This action is irreversible and
               will cancel your subscription, so proceed with caution.

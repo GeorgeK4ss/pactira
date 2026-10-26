@@ -79,7 +79,7 @@ const RecipientRowInner = ({
             {...(dragHandleProps ?? {})}
             data-testid="recipient-row-drag-handle"
             className={cn(
-              'mt-auto -ml-1.5 flex h-10 w-8 flex-shrink-0 cursor-grab items-center justify-center rounded-md hover:bg-foreground/5 active:cursor-grabbing',
+              '-ms-1.5 mt-auto flex h-10 w-8 flex-shrink-0 cursor-grab items-center justify-center rounded-md hover:bg-foreground/5 active:cursor-grabbing',
               {
                 'mb-6': rowErrors,
                 'cursor-default hover:bg-transparent': !dragHandleProps,
@@ -210,7 +210,7 @@ const RecipientRowInner = ({
             <FormItem
               className={cn('mt-2 w-full', {
                 'mb-6': rowErrors && !rowErrors.actionAuth,
-                'pl-6': isSequential,
+                'ps-6': isSequential,
               })}
             >
               <FormControl>

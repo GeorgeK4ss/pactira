@@ -113,7 +113,7 @@ export default function DocumentPage({ params }: Route.ComponentProps) {
       )}
 
       <Link to={documentRootPath} className="flex items-center text-documenso-700 hover:opacity-80">
-        <ChevronLeft className="mr-2 inline-block h-5 w-5" />
+        <ChevronLeft className="me-2 inline-block h-5 w-5" />
         <Trans>Documents</Trans>
       </Link>
 
@@ -128,7 +128,7 @@ export default function DocumentPage({ params }: Route.ComponentProps) {
 
             {envelope.recipients.length > 0 && (
               <div className="flex items-center text-muted-foreground">
-                <Users2 className="mr-2 h-5 w-5" />
+                <Users2 className="me-2 h-5 w-5" />
 
                 <StackAvatarsWithTooltip
                   recipients={envelope.recipients}

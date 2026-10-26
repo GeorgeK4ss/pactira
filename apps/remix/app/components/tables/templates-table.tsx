@@ -122,7 +122,7 @@ export const TemplatesTable = ({
                 <ul className="space-y-0.5 divide-y text-muted-foreground [&>li]:p-4">
                   <li>
                     <h2 className="mb-2 flex flex-row items-center font-semibold">
-                      <Globe2Icon className="mr-2 h-5 w-5 text-green-500 dark:text-green-300" />
+                      <Globe2Icon className="me-2 h-5 w-5 text-green-500 dark:text-green-300" />
                       <Trans>Public</Trans>
                     </h2>
 
@@ -135,7 +135,7 @@ export const TemplatesTable = ({
                   </li>
                   <li>
                     <div className="mb-2 flex w-fit flex-row items-center rounded border border-neutral-300 bg-neutral-200 px-1.5 py-0.5 text-xs dark:border-neutral-500 dark:bg-neutral-600">
-                      <Link2Icon className="mr-1 h-3 w-3" />
+                      <Link2Icon className="me-1 h-3 w-3" />
                       <Trans>direct link</Trans>
                     </div>
 
@@ -148,7 +148,7 @@ export const TemplatesTable = ({
                   </li>
                   <li>
                     <h2 className="mb-2 flex flex-row items-center font-semibold">
-                      <LockIcon className="mr-2 h-5 w-5 text-blue-600 dark:text-blue-300" />
+                      <LockIcon className="me-2 h-5 w-5 text-blue-600 dark:text-blue-300" />
                       {team?.id ? <Trans>Team Only</Trans> : <Trans>Private</Trans>}
                     </h2>
 
@@ -162,7 +162,7 @@ export const TemplatesTable = ({
                   </li>
                   <li>
                     <h2 className="mb-2 flex flex-row items-center font-semibold">
-                      <Building2Icon className="mr-2 h-5 w-5 text-orange-500 dark:text-orange-300" />
+                      <Building2Icon className="me-2 h-5 w-5 text-orange-500 dark:text-orange-300" />
                       <Trans>Organisation</Trans>
                     </h2>
 
@@ -187,12 +187,12 @@ export const TemplatesTable = ({
               <TemplateType type={row.original.type} />
 
               {isFromOtherTeam && row.original.team?.name && (
-                <span className="ml-2 text-muted-foreground text-xs">({row.original.team.name})</span>
+                <span className="ms-2 text-muted-foreground text-xs">({row.original.team.name})</span>
               )}
 
               {row.original.directLink?.token && (
                 <TemplateDirectLinkBadge
-                  className="ml-2"
+                  className="ms-2"
                   token={row.original.directLink.token}
                   enabled={row.original.directLink.enabled}
                 />

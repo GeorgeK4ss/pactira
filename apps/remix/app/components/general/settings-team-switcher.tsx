@@ -101,7 +101,7 @@ export const SettingsTeamSwitcher = ({ currentOrgUrl, currentTeamUrl }: Settings
             avatarSrc={formatAvatarUrl(currentTeam.avatarImageId)}
             avatarFallback={currentTeam.name.slice(0, 1).toUpperCase()}
             primaryText={<span className="font-semibold text-muted-foreground">{currentTeam.name}</span>}
-            rightSideComponent={<ChevronsUpDownIcon className="ml-auto h-4 w-4 shrink-0 text-muted-foreground" />}
+            rightSideComponent={<ChevronsUpDownIcon className="ms-auto h-4 w-4 shrink-0 text-muted-foreground" />}
           />
         </Button>
       </PopoverTrigger>
@@ -118,7 +118,7 @@ export const SettingsTeamSwitcher = ({ currentOrgUrl, currentTeamUrl }: Settings
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder={t`Search teams…`}
-                className="h-8 pl-7"
+                className="h-8 ps-7"
                 data-testid="settings-team-switcher-search"
               />
             </div>
@@ -134,7 +134,7 @@ export const SettingsTeamSwitcher = ({ currentOrgUrl, currentTeamUrl }: Settings
                   type="button"
                   onClick={() => handleSelect(team.url)}
                   className={cn(
-                    'flex w-full items-center rounded-md px-2 py-2 text-left hover:bg-muted',
+                    'flex w-full items-center rounded-md px-2 py-2 text-start hover:bg-muted',
                     isCurrent && 'bg-muted',
                   )}
                   data-testid={`settings-team-switcher-item-${team.url}`}
@@ -155,7 +155,7 @@ export const SettingsTeamSwitcher = ({ currentOrgUrl, currentTeamUrl }: Settings
         <div className="border-t p-1">
           <Button variant="ghost" asChild className="w-full justify-start" data-testid="settings-team-switcher-create">
             <a href={`/o/${currentOrg.url}/settings/teams?action=add-team`}>
-              <PlusIcon className="mr-2 h-4 w-4" />
+              <PlusIcon className="me-2 h-4 w-4" />
               <Trans>Create team</Trans>
             </a>
           </Button>

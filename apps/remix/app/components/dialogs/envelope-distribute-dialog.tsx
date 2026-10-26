@@ -498,7 +498,7 @@ export const EnvelopeDistributeDialog = ({
                   <AlertDescription>
                     <Trans>The following signers are missing signature fields:</Trans>
 
-                    <ul className="mt-1 ml-2 list-inside list-disc">
+                    <ul className="ms-2 mt-1 list-inside list-disc">
                       {recipientsMissingSignatureFields.map((recipient) => (
                         <li key={recipient.id}>
                           {recipient.email || recipient.name || t`Recipient ${recipient.index + 1}`}
@@ -511,7 +511,7 @@ export const EnvelopeDistributeDialog = ({
                   <AlertDescription>
                     <Trans>The following recipients require an email address:</Trans>
 
-                    <ul className="mt-1 ml-2 list-inside list-disc">
+                    <ul className="ms-2 mt-1 list-inside list-disc">
                       {recipientsMissingRequiredEmail.map((recipient) => (
                         <li key={recipient.id}>
                           {recipient.email || recipient.name || t`Recipient ${recipient.index + 1}`}

@@ -158,21 +158,21 @@ export const AdminOrganisationsTable = ({
 
               <DropdownMenuItem asChild>
                 <Link to={`/admin/organisations/${row.original.id}`}>
-                  <SettingsIcon className="mr-2 h-4 w-4" />
+                  <SettingsIcon className="me-2 h-4 w-4" />
                   <Trans>Manage</Trans>
                 </Link>
               </DropdownMenuItem>
 
               <DropdownMenuItem asChild>
                 <Link to={`/admin/users/${row.original.owner.id}`}>
-                  <UserIcon className="mr-2 h-4 w-4" />
+                  <UserIcon className="me-2 h-4 w-4" />
                   <Trans>View owner</Trans>
                 </Link>
               </DropdownMenuItem>
 
               <DropdownMenuItem disabled={!row.original.customerId} asChild>
                 <Link to={`https://dashboard.stripe.com/customers/${row.original.customerId}`}>
-                  <CreditCardIcon className="mr-2 h-4 w-4" />
+                  <CreditCardIcon className="me-2 h-4 w-4" />
                   <Trans>Stripe</Trans>
                   {!row.original.customerId && <span>&nbsp;(N/A)</span>}
                 </Link>
@@ -189,7 +189,7 @@ export const AdminOrganisationsTable = ({
                       })
                     }
                   >
-                    <ArrowRightLeftIcon className="mr-2 h-4 w-4" />
+                    <ArrowRightLeftIcon className="me-2 h-4 w-4" />
                     <Trans>Move Subscription</Trans>
                   </DropdownMenuItem>
                 )}
@@ -221,7 +221,7 @@ export const AdminOrganisationsTable = ({
           rows: 3,
           component: (
             <>
-              <TableCell className="py-4 pr-4">
+              <TableCell className="py-4 pe-4">
                 <Skeleton className="h-4 w-20 rounded-full" />
               </TableCell>
               <TableCell>

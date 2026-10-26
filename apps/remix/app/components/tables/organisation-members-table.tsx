@@ -131,7 +131,7 @@ export const OrganisationMembersDataTable = () => {
                     onSelect={(e) => e.preventDefault()}
                     title="Update organisation member role"
                   >
-                    <Edit className="mr-2 h-4 w-4" />
+                    <Edit className="me-2 h-4 w-4" />
                     <Trans>Update role</Trans>
                   </DropdownMenuItem>
                 }
@@ -153,7 +153,7 @@ export const OrganisationMembersDataTable = () => {
                     }
                     title={_(msg`Remove organisation member`)}
                   >
-                    <Trash2 className="mr-2 h-4 w-4" />
+                    <Trash2 className="me-2 h-4 w-4" />
                     <Trans>Remove</Trans>
                   </DropdownMenuItem>
                 }
@@ -181,11 +181,11 @@ export const OrganisationMembersDataTable = () => {
         rows: 3,
         component: (
           <>
-            <TableCell className="w-1/2 py-4 pr-4">
+            <TableCell className="w-1/2 py-4 pe-4">
               <div className="flex w-full flex-row items-center">
                 <Skeleton className="h-12 w-12 flex-shrink-0 rounded-full" />
 
-                <div className="ml-2 flex flex-grow flex-col">
+                <div className="ms-2 flex flex-grow flex-col">
                   <Skeleton className="h-4 w-1/3 max-w-[8rem]" />
                   <Skeleton className="mt-1 h-4 w-1/2 max-w-[12rem]" />
                 </div>

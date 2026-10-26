@@ -186,7 +186,7 @@ export default function AdminDocumentDetailsPage({ loaderData }: Route.Component
         </h2>
 
         <Button variant="outline" loading={isDownloadAuditLogsLoading} onClick={() => void onDownloadAuditLogsClick()}>
-          {!isDownloadAuditLogsLoading && <DownloadIcon className="mr-1.5 h-4 w-4" />}
+          {!isDownloadAuditLogsLoading && <DownloadIcon className="me-1.5 h-4 w-4" />}
           <Trans>Download Audit Logs</Trans>
         </Button>
       </div>

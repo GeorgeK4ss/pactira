@@ -113,7 +113,7 @@ export const InternalAuditLogTable = ({ logs }: AuditLogDataTableProps) => {
                   <div className="mt-1 font-mono text-foreground">{log.email || 'N/A'}</div>
                 </div>
 
-                <div className="text-right">
+                <div className="text-end">
                   <div className="font-medium text-muted-foreground/70 uppercase tracking-wide">
                     {_(msg`IP Address`)}
                   </div>

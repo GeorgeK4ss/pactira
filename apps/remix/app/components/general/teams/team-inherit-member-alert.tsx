@@ -17,7 +17,7 @@ export const TeamInheritMemberAlert = ({ memberAccessTeamGroup }: TeamInheritMem
           <Trans>Inherit organisation members</Trans>
         </AlertTitle>
 
-        <AlertDescription className="mr-2">
+        <AlertDescription className="me-2">
           {memberAccessTeamGroup ? (
             <Trans>Currently all organisation members can access this team</Trans>
           ) : (

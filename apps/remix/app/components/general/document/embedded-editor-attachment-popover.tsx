@@ -92,7 +92,7 @@ export const EmbeddedEditorAttachmentPopover = ({
 
           <span>
             <Trans>Attachments</Trans>
-            {attachments.length > 0 && <span className="ml-1">({attachments.length})</span>}
+            {attachments.length > 0 && <span className="ms-1">({attachments.length})</span>}
           </span>
         </Button>
       </PopoverTrigger>
@@ -131,7 +131,7 @@ export const EmbeddedEditorAttachmentPopover = ({
                     variant="ghost"
                     size="sm"
                     onClick={() => onDeleteAttachment(attachment.id)}
-                    className="ml-2 h-8 w-8 p-0"
+                    className="ms-2 h-8 w-8 p-0"
                   >
                     <X className="h-4 w-4" />
                   </Button>
@@ -142,7 +142,7 @@ export const EmbeddedEditorAttachmentPopover = ({
 
           {!isAdding && (
             <Button variant="outline" size="sm" className="w-full" onClick={() => setIsAdding(true)}>
-              <Plus className="mr-2 h-4 w-4" />
+              <Plus className="me-2 h-4 w-4" />
               <Trans>Add Attachment</Trans>
             </Button>
           )}

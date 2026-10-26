@@ -58,7 +58,7 @@ export default function SettingsSecurity({ loaderData }: Route.ComponentProps) {
               <Trans>Set a password</Trans>
             </AlertTitle>
 
-            <AlertDescription className="mr-4">
+            <AlertDescription className="me-4">
               <Trans>
                 Your account has no password. Add one to sign in with your email and to sign documents that require it.
                 We'll email you a link.
@@ -76,7 +76,7 @@ export default function SettingsSecurity({ loaderData }: Route.ComponentProps) {
             <Trans>Two factor authentication</Trans>
           </AlertTitle>
 
-          <AlertDescription className="mr-4">
+          <AlertDescription className="me-4">
             {hasEmailPasswordAccount ? (
               <Trans>
                 Add an authenticator to serve as a secondary authentication method when signing in, or when signing
@@ -98,7 +98,7 @@ export default function SettingsSecurity({ loaderData }: Route.ComponentProps) {
               <Trans>Recovery codes</Trans>
             </AlertTitle>
 
-            <AlertDescription className="mr-4">
+            <AlertDescription className="me-4">
               <Trans>
                 Two factor authentication recovery codes are used to access your account in the event that you lose
                 access to your authenticator app.
@@ -116,7 +116,7 @@ export default function SettingsSecurity({ loaderData }: Route.ComponentProps) {
             <Trans>Passkeys</Trans>
           </AlertTitle>
 
-          <AlertDescription className="mr-4">
+          <AlertDescription className="me-4">
             <Trans>Allows authenticating using biometrics, password managers, hardware keys, etc.</Trans>
           </AlertDescription>
         </div>
@@ -129,12 +129,12 @@ export default function SettingsSecurity({ loaderData }: Route.ComponentProps) {
       </Alert>
 
       <Alert className="mt-6 flex flex-col justify-between p-6 sm:flex-row sm:items-center" variant="neutral">
-        <div className="mr-4 mb-4 sm:mb-0">
+        <div className="me-4 mb-4 sm:mb-0">
           <AlertTitle>
             <Trans>Recent activity</Trans>
           </AlertTitle>
 
-          <AlertDescription className="mr-2">
+          <AlertDescription className="me-2">
             <Trans>View all recent security activity related to your account.</Trans>
           </AlertDescription>
         </div>
@@ -147,12 +147,12 @@ export default function SettingsSecurity({ loaderData }: Route.ComponentProps) {
       </Alert>
 
       <Alert className="mt-6 flex flex-col justify-between p-6 sm:flex-row sm:items-center" variant="neutral">
-        <div className="mr-4 mb-4 sm:mb-0">
+        <div className="me-4 mb-4 sm:mb-0">
           <AlertTitle>
             <Trans>Active sessions</Trans>
           </AlertTitle>
 
-          <AlertDescription className="mr-2">
+          <AlertDescription className="me-2">
             <Trans>View and manage all active sessions for your account.</Trans>
           </AlertDescription>
         </div>
@@ -165,12 +165,12 @@ export default function SettingsSecurity({ loaderData }: Route.ComponentProps) {
       </Alert>
 
       <Alert className="mt-6 flex flex-col justify-between p-6 sm:flex-row sm:items-center" variant="neutral">
-        <div className="mr-4 mb-4 sm:mb-0">
+        <div className="me-4 mb-4 sm:mb-0">
           <AlertTitle>
             <Trans>Linked Accounts</Trans>
           </AlertTitle>
 
-          <AlertDescription className="mr-2">
+          <AlertDescription className="me-2">
             <Trans>View and manage all login methods linked to your account.</Trans>
           </AlertDescription>
         </div>

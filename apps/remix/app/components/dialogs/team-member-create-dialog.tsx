@@ -274,7 +274,7 @@ export const TeamMemberCreateDialog = ({ trigger, ...props }: TeamMemberCreateDi
                                   onOpenChange={setInviteDialogOpen}
                                   trigger={
                                     <Button type="button" variant="default">
-                                      <UserPlusIcon className="mr-2 h-4 w-4" />
+                                      <UserPlusIcon className="me-2 h-4 w-4" />
                                       <Trans>Invite organisation members</Trans>
                                     </Button>
                                   }

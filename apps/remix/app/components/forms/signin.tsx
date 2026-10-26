@@ -373,7 +373,7 @@ export const SignInForm = ({
                     <FormMessage />
 
                     {!hideForgotPassword && (
-                      <p className="mt-2 text-right">
+                      <p className="mt-2 text-end">
                         <Link
                           to="/forgot-password"
                           className="text-muted-foreground text-sm duration-200 hover:opacity-70"
@@ -427,7 +427,7 @@ export const SignInForm = ({
               disabled={isSubmitting}
               onClick={onSignInWithGoogleClick}
             >
-              <FcGoogle className="mr-2 h-5 w-5" />
+              <FcGoogle className="me-2 h-5 w-5" />
               Google
             </Button>
           )}
@@ -441,7 +441,7 @@ export const SignInForm = ({
               disabled={isSubmitting}
               onClick={onSignInWithMicrosoftClick}
             >
-              <img className="mr-2 h-4 w-4" alt="Microsoft Logo" src={'/static/microsoft.svg'} />
+              <img className="me-2 h-4 w-4" alt="Microsoft Logo" src={'/static/microsoft.svg'} />
               Microsoft
             </Button>
           )}
@@ -455,7 +455,7 @@ export const SignInForm = ({
               disabled={isSubmitting}
               onClick={onSignInWithOIDCClick}
             >
-              <FaIdCardClip className="mr-2 h-5 w-5" />
+              <FaIdCardClip className="me-2 h-5 w-5" />
               {oidcProviderLabel || 'OIDC'}
             </Button>
           )}
@@ -469,7 +469,7 @@ export const SignInForm = ({
             className="border bg-background text-muted-foreground"
             onClick={onSignInWithPasskey}
           >
-            {!isPasskeyLoading && <KeyRoundIcon className="mr-1 -ml-1 h-5 w-5" />}
+            {!isPasskeyLoading && <KeyRoundIcon className="-ms-1 me-1 h-5 w-5" />}
             <Trans>Passkey</Trans>
           </Button>
         </fieldset>

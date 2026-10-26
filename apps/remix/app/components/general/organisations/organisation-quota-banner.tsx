@@ -66,7 +66,7 @@ export const OrganisationQuotaBanner = () => {
       >
         <div className="mx-auto flex max-w-screen-xl items-center justify-center gap-x-4 px-4 py-2 font-medium text-sm">
           <div className="flex items-center">
-            <AlertTriangle className="mr-2.5 h-5 w-5" />
+            <AlertTriangle className="me-2.5 h-5 w-5" />
 
             {isAnyQuotaExceeded ? (
               <Trans>Your organisation has exceeded a fair use limit</Trans>

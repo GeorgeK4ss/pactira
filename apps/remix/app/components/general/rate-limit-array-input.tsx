@@ -158,7 +158,7 @@ export const RateLimitArrayInput = ({ value, onChange, disabled }: RateLimitArra
         disabled={isAddDisabled}
         onClick={addEntry}
       >
-        <PlusIcon className="mr-2 h-4 w-4" />
+        <PlusIcon className="me-2 h-4 w-4" />
         <Trans>Add rate limit window</Trans>
       </Button>
     </div>

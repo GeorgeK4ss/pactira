@@ -77,7 +77,7 @@ export const EmailTransportDeleteDialog = ({
             <AlertDescription>
               <Trans>Warning, this email transport is currently being used by:</Trans>
 
-              <ul className="mt-2 list-disc pl-5">
+              <ul className="mt-2 list-disc ps-5">
                 {subscriptionClaimCount > 0 && (
                   <li>
                     <Plural value={subscriptionClaimCount} one="# Subscription claim" other="# Subscription claims" />

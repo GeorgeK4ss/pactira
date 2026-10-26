@@ -190,7 +190,7 @@ export default function CompletedSigningPage({ loaderData }: Route.ComponentProp
             {match({ status: signingStatus, deletedAt: document.deletedAt })
               .with({ status: 'COMPLETED' }, () => (
                 <div className="mt-4 flex items-center text-center text-documenso-700">
-                  <CheckCircle2 className="mr-2 h-5 w-5" />
+                  <CheckCircle2 className="me-2 h-5 w-5" />
                   <span className="text-sm">
                     <Trans>Everyone has signed</Trans>
                   </span>
@@ -198,7 +198,7 @@ export default function CompletedSigningPage({ loaderData }: Route.ComponentProp
               ))
               .with({ status: 'PROCESSING' }, () => (
                 <div className="mt-4 flex items-center text-center text-orange-600">
-                  <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                  <Loader2 className="me-2 h-5 w-5 animate-spin" />
                   <span className="text-sm">
                     <Trans>Processing document</Trans>
                   </span>
@@ -206,7 +206,7 @@ export default function CompletedSigningPage({ loaderData }: Route.ComponentProp
               ))
               .with({ deletedAt: null }, () => (
                 <div className="mt-4 flex items-center text-center text-blue-600">
-                  <Clock8 className="mr-2 h-5 w-5" />
+                  <Clock8 className="me-2 h-5 w-5" />
                   <span className="text-sm">
                     <Trans>Waiting for others to sign</Trans>
                   </span>
@@ -214,7 +214,7 @@ export default function CompletedSigningPage({ loaderData }: Route.ComponentProp
               ))
               .otherwise(() => (
                 <div className="flex items-center text-center text-red-600">
-                  <Clock8 className="mr-2 h-5 w-5" />
+                  <Clock8 className="me-2 h-5 w-5" />
                   <span className="text-sm">
                     <Trans>Document no longer available to sign</Trans>
                   </span>
@@ -263,7 +263,7 @@ export default function CompletedSigningPage({ loaderData }: Route.ComponentProp
                   token={recipient?.token}
                   trigger={
                     <Button type="button" variant="outline" className="flex-1 md:flex-initial">
-                      <DownloadIcon className="mr-2 h-5 w-5" />
+                      <DownloadIcon className="me-2 h-5 w-5" />
                       <Trans>Download</Trans>
                     </Button>
                   }

@@ -35,7 +35,7 @@ export const AnalyticsNoActivityAlert = ({ range, onShowLastYear }: AnalyticsNoA
         </span>
 
         {canWidenRange && (
-          <Button variant="ghost" size="sm" className="-mr-2" onClick={onShowLastYear}>
+          <Button variant="ghost" size="sm" className="-me-2" onClick={onShowLastYear}>
             <Trans>Show last 12 months</Trans>
           </Button>
         )}

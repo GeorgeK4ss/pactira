@@ -68,7 +68,7 @@ export const EnvelopesTableBulkActionBar = ({
         variant="ghost"
         size="sm"
         onClick={onMoveClick}
-        className="h-8 gap-x-1.5 py-1.5 pr-2.5 pl-2"
+        className="h-8 gap-x-1.5 py-1.5 ps-2 pe-2.5"
       >
         <FolderInputIcon className="size-4 shrink-0" />
         <Trans>Move</Trans>
@@ -80,7 +80,7 @@ export const EnvelopesTableBulkActionBar = ({
           variant="ghost"
           size="sm"
           onClick={onDownloadClick}
-          className="h-8 gap-x-1.5 py-1.5 pr-2.5 pl-2"
+          className="h-8 gap-x-1.5 py-1.5 ps-2 pe-2.5"
         >
           <DownloadIcon className="size-4 shrink-0" />
           <Trans>Download</Trans>
@@ -93,7 +93,7 @@ export const EnvelopesTableBulkActionBar = ({
           variant="ghost"
           size="sm"
           onClick={onCancelClick}
-          className="h-8 gap-x-1.5 py-1.5 pr-2.5 pl-2"
+          className="h-8 gap-x-1.5 py-1.5 ps-2 pe-2.5"
         >
           <XCircleIcon className="size-4 shrink-0" />
           <Trans>Cancel</Trans>
@@ -105,7 +105,7 @@ export const EnvelopesTableBulkActionBar = ({
         variant="ghost"
         size="sm"
         onClick={onDeleteClick}
-        className="h-8 gap-x-1.5 py-1.5 pr-2.5 pl-2 text-destructive hover:bg-destructive/10 hover:text-destructive"
+        className="h-8 gap-x-1.5 py-1.5 ps-2 pe-2.5 text-destructive hover:bg-destructive/10 hover:text-destructive"
       >
         <Trash2Icon className="size-4 shrink-0" />
         <Trans>Delete</Trans>

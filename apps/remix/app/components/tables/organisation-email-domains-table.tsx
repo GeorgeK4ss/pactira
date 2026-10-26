@@ -80,13 +80,13 @@ export const OrganisationEmailDomainsDataTable = () => {
           match(row.original.status)
             .with(EmailDomainStatus.ACTIVE, () => (
               <Badge>
-                <CheckCircle2Icon className="mr-2 h-4 w-4 text-green-500 dark:text-green-300" />
+                <CheckCircle2Icon className="me-2 h-4 w-4 text-green-500 dark:text-green-300" />
                 <Trans>Active</Trans>
               </Badge>
             ))
             .with(EmailDomainStatus.PENDING, () => (
               <Badge variant="warning">
-                <ClockIcon className="mr-2 h-4 w-4 text-yellow-500 dark:text-yellow-200" />
+                <ClockIcon className="me-2 h-4 w-4 text-yellow-500 dark:text-yellow-200" />
                 <Trans>Pending</Trans>
               </Badge>
             ))
@@ -169,7 +169,7 @@ export const OrganisationEmailDomainsDataTable = () => {
                 <Trans>Sync Email Domains</Trans>
               </AlertTitle>
 
-              <AlertDescription className="mr-2">
+              <AlertDescription className="me-2">
                 <Trans>This will check and sync the status of all email domains for this organisation</Trans>
               </AlertDescription>
             </div>

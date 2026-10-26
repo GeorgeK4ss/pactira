@@ -126,7 +126,7 @@ export const AdminClaimsTable = ({ licenseFlags }: AdminClaimsTableProps) => {
                 trigger={
                   <DropdownMenuItem asChild onSelect={(e) => e.preventDefault()}>
                     <div>
-                      <EditIcon className="mr-2 h-4 w-4" />
+                      <EditIcon className="me-2 h-4 w-4" />
                       <Trans>Update</Trans>
                     </div>
                   </DropdownMenuItem>
@@ -140,7 +140,7 @@ export const AdminClaimsTable = ({ licenseFlags }: AdminClaimsTableProps) => {
                 trigger={
                   <DropdownMenuItem asChild onSelect={(e) => e.preventDefault()}>
                     <div>
-                      <Trash2Icon className="mr-2 h-4 w-4" />
+                      <Trash2Icon className="me-2 h-4 w-4" />
                       <Trans>Delete</Trans>
                     </div>
                   </DropdownMenuItem>
@@ -170,7 +170,7 @@ export const AdminClaimsTable = ({ licenseFlags }: AdminClaimsTableProps) => {
           rows: 3,
           component: (
             <>
-              <TableCell className="py-4 pr-4">
+              <TableCell className="py-4 pe-4">
                 <Skeleton className="h-4 w-20 rounded-full" />
               </TableCell>
               <TableCell>

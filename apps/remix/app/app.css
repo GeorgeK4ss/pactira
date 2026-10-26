@@ -69,3 +69,11 @@
     --font-noto: "Noto Sans", "Noto Sans Korean", "Noto Sans Japanese", "Noto Sans Chinese";
   }
 }
+
+/*
+ * Right-to-left: Tailwind 3's space-x-* puts the gap on the left of each following item. Reversing
+ * it under dir="rtl" puts the gap between items again.
+ */
+[dir="rtl"] [class*="space-x-"] > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}

@@ -48,7 +48,7 @@ export const TemplateType = ({ className, type, inheritColor, ...props }: Templa
     <span className={cn('flex items-center', className)} {...props}>
       {Icon && (
         <Icon
-          className={cn('mr-2 inline-block h-4 w-4', {
+          className={cn('me-2 inline-block h-4 w-4', {
             [color]: !inheritColor,
           })}
         />

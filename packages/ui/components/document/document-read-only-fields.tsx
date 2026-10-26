@@ -130,12 +130,12 @@ export const DocumentReadOnlyFields = ({
                       >
                         {field.recipient.signingStatus === SigningStatus.SIGNED ? (
                           <>
-                            <SignatureIcon className="mr-1 h-3 w-3" />
+                            <SignatureIcon className="me-1 h-3 w-3" />
                             <Trans>Signed</Trans>
                           </>
                         ) : (
                           <>
-                            <Clock className="mr-1 h-3 w-3" />
+                            <Clock className="me-1 h-3 w-3" />
                             <Trans>Pending</Trans>
                           </>
                         )}

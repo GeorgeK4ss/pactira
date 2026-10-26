@@ -124,7 +124,7 @@ export default function ApiTokensPage() {
             <AlertTitle>
               <Trans>Unauthorized</Trans>
             </AlertTitle>
-            <AlertDescription className="mr-2">
+            <AlertDescription className="me-2">
               <Trans>You need to be an admin to manage API tokens.</Trans>
             </AlertDescription>
           </div>

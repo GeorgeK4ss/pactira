@@ -70,7 +70,7 @@ export const EnvelopeSignerHeader = () => {
 
       {/* Right side - Desktop content */}
       <div className="hidden items-center space-x-2 lg:flex">
-        <p className="mr-2 flex-shrink-0 text-muted-foreground text-sm">
+        <p className="me-2 flex-shrink-0 text-muted-foreground text-sm">
           <Plural one="1 Field Remaining" other="# Fields Remaining" value={recipientFieldsRemaining.length} />
         </p>
 
@@ -110,7 +110,7 @@ const MobileDropdownMenu = () => {
           trigger={
             <DropdownMenuItem asChild onSelect={(e) => e.preventDefault()}>
               <div>
-                <DownloadCloudIcon className="mr-2 h-4 w-4" />
+                <DownloadCloudIcon className="me-2 h-4 w-4" />
                 <Trans>Download PDF</Trans>
               </div>
             </DropdownMenuItem>
@@ -124,7 +124,7 @@ const MobileDropdownMenu = () => {
             trigger={
               <DropdownMenuItem asChild onSelect={(e) => e.preventDefault()}>
                 <div>
-                  <BanIcon className="mr-2 h-4 w-4" />
+                  <BanIcon className="me-2 h-4 w-4" />
                   <Trans>Reject</Trans>
                 </div>
               </DropdownMenuItem>

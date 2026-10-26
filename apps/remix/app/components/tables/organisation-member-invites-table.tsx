@@ -160,12 +160,12 @@ export const OrganisationMemberInvitesTable = () => {
                   })
                 }
               >
-                <History className="mr-2 h-4 w-4" />
+                <History className="me-2 h-4 w-4" />
                 <Trans>Resend</Trans>
               </DropdownMenuItem>
 
               <DropdownMenuItem onClick={async () => onCopyInviteLink(row.original.id)}>
-                <LinkIcon className="mr-2 h-4 w-4" />
+                <LinkIcon className="me-2 h-4 w-4" />
                 <Trans>Copy invite link</Trans>
               </DropdownMenuItem>
 
@@ -181,7 +181,7 @@ export const OrganisationMemberInvitesTable = () => {
                     })
                   }
                 >
-                  <Trash2 className="mr-2 h-4 w-4" />
+                  <Trash2 className="me-2 h-4 w-4" />
                   <Trans>Remove</Trans>
                 </DropdownMenuItem>
               )}
@@ -208,10 +208,10 @@ export const OrganisationMemberInvitesTable = () => {
         rows: 3,
         component: (
           <>
-            <TableCell className="w-1/2 py-4 pr-4">
+            <TableCell className="w-1/2 py-4 pe-4">
               <div className="flex w-full flex-row items-center">
                 <Skeleton className="h-12 w-12 flex-shrink-0 rounded-full" />
-                <Skeleton className="ml-2 h-4 w-1/3 max-w-[10rem]" />
+                <Skeleton className="ms-2 h-4 w-1/3 max-w-[10rem]" />
               </div>
             </TableCell>
             <TableCell>

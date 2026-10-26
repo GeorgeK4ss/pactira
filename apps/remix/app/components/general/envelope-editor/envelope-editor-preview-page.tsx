@@ -294,7 +294,7 @@ export const EnvelopeEditorPreviewPage = () => {
                   />
                   <Label
                     htmlFor="document-signed-preview"
-                    className="text-foreground ml-1.5 text-xs font-normal"
+                    className="text-foreground ms-1.5 text-xs font-normal"
                   >
                     <Trans>Document Signed Preview</Trans>
                   </Label>
@@ -308,7 +308,7 @@ export const EnvelopeEditorPreviewPage = () => {
                   />
                   <Label
                     htmlFor="recipient-preview"
-                    className="text-foreground ml-1.5 text-xs font-normal"
+                    className="text-foreground ms-1.5 text-xs font-normal"
                   >
                     <Trans>Recipient Preview</Trans>
                   </Label>

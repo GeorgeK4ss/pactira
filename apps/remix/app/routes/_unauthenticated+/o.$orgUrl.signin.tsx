@@ -127,7 +127,7 @@ export default function OrganisationSignIn({ loaderData }: Route.ComponentProps)
     return (
       <div className="w-screen max-w-lg px-4">
         <div className="flex items-start">
-          <div className="mt-1 mr-4 hidden md:block">
+          <div className="me-4 mt-1 hidden md:block">
             <MailsIcon className="h-10 w-10 text-primary" strokeWidth={2} />
           </div>
           <div className="">
@@ -176,7 +176,7 @@ export default function OrganisationSignIn({ loaderData }: Route.ComponentProps)
           />
 
           <label
-            className="ml-2 flex flex-row items-center text-muted-foreground text-sm"
+            className="ms-2 flex flex-row items-center text-muted-foreground text-sm"
             htmlFor={`flag-3rd-party-service`}
           >
             <Trans>

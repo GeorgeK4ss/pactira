@@ -2,13 +2,14 @@ import { getOptionalSession } from '@documenso/auth/server/lib/utils/get-session
 import { useAnalytics } from '@documenso/lib/client-only/hooks/use-analytics';
 import { SessionProvider } from '@documenso/lib/client-only/providers/session';
 import { getBasePath } from '@documenso/lib/constants/app';
-import { APP_I18N_OPTIONS, type SupportedLanguageCodes } from '@documenso/lib/constants/i18n';
+import { APP_I18N_OPTIONS, isRtlLanguage, type SupportedLanguageCodes } from '@documenso/lib/constants/i18n';
 import { createPublicEnv } from '@documenso/lib/utils/env';
 import { extractLocaleData } from '@documenso/lib/utils/i18n';
 import { TrpcProvider } from '@documenso/trpc/react';
 import { getOrganisationSession } from '@documenso/trpc/server/organisation-router/get-organisation-session';
 import { Toaster } from '@documenso/ui/primitives/toaster';
 import { TooltipProvider } from '@documenso/ui/primitives/tooltip';
+import { DirectionProvider } from '@radix-ui/react-direction';
 import { NuqsAdapter } from 'nuqs/adapters/react-router/v7';
 import { useEffect } from 'react';
 import {
@@ -131,7 +132,14 @@ export function LayoutContent({ children }: { children: React.ReactNode }) {
     // `data-theme`/`class` on <html> before hydration (PreventFlashOnWrongTheme),
     // so the server-rendered attributes never match the client render when the
     // theme is resolved from the system preference. Attribute-only, one level deep.
-    <html translate="no" lang={lang} data-theme={theme} className={theme ?? ''} suppressHydrationWarning>
+    <html
+      translate="no"
+      lang={lang}
+      dir={isRtlLanguage(lang) ? 'rtl' : 'ltr'}
+      data-theme={theme}
+      className={theme ?? ''}
+      suppressHydrationWarning
+    >
       <head>
         <meta charSet="utf-8" />
         <link rel="apple-touch-icon" sizes="180x180" href={`${basePath}/apple-touch-icon.png`} />
@@ -170,17 +178,19 @@ export function LayoutContent({ children }: { children: React.ReactNode }) {
           </div>
         )} */}
 
-        <NuqsAdapter>
-          <SessionProvider initialSession={session}>
-            <TooltipProvider>
-              <TrpcProvider>
-                {children}
+        <DirectionProvider dir={isRtlLanguage(lang) ? 'rtl' : 'ltr'}>
+          <NuqsAdapter>
+            <SessionProvider initialSession={session}>
+              <TooltipProvider>
+                <TrpcProvider>
+                  {children}
 
-                <Toaster />
-              </TrpcProvider>
-            </TooltipProvider>
-          </SessionProvider>
-        </NuqsAdapter>
+                  <Toaster />
+                </TrpcProvider>
+              </TooltipProvider>
+            </SessionProvider>
+          </NuqsAdapter>
+        </DirectionProvider>
 
         <script
           nonce={nonce(cspNonce)}

@@ -119,7 +119,7 @@ export default function TemplatePage({ params }: Route.ComponentProps) {
     <div className="mx-auto -mt-4 w-full max-w-screen-xl px-4 md:px-8">
       <div className="flex flex-row justify-between">
         <Link to={templateRootPath} className="flex items-center text-documenso-700 hover:opacity-80">
-          <ChevronLeft className="mr-2 inline-block h-5 w-5" />
+          <ChevronLeft className="me-2 inline-block h-5 w-5" />
           <Trans>Templates</Trans>
         </Link>
 
@@ -140,7 +140,7 @@ export default function TemplatePage({ params }: Route.ComponentProps) {
 
               <Button asChild size="sm">
                 <Link to={`${templateRootPath}/${envelope.id}/edit`}>
-                  <LucideEdit className="mr-1.5 h-3.5 w-3.5" />
+                  <LucideEdit className="me-1.5 h-3.5 w-3.5" />
                   <Trans>Edit Template</Trans>
                 </Link>
               </Button>
@@ -159,7 +159,7 @@ export default function TemplatePage({ params }: Route.ComponentProps) {
 
           {envelope.directLink?.token && (
             <TemplateDirectLinkBadge
-              className="ml-4"
+              className="ms-4"
               token={envelope.directLink.token}
               enabled={envelope.directLink.enabled}
             />

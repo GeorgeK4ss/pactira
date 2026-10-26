@@ -200,7 +200,7 @@ export const DocumentSigningForm = ({
                                     {r.name}
 
                                     {r.id === recipient.id && (
-                                      <span className="ml-2 text-muted-foreground">{_(msg`(You)`)}</span>
+                                      <span className="ms-2 text-muted-foreground">{_(msg`(You)`)}</span>
                                     )}
                                   </Label>
                                   <p className="text-muted-foreground text-xs">{r.email}</p>

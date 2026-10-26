@@ -82,7 +82,7 @@ export const DocumentPageViewDropdown = ({ envelope }: DocumentPageViewDropdownP
         {(isOwner || isCurrentTeamDocument) && !isComplete && (
           <DropdownMenuItem asChild>
             <Link to={`${documentsPath}/${envelope.id}/edit`}>
-              <Edit className="mr-2 h-4 w-4" />
+              <Edit className="me-2 h-4 w-4" />
               <Trans>Edit</Trans>
             </Link>
           </DropdownMenuItem>
@@ -90,7 +90,7 @@ export const DocumentPageViewDropdown = ({ envelope }: DocumentPageViewDropdownP
 
         {canManageDocument && canTitleBeChanged && (
           <DropdownMenuItem onClick={() => setRenameDialogOpen(true)}>
-            <Pencil className="mr-2 h-4 w-4" />
+            <Pencil className="me-2 h-4 w-4" />
             <Trans>Rename</Trans>
           </DropdownMenuItem>
         )}
@@ -104,7 +104,7 @@ export const DocumentPageViewDropdown = ({ envelope }: DocumentPageViewDropdownP
           trigger={
             <DropdownMenuItem asChild onSelect={(e) => e.preventDefault()}>
               <div>
-                <Download className="mr-2 h-4 w-4" />
+                <Download className="me-2 h-4 w-4" />
                 <Trans>Download</Trans>
               </div>
             </DropdownMenuItem>
@@ -113,7 +113,7 @@ export const DocumentPageViewDropdown = ({ envelope }: DocumentPageViewDropdownP
 
         <DropdownMenuItem asChild>
           <Link to={`${documentsPath}/${envelope.id}/logs`}>
-            <ScrollTextIcon className="mr-2 h-4 w-4" />
+            <ScrollTextIcon className="me-2 h-4 w-4" />
             <Trans>Audit Logs</Trans>
           </Link>
         </DropdownMenuItem>
@@ -124,7 +124,7 @@ export const DocumentPageViewDropdown = ({ envelope }: DocumentPageViewDropdownP
           trigger={
             <DropdownMenuItem asChild onSelect={(e) => e.preventDefault()}>
               <div>
-                <Copy className="mr-2 h-4 w-4" />
+                <Copy className="me-2 h-4 w-4" />
                 <Trans>Duplicate</Trans>
               </div>
             </DropdownMenuItem>
@@ -132,7 +132,7 @@ export const DocumentPageViewDropdown = ({ envelope }: DocumentPageViewDropdownP
         />
 
         <DropdownMenuItem onClick={() => setSaveAsTemplateDialogOpen(true)}>
-          <FileOutputIcon className="mr-2 h-4 w-4" />
+          <FileOutputIcon className="me-2 h-4 w-4" />
           <Trans>Save as Template</Trans>
         </DropdownMenuItem>
 
@@ -148,7 +148,7 @@ export const DocumentPageViewDropdown = ({ envelope }: DocumentPageViewDropdownP
           trigger={
             <DropdownMenuItem asChild disabled={isDeleted} onSelect={(e) => e.preventDefault()}>
               <div>
-                <Trash2 className="mr-2 h-4 w-4" />
+                <Trash2 className="me-2 h-4 w-4" />
                 <Trans>Delete</Trans>
               </div>
             </DropdownMenuItem>
@@ -164,7 +164,7 @@ export const DocumentPageViewDropdown = ({ envelope }: DocumentPageViewDropdownP
             recipients={envelope.recipients}
             trigger={
               <DropdownMenuItem disabled={!isPending || isDeleted} onSelect={(e) => e.preventDefault()}>
-                <Copy className="mr-2 h-4 w-4" />
+                <Copy className="me-2 h-4 w-4" />
                 <Trans>Signing Links</Trans>
               </DropdownMenuItem>
             }
@@ -178,7 +178,7 @@ export const DocumentPageViewDropdown = ({ envelope }: DocumentPageViewDropdownP
             trigger={
               <DropdownMenuItem asChild onSelect={(e) => e.preventDefault()}>
                 <div>
-                  <History className="mr-2 h-4 w-4" />
+                  <History className="me-2 h-4 w-4" />
                   <Trans>Resend</Trans>
                 </div>
               </DropdownMenuItem>
@@ -192,7 +192,7 @@ export const DocumentPageViewDropdown = ({ envelope }: DocumentPageViewDropdownP
           trigger={({ loading, disabled }) => (
             <DropdownMenuItem disabled={disabled || isDraft} onSelect={(e) => e.preventDefault()}>
               <div className="flex items-center">
-                {loading ? <Loader className="mr-2 h-4 w-4" /> : <Share className="mr-2 h-4 w-4" />}
+                {loading ? <Loader className="me-2 h-4 w-4" /> : <Share className="me-2 h-4 w-4" />}
                 <Trans>Share Signing Card</Trans>
               </div>
             </DropdownMenuItem>

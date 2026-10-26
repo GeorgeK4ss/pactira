@@ -82,7 +82,7 @@ export const Header = ({ className, fullWidth = false, ...props }: HeaderProps) 
           </Link>
         </Button>
 
-        <div className="md:ml-4">
+        <div className="md:ms-4">
           <OrgMenuSwitcher />
         </div>
 

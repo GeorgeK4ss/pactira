@@ -366,7 +366,7 @@ export const EnvelopeEditorSettingsDialog = ({ trigger, ...props }: EnvelopeEdit
                     'bg-secondary': activeTab === tab.id,
                   })}
                 >
-                  <tab.icon className="mr-2 h-5 w-5" />
+                  <tab.icon className="me-2 h-5 w-5" />
                   {t(tab.title)}
                 </Button>
               );
@@ -634,7 +634,7 @@ export const EnvelopeEditorSettingsDialog = ({ trigger, ...props }: EnvelopeEdit
                                       </Trans>
                                     </p>
 
-                                    <ul className="ml-3.5 list-outside list-disc space-y-0.5 py-2">
+                                    <ul className="ms-3.5 list-outside list-disc space-y-0.5 py-2">
                                       <li>
                                         <Trans>
                                           <strong>Email</strong> - The recipient will be emailed the document to sign,

@@ -138,7 +138,7 @@ export default function DocumentsLogsPage({ loaderData }: Route.ComponentProps) 
         to={`${documentRootPath}/${document.envelopeId}`}
         className="flex items-center text-documenso-700 hover:opacity-80"
       >
-        <ChevronLeft className="mr-2 inline-block h-5 w-5" />
+        <ChevronLeft className="me-2 inline-block h-5 w-5" />
         <Trans>Document</Trans>
       </Link>
 
@@ -157,7 +157,7 @@ export default function DocumentsLogsPage({ loaderData }: Route.ComponentProps) 
           </div>
           <div className="mt-4 flex w-full flex-row sm:mt-0 sm:w-auto sm:self-end">
             <DocumentCertificateDownloadButton
-              className="mr-2"
+              className="me-2"
               envelopeId={document.envelopeId}
               documentStatus={document.status}
             />
