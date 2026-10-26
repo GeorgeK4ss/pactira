@@ -7,6 +7,25 @@ import { msg } from '@lingui/core/macro';
 import { useLingui } from '@lingui/react';
 import { CheckIcon } from 'lucide-react';
 
+/**
+ * Saves the language and reloads, so the page direction (right-to-left for Hebrew) and the
+ * server-rendered parts follow the new language too.
+ */
+export const switchLanguage = async (lang: string) => {
+  await dynamicActivate(lang);
+
+  const formData = new FormData();
+
+  formData.append('lang', lang);
+
+  await fetch(formatPath('/api/locale'), {
+    method: 'post',
+    body: formData,
+  });
+
+  window.location.reload();
+};
+
 type LanguageSwitcherDialogProps = {
   open: boolean;
   setOpen: (_open: boolean) => void;
@@ -18,16 +37,7 @@ export const LanguageSwitcherDialog = ({ open, setOpen }: LanguageSwitcherDialog
   const setLanguage = async (lang: string) => {
     setOpen(false);
 
-    await dynamicActivate(lang);
-
-    const formData = new FormData();
-
-    formData.append('lang', lang);
-
-    await fetch(formatPath('/api/locale'), {
-      method: 'post',
-      body: formData,
-    });
+    await switchLanguage(lang);
   };
 
   return (
