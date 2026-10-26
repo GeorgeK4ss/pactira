@@ -1,5 +1,5 @@
 import { useSession } from '@documenso/lib/client-only/providers/session';
-import { NEXT_PUBLIC_WEBAPP_URL } from '@documenso/lib/constants/app';
+import { IS_CRYPTO_BILLING_ENABLED, NEXT_PUBLIC_WEBAPP_URL } from '@documenso/lib/constants/app';
 import { formatAvatarUrl } from '@documenso/lib/utils/avatars';
 import { isOrganisationPendingPayment } from '@documenso/lib/utils/billing';
 import { canExecuteOrganisationAction } from '@documenso/lib/utils/organisations';
@@ -23,6 +23,12 @@ export const UserBillingOrganisationsTable = () => {
   }, [organisations]);
 
   const getSubscriptionStatusDisplay = (organisation: (typeof billingOrganisations)[number]) => {
+    if (IS_CRYPTO_BILLING_ENABLED()) {
+      return isOrganisationPendingPayment(organisation)
+        ? { label: t({ message: `Not active`, context: `Subscription status` }), variant: 'warning' as const }
+        : { label: t({ message: `Active`, context: `Subscription status` }), variant: 'default' as const };
+    }
+
     return match(organisation.subscription?.status)
       .with(SubscriptionStatus.ACTIVE, () => ({
         label: t({ message: `Active`, context: `Subscription status` }),

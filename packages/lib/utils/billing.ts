@@ -26,7 +26,7 @@ export const validateIfSubscriptionIsRequired = (subscription?: Subscription | n
 
 type PendingPaymentOrganisation = {
   type: OrganisationType;
-  subscription?: { status: string; periodEnd?: Date | string | null } | null;
+  subscription?: { status: string; periodEnd?: Date | string | null; provider?: string } | null;
   organisationClaim: {
     originalSubscriptionClaimId: string | null;
   };
@@ -51,7 +51,13 @@ export const isOrganisationPendingPayment = (organisation: PendingPaymentOrganis
   if (IS_CRYPTO_BILLING_ENABLED()) {
     const subscription = organisation.subscription;
 
-    if (!subscription || subscription.status !== 'ACTIVE' || !subscription.periodEnd) {
+    // Only a crypto-paid period counts; a leftover Stripe subscription does not.
+    if (
+      !subscription ||
+      subscription.provider !== 'crypto' ||
+      subscription.status !== 'ACTIVE' ||
+      !subscription.periodEnd
+    ) {
       return true;
     }
 
