@@ -1,3 +1,4 @@
+import { IS_EMAIL_VERIFICATION_DISABLED } from '@documenso/lib/constants/app';
 import {
   isDisposableEmail,
   isEmailDomainAllowedForSignup,
@@ -157,7 +158,7 @@ export const emailPasswordRoute = new Hono<HonoAuthContext>()
       }
     }
 
-    if (!user.emailVerified) {
+    if (!user.emailVerified && !IS_EMAIL_VERIFICATION_DISABLED()) {
       const mostRecentToken = await getMostRecentEmailVerificationToken({
         userId: user.id,
       });
@@ -231,17 +232,27 @@ export const emailPasswordRoute = new Hono<HonoAuthContext>()
       });
     }
 
-    const user = await createUser({ name, email, password, signature }).catch((err) => {
+    const isVerificationDisabled = IS_EMAIL_VERIFICATION_DISABLED();
+
+    const user = await createUser({
+      name,
+      email,
+      password,
+      signature,
+      emailVerified: isVerificationDisabled ? new Date() : null,
+    }).catch((err) => {
       console.error(err);
       throw err;
     });
 
-    await jobsClient.triggerJob({
-      name: 'send.signup.confirmation.email',
-      payload: {
-        email: user.email,
-      },
-    });
+    if (!isVerificationDisabled) {
+      await jobsClient.triggerJob({
+        name: 'send.signup.confirmation.email',
+        payload: {
+          email: user.email,
+        },
+      });
+    }
 
     return c.text('OK', 201);
   })

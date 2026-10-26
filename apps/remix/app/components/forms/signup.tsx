@@ -2,6 +2,7 @@ import communityCardsImage from '@documenso/assets/images/community-cards.png';
 import { authClient } from '@documenso/auth/client';
 import { useAnalytics } from '@documenso/lib/client-only/hooks/use-analytics';
 import {
+  IS_EMAIL_VERIFICATION_DISABLED,
   NEXT_PUBLIC_IMPRINT_URL,
   NEXT_PUBLIC_PRIVACY_POLICY_URL,
   NEXT_PUBLIC_TERMS_OF_SERVICE_URL,
@@ -142,15 +143,23 @@ export const SignUpForm = ({
         captchaToken: token ?? undefined,
       });
 
-      await navigate(returnTo ? returnTo : '/unverified-account');
+      if (IS_EMAIL_VERIFICATION_DISABLED()) {
+        // The account is usable straight away, so sign in with the same details.
+        // The captcha token was spent on sign-up; if sign-in needs a fresh one, fall back to the sign-in page.
+        await authClient.emailPassword
+          .signIn({ email, password, redirectPath: returnTo ?? undefined })
+          .catch(async () => navigate('/signin'));
+      } else {
+        await navigate(returnTo ? returnTo : '/unverified-account');
 
-      toast({
-        title: _(msg`Registration Successful`),
-        description: _(
-          msg`You have successfully registered. Please verify your account by clicking on the link you received in the email.`,
-        ),
-        duration: 5000,
-      });
+        toast({
+          title: _(msg`Registration Successful`),
+          description: _(
+            msg`You have successfully registered. Please verify your account by clicking on the link you received in the email.`,
+          ),
+          duration: 5000,
+        });
+      }
 
       analytics.capture('App: User Sign Up', {
         email,

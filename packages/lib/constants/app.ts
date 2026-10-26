@@ -62,6 +62,12 @@ export const NEXT_PRIVATE_INTERNAL_WEBAPP_URL = () =>
 export const IS_BILLING_ENABLED = () => env('NEXT_PUBLIC_FEATURE_BILLING_ENABLED') === 'true';
 
 /**
+ * When true, accounts are usable straight after sign-up: no confirmation email is sent
+ * and sign-in does not require a verified email.
+ */
+export const IS_EMAIL_VERIFICATION_DISABLED = () => env('NEXT_PUBLIC_DISABLE_EMAIL_VERIFICATION') === 'true';
+
+/**
  * Whether this instance is Documenso Cloud (managed SaaS).
  *
  * Used so we can show a different UI for Documenso Cloud and self-hosted instances since
