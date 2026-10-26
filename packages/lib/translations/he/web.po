@@ -7390,6 +7390,7 @@ msgstr "תווית"
 
 #: apps/remix/app/components/embed/authoring/configure-document-advanced-settings.tsx
 #: apps/remix/app/components/general/app-command-menu.tsx
+#: apps/remix/app/components/general/app-nav-mobile.tsx
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-settings-dialog.tsx
 #: apps/remix/app/components/general/org-menu-switcher.tsx
 #: packages/ui/primitives/document-flow/add-settings.tsx
@@ -9186,6 +9187,10 @@ msgstr "תשלום"
 msgid "Pay invoice"
 msgstr "תשלום חשבונית"
 
+#: apps/remix/app/components/general/organisations/organisation-billing-banner.tsx
+msgid "Pay now"
+msgstr "לתשלום"
+
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.billing.pay.$invoiceId.tsx
 msgid "Pay with a stablecoin from any wallet or exchange."
 msgstr "שלמו במטבע יציב (stablecoin) מכל ארנק או בורסה."
@@ -9211,6 +9216,10 @@ msgstr "התשלום באיחור"
 #: apps/remix/app/components/general/organisations/organisation-billing-banner.tsx
 msgid "Payment required"
 msgstr "נדרש תשלום"
+
+#: apps/remix/app/components/general/organisations/organisation-billing-banner.tsx
+msgid "Payment required to send documents"
+msgstr "נדרש תשלום כדי לשלוח מסמכים"
 
 #. placeholder {0}: payment.confirmations
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.billing.pay.$invoiceId.tsx
@@ -16608,6 +16617,11 @@ msgstr "התוכנית שלכם אינה תומכת בהזמנת חברים. ש�
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
 msgid "Your plan ended on <0>{0}</0>. Pay to continue sending documents."
 msgstr "התוכנית שלכם הסתיימה ב-<0>{0}</0>. שלמו כדי להמשיך לשלוח מסמכים."
+
+#. placeholder {0}: i18n.date(periodEnd, { dateStyle: 'medium' })
+#: apps/remix/app/components/general/organisations/organisation-billing-banner.tsx
+msgid "Your plan ends on {0}. Pay to keep access."
+msgstr "התוכנית שלכם מסתיימת ב-{0}. שלמו כדי לשמור על הגישה."
 
 #: apps/remix/app/components/general/organisations/organisation-billing-banner.tsx
 msgid "Your plan is no longer valid. Please subscribe to a new plan to continue using Pactira."

@@ -7390,6 +7390,7 @@ msgstr "Rótulo"
 
 #: apps/remix/app/components/embed/authoring/configure-document-advanced-settings.tsx
 #: apps/remix/app/components/general/app-command-menu.tsx
+#: apps/remix/app/components/general/app-nav-mobile.tsx
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-settings-dialog.tsx
 #: apps/remix/app/components/general/org-menu-switcher.tsx
 #: packages/ui/primitives/document-flow/add-settings.tsx
@@ -9186,6 +9187,10 @@ msgstr ""
 msgid "Pay invoice"
 msgstr ""
 
+#: apps/remix/app/components/general/organisations/organisation-billing-banner.tsx
+msgid "Pay now"
+msgstr ""
+
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.billing.pay.$invoiceId.tsx
 msgid "Pay with a stablecoin from any wallet or exchange."
 msgstr ""
@@ -9210,6 +9215,10 @@ msgstr "Pagamento em atraso"
 #: apps/remix/app/components/general/organisations/organisation-billing-banner.tsx
 #: apps/remix/app/components/general/organisations/organisation-billing-banner.tsx
 msgid "Payment required"
+msgstr ""
+
+#: apps/remix/app/components/general/organisations/organisation-billing-banner.tsx
+msgid "Payment required to send documents"
 msgstr ""
 
 #. placeholder {0}: payment.confirmations
@@ -16607,6 +16616,11 @@ msgstr "Seu plano não suporta convidar membros. Por favor, atualize seu plano o
 #. placeholder {0}: i18n.date(subscription.periodEnd, { dateStyle: 'long' })
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
 msgid "Your plan ended on <0>{0}</0>. Pay to continue sending documents."
+msgstr ""
+
+#. placeholder {0}: i18n.date(periodEnd, { dateStyle: 'medium' })
+#: apps/remix/app/components/general/organisations/organisation-billing-banner.tsx
+msgid "Your plan ends on {0}. Pay to keep access."
 msgstr ""
 
 #: apps/remix/app/components/general/organisations/organisation-billing-banner.tsx
