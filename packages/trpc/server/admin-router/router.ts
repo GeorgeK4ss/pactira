@@ -7,8 +7,10 @@ import { createUserRoute } from './create-user';
 import {
   createAdminCryptoInvoiceRoute,
   getAdminCryptoBillingRoute,
+  getAdminCryptoOrganisationRoute,
   markCryptoInvoicePaidRoute,
   runCryptoTickRoute,
+  setCryptoPeriodRoute,
 } from './crypto-billing';
 import { deleteDocumentRoute } from './delete-document';
 import { deleteOrganisationRoute } from './delete-organisation';
@@ -88,6 +90,8 @@ export const adminRouter = router({
     markInvoicePaid: markCryptoInvoicePaidRoute,
     createInvoice: createAdminCryptoInvoiceRoute,
     runTick: runCryptoTickRoute,
+    getOrganisation: getAdminCryptoOrganisationRoute,
+    setPeriod: setCryptoPeriodRoute,
   },
   license: {
     resync: resyncLicenseRoute,

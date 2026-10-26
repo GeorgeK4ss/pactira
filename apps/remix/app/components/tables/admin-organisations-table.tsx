@@ -2,6 +2,7 @@ import { useUpdateSearchParams } from '@documenso/lib/client-only/hooks/use-upda
 import { SUBSCRIPTION_STATUS_MAP } from '@documenso/lib/constants/billing';
 import { ZUrlSearchParamsSchema } from '@documenso/lib/types/search-params';
 import { trpc } from '@documenso/trpc/react';
+import { CopyTextButton } from '@documenso/ui/components/common/copy-text-button';
 import { Badge } from '@documenso/ui/primitives/badge';
 import type { DataTableColumnDef } from '@documenso/ui/primitives/data-table';
 import { DataTable } from '@documenso/ui/primitives/data-table';
@@ -15,6 +16,7 @@ import {
 } from '@documenso/ui/primitives/dropdown-menu';
 import { Skeleton } from '@documenso/ui/primitives/skeleton';
 import { TableCell } from '@documenso/ui/primitives/table';
+import { useToast } from '@documenso/ui/primitives/use-toast';
 import { Trans, useLingui } from '@lingui/react/macro';
 import {
   ArrowRightLeftIcon,
@@ -43,6 +45,7 @@ export const AdminOrganisationsTable = ({
   hidePaginationUntilOverflow,
 }: AdminOrganisationsTableOptions) => {
   const { t, i18n } = useLingui();
+  const { toast } = useToast();
 
   const [swapSource, setSwapSource] = useState<{
     id: string;
@@ -88,6 +91,18 @@ export const AdminOrganisationsTable = ({
         header: t`Organisation`,
         accessorKey: 'name',
         cell: ({ row }) => <Link to={`/admin/organisations/${row.original.id}`}>{row.original.name}</Link>,
+      },
+      {
+        header: t`Organisation ID`,
+        accessorKey: 'id',
+        cell: ({ row }) => (
+          <div className="flex items-center gap-1">
+            <span dir="ltr" className="font-mono text-muted-foreground text-xs">
+              {row.original.id}
+            </span>
+            <CopyTextButton value={row.original.id} onCopySuccess={() => toast({ title: t`ID copied to clipboard` })} />
+          </div>
+        ),
       },
       {
         header: t`Created At`,

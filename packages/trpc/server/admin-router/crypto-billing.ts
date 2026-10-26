@@ -1,6 +1,12 @@
 import { runCryptoTick } from '@documenso/billing/crypto/core';
 import { getCryptoSettings } from '@documenso/billing/crypto/settings';
-import { getOrCreateRenewalInvoice, markInvoicePaid } from '@documenso/billing/invoices';
+import {
+  getCryptoSubscription,
+  getOrCreateRenewalInvoice,
+  markInvoicePaid,
+  setCryptoPeriod,
+} from '@documenso/billing/invoices';
+import { addInterval } from '@documenso/billing/plan';
 import { AppError, AppErrorCode } from '@documenso/lib/errors/app-error';
 import {
   SITE_SETTINGS_CRYPTO_PAYMENTS_ID,
@@ -9,7 +15,12 @@ import {
 import { prisma } from '@documenso/prisma';
 
 import { adminProcedure } from '../trpc';
-import { ZCreateAdminCryptoInvoiceRequestSchema, ZMarkCryptoInvoicePaidRequestSchema } from './crypto-billing.types';
+import {
+  ZCreateAdminCryptoInvoiceRequestSchema,
+  ZGetAdminCryptoOrganisationRequestSchema,
+  ZMarkCryptoInvoicePaidRequestSchema,
+  ZSetCryptoPeriodRequestSchema,
+} from './crypto-billing.types';
 
 export const getAdminCryptoBillingRoute = adminProcedure.query(async () => {
   const [row, effective, cursors, requests, transfers, openInvoices] = await Promise.all([
@@ -117,3 +128,70 @@ export const runCryptoTickRoute = adminProcedure.mutation(async () => {
 
   return JSON.parse(JSON.stringify(result)) as Record<string, unknown>;
 });
+
+export const getAdminCryptoOrganisationRoute = adminProcedure
+  .input(ZGetAdminCryptoOrganisationRequestSchema)
+  .query(async ({ input }) => {
+    const { organisationId } = input;
+
+    const [subscription, invoices] = await Promise.all([
+      getCryptoSubscription(organisationId),
+      prisma.billingInvoice.findMany({
+        where: { organisationId },
+        orderBy: { createdAt: 'desc' },
+        take: 20,
+      }),
+    ]);
+
+    return {
+      subscription: subscription
+        ? {
+            status: subscription.status,
+            interval: subscription.interval,
+            periodStart: subscription.periodStart,
+            periodEnd: subscription.periodEnd,
+            extraSeats: subscription.extraSeats,
+          }
+        : null,
+      invoices: invoices.map((i) => ({
+        id: i.id,
+        kind: i.kind,
+        interval: i.interval,
+        status: i.status,
+        amountCents: i.amountCents,
+        paidVia: i.paidVia,
+        createdAt: i.createdAt,
+        paidAt: i.paidAt,
+      })),
+    };
+  });
+
+export const setCryptoPeriodRoute = adminProcedure
+  .input(ZSetCryptoPeriodRequestSchema)
+  .mutation(async ({ ctx, input }) => {
+    const { organisationId, action, periodEnd, extraSeats } = input;
+
+    ctx.logger.info({ input: { organisationId, action, periodEnd, extraSeats } });
+
+    const now = new Date();
+    const subscription = await getCryptoSubscription(organisationId);
+
+    let end: Date;
+
+    if (action === 'expire') {
+      end = now;
+    } else if (action === 'extend') {
+      const from = subscription?.periodEnd && subscription.periodEnd > now ? subscription.periodEnd : now;
+      end = addInterval(from, subscription?.interval ?? 'MONTH');
+    } else {
+      if (!periodEnd) {
+        throw new AppError(AppErrorCode.INVALID_REQUEST, { message: 'A period end date is required' });
+      }
+
+      end = periodEnd;
+    }
+
+    await setCryptoPeriod({ organisationId, periodEnd: end, extraSeats, now });
+
+    return { periodEnd: end };
+  });

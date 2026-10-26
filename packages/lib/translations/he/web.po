@@ -1175,6 +1175,10 @@ msgctxt "Audit log format"
 msgid "A recipient was updated"
 msgstr "עודכן נמען"
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "A renewal invoice is created 7 days before the period ends. When the period ends unpaid, the organisation is restricted at once."
+msgstr "חשבונית חידוש נוצרת 7 ימים לפני סוף התקופה. אם התקופה מסתיימת ללא תשלום, הגישה של הארגון מוגבלת מיד."
+
 #: packages/email/templates/organisation-account-link-confirmation.tsx
 msgid "A request has been made to create an account for you"
 msgstr "התקבלה בקשה ליצור עבורך חשבון"
@@ -1381,6 +1385,7 @@ msgstr "פעולות"
 msgid "Activate the plan first, then you can add seats."
 msgstr "יש להפעיל קודם את התוכנית, ואז ניתן להוסיף מושבים."
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/tables/organisation-email-domains-table.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/email-domains._index.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/email-domains._index.tsx
@@ -1391,6 +1396,7 @@ msgid "Active"
 msgstr "פעיל"
 
 #: apps/remix/app/components/general/admin-license-card.tsx
+#: apps/remix/app/components/tables/user-billing-organisations-table.tsx
 #: apps/remix/app/components/tables/user-billing-organisations-table.tsx
 #: packages/lib/constants/billing.ts
 msgctxt "Subscription status"
@@ -2587,6 +2593,18 @@ msgstr "לפני שמתחילים, אשרו את כתובת האימייל של�
 #: packages/lib/utils/settings-nav.ts
 msgid "Billing"
 msgstr "חיוב"
+
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Billing interval"
+msgstr "מחזור חיוב"
+
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Billing period"
+msgstr "תקופת חיוב"
+
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Billing period updated"
+msgstr "תקופת החיוב עודכנה"
 
 #: apps/remix/app/components/forms/public-profile-form.tsx
 msgid "Bio"
@@ -5987,6 +6005,7 @@ msgstr "המעטפה עודכנה"
 #: apps/remix/app/components/dialogs/session-logout-all-dialog.tsx
 #: apps/remix/app/components/dialogs/webhook-create-dialog.tsx
 #: apps/remix/app/components/embed/multisign/multi-sign-document-signing-view.tsx
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-auto-sign.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-checkbox-field.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-checkbox-field.tsx
@@ -6124,6 +6143,10 @@ msgstr "הרחבת סרגל הצד"
 msgid "Expiration"
 msgstr "תפוגה"
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Expire now"
+msgstr "סיום מיידי"
+
 #: apps/remix/app/components/general/document/document-page-view-recipients.tsx
 #: apps/remix/app/components/general/document/document-status.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.general.tsx
@@ -6155,11 +6178,21 @@ msgstr "תוקף"
 msgid "Expires in {0}"
 msgstr "פג תוקף בעוד {0}"
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Extend by one period"
+msgstr "הארכה בתקופה אחת"
+
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-settings-dialog.tsx
 #: packages/ui/primitives/document-flow/add-settings.tsx
 #: packages/ui/primitives/template-flow/add-template-settings.tsx
 msgid "External ID"
 msgstr "מזהה חיצוני"
+
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Extra seats"
+msgstr "מושבים נוספים"
 
 #. placeholder {0}: invoice.extraSeats
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
@@ -6912,6 +6945,8 @@ msgid "ID"
 msgstr "מזהה"
 
 #: apps/remix/app/components/tables/admin-claims-table.tsx
+#: apps/remix/app/components/tables/admin-organisations-table.tsx
+#: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
 msgid "ID copied to clipboard"
 msgstr "המזהה הועתק ללוח"
 
@@ -7244,6 +7279,7 @@ msgstr "החשבונית נוצרה"
 msgid "Invoice marked paid"
 msgstr "החשבונית סומנה כשולמה"
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
 msgid "Invoices"
 msgstr "חשבוניות"
@@ -7968,6 +8004,7 @@ msgid "Modify the details of the subscription claim."
 msgstr "עריכת הפרטים של החבילת מנוי."
 
 #: apps/remix/app/components/dialogs/organisation-create-dialog.tsx
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/analytics/analytics-documents-over-time-card.tsx
 #: apps/remix/app/components/general/billing-plans.tsx
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
@@ -8150,6 +8187,10 @@ msgstr "אפשרות חדשה {0}"
 #: apps/remix/app/components/forms/password.tsx
 msgid "New Password"
 msgstr "סיסמה חדשה"
+
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "New period end"
+msgstr "סוף תקופה חדש"
 
 #: apps/remix/app/components/dialogs/team-group-create-dialog.tsx
 #: apps/remix/app/components/dialogs/team-member-create-dialog.tsx
@@ -8480,7 +8521,13 @@ msgstr "אין עדיין."
 msgid "None."
 msgstr "אין."
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/settings-org-switcher.tsx
+msgid "Not active"
+msgstr "לא פעיל"
+
+#: apps/remix/app/components/tables/user-billing-organisations-table.tsx
+msgctxt "Subscription status"
 msgid "Not active"
 msgstr "לא פעיל"
 
@@ -8674,6 +8721,11 @@ msgstr "אופס! משהו השתבש."
 msgid "Open"
 msgstr "פתיחה"
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgctxt "Invoice status"
+msgid "Open"
+msgstr "פתוחה"
+
 #: apps/remix/app/routes/_authenticated+/admin+/crypto.tsx
 msgid "Open invoices"
 msgstr "חשבוניות פתוחות"
@@ -8770,6 +8822,8 @@ msgstr "הארגון עודכן בהצלחה"
 msgid "Organisation has been updated. No limits changed, so no notification was sent"
 msgstr "הארגון עודכן. לא שונו מגבלות, ולכן לא נשלחה הודעה"
 
+#: apps/remix/app/components/tables/admin-organisations-table.tsx
+#: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/teams.$id.tsx
 msgid "Organisation ID"
 msgstr "מזהה ארגון"
@@ -8999,6 +9053,7 @@ msgstr "עמוד {0} מתוך {1}"
 msgid "Page {pageNumber} of {numPages}"
 msgstr "עמוד {pageNumber} מתוך {numPages}"
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.billing.pay.$invoiceId.tsx
 msgid "Paid"
@@ -9237,6 +9292,10 @@ msgstr "לשנה"
 #: apps/remix/app/routes/_authenticated+/admin+/organisation-stats._index.tsx
 msgid "Period"
 msgstr "תקופה"
+
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Period ends"
+msgstr "סוף התקופה"
 
 #: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
 msgid "Permanently delete this organisation. Documents will be orphaned (not deleted) so they remain accessible via the deleted-account service account."
@@ -10248,6 +10307,10 @@ msgstr "שינוי שם התבנית"
 msgid "Renew early with crypto"
 msgstr "חידוש מוקדם בקריפטו"
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Renewal"
+msgstr "חידוש"
+
 #: apps/remix/app/components/forms/password.tsx
 #: apps/remix/app/components/forms/reset-password.tsx
 msgid "Repeat Password"
@@ -10561,6 +10624,7 @@ msgstr "שורות בעמוד"
 #: apps/remix/app/components/dialogs/template-direct-link-dialog.tsx
 #: apps/remix/app/components/embed/authoring/configure-fields-view.tsx
 #: apps/remix/app/components/embed/authoring/configure-fields-view.tsx
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-number-field.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-text-field.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/crypto.tsx
@@ -14689,6 +14753,10 @@ msgstr "נראות"
 msgid "Visible to the document owner in the audit log."
 msgstr "גלוי לבעלי המסמך ביומן הביקורת."
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Void"
+msgstr "מבוטלת"
+
 #: apps/remix/app/components/general/analytics/analytics-overview-cards.tsx
 msgid "vs. previous period"
 msgstr "לעומת התקופה הקודמת"
@@ -14794,6 +14862,10 @@ msgstr "לא הצלחנו להפעיל את תכונות ה-AI כרגע. נסו 
 #: apps/remix/app/components/dialogs/admin-team-member-delete-dialog.tsx
 msgid "We couldn't remove this member. Please try again later."
 msgstr "לא הצלחנו להסיר את החבר. נסו שוב מאוחר יותר."
+
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "We couldn't update the billing period."
+msgstr "לא הצלחנו לעדכן את תקופת החיוב."
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.groups.$id.tsx
 msgid "We couldn't update the group. Please try again."
@@ -15345,6 +15417,7 @@ msgid "Write a description to display on your public profile"
 msgstr "כתבו תיאור שיוצג בפרופיל הציבורי שלכם"
 
 #: apps/remix/app/components/dialogs/organisation-create-dialog.tsx
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/billing-plans.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/crypto.tsx
 msgid "Yearly"

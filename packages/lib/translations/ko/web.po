@@ -1180,6 +1180,10 @@ msgctxt "Audit log format"
 msgid "A recipient was updated"
 msgstr "수신자가 업데이트되었습니다."
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "A renewal invoice is created 7 days before the period ends. When the period ends unpaid, the organisation is restricted at once."
+msgstr ""
+
 #: packages/email/templates/organisation-account-link-confirmation.tsx
 msgid "A request has been made to create an account for you"
 msgstr "귀하를 위한 계정 생성 요청이 있습니다."
@@ -1386,6 +1390,7 @@ msgstr "동작"
 msgid "Activate the plan first, then you can add seats."
 msgstr ""
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/tables/organisation-email-domains-table.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/email-domains._index.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/email-domains._index.tsx
@@ -1396,6 +1401,7 @@ msgid "Active"
 msgstr "활성"
 
 #: apps/remix/app/components/general/admin-license-card.tsx
+#: apps/remix/app/components/tables/user-billing-organisations-table.tsx
 #: apps/remix/app/components/tables/user-billing-organisations-table.tsx
 #: packages/lib/constants/billing.ts
 msgctxt "Subscription status"
@@ -2592,6 +2598,18 @@ msgstr "시작하기 전에 아래 버튼을 클릭하여 이메일 주소를 �
 #: packages/lib/utils/settings-nav.ts
 msgid "Billing"
 msgstr "결제"
+
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Billing interval"
+msgstr ""
+
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Billing period"
+msgstr ""
+
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Billing period updated"
+msgstr ""
 
 #: apps/remix/app/components/forms/public-profile-form.tsx
 msgid "Bio"
@@ -5992,6 +6010,7 @@ msgstr "봉투가 업데이트되었습니다"
 #: apps/remix/app/components/dialogs/session-logout-all-dialog.tsx
 #: apps/remix/app/components/dialogs/webhook-create-dialog.tsx
 #: apps/remix/app/components/embed/multisign/multi-sign-document-signing-view.tsx
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-auto-sign.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-checkbox-field.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-checkbox-field.tsx
@@ -6129,6 +6148,10 @@ msgstr "사이드바 펼치기"
 msgid "Expiration"
 msgstr "만료"
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Expire now"
+msgstr ""
+
 #: apps/remix/app/components/general/document/document-page-view-recipients.tsx
 #: apps/remix/app/components/general/document/document-status.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.general.tsx
@@ -6160,11 +6183,21 @@ msgstr ""
 msgid "Expires in {0}"
 msgstr "{0} 후 만료"
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Extend by one period"
+msgstr ""
+
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-settings-dialog.tsx
 #: packages/ui/primitives/document-flow/add-settings.tsx
 #: packages/ui/primitives/template-flow/add-template-settings.tsx
 msgid "External ID"
 msgstr "외부 ID"
+
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Extra seats"
+msgstr ""
 
 #. placeholder {0}: invoice.extraSeats
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
@@ -6917,6 +6950,8 @@ msgid "ID"
 msgstr "ID"
 
 #: apps/remix/app/components/tables/admin-claims-table.tsx
+#: apps/remix/app/components/tables/admin-organisations-table.tsx
+#: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
 msgid "ID copied to clipboard"
 msgstr "ID가 클립보드에 복사되었습니다."
 
@@ -7249,6 +7284,7 @@ msgstr ""
 msgid "Invoice marked paid"
 msgstr ""
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
 msgid "Invoices"
 msgstr ""
@@ -7973,6 +8009,7 @@ msgid "Modify the details of the subscription claim."
 msgstr "구독 클레임 세부 정보를 수정합니다."
 
 #: apps/remix/app/components/dialogs/organisation-create-dialog.tsx
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/analytics/analytics-documents-over-time-card.tsx
 #: apps/remix/app/components/general/billing-plans.tsx
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
@@ -8155,6 +8192,10 @@ msgstr "새 옵션 {0}"
 #: apps/remix/app/components/forms/password.tsx
 msgid "New Password"
 msgstr "새 비밀번호"
+
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "New period end"
+msgstr ""
 
 #: apps/remix/app/components/dialogs/team-group-create-dialog.tsx
 #: apps/remix/app/components/dialogs/team-member-create-dialog.tsx
@@ -8485,7 +8526,13 @@ msgstr ""
 msgid "None."
 msgstr ""
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/settings-org-switcher.tsx
+msgid "Not active"
+msgstr ""
+
+#: apps/remix/app/components/tables/user-billing-organisations-table.tsx
+msgctxt "Subscription status"
 msgid "Not active"
 msgstr ""
 
@@ -8679,6 +8726,11 @@ msgstr "문제가 발생했습니다."
 msgid "Open"
 msgstr ""
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgctxt "Invoice status"
+msgid "Open"
+msgstr ""
+
 #: apps/remix/app/routes/_authenticated+/admin+/crypto.tsx
 msgid "Open invoices"
 msgstr ""
@@ -8775,6 +8827,8 @@ msgstr "조직이 성공적으로 업데이트되었습니다."
 msgid "Organisation has been updated. No limits changed, so no notification was sent"
 msgstr ""
 
+#: apps/remix/app/components/tables/admin-organisations-table.tsx
+#: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/teams.$id.tsx
 msgid "Organisation ID"
 msgstr "조직 ID"
@@ -9004,6 +9058,7 @@ msgstr "페이지 {0}/{1}"
 msgid "Page {pageNumber} of {numPages}"
 msgstr "{numPages}페이지 중 {pageNumber}페이지"
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.billing.pay.$invoiceId.tsx
 msgid "Paid"
@@ -9242,6 +9297,10 @@ msgstr "연간"
 #: apps/remix/app/routes/_authenticated+/admin+/organisation-stats._index.tsx
 msgid "Period"
 msgstr "기간"
+
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Period ends"
+msgstr ""
 
 #: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
 msgid "Permanently delete this organisation. Documents will be orphaned (not deleted) so they remain accessible via the deleted-account service account."
@@ -10253,6 +10312,10 @@ msgstr "템플릿 이름 변경"
 msgid "Renew early with crypto"
 msgstr ""
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Renewal"
+msgstr ""
+
 #: apps/remix/app/components/forms/password.tsx
 #: apps/remix/app/components/forms/reset-password.tsx
 msgid "Repeat Password"
@@ -10566,6 +10629,7 @@ msgstr "페이지당 행 수"
 #: apps/remix/app/components/dialogs/template-direct-link-dialog.tsx
 #: apps/remix/app/components/embed/authoring/configure-fields-view.tsx
 #: apps/remix/app/components/embed/authoring/configure-fields-view.tsx
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-number-field.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-text-field.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/crypto.tsx
@@ -14694,6 +14758,10 @@ msgstr "공개 범위"
 msgid "Visible to the document owner in the audit log."
 msgstr ""
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Void"
+msgstr ""
+
 #: apps/remix/app/components/general/analytics/analytics-overview-cards.tsx
 msgid "vs. previous period"
 msgstr ""
@@ -14799,6 +14867,10 @@ msgstr "지금은 AI 기능을 활성화할 수 없습니다. 다시 시도해 �
 #: apps/remix/app/components/dialogs/admin-team-member-delete-dialog.tsx
 msgid "We couldn't remove this member. Please try again later."
 msgstr "이 구성원을 제거할 수 없습니다. 나중에 다시 시도해 주세요."
+
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "We couldn't update the billing period."
+msgstr ""
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.groups.$id.tsx
 msgid "We couldn't update the group. Please try again."
@@ -15350,6 +15422,7 @@ msgid "Write a description to display on your public profile"
 msgstr "공개 프로필에 표시될 설명을 작성하세요."
 
 #: apps/remix/app/components/dialogs/organisation-create-dialog.tsx
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/billing-plans.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/crypto.tsx
 msgid "Yearly"

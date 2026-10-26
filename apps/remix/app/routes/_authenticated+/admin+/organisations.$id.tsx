@@ -1,4 +1,4 @@
-import { NEXT_PUBLIC_WEBAPP_URL } from '@documenso/lib/constants/app';
+import { IS_CRYPTO_BILLING_ENABLED, NEXT_PUBLIC_WEBAPP_URL } from '@documenso/lib/constants/app';
 import { SUBSCRIPTION_STATUS_MAP } from '@documenso/lib/constants/billing';
 import { AppError } from '@documenso/lib/errors/app-error';
 import { LicenseClient } from '@documenso/lib/server-only/license/license-client';
@@ -8,6 +8,7 @@ import { getHighestOrganisationRoleInGroup } from '@documenso/lib/utils/organisa
 import { trpc } from '@documenso/trpc/react';
 import type { TGetAdminOrganisationResponse } from '@documenso/trpc/server/admin-router/get-admin-organisation.types';
 import { ZUpdateAdminOrganisationRequestSchema } from '@documenso/trpc/server/admin-router/update-admin-organisation.types';
+import { CopyTextButton } from '@documenso/ui/components/common/copy-text-button';
 import { cn } from '@documenso/ui/lib/utils';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@documenso/ui/primitives/accordion';
 import { Alert, AlertDescription, AlertTitle } from '@documenso/ui/primitives/alert';
@@ -43,6 +44,7 @@ import { AdminOrganisationDeleteDialog } from '~/components/dialogs/admin-organi
 import { AdminOrganisationMemberDeleteDialog } from '~/components/dialogs/admin-organisation-member-delete-dialog';
 import { AdminOrganisationMemberUpdateDialog } from '~/components/dialogs/admin-organisation-member-update-dialog';
 import { AdminOrganisationSyncSubscriptionDialog } from '~/components/dialogs/admin-organisation-sync-subscription-dialog';
+import { AdminCryptoPeriodPanel } from '~/components/general/admin-crypto-period-panel';
 import { AdminGlobalSettingsSection } from '~/components/general/admin-global-settings-section';
 import { ClaimLimitFields } from '~/components/general/claim-limit-fields';
 import { GenericErrorLayout } from '~/components/general/generic-error-layout';
@@ -270,6 +272,16 @@ export default function OrganisationGroupSettingsPage({ params, loaderData }: Ro
         </Button>
       </SettingsHeader>
 
+      <div className="mt-4 flex flex-wrap items-center gap-2 text-sm">
+        <span className="text-muted-foreground">
+          <Trans>Organisation ID</Trans>
+        </span>
+        <code dir="ltr" className="rounded bg-muted px-2 py-1 font-mono text-xs">
+          {organisation.id}
+        </code>
+        <CopyTextButton value={organisation.id} onCopySuccess={() => toast({ title: t`ID copied to clipboard` })} />
+      </div>
+
       <GenericOrganisationAdminForm organisation={organisation} />
 
       <SettingsHeader
@@ -318,86 +330,90 @@ export default function OrganisationGroupSettingsPage({ params, loaderData }: Ro
         className="mt-16"
       />
 
-      <Alert
-        className={cn(
-          'my-6 flex flex-col justify-between p-6 sm:flex-row sm:items-center',
-          organisation.subscription?.status === SubscriptionStatus.ACTIVE &&
-            'border border-green-600/20 bg-green-50 dark:border-green-500/20 dark:bg-green-500/10',
-          organisation.subscription?.status === SubscriptionStatus.INACTIVE && 'opacity-60',
-        )}
-        variant="neutral"
-      >
-        <div className="mb-4 sm:mb-0">
-          <AlertTitle>
-            <Trans>Subscription</Trans>
-          </AlertTitle>
+      {IS_CRYPTO_BILLING_ENABLED() ? (
+        <AdminCryptoPeriodPanel organisationId={organisationId} />
+      ) : (
+        <Alert
+          className={cn(
+            'my-6 flex flex-col justify-between p-6 sm:flex-row sm:items-center',
+            organisation.subscription?.status === SubscriptionStatus.ACTIVE &&
+              'border border-green-600/20 bg-green-50 dark:border-green-500/20 dark:bg-green-500/10',
+            organisation.subscription?.status === SubscriptionStatus.INACTIVE && 'opacity-60',
+          )}
+          variant="neutral"
+        >
+          <div className="mb-4 sm:mb-0">
+            <AlertTitle>
+              <Trans>Subscription</Trans>
+            </AlertTitle>
 
-          <AlertDescription className="me-2">
-            {organisation.subscription ? (
-              <span className="flex items-center gap-2">
-                {organisation.subscription.status === SubscriptionStatus.ACTIVE && (
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-green-600 dark:bg-green-400" aria-hidden="true" />
-                )}
-                <span>{i18n._(SUBSCRIPTION_STATUS_MAP[organisation.subscription.status])} subscription found</span>
-              </span>
-            ) : (
-              <span>
-                <Trans>No subscription found</Trans>
-              </span>
-            )}
-          </AlertDescription>
-        </div>
-
-        {!organisation.customerId && (
-          <div>
-            <Button
-              variant="outline"
-              className="bg-background"
-              loading={isCreatingStripeCustomer}
-              onClick={async () => createStripeCustomer({ organisationId })}
-            >
-              <Trans>Create Stripe customer</Trans>
-            </Button>
+            <AlertDescription className="me-2">
+              {organisation.subscription ? (
+                <span className="flex items-center gap-2">
+                  {organisation.subscription.status === SubscriptionStatus.ACTIVE && (
+                    <span className="h-2 w-2 shrink-0 rounded-full bg-green-600 dark:bg-green-400" aria-hidden="true" />
+                  )}
+                  <span>{i18n._(SUBSCRIPTION_STATUS_MAP[organisation.subscription.status])} subscription found</span>
+                </span>
+              ) : (
+                <span>
+                  <Trans>No subscription found</Trans>
+                </span>
+              )}
+            </AlertDescription>
           </div>
-        )}
 
-        {organisation.customerId && !organisation.subscription && (
-          <div>
-            <Button variant="outline" className="bg-background" asChild>
-              <Link
-                target="_blank"
-                to={`https://dashboard.stripe.com/customers/${organisation.customerId}?create=subscription&subscription_default_customer=${organisation.customerId}`}
+          {!organisation.customerId && (
+            <div>
+              <Button
+                variant="outline"
+                className="bg-background"
+                loading={isCreatingStripeCustomer}
+                onClick={async () => createStripeCustomer({ organisationId })}
               >
-                <Trans>Create subscription</Trans>
-                <ExternalLinkIcon className="ms-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        )}
+                <Trans>Create Stripe customer</Trans>
+              </Button>
+            </div>
+          )}
 
-        {organisation.subscription && (
-          <div className="flex flex-col gap-2 sm:flex-row">
-            <AdminOrganisationSyncSubscriptionDialog
-              organisationId={organisationId}
-              trigger={
-                <Button variant="outline" className="bg-background">
-                  <Trans>Sync Stripe subscription</Trans>
-                </Button>
-              }
-            />
+          {organisation.customerId && !organisation.subscription && (
+            <div>
+              <Button variant="outline" className="bg-background" asChild>
+                <Link
+                  target="_blank"
+                  to={`https://dashboard.stripe.com/customers/${organisation.customerId}?create=subscription&subscription_default_customer=${organisation.customerId}`}
+                >
+                  <Trans>Create subscription</Trans>
+                  <ExternalLinkIcon className="ms-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          )}
 
-            <Button variant="outline" className="bg-background" asChild>
-              <Link
-                target="_blank"
-                to={`https://dashboard.stripe.com/subscriptions/${organisation.subscription.planId}`}
-              >
-                <Trans>Manage subscription</Trans>
-                <ExternalLinkIcon className="ms-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        )}
-      </Alert>
+          {organisation.subscription && (
+            <div className="flex flex-col gap-2 sm:flex-row">
+              <AdminOrganisationSyncSubscriptionDialog
+                organisationId={organisationId}
+                trigger={
+                  <Button variant="outline" className="bg-background">
+                    <Trans>Sync Stripe subscription</Trans>
+                  </Button>
+                }
+              />
+
+              <Button variant="outline" className="bg-background" asChild>
+                <Link
+                  target="_blank"
+                  to={`https://dashboard.stripe.com/subscriptions/${organisation.subscription.planId}`}
+                >
+                  <Trans>Manage subscription</Trans>
+                  <ExternalLinkIcon className="ms-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          )}
+        </Alert>
+      )}
 
       <OrganisationAdminForm organisation={organisation} licenseFlags={licenseFlags} />
 

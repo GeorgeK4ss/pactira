@@ -1180,6 +1180,10 @@ msgctxt "Audit log format"
 msgid "A recipient was updated"
 msgstr "Zaktualizowano odbiorcę"
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "A renewal invoice is created 7 days before the period ends. When the period ends unpaid, the organisation is restricted at once."
+msgstr ""
+
 #: packages/email/templates/organisation-account-link-confirmation.tsx
 msgid "A request has been made to create an account for you"
 msgstr "Utworzono prośbę o utworzenie konta dla Ciebie"
@@ -1386,6 +1390,7 @@ msgstr "Akcje"
 msgid "Activate the plan first, then you can add seats."
 msgstr ""
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/tables/organisation-email-domains-table.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/email-domains._index.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/email-domains._index.tsx
@@ -1396,6 +1401,7 @@ msgid "Active"
 msgstr "Aktywny"
 
 #: apps/remix/app/components/general/admin-license-card.tsx
+#: apps/remix/app/components/tables/user-billing-organisations-table.tsx
 #: apps/remix/app/components/tables/user-billing-organisations-table.tsx
 #: packages/lib/constants/billing.ts
 msgctxt "Subscription status"
@@ -2592,6 +2598,18 @@ msgstr "Zanim zaczniesz, potwierdź adres e-mail, klikając poniższy przycisk:"
 #: packages/lib/utils/settings-nav.ts
 msgid "Billing"
 msgstr "Płatności"
+
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Billing interval"
+msgstr ""
+
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Billing period"
+msgstr ""
+
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Billing period updated"
+msgstr ""
 
 #: apps/remix/app/components/forms/public-profile-form.tsx
 msgid "Bio"
@@ -5992,6 +6010,7 @@ msgstr "Koperta została zaktualizowana"
 #: apps/remix/app/components/dialogs/session-logout-all-dialog.tsx
 #: apps/remix/app/components/dialogs/webhook-create-dialog.tsx
 #: apps/remix/app/components/embed/multisign/multi-sign-document-signing-view.tsx
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-auto-sign.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-checkbox-field.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-checkbox-field.tsx
@@ -6129,6 +6148,10 @@ msgstr "Rozwiń panel boczny"
 msgid "Expiration"
 msgstr "Wygaśnięcie"
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Expire now"
+msgstr ""
+
 #: apps/remix/app/components/general/document/document-page-view-recipients.tsx
 #: apps/remix/app/components/general/document/document-status.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.general.tsx
@@ -6160,11 +6183,21 @@ msgstr "Wygaśnie za"
 msgid "Expires in {0}"
 msgstr "Wygaśnie za {0}"
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Extend by one period"
+msgstr ""
+
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-settings-dialog.tsx
 #: packages/ui/primitives/document-flow/add-settings.tsx
 #: packages/ui/primitives/template-flow/add-template-settings.tsx
 msgid "External ID"
 msgstr "Identyfikator zewnętrzny"
+
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Extra seats"
+msgstr ""
 
 #. placeholder {0}: invoice.extraSeats
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
@@ -6917,6 +6950,8 @@ msgid "ID"
 msgstr "Identyfikator"
 
 #: apps/remix/app/components/tables/admin-claims-table.tsx
+#: apps/remix/app/components/tables/admin-organisations-table.tsx
+#: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
 msgid "ID copied to clipboard"
 msgstr "Identyfikator został skopiowany do schowka"
 
@@ -7249,6 +7284,7 @@ msgstr ""
 msgid "Invoice marked paid"
 msgstr ""
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
 msgid "Invoices"
 msgstr ""
@@ -7973,6 +8009,7 @@ msgid "Modify the details of the subscription claim."
 msgstr "Edytuj szczegóły subskrypcji."
 
 #: apps/remix/app/components/dialogs/organisation-create-dialog.tsx
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/analytics/analytics-documents-over-time-card.tsx
 #: apps/remix/app/components/general/billing-plans.tsx
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
@@ -8155,6 +8192,10 @@ msgstr "Nowa opcja {0}"
 #: apps/remix/app/components/forms/password.tsx
 msgid "New Password"
 msgstr "Nowe hasło"
+
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "New period end"
+msgstr ""
 
 #: apps/remix/app/components/dialogs/team-group-create-dialog.tsx
 #: apps/remix/app/components/dialogs/team-member-create-dialog.tsx
@@ -8485,7 +8526,13 @@ msgstr ""
 msgid "None."
 msgstr ""
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/settings-org-switcher.tsx
+msgid "Not active"
+msgstr ""
+
+#: apps/remix/app/components/tables/user-billing-organisations-table.tsx
+msgctxt "Subscription status"
 msgid "Not active"
 msgstr ""
 
@@ -8679,6 +8726,11 @@ msgstr "Ups! Coś poszło nie tak."
 msgid "Open"
 msgstr "Otwórz"
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgctxt "Invoice status"
+msgid "Open"
+msgstr ""
+
 #: apps/remix/app/routes/_authenticated+/admin+/crypto.tsx
 msgid "Open invoices"
 msgstr ""
@@ -8775,6 +8827,8 @@ msgstr "Organizacja została zaktualizowana"
 msgid "Organisation has been updated. No limits changed, so no notification was sent"
 msgstr ""
 
+#: apps/remix/app/components/tables/admin-organisations-table.tsx
+#: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/teams.$id.tsx
 msgid "Organisation ID"
 msgstr "Identyfikator organizacji"
@@ -9004,6 +9058,7 @@ msgstr "Strona {0} z {1}"
 msgid "Page {pageNumber} of {numPages}"
 msgstr "Strona {pageNumber} z {numPages}"
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/billing/crypto-billing.tsx
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.billing.pay.$invoiceId.tsx
 msgid "Paid"
@@ -9242,6 +9297,10 @@ msgstr "rocznie"
 #: apps/remix/app/routes/_authenticated+/admin+/organisation-stats._index.tsx
 msgid "Period"
 msgstr "Okres"
+
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Period ends"
+msgstr ""
 
 #: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
 msgid "Permanently delete this organisation. Documents will be orphaned (not deleted) so they remain accessible via the deleted-account service account."
@@ -10253,6 +10312,10 @@ msgstr "Zmień nazwę szablonu"
 msgid "Renew early with crypto"
 msgstr ""
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Renewal"
+msgstr ""
+
 #: apps/remix/app/components/forms/password.tsx
 #: apps/remix/app/components/forms/reset-password.tsx
 msgid "Repeat Password"
@@ -10566,6 +10629,7 @@ msgstr "Wiersze na stronę"
 #: apps/remix/app/components/dialogs/template-direct-link-dialog.tsx
 #: apps/remix/app/components/embed/authoring/configure-fields-view.tsx
 #: apps/remix/app/components/embed/authoring/configure-fields-view.tsx
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-number-field.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-text-field.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/crypto.tsx
@@ -14694,6 +14758,10 @@ msgstr "Widoczność"
 msgid "Visible to the document owner in the audit log."
 msgstr ""
 
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "Void"
+msgstr ""
+
 #: apps/remix/app/components/general/analytics/analytics-overview-cards.tsx
 msgid "vs. previous period"
 msgstr ""
@@ -14799,6 +14867,10 @@ msgstr "Nie mogliśmy włączyć funkcji AI. Spróbuj ponownie."
 #: apps/remix/app/components/dialogs/admin-team-member-delete-dialog.tsx
 msgid "We couldn't remove this member. Please try again later."
 msgstr "Nie mogliśmy usunąć użytkownika. Spróbuj ponownie później."
+
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
+msgid "We couldn't update the billing period."
+msgstr ""
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.groups.$id.tsx
 msgid "We couldn't update the group. Please try again."
@@ -15350,6 +15422,7 @@ msgid "Write a description to display on your public profile"
 msgstr "Wpisz opis, który będzie wyświetlany w profilu publicznym"
 
 #: apps/remix/app/components/dialogs/organisation-create-dialog.tsx
+#: apps/remix/app/components/general/admin-crypto-period-panel.tsx
 #: apps/remix/app/components/general/billing-plans.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/crypto.tsx
 msgid "Yearly"

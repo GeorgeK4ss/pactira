@@ -242,3 +242,58 @@ export const processRenewals = async (now: Date = new Date()) => {
 
   return { renewalInvoices: dueSoon.length, lapsed: lapsed.count };
 };
+
+/**
+ * Admin override of an organisation's paid period, for deals, support and testing. A period end in
+ * the future makes the organisation active (creating the subscription if needed); one in the past
+ * restricts it at once and leaves a renewal invoice for the customer to pay.
+ */
+export const setCryptoPeriod = async ({
+  organisationId,
+  periodEnd,
+  extraSeats,
+  now = new Date(),
+}: {
+  organisationId: string;
+  periodEnd: Date;
+  extraSeats?: number;
+  now?: Date;
+}) => {
+  const active = periodEnd.getTime() > now.getTime();
+
+  await prisma.$transaction(async (tx) => {
+    const subscription = await tx.subscription.findFirst({
+      where: { organisationId, provider: CRYPTO_PROVIDER },
+    });
+
+    const interval = subscription?.interval ?? 'MONTH';
+    const seats = extraSeats ?? subscription?.extraSeats ?? 0;
+
+    const data = {
+      provider: CRYPTO_PROVIDER,
+      status: active ? SubscriptionStatus.ACTIVE : SubscriptionStatus.INACTIVE,
+      priceId: subscription?.priceId ?? `pactira_${interval.toLowerCase()}`,
+      interval,
+      periodStart: subscription?.periodStart ?? now,
+      periodEnd,
+      extraSeats: seats,
+      cancelAtPeriodEnd: false,
+    };
+
+    await tx.subscription.upsert({
+      where: { organisationId },
+      create: { ...data, ...syntheticIds(organisationId), organisationId },
+      update: data,
+    });
+
+    if (active) {
+      await applyPaidClaim(tx, organisationId, seats);
+    }
+  });
+
+  if (!active) {
+    const subscription = await getCryptoSubscription(organisationId);
+
+    await getOrCreateRenewalInvoice({ organisationId, interval: subscription?.interval ?? 'MONTH' });
+  }
+};
