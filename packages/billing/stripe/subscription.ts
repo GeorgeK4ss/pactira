@@ -122,7 +122,8 @@ export const syncStripeCustomerSubscription = async ({
   }
 
   const subscriptions = await stripe.subscriptions
-    .list({ customer: customerId, status: 'all', expand: ['data.items.data.price.product'], limit: 100 })
+    // Stripe allows four levels of expand, so the product is fetched separately when needed.
+    .list({ customer: customerId, status: 'all', expand: ['data.items.data.price'], limit: 100 })
     .autoPagingToArray({ limit: 1000 });
 
   const current = pickCurrentSubscription(subscriptions);
@@ -192,7 +193,11 @@ export const syncStripeCustomerSubscription = async ({
     return;
   }
 
-  const claimId = getPriceClaimId(price);
+  const claimId =
+    getPriceClaimId(price) ??
+    (typeof price.product === 'string'
+      ? getPriceClaimId({ ...price, product: await stripe.products.retrieve(price.product) })
+      : null);
 
   if (!claimId) {
     console.error(`[billing] Stripe price ${price.id} has no claimId metadata, limits not updated`);
