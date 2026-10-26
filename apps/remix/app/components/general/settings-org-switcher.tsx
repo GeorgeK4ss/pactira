@@ -1,6 +1,6 @@
 import { useSession } from '@documenso/lib/client-only/providers/session';
-import { IS_BILLING_ENABLED } from '@documenso/lib/constants/app';
-import { type INTERNAL_CLAIM_ID, internalClaims } from '@documenso/lib/types/subscription';
+import { IS_BILLING_ENABLED, IS_CRYPTO_BILLING_ENABLED } from '@documenso/lib/constants/app';
+import { INTERNAL_CLAIM_ID, internalClaims } from '@documenso/lib/types/subscription';
 import { formatAvatarUrl } from '@documenso/lib/utils/avatars';
 import { canExecuteOrganisationAction } from '@documenso/lib/utils/organisations';
 import { getSettingsNavGroups } from '@documenso/lib/utils/settings-nav';
@@ -108,6 +108,11 @@ export const SettingsOrgSwitcher = ({ currentOrgUrl }: SettingsOrgSwitcherProps)
   // Resolve an organisation's plan label. Unknown or custom claims (including
   // self-hosted custom claim IDs) fall back to "Custom Plan".
   const getPlanName = (organisationClaimId: string | null) => {
+    // Crypto billing has a single paid plan; anything else means the organisation has not paid.
+    if (IS_CRYPTO_BILLING_ENABLED()) {
+      return organisationClaimId === INTERNAL_CLAIM_ID.TEAM ? t`Pactira plan` : t`Not active`;
+    }
+
     const planClaim =
       organisationClaimId && organisationClaimId in internalClaims
         ? internalClaims[organisationClaimId as INTERNAL_CLAIM_ID]

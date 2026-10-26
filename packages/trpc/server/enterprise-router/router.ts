@@ -2,6 +2,14 @@ import { router } from '../trpc';
 import { createOrganisationEmailRoute } from './create-organisation-email';
 import { createOrganisationEmailDomainRoute } from './create-organisation-email-domain';
 import { createSubscriptionRoute } from './create-subscription';
+import { addCryptoSeatsRoute, createCryptoInvoiceRoute } from './crypto/create-crypto-invoice';
+import {
+  createCryptoPaymentRoute,
+  getCryptoInvoiceRoute,
+  refreshCryptoPaymentRoute,
+  submitCryptoTxHashRoute,
+} from './crypto/crypto-payment';
+import { getCryptoBillingRoute } from './crypto/get-crypto-billing';
 import { cscSignEnvelopeRoute } from './csc-sign-envelope';
 import { declineLinkOrganisationAccountRoute } from './decline-link-organisation-account';
 import { deleteOrganisationEmailRoute } from './delete-organisation-email';
@@ -54,6 +62,15 @@ export const enterpriseRouter = router({
     },
     invoices: {
       get: getInvoicesRoute,
+    },
+    crypto: {
+      get: getCryptoBillingRoute,
+      createInvoice: createCryptoInvoiceRoute,
+      addSeats: addCryptoSeatsRoute,
+      getInvoice: getCryptoInvoiceRoute,
+      createPayment: createCryptoPaymentRoute,
+      refreshPayment: refreshCryptoPaymentRoute,
+      submitTxHash: submitCryptoTxHashRoute,
     },
   },
   csc: {

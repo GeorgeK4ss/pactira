@@ -1,4 +1,5 @@
 import { useCurrentOrganisation } from '@documenso/lib/client-only/providers/organisation';
+import { BILLING_PROVIDER } from '@documenso/lib/constants/app';
 import { canExecuteOrganisationAction } from '@documenso/lib/utils/organisations';
 import { trpc } from '@documenso/trpc/react';
 import { msg } from '@lingui/core/macro';
@@ -11,6 +12,7 @@ import { useSearchParams } from 'react-router';
 import type Stripe from 'stripe';
 import { match, P } from 'ts-pattern';
 
+import { CryptoBilling } from '~/components/general/billing/crypto-billing';
 import { BillingPlans } from '~/components/general/billing-plans';
 import { OrganisationBillingPortalButton } from '~/components/general/organisations/organisation-billing-portal-button';
 import { OrganisationBillingInvoicesTable } from '~/components/tables/organisation-billing-invoices-table';
@@ -21,6 +23,10 @@ export function meta() {
 }
 
 export default function TeamsSettingBillingPage() {
+  return BILLING_PROVIDER() === 'crypto' ? <CryptoBilling /> : <StripeBilling />;
+}
+
+const StripeBilling = () => {
   const { _, i18n } = useLingui();
 
   const organisation = useCurrentOrganisation();
@@ -187,4 +193,4 @@ export default function TeamsSettingBillingPage() {
       </section>
     </div>
   );
-}
+};

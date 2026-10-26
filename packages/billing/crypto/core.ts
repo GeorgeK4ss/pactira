@@ -6,7 +6,14 @@ import { markInvoicePaid, processRenewals } from '../invoices';
 import { centsToDecimal, toCents, uniqueAmountCents } from './amounts';
 import { type EvmNetwork, fetchErc20Incoming, findErc20ByHash, getBlockNumber, isEvmAddress } from './chains/evm';
 import { fetchTrc20Incoming, findTrc20ByHash } from './chains/tron';
-import { type AssetDef, type ChainTransfer, findAsset, NETWORKS, TX_HASH_TOLERANCE_CENTS } from './config';
+import {
+  type AssetDef,
+  type ChainTransfer,
+  findAsset,
+  NETWORKS,
+  TX_HASH_MAX_OVERPAY_CENTS,
+  TX_HASH_TOLERANCE_CENTS,
+} from './config';
 import { getCryptoSettings, payableAssets } from './settings';
 
 const OPEN_STATUSES = [CryptoPaymentStatus.PENDING, CryptoPaymentStatus.SEEN];
@@ -305,6 +312,8 @@ export type SubmitTxHashResult =
   | 'invalid_hash'
   | 'not_found'
   | 'wrong_amount'
+  | 'too_early'
+  | 'unavailable'
   | 'already_used'
   | 'not_payable';
 
@@ -347,30 +356,47 @@ export const submitTxHash = async ({
 
   const normalised = isTron ? trimmed.replace(/^0x/, '').toLowerCase() : trimmed.toLowerCase();
 
-  const transfer = isTron
-    ? await findTrc20ByHash({
-        address: request.toAddress,
-        contract: asset.contract,
-        decimals: asset.decimals,
-        hash: normalised,
-      })
-    : isEvmAddress(request.toAddress)
-      ? await findErc20ByHash({
-          network: asset.network as EvmNetwork,
-          hash: normalised,
+  let transfer: ChainTransfer | null;
+
+  // Public chain APIs rate-limit; tell the customer to retry rather than showing a raw error.
+  try {
+    transfer = isTron
+      ? await findTrc20ByHash({
+          address: request.toAddress,
           contract: asset.contract,
-          to: request.toAddress,
           decimals: asset.decimals,
-          confirmations: NETWORKS[asset.network].confirmations,
+          hash: normalised,
         })
-      : null;
+      : isEvmAddress(request.toAddress)
+        ? await findErc20ByHash({
+            network: asset.network as EvmNetwork,
+            hash: normalised,
+            contract: asset.contract,
+            to: request.toAddress,
+            decimals: asset.decimals,
+            confirmations: NETWORKS[asset.network].confirmations,
+          })
+        : null;
+  } catch (err) {
+    console.error('[CRYPTO] Transaction lookup failed', err);
+
+    return 'unavailable';
+  }
 
   if (!transfer) {
     return 'not_found';
   }
 
-  if (toCents(transfer.amount) + TX_HASH_TOLERANCE_CENTS < toCents(request.amount.toFixed(2))) {
+  const sentCents = toCents(transfer.amount);
+  const dueCents = toCents(request.amount.toFixed(2));
+
+  if (sentCents + TX_HASH_TOLERANCE_CENTS < dueCents || sentCents > dueCents + TX_HASH_MAX_OVERPAY_CENTS) {
     return 'wrong_amount';
+  }
+
+  // The amount to send only exists once the request is created, so an earlier transfer is not this payment.
+  if (transfer.blockTimeMs !== null && transfer.blockTimeMs < request.createdAt.getTime() - MATCH_WINDOW_MS) {
+    return 'too_early';
   }
 
   await storeTransfers(asset, [transfer]);
@@ -438,7 +464,9 @@ export const runCryptoTick = async () => {
       where: { network_asset_address: { network: asset.network, asset: asset.asset, address: asset.toAddress } },
     });
 
-    const idleDue = !cursor?.lastSyncAt || Date.now() - cursor.lastSyncAt.getTime() > IDLE_SYNC_MS;
+    // A failed read is retried on the next tick rather than waiting out the idle interval.
+    const idleDue =
+      !cursor?.lastSyncAt || Boolean(cursor.lastError) || Date.now() - cursor.lastSyncAt.getTime() > IDLE_SYNC_MS;
 
     if (openCount === 0 && !idleDue) {
       synced[asset.key] = 'skipped';

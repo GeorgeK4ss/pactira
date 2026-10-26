@@ -3,6 +3,7 @@ import { useCurrentOrganisation } from '@documenso/lib/client-only/providers/org
 import { IS_BILLING_ENABLED, SUPPORT_EMAIL } from '@documenso/lib/constants/app';
 import { ORGANISATION_MEMBER_ROLE_HIERARCHY } from '@documenso/lib/constants/organisations';
 import { ORGANISATION_MEMBER_ROLE_MAP } from '@documenso/lib/constants/organisations-translations';
+import { AppError } from '@documenso/lib/errors/app-error';
 import { INTERNAL_CLAIM_ID } from '@documenso/lib/types/subscription';
 import { zEmail } from '@documenso/lib/utils/zod';
 import { trpc } from '@documenso/trpc/react';
@@ -143,12 +144,31 @@ export const OrganisationMemberInviteDialog = ({ trigger, ...props }: Organisati
       });
 
       setOpen(false);
-    } catch {
+    } catch (err) {
+      const error = AppError.parseError(err);
+
+      if (error.code === 'EmailDeliveryFailed') {
+        // The invitations exist; only the emails failed.
+        toast({
+          title: _(msg`Invitations created`),
+          description: _(
+            msg`We could not email them. Open the pending invitations list and use "Copy invite link" to share each link.`,
+          ),
+          duration: 10000,
+        });
+
+        setOpen(false);
+
+        return;
+      }
+
       toast({
         title: _(msg`An unknown error occurred`),
-        description: _(
-          msg`We encountered an unknown error while attempting to invite organisation members. Please try again later.`,
-        ),
+        description:
+          error.userMessage ||
+          _(
+            msg`We encountered an unknown error while attempting to invite organisation members. Please try again later.`,
+          ),
         variant: 'destructive',
       });
     }

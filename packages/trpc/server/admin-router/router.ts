@@ -4,6 +4,12 @@ import { createAdminOrganisationRoute } from './create-admin-organisation';
 import { createStripeCustomerRoute } from './create-stripe-customer';
 import { createSubscriptionClaimRoute } from './create-subscription-claim';
 import { createUserRoute } from './create-user';
+import {
+  createAdminCryptoInvoiceRoute,
+  getAdminCryptoBillingRoute,
+  markCryptoInvoicePaidRoute,
+  runCryptoTickRoute,
+} from './crypto-billing';
 import { deleteDocumentRoute } from './delete-document';
 import { deleteOrganisationRoute } from './delete-organisation';
 import { deleteAdminOrganisationMemberRoute } from './delete-organisation-member';
@@ -76,6 +82,12 @@ export const adminRouter = router({
   },
   stripe: {
     createCustomer: createStripeCustomerRoute,
+  },
+  crypto: {
+    get: getAdminCryptoBillingRoute,
+    markInvoicePaid: markCryptoInvoicePaidRoute,
+    createInvoice: createAdminCryptoInvoiceRoute,
+    runTick: runCryptoTickRoute,
   },
   license: {
     resync: resyncLicenseRoute,

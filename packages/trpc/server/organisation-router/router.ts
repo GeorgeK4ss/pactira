@@ -18,6 +18,7 @@ import { getOrganisationAnalyticsOverviewRoute } from './get-organisation-analyt
 import { getOrganisationAnalyticsStatusBreakdownRoute } from './get-organisation-analytics-status-breakdown';
 import { getOrganisationAnalyticsTeamActivityRoute } from './get-organisation-analytics-team-activity';
 import { getOrganisationAnalyticsTemplateUsageRoute } from './get-organisation-analytics-template-usage';
+import { getOrganisationMemberInviteLinkRoute } from './get-organisation-member-invite-link';
 import { getOrganisationMemberInvitesRoute } from './get-organisation-member-invites';
 import { getOrganisationQuotaFlagsRoute } from './get-organisation-quota-flags';
 import { getOrganisationSessionRoute } from './get-organisation-session';
@@ -54,6 +55,7 @@ export const organisationRouter = router({
       find: findOrganisationMemberInvitesRoute,
       getMany: getOrganisationMemberInvitesRoute,
       createMany: createOrganisationMemberInvitesRoute,
+      getLink: getOrganisationMemberInviteLinkRoute,
       deleteMany: deleteOrganisationMemberInvitesRoute,
       accept: acceptOrganisationMemberInviteRoute,
       decline: declineOrganisationMemberInviteRoute,

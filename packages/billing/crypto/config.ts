@@ -42,8 +42,10 @@ export const NETWORKS: Record<CryptoNetwork, NetworkDef> = {
     kind: 'evm',
     chainId: 56,
     confirmations: 15,
-    // ~4 hours at ~0.75 s per block.
-    lookback: 20_000,
+    // ~25 minutes at ~0.75 s per block. Only the first scan of a new address looks back; after
+    // that each tick reads the few blocks since the last one. Larger first scans trip the free
+    // nodes' rate limits.
+    lookback: 2_000,
     explorerTx: (hash) => `https://bscscan.com/tx/${hash}`,
     explorerAddress: (address) => `https://bscscan.com/address/${address}`,
   },
@@ -101,5 +103,10 @@ export type ChainTransfer = {
 /** How long a "send exactly X" request stays open. */
 export const DEFAULT_REQUEST_TTL_HOURS = 24;
 
-/** On the "I already sent it" path, accept up to this much below the asked amount (exchange withdrawal fees). */
+/**
+ * On the "I already sent it" path the transfer may be this much below the asked amount (exchange
+ * withdrawal fees) or above it. Kept tight: the receiving address and its incoming transfers are
+ * public, so a pasted hash must not let someone claim a stranger's payment of a different size.
+ */
 export const TX_HASH_TOLERANCE_CENTS = 50n;
+export const TX_HASH_MAX_OVERPAY_CENTS = 200n;

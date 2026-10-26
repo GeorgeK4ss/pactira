@@ -22,7 +22,7 @@ import { msg } from '@lingui/core/macro';
 import { useLingui } from '@lingui/react';
 import { Trans } from '@lingui/react/macro';
 import { OrganisationMemberInviteStatus } from '@prisma/client';
-import { History, MoreHorizontal, Trash2 } from 'lucide-react';
+import { History, LinkIcon, MoreHorizontal, Trash2 } from 'lucide-react';
 import { useMemo } from 'react';
 import { useSearchParams } from 'react-router';
 
@@ -48,6 +48,26 @@ export const OrganisationMemberInvitesTable = () => {
       placeholderData: (previousData) => previousData,
     },
   );
+
+  const { mutateAsync: getInviteLink } = trpc.organisation.member.invite.getLink.useMutation();
+
+  const onCopyInviteLink = async (invitationId: string) => {
+    try {
+      const { url } = await getInviteLink({ organisationId: organisation.id, invitationId });
+      await navigator.clipboard.writeText(url);
+
+      toast({
+        title: _(msg`Invite link copied`),
+        description: _(msg`Send it to the person you invited. It works once and only for their email address.`),
+      });
+    } catch {
+      toast({
+        title: _(msg`Something went wrong`),
+        description: _(msg`Unable to copy the invite link. Please try again.`),
+        variant: 'destructive',
+      });
+    }
+  };
 
   const { mutateAsync: resendOrganisationMemberInvitation } = trpc.organisation.member.invite.resend.useMutation({
     onSuccess: () => {
@@ -142,6 +162,11 @@ export const OrganisationMemberInvitesTable = () => {
               >
                 <History className="mr-2 h-4 w-4" />
                 <Trans>Resend</Trans>
+              </DropdownMenuItem>
+
+              <DropdownMenuItem onClick={async () => onCopyInviteLink(row.original.id)}>
+                <LinkIcon className="mr-2 h-4 w-4" />
+                <Trans>Copy invite link</Trans>
               </DropdownMenuItem>
 
               {isOrganisationRoleWithinUserHierarchy(
