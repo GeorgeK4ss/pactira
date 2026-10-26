@@ -1,4 +1,4 @@
-import { syncMemberCountWithStripeSeatPlan } from '@documenso/billing/stripe/seats';
+import { syncMemberCountWithStripeSeatPlan } from '@documenso/billing/seats';
 import { prisma } from '@documenso/prisma';
 import { SubscriptionStatus } from '@prisma/client';
 import { IS_BILLING_ENABLED } from '../../../constants/app';

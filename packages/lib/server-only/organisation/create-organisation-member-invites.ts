@@ -1,5 +1,6 @@
+import { assertSeatsAvailable } from '@documenso/billing/seats';
 import { OrganisationInviteEmailTemplate } from '@documenso/email/templates/organisation-invite';
-import { NEXT_PUBLIC_WEBAPP_URL } from '@documenso/lib/constants/app';
+import { IS_BILLING_ENABLED, NEXT_PUBLIC_WEBAPP_URL } from '@documenso/lib/constants/app';
 import { ORGANISATION_MEMBER_ROLE_PERMISSIONS_MAP } from '@documenso/lib/constants/organisations';
 import { AppError, AppErrorCode } from '@documenso/lib/errors/app-error';
 import { isOrganisationRoleWithinUserHierarchy } from '@documenso/lib/utils/organisations';
@@ -57,6 +58,7 @@ export const createOrganisationMemberInvites = async ({
         },
       },
       organisationGlobalSettings: true,
+      organisationClaim: true,
     },
   });
 
@@ -97,6 +99,13 @@ export const createOrganisationMemberInvites = async ({
     throw new AppError(AppErrorCode.UNAUTHORIZED, {
       message: 'User does not have permission to set high level roles',
     });
+  }
+
+  if (IS_BILLING_ENABLED()) {
+    assertSeatsAvailable(
+      organisation.organisationClaim,
+      organisation.members.length + organisation.invites.length + usersToInvite.length,
+    );
   }
 
   const organisationMemberInvites: Prisma.OrganisationMemberInviteCreateManyInput[] = usersToInvite.map(

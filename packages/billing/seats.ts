@@ -5,6 +5,19 @@ import type { OrganisationClaim, Subscription } from '@prisma/client';
  * Plans in this app are a flat price per organisation, so member count never changes
  * the Stripe subscription. The plan's member limit is still enforced.
  */
+/**
+ * Throws when `seatsInUse` (members, plus pending invites when sending new ones) would go over the
+ * organisation's seat cap. A cap of 0 means unlimited.
+ */
+export const assertSeatsAvailable = (organisationClaim: Pick<OrganisationClaim, 'memberCount'>, seatsInUse: number) => {
+  if (organisationClaim.memberCount > 0 && seatsInUse > organisationClaim.memberCount) {
+    throw new AppError(AppErrorCode.LIMIT_EXCEEDED, {
+      message: `Your plan has ${organisationClaim.memberCount} seats and they are all taken or invited. Add seats in Billing to invite more people.`,
+      statusCode: 400,
+    });
+  }
+};
+
 export const assertMemberCountWithinCap = async (
   _subscription: Subscription | null,
   organisationClaim: Pick<OrganisationClaim, 'memberCount'>,

@@ -9,7 +9,8 @@
     "stripe/"
   ],
   "scripts": {
-    "clean": "rimraf node_modules"
+    "clean": "rimraf node_modules",
+    "test": "vitest run"
   },
   "dependencies": {
     "@documenso/auth": "*",
@@ -19,5 +20,8 @@
     "remeda": "^2.32.0",
     "stripe": "^12.18.0",
     "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "vitest": "^4.0.18"
   }
 }

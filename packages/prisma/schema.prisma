@@ -249,6 +249,13 @@ model Subscription {
   updatedAt         DateTime           @updatedAt
   cancelAtPeriodEnd Boolean            @default(false)
 
+  /// Which payment system this subscription belongs to: "stripe" or "crypto".
+  provider    String           @default("stripe")
+  interval    BillingInterval?
+  periodStart DateTime?
+  /// Paid seats on top of the seats included in the plan.
+  extraSeats  Int              @default(0)
+
   customerId String
 
   organisationId String       @unique
@@ -852,6 +859,9 @@ model Organisation {
 
   embedSignatures EmbedSignature[]
 
+  billingInvoices       BillingInvoice[]
+  cryptoPaymentRequests CryptoPaymentRequest[]
+
   avatarImage AvatarImage? @relation(fields: [avatarImageId], references: [id], onDelete: SetNull)
 
   ownerUserId Int
@@ -1309,4 +1319,117 @@ model RateLimit {
 
   @@id([key, action, bucket])
   @@index([createdAt])
+}
+
+enum BillingInterval {
+  MONTH
+  YEAR
+}
+
+enum BillingInvoiceKind {
+  /// The next period of the plan, including the extra seats held at the time.
+  RENEWAL
+  /// Extra seats added during a period, prorated to its end.
+  SEATS
+}
+
+enum BillingInvoiceStatus {
+  OPEN
+  PAID
+  VOID
+}
+
+model BillingInvoice {
+  id             String               @id @default(cuid())
+  organisationId String
+  kind           BillingInvoiceKind
+  status         BillingInvoiceStatus @default(OPEN)
+  interval       BillingInterval
+  periodStart    DateTime
+  periodEnd      DateTime
+  /// RENEWAL: extra seats covered by the period. SEATS: seats being added.
+  extraSeats     Int                  @default(0)
+  amountCents    Int
+  paidAt         DateTime?
+  /// "crypto" or "manual" (marked paid by an admin).
+  paidVia        String?
+  createdAt      DateTime             @default(now())
+  updatedAt      DateTime             @updatedAt
+
+  organisation    Organisation           @relation(fields: [organisationId], references: [id], onDelete: Cascade)
+  paymentRequests CryptoPaymentRequest[]
+
+  @@index([organisationId, status])
+}
+
+enum CryptoPaymentStatus {
+  PENDING
+  /// A matching transfer was found but is not final yet.
+  SEEN
+  PAID
+  EXPIRED
+  CANCELLED
+}
+
+model CryptoPaymentRequest {
+  id             String              @id @default(cuid())
+  organisationId String
+  invoiceId      String
+  /// tron | ethereum | bsc
+  network        String
+  /// USDT | USDC
+  asset          String
+  toAddress      String
+  /// The exact amount to send; its cents identify this request.
+  amount         Decimal             @db.Decimal(20, 2)
+  status         CryptoPaymentStatus @default(PENDING)
+  expiresAt      DateTime
+  seenAt         DateTime?
+  paidAt         DateTime?
+  createdAt      DateTime            @default(now())
+  updatedAt      DateTime            @updatedAt
+
+  organisation Organisation    @relation(fields: [organisationId], references: [id], onDelete: Cascade)
+  invoice      BillingInvoice  @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+  transfer     CryptoTransfer?
+
+  @@index([network, asset, toAddress, status])
+  @@index([invoiceId])
+}
+
+/// Every incoming token transfer seen on a receiving address.
+model CryptoTransfer {
+  id               String    @id @default(cuid())
+  network          String
+  asset            String
+  txHash           String
+  logIndex         Int
+  fromAddress      String
+  toAddress        String
+  /// Token amount as a decimal (6 or 18 decimals depending on the token).
+  amount           Decimal   @db.Decimal(38, 18)
+  blockNumber      BigInt?
+  blockTime        DateTime?
+  confirmed        Boolean   @default(false)
+  matchedRequestId String?   @unique
+  matchedAt        DateTime?
+  createdAt        DateTime  @default(now())
+
+  matchedRequest CryptoPaymentRequest? @relation(fields: [matchedRequestId], references: [id], onDelete: SetNull)
+
+  @@unique([network, txHash, logIndex])
+  @@index([network, asset, toAddress, matchedRequestId])
+}
+
+model CryptoWatchCursor {
+  id              String    @id @default(cuid())
+  network         String
+  asset           String
+  address         String
+  lastBlock       BigInt?
+  lastTimestampMs BigInt?
+  lastError       String?
+  lastSyncAt      DateTime?
+
+  @@unique([network, asset, address])
 }

@@ -1,4 +1,4 @@
-import { assertMemberCountWithinCap, syncMemberCountWithStripeSeatPlan } from '@documenso/billing/stripe/seats';
+import { assertMemberCountWithinCap, syncMemberCountWithStripeSeatPlan } from '@documenso/billing/seats';
 import { prisma } from '@documenso/prisma';
 import type { OrganisationGroup, OrganisationMemberRole } from '@prisma/client';
 import { OrganisationGroupType, OrganisationMemberInviteStatus, SubscriptionStatus } from '@prisma/client';
